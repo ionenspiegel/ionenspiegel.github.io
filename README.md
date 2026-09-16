@@ -1,4 +1,4 @@
-ionenspiegel SUPER V13
+İonenSpiegel V16 • Canlı Skor + Ziyaret Sayacı
 
 V10 altyapısına haber detayları, Web Share, PWA install prompt, demo canlı maç simülasyonu, Notification API, skeleton loading, OG/Twitter meta, focus trap, offline banner ve manifest shortcuts/screenshots eklendi. Tüm maç/istatistik verileri demo amaçlıdır; gerçek API bağlantısı yoktur.
 
