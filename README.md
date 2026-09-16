@@ -35,3 +35,6 @@ V13: Süper Lig sekmeleri mobilde 5 sütunlu sabit düzene alındı; yatay kayma
 
 ## V20
 Transfer ve basketbol bölümleri dolduruldu; yaklaşan maç fikstürü, maç detay modalı, localStorage yorum/anket/okuma sayaçları ve ziyaretçi istatistikleri eklendi.
+
+
+V22 düzeltmeleri: koyu tema uyumluluğu, güncel 16 Eylül 2026 içerikleri, offline uyarısının kaldırılması, harici haber görsellerinin yerel varlıklara alınması, gerçek hesap sistemi olmadığı bilgisinin netleştirilmesi ve Service Worker cache v22.

@@ -244,3 +244,50 @@ html{scroll-behavior:smooth;scroll-padding-top:88px}
 /* V20 */
 .content-section{scroll-margin-top:90px}.news-grid,.basketball-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.content-card,.poll-card,.comments-card{background:var(--panel,#fff);border:1px solid var(--border,#e5e7eb);border-radius:18px;padding:20px;box-shadow:0 8px 24px rgba(0,0,0,.05)}.content-card h3,.poll-card h3,.comments-card h3{margin:10px 0 8px}.content-card p,.poll-card p,.comments-card p{color:var(--muted,#667085);line-height:1.6}.content-card a{font-weight:700;text-decoration:none}.tag{display:inline-flex;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:800;background:#eef2ff}.tag.rumor{background:#fff1f2;color:#be123c}.tag.news{background:#eef6ff;color:#1d4ed8}.engage-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.poll-option{width:100%;display:flex;justify-content:space-between;text-align:left;padding:12px;margin:7px 0;border:1px solid var(--border,#e5e7eb);background:transparent;border-radius:12px;cursor:pointer;color:inherit}.poll-option small{color:var(--muted,#667085)}.poll-line{position:relative;display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border,#e5e7eb)}.poll-line i{position:absolute;left:0;bottom:0;height:3px;background:currentColor;opacity:.18}.comments-card input,.comments-card textarea{width:100%;box-sizing:border-box;margin:6px 0;padding:12px;border:1px solid var(--border,#e5e7eb);border-radius:10px;background:transparent;color:inherit}.comments-card textarea{resize:vertical}.comment-item{position:relative;border-top:1px solid var(--border,#e5e7eb);padding:12px 0}.comment-item small{margin-left:8px;color:var(--muted,#667085)}.comment-item p{margin:5px 0}.comment-item button{font-size:11px}.fixture-card{display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:12px;width:100%;text-align:left;padding:15px;border:1px solid var(--border,#e5e7eb);border-radius:14px;background:var(--panel,#fff);color:inherit;margin-bottom:8px;cursor:pointer}.fixture-card span{display:flex;gap:8px;align-items:center}.fixture-card span small{font-weight:700}.fixture-card strong em{font-style:normal;color:var(--muted,#667085);font-weight:500;margin:0 5px}.match-detail-modal{width:min(760px,calc(100vw - 28px));max-height:85vh;overflow:auto;background:var(--panel,#fff);color:inherit;border-radius:22px;padding:24px;position:relative}.match-detail-modal .close-btn{position:absolute;right:15px;top:12px}.match-tabs{display:flex;gap:10px;border-bottom:1px solid var(--border,#e5e7eb);padding:15px 0}.match-detail-body{display:grid;grid-template-columns:1fr 1fr;gap:15px;padding-top:18px}.match-stats{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.match-stats span{padding:14px;border-radius:12px;background:rgba(127,127,127,.08);display:flex;flex-direction:column;gap:6px}.dark .content-card,.dark .poll-card,.dark .comments-card,.dark .fixture-card,.dark .match-detail-modal{box-shadow:none}
 @media(max-width:800px){.news-grid,.basketball-grid,.engage-grid{grid-template-columns:1fr}.fixture-card{grid-template-columns:62px 1fr}.fixture-card>small{grid-column:2}.match-detail-body{grid-template-columns:1fr}.match-stats{grid-template-columns:1fr}.content-card,.poll-card,.comments-card{padding:16px}}
+
+/* V21 FIX: yeni içerik kartlarını koyu temaya uyumlu hale getir */
+.dark-theme .content-card,
+.dark-theme .poll-card,
+.dark-theme .comments-card,
+.dark-theme .fixture-card,
+.dark-theme .match-detail-modal{
+  background:var(--card);
+  border-color:var(--line);
+  color:#eef1f4;
+  box-shadow:none;
+}
+.dark-theme .content-card h3,
+.dark-theme .poll-card h3,
+.dark-theme .comments-card h3{
+  color:#fff;
+}
+.dark-theme .content-card p,
+.dark-theme .poll-card p,
+.dark-theme .comments-card p{
+  color:#adb3bc;
+}
+.dark-theme .content-card a{color:#ff5a62}
+.dark-theme .poll-option{
+  color:#eef1f4;
+  border-color:var(--line);
+  background:#111419;
+}
+.dark-theme .poll-option small{color:#adb3bc}
+.dark-theme .poll-line{border-color:var(--line);color:#eef1f4}
+.dark-theme .comments-card input,
+.dark-theme .comments-card textarea{
+  background:#111419;
+  color:#eef1f4;
+  border-color:var(--line);
+}
+.dark-theme .comments-card input::placeholder,
+.dark-theme .comments-card textarea::placeholder{color:#777f89}
+.dark-theme .fixture-card strong em{color:#adb3bc}
+
+/* V22: koyu tema + mobil okunabilirlik */
+.dark-theme .fixture-card,.dark-theme .poll-option,.dark-theme .poll-line,.dark-theme .comment-item,.dark-theme .search-hit{background:var(--card);color:#f3f5f7;border-color:var(--line)}
+.dark-theme .fixture-card strong,.dark-theme .poll-option span,.dark-theme .poll-line span,.dark-theme .comment-item b{color:#fff}
+.dark-theme .fixture-card small,.dark-theme .poll-option small,.dark-theme .comment-item small,.dark-theme .comment-item p{color:#adb3bc}
+.dark-theme .poll-option:hover{background:#1c2128}
+.dark-theme .modal input,.dark-theme textarea{background:#101318;color:#fff;border-color:#303640}
+.offline-banner{display:none!important}

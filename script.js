@@ -64,10 +64,10 @@ $('#savedNewsMenu')?.addEventListener('click',openSaved);$('#savedCard')?.addEve
 
 /* ---------- HERO ---------- */
 const slides=[
- {title:'Beşiktaş - Marseille maçına saatler kaldı',text:'Siyah-beyazlılar UEFA Avrupa Ligi lig aşamasındaki ilk maçında Marseille ile karşılaşacak.',source:'Beşiktaş JK · 16 Eylül',newsId:'bjk-marseille',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("https://cdn.duhuliye.com/uploads/posts/2026/02/b89c4bcf-ada5-4bcc-b7e9-2b6c32fd05fd.webp") center/cover',link:'https://bjk.com.tr/tr/fikstur/1/1/718/682/5274'},
- {title:'Thomas Reis Trabzonspor için Trabzon\'da',text:'Trabzonspor\'un anlaşmaya vardığı Alman teknik direktör Thomas Reis, 16 Eylül gündeminin öne çıkan gelişmesi oldu.',source:'Anadolu Ajansı · 16 Eylül',newsId:'thomas-reis-ts',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("https://imgs.stargazete.com/imgsdisk/2026/09/16/trabzonsporun-13-yabanci--383_2-41.jpg") center/cover',link:'https://www.aa.com.tr/tr/spor/thomas-reis-trabzonsporun-13-yabanci-teknik-direktoru/4058780'},
- {title:'Galatasaray liderliğini korudu',text:'Kocaelispor\'u 1-0 yenen Galatasaray, 5. hafta sonunda 13 puanla zirvede kaldı.',source:'Anadolu Ajansı · 14 Eylül',newsId:'gs-kocaeli',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("https://web-cdnprod.aa.com.tr/uploads/PhotoGallery/2026/09/13/thumbs_b_41381654f5168b2c208621c8c975a26b.jpg") center/cover',link:'https://www.aa.com.tr/tr/spor/galatasaray-kaptan-abdulkerimin-goluyle-kocaelisporu-1-0-yendi/4056133'},
- {title:'Fenerbahçe, Gaziantep FK deplasmanından 0-0 ile döndü',text:'5. hafta kapanışında taraflar puanları paylaştı.',source:'Anadolu Ajansı · 14 Eylül',newsId:'fb-gaziantep',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("https://web-cdnprod.aa.com.tr/uploads/PhotoGallery/2026/09/14/thumbs_b_08205dec22bbfebd96ecd4decf19414b.jpg") center/cover',link:'https://www.aa.com.tr/tr/spor/gaziantep-fk-ile-fenerbahce-berabere-kaldi/4057102'}
+ {title:'Beşiktaş - Marseille maçına saatler kaldı',text:'Siyah-beyazlılar UEFA Avrupa Ligi lig aşamasındaki ilk maçında Marseille ile karşılaşacak.',source:'Beşiktaş JK · 16 Eylül',newsId:'bjk-marseille',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./assets/local-2.svg") center/cover',link:'https://bjk.com.tr/tr/fikstur/1/1/718/682/5274'},
+ {title:'Thomas Reis Trabzonspor için Trabzon\'da',text:'Trabzonspor\'un anlaşmaya vardığı Alman teknik direktör Thomas Reis, 16 Eylül gündeminin öne çıkan gelişmesi oldu.',source:'Anadolu Ajansı · 16 Eylül',newsId:'thomas-reis-ts',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./assets/local-5.svg") center/cover',link:'https://www.aa.com.tr/tr/spor/thomas-reis-trabzonsporun-13-yabanci-teknik-direktoru/4058780'},
+ {title:'Süper Lig derbilerinin tarihleri açıklandı',text:'TFF, ilk yarıdaki önemli derbilerin tarih ve saatlerini açıkladı.',source:'Anadolu Ajansı · 15 Eylül',newsId:'gs-kocaeli',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./assets/local-6.svg") center/cover',link:'https://www.aa.com.tr/tr/spor/trendyol-super-ligde-7-16-haftalarin-programi-aciklandi/4057906'},
+ {title:'Avrupa Ligi lig aşaması başlıyor',text:'36 takımlı lig aşaması 16 Eylül’de başlıyor; Beşiktaş 17 Eylül’de Marseille’i ağırlayacak.',source:'UEFA · 16 Eylül',newsId:'fb-gaziantep',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./assets/local-7.svg") center/cover',link:'https://www.uefa.com/uefaeuropaleague/news/02a9-21815eb7babc-62eab180d6e2-1000--europa-league-squads-league-phase-selections-confirmed/'}
 ];let slideIndex=0;
 function renderSlide(){const s=slides[slideIndex];const media=$('#heroMedia');if(!media)return;$('#heroTitle').textContent=s.title;$('#heroText').textContent=s.text;$('#heroSource').textContent=s.source;media.style.background=s.bg;$('#heroIndex').textContent=slideIndex+1;$('#heroRead').onclick=()=>window.open(s.link,'_blank','noopener');$$('#sliderDots i').forEach((d,i)=>d.classList.toggle('active',i===slideIndex))}
 slides.forEach(s=>{const u=s.bg.match(/url\("([^"]+)/)?.[1];if(u){const i=new Image();i.src=u}});
@@ -195,11 +195,11 @@ window.addEventListener('scroll',()=>{const max=document.documentElement.scrollH
 /* ---------- V12 ARTICLE DETAIL ---------- */
 const articleModal=$('#articleModal'),articleTitle=$('#articleDetailTitle'),articleMeta=$('#articleDetailMeta'),articleImage=$('#articleDetailImage'),articleBody=$('#articleDetailBody'),articleSource=$('#articleSource'),articleKicker=$('#articleDetailKicker');
 const articleLongText={
- 'thomas-reis-ts':['Alman teknik adam Thomas Reis ile Trabzonspor arasında anlaşmaya varıldığı yönündeki gelişme 16 Eylül gündeminin öne çıkan başlıklarından biri oldu.','Trabzonspor cephesinde teknik direktörlük koltuğu için yapılan görüşmelerin ardından Reis ismi gündemin merkezine yerleşti. Bu demo haber metni, kısa haber kartındaki bilgiyi tam ekran okuma deneyimine dönüştürmek için hazırlanmıştır.','Kulübün sezon içindeki hedefleri, kadro yapısı ve fikstür yoğunluğu yeni teknik ekibin ilk dönemindeki temel başlıklardan olacak. Haber kartındaki kaynak bağlantısı, okuyucunun ilgili dış kaynağa geçebilmesi için ayrıca korunur.'],
- 'bjk-marseille':['Beşiktaş, UEFA Avrupa Ligi lig aşamasındaki ilk maçında Marseille ile karşılaşmaya hazırlanıyor. Karşılaşma 17 Eylül saat 22.00’de Tüpraş Stadyumu’nda oynanacak.','Siyah-beyazlıların maç öncesi hazırlıkları sürerken takımın Avrupa Ligi başlangıcı sezon takviminin önemli duraklarından biri olacak. Bu metin demo portalındaki tam haber görünümünü göstermek amacıyla kullanılır.','Maç merkezi, karşılaşma başladığında skor, dakika ve olay akışının ayrı bir arayüzde gösterilebilmesi için hazırlanmıştır.'],
- 'gs-kocaeli':['Galatasaray, Kocaelispor karşısında aldığı 1-0’lık galibiyetle beşinci hafta sonunda 13 puana ulaştı ve zirvedeki yerini korudu.','Sezonun ilk haftalarındaki sonuçlar, Galatasaray’ın puan tablosunda üst sırada kalmasını sağladı. Bu demo içerik, haber detay sayfasında uzun okuma düzenini test etmek için kısa kart metninin genişletilmiş versiyonudur.','Haberin kaynak bağlantısı ayrıca sunularak okuyucuya dış kaynağa geçiş imkânı verilir.'],
+ 'thomas-reis-ts':['Alman teknik adam Thomas Reis ile Trabzonspor arasında anlaşmaya varıldığı yönündeki gelişme 16 Eylül gündeminin öne çıkan başlıklarından biri oldu.','Trabzonspor cephesinde teknik direktörlük koltuğu için yapılan görüşmelerin ardından Reis ismi gündemin merkezine yerleşti. Haberin ayrıntıları ve kaynak bağlantısı tam ekran okuma görünümünde sunulur.','Kulübün sezon içindeki hedefleri, kadro yapısı ve fikstür yoğunluğu yeni teknik ekibin ilk dönemindeki temel başlıklardan olacak. Haber kartındaki kaynak bağlantısı, okuyucunun ilgili dış kaynağa geçebilmesi için ayrıca korunur.'],
+ 'bjk-marseille':['Beşiktaş, UEFA Avrupa Ligi lig aşamasındaki ilk maçında Marseille ile karşılaşmaya hazırlanıyor. Karşılaşma 17 Eylül saat 22.00’de Tüpraş Stadyumu’nda oynanacak.','Siyah-beyazlıların maç öncesi hazırlıkları sürerken takımın Avrupa Ligi başlangıcı sezon takviminin önemli duraklarından biri olacak. Haberin ayrıntıları ve kaynak bağlantısı tam ekran okuma görünümünde sunulur.','Maç merkezi, karşılaşma başladığında skor, dakika ve olay akışının ayrı bir arayüzde gösterilebilmesi için hazırlanmıştır.'],
+ 'gs-kocaeli':['Galatasaray, Kocaelispor karşısında aldığı 1-0’lık galibiyetle beşinci hafta sonunda 13 puana ulaştı ve zirvedeki yerini korudu.','Sezonun ilk haftalarındaki sonuçlar, Galatasaray’ın puan tablosunda üst sırada kalmasını sağladı. Haberin ayrıntıları ve kaynak bağlantısı tam ekran okuma görünümünde sunulur.','Haberin kaynak bağlantısı ayrıca sunularak okuyucuya dış kaynağa geçiş imkânı verilir.'],
  'fb-gaziantep':['Fenerbahçe, Süper Lig’in beşinci hafta kapanışında Gaziantep FK ile 0-0 berabere kaldı. Karşılaşmada taraflar birer puan aldı.','Bu sonuçla Fenerbahçe beş maç sonunda 7 puanda kaldı. Takımın lig performansında galibiyetlerin yanı sıra iki mağlubiyet ve bir beraberlik bulunuyor.','Tam haber görünümü, başlık ve kapak görselinin yanında kaynak, paylaşım ve uzun metin alanlarını tek ekranda birleştirmek için tasarlanmıştır.']};
-function articleDataFull(a){const d=articleData(a),ps=articleLongText[d.id]||[d.text,'Bu bölüm demo portalındaki uzun haber görünümünü göstermek için kullanılır.','Kaynak bağlantısı ve paylaşım araçları haber detayının altında yer alır.'];return {...d,paragraphs:ps}}
+function articleDataFull(a){const d=articleData(a),ps=articleLongText[d.id]||[d.text,'Haberin ayrıntıları ve kaynak bağlantısı tam ekran okuma görünümünde sunulur.','Kaynak bağlantısı ve paylaşım araçları haber detayının altında yer alır.'];return {...d,paragraphs:ps}}
 function openArticle(article){if(!articleModal||!article)return;const d=articleDataFull(article);articleKicker.textContent=d.kicker||d.team||'HABER';articleTitle.textContent=d.title;articleMeta.textContent=`${d.team||'Futbol'} · ${new Date().toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'})}`;articleImage.src=d.image;articleImage.alt=d.title;articleBody.innerHTML=d.paragraphs.map((x,i)=>`<p class="${i===0?'article-lead':''}">${x}</p>`).join('');articleSource.href=d.source;articleModal.classList.add('show');document.body.classList.add('modal-open');setTimeout(()=>$('#articleClose')?.focus(),30)}
 function closeArticle(){articleModal?.classList.remove('show');document.body.classList.remove('modal-open')}
 function bindNewsInteractions(){
@@ -217,12 +217,7 @@ installCard?.addEventListener('click',async()=>{if(!deferredInstall){toast('Tara
 window.addEventListener('appinstalled',()=>{deferredInstall=null;installCard?.classList.remove('ready');installCard?.setAttribute('hidden','hidden');toast('ionenspiegel yüklendi')});
 
 /* ---------- V12 NOTIFICATIONS ---------- */
-$('#notificationCard')?.addEventListener('click',async()=>{if(!('Notification' in window)){toast('Bu tarayıcı bildirimleri desteklemiyor');return}let p=Notification.permission;if(p==='default')p=await Notification.requestPermission();if(p==='granted'){toast('Bildirimler açıldı');setTimeout(()=>new Notification('ionenspiegel',{body:'Demo: Yeni futbol gelişmesi var.',icon:'icon-192.png',tag:'ionenspiegel-demo'}),3000)}else toast('Bildirim izni verilmedi')});
-
-/* ---------- V12 OFFLINE ---------- */
-const offlineBanner=$('#offlineBanner');function setOnlineState(){const off=!navigator.onLine;offlineBanner?.classList.toggle('show',off)}window.addEventListener('online',setOnlineState);window.addEventListener('offline',setOnlineState);setOnlineState();
-navigator.serviceWorker?.addEventListener('message',e=>{if(e.data?.type==='OFFLINE')offlineBanner?.classList.add('show');if(e.data?.type==='ONLINE')offlineBanner?.classList.remove('show')});
-
+$('#notificationCard')?.addEventListener('click',async()=>{if(!('Notification' in window)){toast('Bu tarayıcı bildirimleri desteklemiyor');return}let p=Notification.permission;if(p==='default')p=await Notification.requestPermission();if(p==='granted'){toast('Bildirimler açıldı');setTimeout(()=>new Notification('ionenspiegel',{body:'Yeni futbol gelişmesi var.',icon:'icon-192.png',tag:'ionenspiegel-news'}),3000)}else toast('Bildirim izni verilmedi')});
 /* ---------- V12 SKELETON NEWS ---------- */
 function runNewsSkeleton(){const feed=$('#newsFeed');if(!feed)return;const html=feed.innerHTML;feed.classList.add('skeleton-mode');feed.setAttribute('aria-busy','true');feed.innerHTML=`<article class="news-row"><div class="thumb"></div><div><div class="news-kicker">YÜKLENİYOR</div><h3>Haber hazırlanıyor...</h3><p>İçerik yükleniyor.</p></div></article><article class="news-row"><div class="thumb"></div><div><div class="news-kicker">YÜKLENİYOR</div><h3>Haber hazırlanıyor...</h3><p>İçerik yükleniyor.</p></div></article><article class="news-row"><div class="thumb"></div><div><div class="news-kicker">YÜKLENİYOR</div><h3>Haber hazırlanıyor...</h3><p>İçerik yükleniyor.</p></div></article>`;setTimeout(()=>{feed.innerHTML=html;feed.classList.remove('skeleton-mode');feed.setAttribute('aria-busy','false');bindNewsInteractions()},650)}
 
@@ -241,20 +236,6 @@ window.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement?.ta
 /* V13: stats tab row always starts from the left on mobile */
 document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({left:0,behavior:'instant'})});
 
-/* ---------- ZİYARET SAYACI ----------
-   iCount, statik GitHub Pages üzerinde backend olmadan toplam sayfa görüntüleme
-   ve günlük ziyaret verisi tutar. Site ID bu projenin Pages adresidir.
-*/
-(function initVisitorCounter(){
-  const total=$('#visitorTotal'),today=$('#visitorToday');
-  const siteId='topcuyusuf254-del.github.io/ionenspiegel';
-  const url='https://icount.kr/api.php?id='+encodeURIComponent(siteId);
-  fetch(url,{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{
-    if(!d)return;
-    if(total) total.textContent=Number(d?.total?.pv||0).toLocaleString('tr-TR');
-    if(today) today.textContent=Number(d?.today?.pv||0).toLocaleString('tr-TR');
-  }).catch(()=>{});
-})();
 
 /* ---------- V20 ETKILESIM / YEREL VERI ---------- */
 (function initV20(){

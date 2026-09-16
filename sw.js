@@ -1,5 +1,5 @@
-// ionenspiegel V14 service worker
-const CACHE_NAME='ionenspiegel-v19';
+// ionenspiegel V21 service worker
+const CACHE_NAME='ionenspiegel-v22';
 const CORE_ASSETS=['./','./index.html','./style.css','./script.js','./manifest.json','./icon-192.png','./icon-512.png','./screenshot-home.jpg','./screenshot-match.jpg'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(CORE_ASSETS)).catch(()=>{}));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))));self.clients.claim()});
