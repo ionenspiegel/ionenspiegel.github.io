@@ -1,6 +1,6 @@
-// ionenspiegel V21 service worker
-const CACHE_NAME='ionenspiegel-v22';
-const CORE_ASSETS=['./','./index.html','./style.css','./script.js','./manifest.json','./icon-192.png','./icon-512.png','./screenshot-home.jpg','./screenshot-match.jpg'];
+// ionenspiegel V23 service worker
+const CACHE_NAME='ionenspiegel-v23';
+const CORE_ASSETS=['./','./index.html','./style.css','./script.js','./manifest.json','./icon-192.png','./icon-512.png','./local-1.svg','./local-2.svg','./local-3.svg','./local-4.svg','./local-5.svg','./local-6.svg','./local-7.svg','./screenshot-home.jpg','./screenshot-match.jpg'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(CORE_ASSETS)).catch(()=>{}));self.skipWaiting()});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))));self.clients.claim()});
 function tell(type){self.clients.matchAll({type:'window',includeUncontrolled:true}).then(cs=>cs.forEach(c=>c.postMessage({type})))}
