@@ -253,13 +253,64 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
   $$('.fixture-card').forEach(b=>b.addEventListener('click',()=>openMatch(Number(b.dataset.match))));
 
   const poll=[['Victor Osimhen','Galatasaray'],['Orkun Kökçü','Beşiktaş'],['Fred','Fenerbahçe'],['Thomas Müller','Avrupa']];
-  const pollBox=$('#playerPoll'), pollResult=$('#pollResult'), pollKey='ionenspiegel-v20-poll';
-  if(pollBox){pollBox.innerHTML=poll.map((x,i)=>`<button class="poll-option" data-poll="${i}"><span>${x[0]}</span><small>${x[1]}</small></button>`).join(''); const votes=()=>JSON.parse(localStorage.getItem(pollKey)||'{}'); const render=()=>{const v=votes(),total=Object.values(v).reduce((a,b)=>a+b,0);pollResult.innerHTML=poll.map((x,i)=>{const n=v[i]||0,p=total?Math.round(n/total*100):0;return `<div class="poll-line"><span>${x[0]}</span><b>${p}%</b><i style="width:${p}%"></i></div>`}).join('')}; $$('.poll-option',pollBox).forEach(b=>b.onclick=()=>{const v=votes();v[b.dataset.poll]=(v[b.dataset.poll]||0)+1;localStorage.setItem(pollKey,JSON.stringify(v));render();toast('Oyun kaydedildi')});render();}
+  const pollBox=$('#playerPoll'), pollResult=$('#pollResult');
+  const COMMUNITY_API = window.IONENSPIEGEL_COMMUNITY_API || 'https://script.google.com/macros/s/AKfycbxPYzzN6tk-EuyrPMwU_cxr4cXH5W6nSqCQj2MVEh40t0sh9Erl5P0P_Cads9lZDKzCCQ/exec';
+  const VOTED_KEY='ionenspiegel-v23-voted';
+  let communityData={comments:[],votes:{}};
 
-  const commentsKey='ionenspiegel-v20-comments'; const cList=$('#commentList');
-  function renderComments(){if(!cList)return;const arr=JSON.parse(localStorage.getItem(commentsKey)||'[]');cList.innerHTML=arr.length?arr.map((c,i)=>`<div class="comment-item"><b>${esc(c.name)}</b><small>${esc(c.date)}</small><p>${esc(c.text)}</p><button data-del-comment="${i}">Sil</button></div>`).join(''):'<small class="muted">Henüz yorum yok.</small>'; $$('[data-del-comment]',cList).forEach(b=>b.onclick=()=>{const a=JSON.parse(localStorage.getItem(commentsKey)||'[]');a.splice(Number(b.dataset.delComment),1);localStorage.setItem(commentsKey,JSON.stringify(a));renderComments()})}
-  function esc(v){return String(v||'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
-  $('#commentAdd')?.addEventListener('click',()=>{const n=$('#commentName')?.value.trim(),t=$('#commentText')?.value.trim();if(!n||!t)return toast('Ad ve yorum yazmalısın');const a=JSON.parse(localStorage.getItem(commentsKey)||'[]');a.unshift({name:n,text:t,date:new Date().toLocaleString('tr-TR')});localStorage.setItem(commentsKey,JSON.stringify(a.slice(0,50)));$('#commentName').value='';$('#commentText').value='';renderComments();toast('Yorum eklendi')});renderComments();
+  function renderCommunity(data){
+    communityData=data||{comments:[],votes:{}};
+    if(pollResult){
+      const v=communityData.votes||{}, total=Object.values(v).reduce((a,b)=>a+Number(b||0),0);
+      pollResult.innerHTML=poll.map((x,i)=>{const n=Number(v[i]||0),p=total?Math.round(n/total*100):0;return `<div class="poll-line"><span>${x[0]}</span><b>${p}%</b><i style="width:${p}%"></i></div>`}).join('');
+    }
+    if(cList){
+      const arr=Array.isArray(communityData.comments)?communityData.comments:[];
+      cList.innerHTML=arr.length?arr.map(c=>`<div class="comment-item"><b>${esc(c.name)}</b><small>${esc(c.date)}</small><p>${esc(c.text)}</p></div>`).join(''):'<small class="muted">Henüz yorum yok.</small>';
+    }
+  }
+
+  function loadCommunity(){
+    if(!/^https:\/\//.test(COMMUNITY_API)) return;
+    const cb='ionenspiegelCommunity_'+Date.now();
+    window[cb]=(data)=>{renderCommunity(data);delete window[cb];script.remove()};
+    const script=document.createElement('script');
+    script.src=COMMUNITY_API+(COMMUNITY_API.includes('?')?'&':'?')+'callback='+cb;
+    script.onerror=()=>{delete window[cb];script.remove()};
+    document.head.appendChild(script);
+  }
+
+  if(pollBox){
+    pollBox.innerHTML=poll.map((x,i)=>`<button class="poll-option" data-poll="${i}"><span>${x[0]}</span><small>${x[1]}</small></button>`).join('');
+    const alreadyVoted=localStorage.getItem(VOTED_KEY)==='1';
+    $$('.poll-option',pollBox).forEach(b=>{
+      b.disabled=alreadyVoted;
+      b.onclick=()=>{
+        if(localStorage.getItem(VOTED_KEY)==='1') return toast('Bu cihazdan zaten oy verdin');
+        const body='action=anket&choice='+encodeURIComponent(b.dataset.poll);
+        if(/^https:\/\//.test(COMMUNITY_API)){
+          fetch(COMMUNITY_API,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body}).catch(()=>{});
+          localStorage.setItem(VOTED_KEY,'1');
+          $$('.poll-option',pollBox).forEach(x=>x.disabled=true);
+          toast('Oyun kaydediliyor');
+          setTimeout(loadCommunity,1200);
+        }else toast('Topluluk sistemi henüz bağlanmadı');
+      };
+    });
+  }
+
+  const cList=$('#commentList');
+  function esc(v){return String(v||'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+  $('#commentAdd')?.addEventListener('click',()=>{
+    const n=$('#commentName')?.value.trim(),t=$('#commentText')?.value.trim();
+    if(!n||!t)return toast('Ad ve yorum yazmalısın');
+    if(n.length>60||t.length>1000)return toast('Yorum çok uzun');
+    if(!/^https:\/\//.test(COMMUNITY_API))return toast('Topluluk sistemi henüz bağlanmadı');
+    const body='action=yorum&name='+encodeURIComponent(n)+'&text='+encodeURIComponent(t);
+    fetch(COMMUNITY_API,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body}).catch(()=>{});
+    $('#commentName').value='';$('#commentText').value='';toast('Yorum gönderiliyor');setTimeout(loadCommunity,1200);
+  });
+  loadCommunity();
 
   const readsKey='ionenspiegel-v20-reads', visitsKey='ionenspiegel-v20-visits';
   const visits=Number(localStorage.getItem(visitsKey)||0)+1;localStorage.setItem(visitsKey,visits); const total=$('#visitorTotal');if(total)total.textContent=visits.toLocaleString('tr-TR');

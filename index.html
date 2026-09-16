@@ -311,8 +311,8 @@
 <section class="section content-section" id="gundem">
   <div class="section-head"><div><h2><span class="red-line"></span> Gündem ve Etkileşim</h2><p class="section-subtitle">Okuma, yorum ve haftanın oyuncusu</p></div></div>
   <div class="engage-grid">
-    <div class="poll-card"><span class="tag news">ANKET</span><h3>Haftanın oyuncusu kim?</h3><p>Oyunu etkileme tercihini seç. Sonuçlar bu tarayıcıda saklanır.</p><div id="playerPoll"></div><div class="poll-result" id="pollResult"></div></div>
-    <div class="comments-card"><h3>Haber tartışması</h3><p>Yorumunu yaz. Yorumlar yalnızca bu cihazdaki tarayıcıda saklanır.</p><input id="commentName" placeholder="Adın"><textarea id="commentText" rows="3" placeholder="Bu haber hakkında ne düşünüyorsun?"></textarea><button class="primary-btn" id="commentAdd">Yorum gönder</button><div id="commentList"></div></div>
+    <div class="poll-card"><span class="tag news">ANKET</span><h3>Haftanın oyuncusu kim?</h3><p>Oyunu seç. Sonuçlar tüm ziyaretçiler için ortaktır.</p><div id="playerPoll"></div><div class="poll-result" id="pollResult"></div></div>
+    <div class="comments-card"><h3>Haber tartışması</h3><p>Yorumunu yaz. Yorumlar tüm ziyaretçilerle paylaşılır ve yeni yorumlar e-posta ile bildirilir.</p><input id="commentName" placeholder="Adın"><textarea id="commentText" rows="3" placeholder="Bu haber hakkında ne düşünüyorsun?"></textarea><button class="primary-btn" id="commentAdd">Yorum gönder</button><div id="commentList"></div></div>
   </div>
 </section>
 
@@ -392,6 +392,7 @@
 </div>
 <div class="modal-backdrop" id="loginModal"><div class="modal"><button class="close-btn" type="button" data-close-modal aria-label="Kapat">×</button><div class="modal-logo">İonenSpiegel</div><h2>Giriş Yap</h2><p>Favori takımlar, bildirimler ve kişiselleştirilmiş akış için giriş ekranı.</p><input placeholder="E-posta"><input placeholder="Şifre" type="password"><button class="primary-btn" data-close-modal>Giriş yap</button><small>Hesap sistemi şu anda etkin değil.</small></div></div>
 <div class="modal-backdrop" id="searchModal"><div class="search-modal"><button class="close-btn" type="button" data-close-modal aria-label="Kapat">×</button><h2>Site içinde ara</h2><div class="big-search"><input id="globalSearch" placeholder="Takım, oyuncu, haber ara..."><button id="globalSearchBtn">Ara</button></div><div id="globalResults"></div></div></div>
+<script>window.IONENSPIEGEL_COMMUNITY_API="https://script.google.com/macros/s/AKfycbxPYzzN6tk-EuyrPMwU_cxr4cXH5W6nSqCQj2MVEh40t0sh9Erl5P0P_Cads9lZDKzCCQ/exec";</script>
 <script src="script.js?v=20"></script>
 <script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
 </body>
