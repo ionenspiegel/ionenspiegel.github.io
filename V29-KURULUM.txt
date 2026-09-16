@@ -1,0 +1,6 @@
+V29: Google News + RSS haber akışı
+1) Code.gs'nin tamamını Apps Script'e yapıştır ve kaydet.
+2) Dağıt > Dağıtımları yönet > Web uygulaması > Yeni sürüm > Dağıt.
+3) Yürütme: Ben, erişim: Herkes.
+4) ZIP'teki diğer dosyaları GitHub ana dizinine yükle.
+5) API JSON'unda "items":[...] görülmeli.

@@ -1,0 +1,8 @@
+V30 otomatik haber sistemi
+1) Code.gs'nin tamamını Google Apps Script'e yapıştır.
+2) Kaydet.
+3) Dağıt > Dağıtımları yönet > Web uygulaması > Yeni sürüm > Dağıt.
+4) Yürütme: Ben, erişim: Herkes.
+5) ZIP içindeki diğer dosyaları GitHub ana dizinine yükle.
+6) API JSON'unda items alanı dolu olmalı.
+Kaynaklar: ASpor, Habertürk Spor, A Haber Spor RSS.

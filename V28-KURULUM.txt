@@ -1,0 +1,9 @@
+V28 otomatik haber sistemi
+1. Code.gs'nin tamamını Google Apps Script'e yapıştır.
+2. Kaydet.
+3. Dağıt > Dağıtımları yönet > Web uygulaması > Yeni sürüm > Dağıt.
+4. Yürütme: Ben, erişim: Herkes.
+5. ZIP içindeki diğer dosyaları GitHub ana dizinine yükle.
+6. API testinde JSON içinde "items":[...] görünmeli.
+Kaynaklar: Fotomaç Futbol RSS, A Haber Spor RSS, Google News Türkiye Futbol RSS.
+Sadece başlık/açıklama/bağlantı metadata'sı gösterilir; tam makale metni kopyalanmaz.

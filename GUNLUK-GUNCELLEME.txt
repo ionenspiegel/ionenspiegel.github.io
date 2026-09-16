@@ -1,0 +1,3 @@
+İonenSpiegel günlük güncelleme: 17 Eylül 2026
+Haberler doğrulanmış web kaynaklarından derlendi. Kaynak ve bağlantılar daily-news.json içindedir.
+Öne çıkan konu: Beşiktaş-Marsilya UEFA Avrupa Ligi maçı.

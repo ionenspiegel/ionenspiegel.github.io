@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
 
   const poll=[['Victor Osimhen','Galatasaray'],['Orkun Kökçü','Beşiktaş'],['Fred','Fenerbahçe'],['Thomas Müller','Avrupa']];
   const pollBox=$('#playerPoll'), pollResult=$('#pollResult');
-  const COMMUNITY_API = window.IONENSPIEGEL_COMMUNITY_API || 'https://script.google.com/macros/s/AKfycbxPYzzN6tk-EuyrPMwU_cxr4cXH5W6nSqCQj2MVEh40t0sh9Erl5P0P_Cads9lZDKzCCQ/exec';
+  const COMMUNITY_API = window.IONENSPIEGEL_COMMUNITY_API || 'https://script.google.com/macros/s/AKfycbxoTMojRbXgNWBkFqSvYXULBRkT1C30nOZdh4luZmLqe_FZ55U3Vv1O2CExgoumeaFy_Q/exec';
   const VOTED_KEY='ionenspiegel-v23-voted';
   let communityData={comments:[],votes:{}};
 
@@ -368,3 +368,19 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
   countSharedVisit();
   $$('.news-row,.content-card,.world-card').forEach(card=>{card.addEventListener('click',()=>{const key=(card.innerText||'').slice(0,80),r=JSON.parse(localStorage.getItem(readsKey)||'{}');r[key]=(r[key]||0)+1;localStorage.setItem(readsKey,JSON.stringify(r))},{once:false})});
 })();
+
+
+/* V30 DAILY VERIFIED NEWS FALLBACK */
+async function loadDailyVerifiedNewsFallback(){
+  try{
+    const r=await fetch('./daily-news.json?v=20260917',{cache:'no-store'});
+    if(!r.ok) return;
+    const d=await r.json();
+    const items=Array.isArray(d.news)?d.news:[];
+    if(!items.length) return;
+    window.IONENSPIEGEL_DAILY_NEWS=items;
+    if(typeof renderNewsItems==='function') renderNewsItems(items);
+    else if(typeof renderNews==='function') renderNews(items);
+  }catch(e){}
+}
+document.addEventListener('DOMContentLoaded',()=>setTimeout(loadDailyVerifiedNewsFallback,800));

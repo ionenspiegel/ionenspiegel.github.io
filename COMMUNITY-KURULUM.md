@@ -29,15 +29,15 @@ Deploy sonrası verilen `/exec` URL'sini kopyala.
 `index.html` içinde şu satırı bul:
 
 ```html
-<script>window.IONENSPIEGEL_COMMUNITY_API="https://script.google.com/macros/s/AKfycbwwLcyHlTXdJOi-WJNLMTZWCFEveprFcR0AJb-Ww5sKGwUYz8_VmZB_OCL9djcrbESsrg/exec";</script>
+<script>window.IONENSPIEGEL_COMMUNITY_API="https://script.google.com/macros/s/AKfycbxoTMojRbXgNWBkFqSvYXULBRkT1C30nOZdh4luZmLqe_FZ55U3Vv1O2CExgoumeaFy_Q/exec";</script>
 ```
 
-`https://script.google.com/macros/s/AKfycbxU2ouqSRW4q_mqsVd_FjgvZTM9yORAolVrEQ11OrKo95lPcjRvHFKrzHe4_ciiEpwP6Q/exec` yerine Apps Script `/exec` adresini yaz.
+`https://script.google.com/macros/s/AKfycbxoTMojRbXgNWBkFqSvYXULBRkT1C30nOZdh4luZmLqe_FZ55U3Vv1O2CExgoumeaFy_Q/exec` yerine Apps Script `/exec` adresini yaz.
 
 Örnek:
 
 ```html
-<script>window.IONENSPIEGEL_COMMUNITY_API="https://script.google.com/macros/s/AKfycbwwLcyHlTXdJOi-WJNLMTZWCFEveprFcR0AJb-Ww5sKGwUYz8_VmZB_OCL9djcrbESsrg/exec";</script>
+<script>window.IONENSPIEGEL_COMMUNITY_API="https://script.google.com/macros/s/AKfycbxoTMojRbXgNWBkFqSvYXULBRkT1C30nOZdh4luZmLqe_FZ55U3Vv1O2CExgoumeaFy_Q/exec";</script>
 ```
 
 ## Sonuç
