@@ -1,0 +1,77 @@
+{
+  "name": "ionenspiegel - Futbol Haberleri",
+  "short_name": "ionenspiegel",
+  "description": "Son dakika futbol haberleri, maç merkezi, transferler ve puan durumları.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0b0d10",
+  "theme_color": "#e50914",
+  "lang": "tr",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Maç Merkezi",
+      "short_name": "Maçlar",
+      "url": "./index.html#maclar",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Transfer",
+      "short_name": "Transfer",
+      "url": "./index.html#transfer",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Son Dakika",
+      "short_name": "Son Dakika",
+      "url": "./index.html#sondakika",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-home.jpg",
+      "sizes": "693x1536",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "ionenspiegel ana sayfa"
+    },
+    {
+      "src": "screenshot-match.jpg",
+      "sizes": "693x1536",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "ionenspiegel maç merkezi"
+    }
+  ]
+}
