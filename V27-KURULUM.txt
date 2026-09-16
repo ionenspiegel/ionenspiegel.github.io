@@ -1,0 +1,7 @@
+İonenSpiegel V27
+1) Code.gs içeriğini Google Apps Script projesinde tamamen değiştir.
+2) Kaydet.
+3) Dağıt > Dağıtımları yönet > Web uygulaması > Yeni sürüm > Dağıt.
+4) Erişim: Herkes, Yürütme: Ben.
+5) GitHub'a bu ZIP içindeki dosyaları ana dizine yükle.
+6) Apps Script /exec adresini değiştirme. Frontend yeni adresi içerir.
