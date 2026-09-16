@@ -255,3 +255,32 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
     if(today) today.textContent=Number(d?.today?.pv||0).toLocaleString('tr-TR');
   }).catch(()=>{});
 })();
+
+/* ---------- V20 ETKILESIM / YEREL VERI ---------- */
+(function initV20(){
+  const upcoming=[
+    ['18 Eyl','20:00','Kasımpaşa','Konyaspor','Süper Lig'],['19 Eyl','17:00','Kocaelispor','Gaziantep FK','Süper Lig'],['19 Eyl','17:00','Çorum FK','Alanyaspor','Süper Lig'],['19 Eyl','20:00','Başakşehir','Gençlerbirliği','Süper Lig'],['19 Eyl','20:00','Trabzonspor','Galatasaray','Süper Lig'],['20 Eyl','17:00','Erzurumspor','Samsunspor','Süper Lig'],['20 Eyl','17:00','Fenerbahçe','Eyüpspor','Süper Lig'],['20 Eyl','20:00','Göztepe','Rizespor','Süper Lig'],['20 Eyl','20:00','Amed Sportif','Beşiktaş','Süper Lig']
+  ];
+  const list=$('#upcomingMainList');
+  if(list){ list.innerHTML=upcoming.map((m,i)=>`<button class="fixture-card" data-match="${i}"><span><b>${m[0]}</b><small>${m[1]}</small></span><strong>${m[2]} <em>vs</em> ${m[3]}</strong><small>${m[4]}</small></button>`).join(''); $('#fixtureCount')?.replaceChildren(document.createTextNode(upcoming.length+' maç')); }
+  const details=[
+    ['Kasımpaşa','Konyaspor','Süper Lig','18 Eylül 2026 · 20:00'],['Kocaelispor','Gaziantep FK','Süper Lig','19 Eylül 2026 · 17:00'],['Çorum FK','Alanyaspor','Süper Lig','19 Eylül 2026 · 17:00'],['Başakşehir','Gençlerbirliği','Süper Lig','19 Eylül 2026 · 20:00'],['Trabzonspor','Galatasaray','Süper Lig','19 Eylül 2026 · 20:00'],['Erzurumspor','Samsunspor','Süper Lig','20 Eylül 2026 · 17:00'],['Fenerbahçe','Eyüpspor','Süper Lig','20 Eylül 2026 · 17:00'],['Göztepe','Rizespor','Süper Lig','20 Eylül 2026 · 20:00'],['Amed Sportif','Beşiktaş','Süper Lig','20 Eylül 2026 · 20:00']
+  ];
+  function openMatch(i){const m=details[i]||details[0]; let modal=$('#matchDetailModal'); if(!modal){modal=document.createElement('div');modal.className='modal-backdrop show';modal.id='matchDetailModal';modal.innerHTML='<div class="match-detail-modal"><button class="close-btn" id="matchClose">×</button><span class="tag news">MAÇ DETAYI</span><h2 id="matchTitle"></h2><p id="matchMeta"></p><div class="match-tabs"><b>Muhtemel 11</b><b>İstatistikler</b><b>Olaylar</b></div><div class="match-detail-body"><div><strong>Ev sahibi</strong><p>Muhtemel kadro bilgisi resmi kulüp açıklamasıyla güncellenir.</p></div><div><strong>Deplasman</strong><p>Muhtemel kadro bilgisi resmi kulüp açıklamasıyla güncellenir.</p></div><div class="match-stats"><span>Topa sahip olma <b>-- / --</b></span><span>Şut <b>-- / --</b></span><span>Korner <b>-- / --</b></span></div></div></div>';document.body.appendChild(modal);$('#matchClose').onclick=()=>modal.remove();modal.onclick=e=>{if(e.target===modal)modal.remove()};}
+    $('#matchTitle').textContent=m[0]+' - '+m[1]; $('#matchMeta').textContent=m[3]+' · '+m[2]; modal.classList.add('show'); }
+  $$('.fixture-card').forEach(b=>b.addEventListener('click',()=>openMatch(Number(b.dataset.match))));
+
+  const poll=[['Victor Osimhen','Galatasaray'],['Orkun Kökçü','Beşiktaş'],['Fred','Fenerbahçe'],['Thomas Müller','Avrupa']];
+  const pollBox=$('#playerPoll'), pollResult=$('#pollResult'), pollKey='ionenspiegel-v20-poll';
+  if(pollBox){pollBox.innerHTML=poll.map((x,i)=>`<button class="poll-option" data-poll="${i}"><span>${x[0]}</span><small>${x[1]}</small></button>`).join(''); const votes=()=>JSON.parse(localStorage.getItem(pollKey)||'{}'); const render=()=>{const v=votes(),total=Object.values(v).reduce((a,b)=>a+b,0);pollResult.innerHTML=poll.map((x,i)=>{const n=v[i]||0,p=total?Math.round(n/total*100):0;return `<div class="poll-line"><span>${x[0]}</span><b>${p}%</b><i style="width:${p}%"></i></div>`}).join('')}; $$('.poll-option',pollBox).forEach(b=>b.onclick=()=>{const v=votes();v[b.dataset.poll]=(v[b.dataset.poll]||0)+1;localStorage.setItem(pollKey,JSON.stringify(v));render();toast('Oyun kaydedildi')});render();}
+
+  const commentsKey='ionenspiegel-v20-comments'; const cList=$('#commentList');
+  function renderComments(){if(!cList)return;const arr=JSON.parse(localStorage.getItem(commentsKey)||'[]');cList.innerHTML=arr.length?arr.map((c,i)=>`<div class="comment-item"><b>${esc(c.name)}</b><small>${esc(c.date)}</small><p>${esc(c.text)}</p><button data-del-comment="${i}">Sil</button></div>`).join(''):'<small class="muted">Henüz yorum yok.</small>'; $$('[data-del-comment]',cList).forEach(b=>b.onclick=()=>{const a=JSON.parse(localStorage.getItem(commentsKey)||'[]');a.splice(Number(b.dataset.delComment),1);localStorage.setItem(commentsKey,JSON.stringify(a));renderComments()})}
+  function esc(v){return String(v||'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
+  $('#commentAdd')?.addEventListener('click',()=>{const n=$('#commentName')?.value.trim(),t=$('#commentText')?.value.trim();if(!n||!t)return toast('Ad ve yorum yazmalısın');const a=JSON.parse(localStorage.getItem(commentsKey)||'[]');a.unshift({name:n,text:t,date:new Date().toLocaleString('tr-TR')});localStorage.setItem(commentsKey,JSON.stringify(a.slice(0,50)));$('#commentName').value='';$('#commentText').value='';renderComments();toast('Yorum eklendi')});renderComments();
+
+  const readsKey='ionenspiegel-v20-reads', visitsKey='ionenspiegel-v20-visits';
+  const visits=Number(localStorage.getItem(visitsKey)||0)+1;localStorage.setItem(visitsKey,visits); const total=$('#visitorTotal');if(total)total.textContent=visits.toLocaleString('tr-TR');
+  const dayKey=new Date().toISOString().slice(0,10), dayObj=JSON.parse(localStorage.getItem(visitsKey+'-day')||'{}');dayObj[dayKey]=(dayObj[dayKey]||0)+1;localStorage.setItem(visitsKey+'-day',JSON.stringify(dayObj));const today=$('#visitorToday');if(today)today.textContent=dayObj[dayKey].toLocaleString('tr-TR');
+  $$('.news-row,.content-card,.world-card').forEach(card=>{card.addEventListener('click',()=>{const key=(card.innerText||'').slice(0,80),r=JSON.parse(localStorage.getItem(readsKey)||'{}');r[key]=(r[key]||0)+1;localStorage.setItem(readsKey,JSON.stringify(r))},{once:false})});
+})();

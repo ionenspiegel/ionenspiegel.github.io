@@ -15,3 +15,23 @@ V13: Süper Lig sekmeleri mobilde 5 sütunlu sabit düzene alındı; yatay kayma
 - Canlı skorlar 30 saniyede bir yenilenir; demo/fake canlı maç kaldırıldı.
 - Footer'a toplam ziyaret ve bugün ziyaret sayacı eklendi (iCount).
 - Marka görünümü İonenSpiegel olarak güncellendi.
+
+
+## V17
+- Instagram ve YouTube sosyal bağlantıları güncellendi; X kaldırıldı.
+- Service Worker cache sürümü V17 olarak yenilendi.
+- CSS/JS asset sürümleri V17 olarak güncellendi.
+- Görünen marka adı İonenSpiegel olarak güncellendi.
+
+- V18: 16 Eylül 2026 güncel dünya futbol haberleri için yatay kaydırmalı haber akışı, kaynak bağlantıları ve açıklamalı kartlar eklendi.
+
+## V19
+- Dünya gündemi için ikinci yatay kaydırma akışı eklendi.
+- 16 Eylül 2026 güncel UEFA, Avrupa ve transfer başlıkları kaynak bağlantılarıyla eklendi.
+- Avrupa Gecesi seçili maç kartları eklendi.
+- Resmi haber / medya haberi / transfer iddiası ayrımı için kaynak etiketi rehberi eklendi.
+- Mobil yatay kaydırma ve karanlık tema desteği korundu.
+
+
+## V20
+Transfer ve basketbol bölümleri dolduruldu; yaklaşan maç fikstürü, maç detay modalı, localStorage yorum/anket/okuma sayaçları ve ziyaretçi istatistikleri eklendi.
