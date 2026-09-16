@@ -38,3 +38,11 @@ Transfer ve basketbol bölümleri dolduruldu; yaklaşan maç fikstürü, maç de
 
 
 V22 düzeltmeleri: koyu tema uyumluluğu, güncel 16 Eylül 2026 içerikleri, offline uyarısının kaldırılması, harici haber görsellerinin yerel varlıklara alınması, gerçek hesap sistemi olmadığı bilgisinin netleştirilmesi ve Service Worker cache v22.
+
+
+## V25
+Toplam ziyaret ve bugünkü ziyaret sayacı Apps Script üzerinden ortak olarak tutulur. Aynı tarayıcı aynı gün içinde tekrar yüklenerek sayacı artırmaz.
+
+
+## V26 Otomatik Haber Akışı
+Son Dakika bölümü Apps Script üzerinden Anadolu Ajansı RSS akışını alır; başlık, tarih, kategori ve kaynak bağlantısını otomatik yeniler. İçerik metni kopyalanmaz, kullanıcı kaynak sayfasına yönlendirilir. Apps Script `Code.gs` dosyasını V26 ile güncelleyip Web App dağıtımını yeni sürüm olarak yayınlamak gerekir.

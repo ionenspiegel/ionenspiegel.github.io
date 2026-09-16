@@ -29,15 +29,15 @@ Deploy sonrası verilen `/exec` URL'sini kopyala.
 `index.html` içinde şu satırı bul:
 
 ```html
-<script>window.IONENSPIEGEL_COMMUNITY_API="BURAYA_APPS_SCRIPT_WEB_APP_URL";</script>
+<script>window.IONENSPIEGEL_COMMUNITY_API="https://script.google.com/macros/s/AKfycbxU2ouqSRW4q_mqsVd_FjgvZTM9yORAolVrEQ11OrKo95lPcjRvHFKrzHe4_ciiEpwP6Q/exec";</script>
 ```
 
-`BURAYA_APPS_SCRIPT_WEB_APP_URL` yerine Apps Script `/exec` adresini yaz.
+`https://script.google.com/macros/s/AKfycbxU2ouqSRW4q_mqsVd_FjgvZTM9yORAolVrEQ11OrKo95lPcjRvHFKrzHe4_ciiEpwP6Q/exec` yerine Apps Script `/exec` adresini yaz.
 
 Örnek:
 
 ```html
-<script>window.IONENSPIEGEL_COMMUNITY_API="https://script.google.com/macros/s/XXXX/exec";</script>
+<script>window.IONENSPIEGEL_COMMUNITY_API="https://script.google.com/macros/s/AKfycbxU2ouqSRW4q_mqsVd_FjgvZTM9yORAolVrEQ11OrKo95lPcjRvHFKrzHe4_ciiEpwP6Q/exec";</script>
 ```
 
 ## Sonuç

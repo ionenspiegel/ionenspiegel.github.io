@@ -88,7 +88,29 @@ $$('.table-tabs button').forEach(btn=>btn.addEventListener('click',()=>{
 $$('.transfer-tabs button').forEach(btn=>btn.addEventListener('click',()=>{$$('.transfer-tabs button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const type=btn.dataset.transfer;$$('#transferGrid article').forEach(a=>a.style.display=(type==='all'||a.dataset.type===type)?'block':'none')}));
 $$('.match-filters button').forEach(btn=>btn.addEventListener('click',()=>{$$('.match-filters button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const day=btn.dataset.day;$$('.match-row').forEach(r=>r.style.display=(day==='all'||r.dataset.day===day)?'grid':'none')}));
 $('#todayBtn')?.addEventListener('click',()=>{document.querySelector('[data-day="16"]')?.scrollIntoView({behavior:'smooth',block:'center'});toast('16 Eylül maçları gösteriliyor')});
-$('#refreshNews')?.addEventListener('click',()=>{const feed=$('#newsFeed');feed?.animate([{opacity:.4},{opacity:1}],{duration:450});sortNewsByFavorite();toast(selectedTeam?`${selectedTeam} haberleri öne alındı`:'Son haberler yenilendi')});
+function liveNewsImage(item){const t=(item.title+' '+item.category).toLocaleLowerCase('tr-TR');if(t.includes('galatasaray'))return './local-3.svg';if(t.includes('fenerbahçe'))return './local-4.svg';if(t.includes('beşiktaş'))return './local-2.svg';if(t.includes('trabzonspor'))return './local-1.svg';return './local-6.svg'}
+function liveNewsTeam(item){const t=(item.title+' '+item.description).toLocaleLowerCase('tr-TR');for(const team of Object.keys(teamStyles)){if(t.includes(team.toLocaleLowerCase('tr-TR')))return team}return ''}
+function liveNewsDate(value){if(!value)return 'Şimdi';const d=new Date(value);if(Number.isNaN(d.getTime()))return value;return new Intl.DateTimeFormat('tr-TR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}).format(d)}
+function loadLiveNews(showToast=false){
+  const feed=$('#newsFeed');const api=window.IONENSPIEGEL_COMMUNITY_API||'';if(!feed||!/^https:\/\//.test(api))return;
+  const status=$('#newsStatus');if(status)status.textContent='Güncelleniyor…';
+  const cb='ionenspiegelNews_'+Date.now();let script;
+  const cleanup=()=>{try{script?.remove()}catch(e){}try{delete window[cb]}catch(e){}};
+  window[cb]=(data)=>{
+    cleanup();
+    const items=Array.isArray(data?.items)?data.items:[];
+    if(!items.length){if(status)status.textContent='Otomatik akışta yeni futbol haberi bulunamadı.';if(showToast)toast('Yeni haber bulunamadı');return}
+    const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    feed.innerHTML=items.map((item,i)=>{const team=liveNewsTeam(item);const id='live-'+i+'-'+Math.abs((item.link||item.title).split('').reduce((a,c)=>((a<<5)-a)+c.charCodeAt(0)|0,0));const img=liveNewsImage(item);const desc=item.description||'Haberin ayrıntıları için kaynak sayfasını aç.';return `<article class="news-row has-bookmark live-news-row" data-news-id="${esc(id)}" data-team="${esc(team)}" data-search="${esc(item.title+' '+desc)}"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="${img}" alt="Futbol haberi"></div><div><div class="news-kicker">${esc(liveNewsDate(item.pubDate))} · ${esc(item.category||'FUTBOL')}</div><h3>${esc(item.title)}</h3><p>${esc(desc)}</p><a href="${esc(item.link)}" target="_blank" rel="noopener noreferrer">${esc(item.source||'Kaynak')} ↗</a></div></article>`}).join('');
+    $$('.news-row.has-bookmark',feed).forEach(a=>a.querySelector('.bookmark-btn')?.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();toggleBookmark(a)}));
+    sortNewsByFavorite();
+    if(status)status.textContent=`Otomatik akış · ${items.length} futbol haberi · ${liveNewsDate(data.updatedAt)}`;
+    if(showToast)toast(`${items.length} güncel haber yüklendi`);
+  };
+  script=document.createElement('script');script.src=api+(api.includes('?')?'&':'?')+'action=haberler&callback='+cb+'&t='+Date.now();script.onerror=()=>{cleanup();if(status)status.textContent='Otomatik haber akışına şu anda ulaşılamıyor.';if(showToast)toast('Haber akışı alınamadı')};document.head.appendChild(script);
+}
+$('#refreshNews')?.addEventListener('click',()=>{const feed=$('#newsFeed');feed?.animate([{opacity:.45},{opacity:1}],{duration:450});loadLiveNews(true)});
+loadLiveNews(false);setInterval(()=>loadLiveNews(false),10*60*1000);
 
 /* ---------- THEME: manual + system preference ---------- */
 const themeCard=$('#themeCard');
@@ -312,8 +334,37 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
   });
   loadCommunity();
 
-  const readsKey='ionenspiegel-v20-reads', visitsKey='ionenspiegel-v20-visits';
-  const visits=Number(localStorage.getItem(visitsKey)||0)+1;localStorage.setItem(visitsKey,visits); const total=$('#visitorTotal');if(total)total.textContent=visits.toLocaleString('tr-TR');
-  const dayKey=new Date().toISOString().slice(0,10), dayObj=JSON.parse(localStorage.getItem(visitsKey+'-day')||'{}');dayObj[dayKey]=(dayObj[dayKey]||0)+1;localStorage.setItem(visitsKey+'-day',JSON.stringify(dayObj));const today=$('#visitorToday');if(today)today.textContent=dayObj[dayKey].toLocaleString('tr-TR');
+  const readsKey='ionenspiegel-v20-reads';
+  const visitorApi = COMMUNITY_API;
+  const visitorTotal = $('#visitorTotal');
+  const visitorToday = $('#visitorToday');
+
+  function renderVisitors(v){
+    if(!v) return;
+    if(visitorTotal) visitorTotal.textContent = Number(v.total||0).toLocaleString('tr-TR');
+    if(visitorToday) visitorToday.textContent = Number(v.today||0).toLocaleString('tr-TR');
+  }
+
+  function countSharedVisit(){
+    if(!/^https:\/\//.test(visitorApi)) return;
+
+    // Aynı tarayıcı aynı gün içinde sayfayı yenileyerek sayacı şişirmesin.
+    const key = 'ionenspiegel-visit-day';
+    const today = new Date().toLocaleDateString('sv-SE', {timeZone:'Europe/Istanbul'});
+    if(localStorage.getItem(key) === today) return;
+
+    localStorage.setItem(key, today);
+    fetch(visitorApi,{
+      method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},
+      body:'action=ziyaret'
+    }).catch(()=>{});
+
+    // Kısa süre sonra ortak sayacı tekrar oku.
+    setTimeout(loadCommunity, 1200);
+  }
+
+  countSharedVisit();
   $$('.news-row,.content-card,.world-card').forEach(card=>{card.addEventListener('click',()=>{const key=(card.innerText||'').slice(0,80),r=JSON.parse(localStorage.getItem(readsKey)||'{}');r[key]=(r[key]||0)+1;localStorage.setItem(readsKey,JSON.stringify(r))},{once:false})});
 })();
