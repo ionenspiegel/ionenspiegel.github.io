@@ -8,3 +8,10 @@ V13: Süper Lig sekmeleri mobilde 5 sütunlu sabit düzene alındı; yatay kayma
 
 ## V14 istatistik güncellemesi
 16 Eylül 2026 itibarıyla Gol Krallığı ve Asist Krallığı sekmeleri güncellendi. Gol sıralamasında Victor Osimhen ve Gift Orban 6 golle, ardından Mohamed Salah, Adrian Benedyczak, Eldor Shomurodov, Juan ve Dušan Vlahović 4 golle yer alıyor. Asist tarafında ilk 10 oyuncunun tamamı 2 asist seviyesinde. Veriler web üzerinden 16 Eylül 2026 tarihinde kontrol edildi.
+
+
+## V15
+- Gerçek canlı skor entegrasyonu: ESPN skor tahtası üzerinden Süper Lig, Premier League, LaLiga, Serie A, Bundesliga, Ligue 1 ve Şampiyonlar Ligi.
+- Canlı skorlar 30 saniyede bir yenilenir; demo/fake canlı maç kaldırıldı.
+- Footer'a toplam ziyaret ve bugün ziyaret sayacı eklendi (iCount).
+- Marka görünümü İonenSpiegel olarak güncellendi.

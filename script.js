@@ -97,19 +97,96 @@ const storedTheme=localStorage.getItem(STORE.theme);applyTheme(storedTheme||syst
 themeCard?.addEventListener('click',()=>{const dark=document.documentElement.classList.contains('dark-theme');applyTheme(dark?'light':'dark',true);toast(dark?'Açık tema aktif':'Koyu tema aktif')});
 window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change',e=>{if(!localStorage.getItem(STORE.theme))applyTheme(e.matches?'dark':'light',false)});
 
-/* ---------- LIVE MATCH CENTER · SCHEDULED DEMO ONLY ---------- */
-/* Demo maç yalnızca kendi başlangıç-bitiş aralığı içindeyken canlı görünür. Geçmiş maç asla CANLI listesine düşmez. */
-const liveMatches=[{id:'demo-live-1',comp:'Demo Süper Lig',home:'Fenerbahçe',away:'Beşiktaş',startAt:'2026-09-16T18:00:00+03:00',durationMin:95,eventsByMinute:{3:{type:'goal',icon:'⚽',title:'Gol - Beşiktaş',desc:'Hızlı hücum sonrası demo gol.'},7:{type:'yellow',icon:'🟨',title:'Sarı kart',desc:'Orta sahada faul sonrası demo kart.'},12:{type:'goal',icon:'⚽',title:'Gol - Fenerbahçe',desc:'Ev sahibi ekip skoru eşitledi.'},18:{type:'sub',icon:'🔄',title:'Oyuncu değişikliği',desc:'Teknik ekip demo değişikliğe gitti.'}}}];
-function activeLiveMatches(){const now=Date.now();return liveMatches.filter(m=>{const start=new Date(m.startAt).getTime(),end=start+(m.durationMin||95)*60000;return now>=start&&now<end})}
-function liveState(m){const start=new Date(m.startAt).getTime(),elapsed=Math.max(0,Math.floor((Date.now()-start)/60000));const minute=Math.min(m.durationMin||95,elapsed);let homeScore=0,awayScore=0,events=[];Object.entries(m.eventsByMinute||{}).forEach(([min,e])=>{const n=+min;if(n<=minute){if(e.type==='goal'){if(e.title.includes(m.home))homeScore++;else if(e.title.includes(m.away))awayScore++}events.push({...e,minute:n+"'"})}});return{...m,minute,homeScore,awayScore,events:events.sort((a,b)=>b.minute.localeCompare(a.minute))}}
-function renderLive(){const list=$('#liveScoreList'),pulse=$('.live-pulse');if(!list)return;const active=activeLiveMatches();if(!active.length){pulse?.classList.add('inactive');list.innerHTML='<div class="no-live-match"><span>⚽</span><strong>Şu anda canlı maç yok</strong><small>Maç başladığında burada otomatik görünecek.</small></div>';return}pulse?.classList.remove('inactive');list.innerHTML=active.map(raw=>{const m=liveState(raw);return `<div class="live-match"><div class="live-match-top"><small>CANLI · ${m.minute}'</small><span class="live-minute">${m.minute}'</span></div><div class="live-teams"><span>${m.home}</span><b class="live-score">${m.homeScore} : ${m.awayScore}</b><span>${m.away}</span></div></div>`}).join('')}
-function simulateLive(){renderLive();if($('#timelineModal')?.classList.contains('show'))openTimeline()}
-function openTimeline(){const box=$('#matchTimeline'),matchesBox=$('#timelineMatches');if(!box||!matchesBox)return;const active=activeLiveMatches();if(!active.length){$('#timelineKicker').textContent='CANLI MAÇ MERKEZİ';$('#timelineTitle').textContent='Şu anda canlı maç yok';matchesBox.innerHTML=`<div class="live-empty-modal"><span>⚽</span><strong>Şu anda oynanan maç bulunmuyor</strong><small>Bir maç başladığında skor, dakika ve olaylar burada görünecek.</small></div>`;box.innerHTML=''}else{const states=active.map(liveState);const m=states[0];$('#timelineKicker').textContent='CANLI · GÜNCEL';$('#timelineTitle').textContent=`${m.home} ${m.homeScore} - ${m.awayScore} ${m.away}`;matchesBox.innerHTML=states.map(x=>`<div class="live-modal-match"><span>${x.minute}'</span><b>${x.home}</b><strong>${x.homeScore} : ${x.awayScore}</strong><b>${x.away}</b></div>`).join('');box.innerHTML=(m.events||[]).map(e=>`<div class="timeline-event ${e.type||''}"><span class="timeline-time">${e.minute}</span><span class="timeline-icon">${e.icon||'•'}</span><strong>${e.title}</strong><p>${e.desc||''}</p></div>`).join('')||'<div class="live-empty-modal"><span>⏱️</span><strong>Henüz olay yok</strong><small>Maç olayları gerçekleştikçe burada görünecek.</small></div>'}$('#timelineModal')?.classList.add('show');document.body.classList.add('modal-open')}
+/* ---------- GERÇEK CANLI MAÇ VERİSİ ----------
+   ESPN'in herkese açık skor tahtası uç noktalarından canlı futbol verisi alınır.
+   API anahtarı gerekmez. Canlı skorlar yaklaşık 30 saniyede bir yenilenir.
+*/
+const LIVE_LEAGUES=[
+  ['tur.1','Süper Lig'],['eng.1','Premier League'],['esp.1','LaLiga'],
+  ['ita.1','Serie A'],['ger.1','Bundesliga'],['fra.1','Ligue 1'],
+  ['uefa.champions','Şampiyonlar Ligi']
+];
+let liveData=[];
+let liveLoading=false;
+
+function todayYMD(){const d=new Date();return d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0')}
+function espnScoreboardUrl(league){return `https://site.api.espn.com/apis/site/v2/sports/soccer/${league}/scoreboard?dates=${todayYMD()}`}
+function eventState(e){return e?.status?.type?.state||''}
+function eventStatus(e){return e?.status?.type?.shortDetail||e?.status?.type?.detail||''}
+function eventMinute(e){
+  const s=e?.status||{};
+  if(s.displayClock) return s.displayClock;
+  if(s.type?.state==='in' && s.period) return `${s.period}.Y`;
+  return '';
+}
+function normalizeEvent(e,leagueName,leagueSlug){
+  const c=e?.competitions?.[0]?.competitors||[];
+  const home=c.find(x=>x.homeAway==='home')||c[0];
+  const away=c.find(x=>x.homeAway==='away')||c[1];
+  return {
+    id:String(e.id), league:leagueName, leagueSlug:leagueSlug,
+    home:home?.team?.displayName||home?.team?.shortDisplayName||'Ev Sahibi',
+    away:away?.team?.displayName||away?.team?.shortDisplayName||'Deplasman',
+    homeLogo:home?.team?.logo||'', awayLogo:away?.team?.logo||'',
+    homeScore:home?.score??'0', awayScore:away?.score??'0',
+    minute:eventMinute(e), status:eventStatus(e), state:eventState(e),
+    date:e?.date||'', venue:e?.competitions?.[0]?.venue?.fullName||''
+  };
+}
+async function fetchLeagueLive([slug,name]){
+  try{
+    const r=await fetch(espnScoreboardUrl(slug),{cache:'no-store'});
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    const data=await r.json();
+    return (data.events||[]).filter(e=>eventState(e)==='in').map(e=>normalizeEvent(e,name,slug));
+  }catch(e){return []}
+}
+async function loadLiveMatches(){
+  if(liveLoading)return;
+  liveLoading=true;
+  try{
+    const groups=await Promise.all(LIVE_LEAGUES.map(fetchLeagueLive));
+    liveData=groups.flat();
+    renderLive();
+    if($('#timelineModal')?.classList.contains('show')) openTimeline();
+  }finally{liveLoading=false}
+}
+function liveMatchHtml(m){
+  const logos=`<span class="live-team"><img src="${m.homeLogo||'icon-192.png'}" alt="" loading="lazy"><span>${m.home}</span></span><b class="live-score">${m.homeScore} : ${m.awayScore}</b><span class="live-team away"><span>${m.away}</span><img src="${m.awayLogo||'icon-192.png'}" alt="" loading="lazy"></span>`;
+  return `<div class="live-match" data-live-id="${m.id}"><div class="live-match-top"><small>${m.league} · CANLI</small><span class="live-minute">${m.minute||'CANLI'}</span></div><div class="live-teams">${logos}</div><small class="live-status">${m.status||'Canlı'}</small></div>`;
+}
+function renderLive(){
+  const list=$('#liveScoreList'),pulse=$('.live-pulse');
+  if(!list)return;
+  if(!liveData.length){pulse?.classList.add('inactive');list.innerHTML='<div class="no-live-match"><span>⚽</span><strong>Şu anda canlı maç yok</strong><small>Bir maç başladığında skor, dakika ve olaylar burada otomatik görünecek.</small></div>';return}
+  pulse?.classList.remove('inactive');
+  list.innerHTML=liveData.slice(0,6).map(liveMatchHtml).join('');
+}
+async function openTimeline(){
+  const box=$('#matchTimeline'),matchesBox=$('#timelineMatches');if(!box||!matchesBox)return;
+  const active=liveData;
+  if(!active.length){$('#timelineKicker').textContent='CANLI MAÇ MERKEZİ';$('#timelineTitle').textContent='Şu anda canlı maç yok';matchesBox.innerHTML=`<div class="live-empty-modal"><span>⚽</span><strong>Şu anda oynanan maç bulunmuyor</strong><small>Bir maç başladığında skor, dakika ve olaylar burada otomatik görünecek.</small></div>`;box.innerHTML=''}
+  else{
+    const m=active[0];
+    $('#timelineKicker').textContent='CANLI · GÜNCEL';
+    $('#timelineTitle').textContent=`${m.home} ${m.homeScore} - ${m.awayScore} ${m.away}`;
+    matchesBox.innerHTML=active.slice(0,8).map(x=>`<div class="live-modal-match"><span>${x.minute||'LIVE'}</span><b>${x.home}</b><strong>${x.homeScore} : ${x.awayScore}</strong><b>${x.away}</b></div>`).join('');
+    box.innerHTML='<div class="live-empty-modal"><span>📡</span><strong>Canlı veri bağlı</strong><small>Skor ve dakika bilgisi otomatik güncelleniyor.</small></div>';
+    try{
+      const r=await fetch(`https://site.api.espn.com/apis/site/v2/sports/soccer/${m.leagueSlug}/summary?event=${encodeURIComponent(m.id)}`,{cache:'no-store'});
+      if(r.ok){
+        const d=await r.json();
+        const plays=(d?.plays||[]).filter(x=>/goal|yellow|red|substitution/i.test(`${x.type?.text||''} ${x.text||''}`)).slice(-12).reverse();
+        if(plays.length) box.innerHTML=plays.map(x=>`<div class="timeline-event"><span class="timeline-time">${x.clock?.displayValue||x.clock?.value||''}</span><span class="timeline-icon">${/goal/i.test(x.type?.text||x.text||'')?'⚽':/yellow/i.test(x.type?.text||x.text||'')?'🟨':/red/i.test(x.type?.text||x.text||'')?'🟥':'🔄'}</span><strong>${x.text||x.type?.text||'Maç olayı'}</strong></div>`).join('');
+      }
+    }catch(e){}
+  }
+  $('#timelineModal')?.classList.add('show');document.body.classList.add('modal-open')
+}
 function closeTimeline(){$('#timelineModal')?.classList.remove('show');document.body.classList.remove('modal-open')}
 $('#liveScoreWidget')?.addEventListener('click',openTimeline);$('#liveScoreWidget')?.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')openTimeline()});$('#liveScoreCard')?.addEventListener('click',openTimeline);$('#timelineClose')?.addEventListener('click',closeTimeline);$('#timelineModal')?.addEventListener('click',e=>{if(e.target.id==='timelineModal')closeTimeline()});
-renderLive();setInterval(simulateLive,1000);
+loadLiveMatches();setInterval(loadLiveMatches,30000);
 
-/* ---------- LIVE CLOCK / COUNTDOWN / SCROLL ---------- */
 function updateLiveClock(){const el=$('#liveClock');if(el)el.textContent=new Intl.DateTimeFormat('tr-TR',{hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(new Date())}updateLiveClock();setInterval(updateLiveClock,1000);
 function countdown(){const target=new Date('2026-09-17T22:00:00+03:00').getTime(),diff=Math.max(0,target-Date.now());$('#cdDays').textContent=String(Math.floor(diff/86400000)).padStart(2,'0');$('#cdHours').textContent=String(Math.floor(diff%86400000/3600000)).padStart(2,'0');$('#cdMins').textContent=String(Math.floor(diff%3600000/60000)).padStart(2,'0');$('#cdSecs').textContent=String(Math.floor(diff%60000/1000)).padStart(2,'0')}countdown();setInterval(countdown,1000);
 window.addEventListener('scroll',()=>{const max=document.documentElement.scrollHeight-innerHeight;$('#progress').style.width=(max?scrollY/max*100:0)+'%';$('#backTop').classList.toggle('show',scrollY>500)});$('#backTop')?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
@@ -163,3 +240,18 @@ window.addEventListener('keydown',e=>{if(e.key==='/'&&document.activeElement?.ta
 
 /* V13: stats tab row always starts from the left on mobile */
 document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({left:0,behavior:'instant'})});
+
+/* ---------- ZİYARET SAYACI ----------
+   iCount, statik GitHub Pages üzerinde backend olmadan toplam sayfa görüntüleme
+   ve günlük ziyaret verisi tutar. Site ID bu projenin Pages adresidir.
+*/
+(function initVisitorCounter(){
+  const total=$('#visitorTotal'),today=$('#visitorToday');
+  const siteId='topcuyusuf254-del.github.io/ionenspiegel';
+  const url='https://icount.kr/api.php?id='+encodeURIComponent(siteId);
+  fetch(url,{cache:'no-store'}).then(r=>r.ok?r.json():null).then(d=>{
+    if(!d)return;
+    if(total) total.textContent=Number(d?.total?.pv||0).toLocaleString('tr-TR');
+    if(today) today.textContent=Number(d?.today?.pv||0).toLocaleString('tr-TR');
+  }).catch(()=>{});
+})();

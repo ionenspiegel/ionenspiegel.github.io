@@ -1,6 +1,6 @@
 {
-  "name": "ionenspiegel - Futbol Haberleri",
-  "short_name": "ionenspiegel",
+  "name": "İonenSpiegel - Futbol Haberleri",
+  "short_name": "İonenSpiegel",
   "description": "Son dakika futbol haberleri, maç merkezi, transferler ve puan durumları.",
   "start_url": "./index.html",
   "scope": "./",
@@ -64,14 +64,14 @@
       "sizes": "693x1536",
       "type": "image/jpeg",
       "form_factor": "narrow",
-      "label": "ionenspiegel ana sayfa"
+      "label": "İonenSpiegel ana sayfa"
     },
     {
       "src": "screenshot-match.jpg",
       "sizes": "693x1536",
       "type": "image/jpeg",
       "form_factor": "narrow",
-      "label": "ionenspiegel maç merkezi"
+      "label": "İonenSpiegel maç merkezi"
     }
   ]
 }
