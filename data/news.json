@@ -1,1 +1,42 @@
-
+[
+  {
+    "id": "bjk-marseille",
+    "title": "Beşiktaş - Marseille maçına saatler kaldı",
+    "description": "Siyah-beyazlılar UEFA Avrupa Ligi lig aşamasındaki ilk maçında Marseille ile karşılaşacak.",
+    "category": "Beşiktaş",
+    "date": "17 Eylül 2026",
+    "image": "../local-2.svg",
+    "source": "Beşiktaş JK",
+    "link": "https://bjk.com.tr/tr/fikstur/1/1/718/682/5274"
+  },
+  {
+    "id": "thomas-reis-ts",
+    "title": "Thomas Reis Trabzonspor için Trabzon'da",
+    "description": "Trabzonspor'un anlaşmaya vardığı Alman teknik direktör Thomas Reis, gündemin öne çıkan gelişmesi oldu.",
+    "category": "Trabzonspor",
+    "date": "17 Eylül 2026",
+    "image": "../local-5.svg",
+    "source": "Anadolu Ajansı",
+    "link": "https://www.aa.com.tr/tr/spor/thomas-reis-trabzonsporun-13-yabanci-teknik-direktoru/4058780"
+  },
+  {
+    "id": "gs-kocaeli",
+    "title": "Süper Lig'de derbi programı netleşti",
+    "description": "Süper Lig'de sezonun ilk bölümündeki önemli karşılaşmaların tarihleri ve saatleri açıklandı.",
+    "category": "Süper Lig",
+    "date": "17 Eylül 2026",
+    "image": "../local-6.svg",
+    "source": "Anadolu Ajansı",
+    "link": "https://www.aa.com.tr/tr/spor/trendyol-super-ligde-7-16-haftalarin-programi-aciklandi/4057906"
+  },
+  {
+    "id": "europa-league",
+    "title": "Avrupa Ligi lig aşaması başlıyor",
+    "description": "Avrupa Ligi'nde 36 takımlı lig aşaması heyecanı başlıyor. Beşiktaş ilk maçında Marseille'i ağırlayacak.",
+    "category": "Avrupa",
+    "date": "17 Eylül 2026",
+    "image": "../local-7.svg",
+    "source": "UEFA",
+    "link": "https://www.uefa.com/uefaeuropaleague/"
+  }
+]
