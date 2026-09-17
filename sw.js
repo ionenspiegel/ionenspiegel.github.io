@@ -1,6 +1,6 @@
 // İonenSpiegel V35 service worker
-const CACHE_NAME = 'ionenspiegel-v36';
-const CORE_ASSETS = ['./','./index.html','./style.css','./script.js','./manifest.json','./icon-192.png','./icon-512.png'];
+const CACHE_NAME = 'ionenspiegel-v38';
+const CORE_ASSETS = ['./manifest.json','./icon-192.png','./icon-512.png'];
 
 const V35_CSS = `
 .home-fixture-card{background:linear-gradient(145deg,#171717,#2a2a2a);color:#fff;border:1px solid #333;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 12px 30px #0002}.home-fixture-kicker{display:flex;align-items:center;gap:8px;font-size:10px;color:#bbb}.home-fixture-kicker b{color:#fff;letter-spacing:.5px}.home-fixture-kicker span:last-child{margin-left:auto;color:#ff6b73;font-weight:900}.home-fixture-teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;font-family:'Barlow Condensed';font-size:27px}.home-fixture-teams strong:last-child{text-align:right}.home-fixture-teams em{font-style:normal;color:#ff5962;font-size:22px}.home-fixture-meta{font-size:11px;color:#aaa}.fixture-toolbar{display:flex;gap:7px;flex-wrap:wrap;margin:-2px 0 12px}.fixture-filter{border:1px solid #d5d5d0;background:#fff;border-radius:999px;padding:9px 14px;font-size:11px;font-weight:900;cursor:pointer}.fixture-filter.active{background:var(--red);color:#fff;border-color:var(--red)}.fixture-board{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.fixture-day{border-bottom:1px solid #e9e9e5}.fixture-day:last-child{border:0}.fixture-day-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#f1f1ef;font-size:11px}.fixture-day-head span{color:var(--red);font-size:9px;font-weight:900}.fixture-match{display:grid;grid-template-columns:65px minmax(0,1fr) 45px minmax(0,1fr) 55px;align-items:center;gap:10px;padding:14px 16px;border-top:1px solid #eee}.fixture-match time{font-family:'Barlow Condensed';font-size:22px;font-weight:900;color:var(--red)}.fixture-team{display:flex;flex-direction:column;gap:2px}.fixture-team b{font-size:13px}.fixture-team small{font-size:9px;color:#888}.fixture-team.away{text-align:right}.fixture-vs{text-align:center;font-size:10px;color:#999}.fixture-badge{justify-self:end;font-size:8px;font-weight:900;background:#f0f0ed;border-radius:5px;padding:5px 6px;color:#666}.fixture-match.featured{background:linear-gradient(90deg,#fff5f5,#fff)}.fixture-match.featured .fixture-badge{background:#ffe3e5;color:var(--red)}.fixture-source-note{font-size:10px;color:#777;margin-top:9px}.upcoming-section{scroll-margin-top:100px}
@@ -65,5 +65,15 @@ self.addEventListener('fetch', event => {
     }).catch(()=>caches.match('./index.html')));
     return;
   }
-  event.respondWith(caches.match(req).then(cached=>cached||fetch(req).then(r=>{const copy=r.clone();caches.open(CACHE_NAME).then(c=>c.put(req,copy)).catch(()=>{});return r;})));
+  // HTML/CSS/JS/JSON gibi içerikler her istekte önce ağdan alınır.
+  // Ağ yoksa daha önce kaydedilmiş kopya kullanılır.
+  event.respondWith(
+    fetch(req, {cache:'no-store'}).then(r => {
+      if (r && r.ok) {
+        const copy = r.clone();
+        caches.open(CACHE_NAME).then(c => c.put(req, copy)).catch(()=>{});
+      }
+      return r;
+    }).catch(() => caches.match(req))
+  );
 });
