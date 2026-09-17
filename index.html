@@ -32,6 +32,11 @@
 })();
 </script>
 <link rel="stylesheet" href="style.css?v=27">
+
+<style id="live-score-removed">
+/* Canlı maç sistemi kaldırıldı */
+#liveScoreWidget,#liveScoreCard,#timelineModal{display:none!important}
+</style>
 </head>
 <body>
 <div id="progress"></div>
@@ -140,8 +145,7 @@
           <div class="thumb photo-bjk"><img src="./local-6.svg" alt="Avrupa futbol haberi"></div><div><div class="news-kicker">15 Eylül 2026 · AVRUPA</div><h3>Şampiyonlar Ligi finalleri 2028'de Münih, 2029'da Barcelona'da</h3><p>UEFA, 2028 Şampiyonlar Ligi finalinin Münih Allianz Arena'da, 2029 finalinin ise Barcelona Camp Nou'da oynanacağını açıkladı.</p><a href="https://www.reuters.com/sports/soccer/munichs-allianz-arena-barcelonas-camp-nou-host-champions-league-finals-2026-09-15/" target="_blank" rel="noopener noreferrer">Reuters ↗</a></div>
         </article>
       </div>
-      <aside class="side-column">
-        <div class="widget live-score-widget" id="liveScoreWidget" role="button" tabindex="0" aria-label="Canlı maç merkezini aç"><div class="live-score-head"><div><span class="live-pulse inactive"></span><strong>CANLI SKOR</strong></div><span class="live-clock" id="liveClock">--:--</span></div><div id="liveScoreList" class="live-score-list"><div class="no-live-match"><span>⚽</span><strong>Şu anda canlı maç yok</strong><small>Oynanan maçlar burada otomatik listelenecek.</small></div></div><a href="#maclar" class="live-all-link">Yaklaşan maçları görüntüle →</a></div>
+      <aside class="side-column"><span class="live-clock" id="liveClock">--:--</span></div><div id="liveScoreList" class="live-score-list"><div class="no-live-match"><span>⚽</span><strong>Şu anda canlı maç yok</strong><small>Oynanan maçlar burada otomatik listelenecek.</small></div></div><a href="#maclar" class="live-all-link">Yaklaşan maçları görüntüle →</a></div>
 
         <div class="widget countdown"><div class="widget-title">BİR SONRAKİ BÜYÜK MAÇ</div><div class="match-teams"><span>⚫⚪<b>Beşiktaş</b></span><strong>VS</strong><span>🔵⚪<b>Marseille</b></span></div><div class="count-grid"><div><b id="cdDays">00</b><small>GÜN</small></div><div><b id="cdHours">00</b><small>SAAT</small></div><div><b id="cdMins">00</b><small>DK</small></div><div><b id="cdSecs">00</b><small>SN</small></div></div><a href="#maclar" class="wide-btn">Maç merkezini aç</a></div>
         <div class="widget"><div class="widget-title">TRENDLER</div><ol class="trend-list"><li><b>Thomas Reis</b><span>#1</span></li><li><b>Beşiktaş - Marseille</b><span>#2</span></li><li><b>Trabzonspor</b><span>#3</span></li><li><b>Avrupa Ligi</b><span>#4</span></li></ol></div>
@@ -336,7 +340,7 @@
 
 <section class="section extras" id="extras">
     <div class="section-head"><h2><span class="red-line"></span> Daha Fazla</h2><span class="muted">İonenSpiegel özellikleri</span></div>
-    <div class="extras-grid"><button class="feature-card" id="notificationCard" type="button" aria-label="Bildirimleri etkinleştir"><span aria-hidden="true">🔔</span><b>Bildirimler</b><small>Gol, son dakika ve maç başlangıcı</small></button><button class="feature-card" id="favoriteCard" type="button"><span>⭐</span><b>Favori Takımlar</b><small>Takımını seç ve akışı kişiselleştir</small></button><button class="feature-card theme-card" id="themeCard" type="button" aria-label="Koyu veya açık temayı değiştir"><span aria-hidden="true">🌙</span><b>Koyu Tema</b><small>Gece okuma görünümü</small></button><button class="feature-card" id="liveScoreCard" type="button" aria-label="Canlı maç merkezini aç"><span aria-hidden="true">📡</span><b>Canlı Skor</b><small>Canlı maç merkezini aç</small></button><button class="feature-card" id="savedCard" type="button" aria-label="Kaydedilen haberleri aç"><span aria-hidden="true">🔖</span><b>Kaydedilenler</b><small>Sonra okumak için sakladığın haberler</small></button><button class="feature-card media-action" id="videoCard" type="button" aria-label="Video galerisini aç"><span aria-hidden="true">▶</span><b>Video</b><small>Günün futbol videolarını izle</small></button><button class="feature-card media-action" id="galleryCard" type="button" aria-label="Fotoğraf galerisini aç"><span aria-hidden="true">▣</span><b>Galeri</b><small>Maçlardan güncel kareler</small></button><button class="feature-card install-card" id="installCard" type="button" aria-label="Uygulamayı yükle" hidden><span aria-hidden="true">⬇</span><b>Uygulamayı Yükle</b><small>İonenSpiegel'i ana ekrana ekle</small></button></div>
+    <div class="extras-grid"><button class="feature-card" id="notificationCard" type="button" aria-label="Bildirimleri etkinleştir"><span aria-hidden="true">🔔</span><b>Bildirimler</b><small>Gol, son dakika ve maç başlangıcı</small></button><button class="feature-card" id="favoriteCard" type="button"><span>⭐</span><b>Favori Takımlar</b><small>Takımını seç ve akışı kişiselleştir</small></button><button class="feature-card theme-card" id="themeCard" type="button" aria-label="Koyu veya açık temayı değiştir"><span aria-hidden="true">🌙</span><b>Koyu Tema</b><small>Gece okuma görünümü</small></button><button class="feature-card" id="savedCard" type="button" aria-label="Kaydedilen haberleri aç"><span aria-hidden="true">🔖</span><b>Kaydedilenler</b><small>Sonra okumak için sakladığın haberler</small></button><button class="feature-card media-action" id="videoCard" type="button" aria-label="Video galerisini aç"><span aria-hidden="true">▶</span><b>Video</b><small>Günün futbol videolarını izle</small></button><button class="feature-card media-action" id="galleryCard" type="button" aria-label="Fotoğraf galerisini aç"><span aria-hidden="true">▣</span><b>Galeri</b><small>Maçlardan güncel kareler</small></button><button class="feature-card install-card" id="installCard" type="button" aria-label="Uygulamayı yükle" hidden><span aria-hidden="true">⬇</span><b>Uygulamayı Yükle</b><small>İonenSpiegel'i ana ekrana ekle</small></button></div>
   </section>
 </div>
 </main>
@@ -388,16 +392,6 @@
     <div id="savedNewsList" class="saved-news-list"></div>
   </div>
 </div>
-
-<!-- Canlı Maç Merkezi / Timeline -->
-<div class="timeline-backdrop" id="timelineModal">
-  <div class="timeline-modal" role="dialog" aria-modal="true" aria-labelledby="timelineTitle">
-    <button class="close-btn" id="timelineClose" aria-label="Kapat">×</button>
-    <div class="setup-kicker" id="timelineKicker">CANLI MAÇ MERKEZİ</div>
-    <h2 id="timelineTitle">Canlı Maçlar</h2>
-    <div id="timelineMatches"></div>
-    <div id="matchTimeline" class="match-timeline"></div>
-  </div>
 </div>
 
 <div class="media-modal-backdrop" id="mediaModal">
@@ -412,7 +406,6 @@
 <div class="modal-backdrop" id="searchModal"><div class="search-modal"><button class="close-btn" type="button" data-close-modal aria-label="Kapat">×</button><h2>Site içinde ara</h2><div class="big-search"><input id="globalSearch" placeholder="Takım, oyuncu, haber ara..."><button id="globalSearchBtn">Ara</button></div><div id="globalResults"></div></div></div>
 <script>window.IONENSPIEGEL_COMMUNITY_API = "https://script.google.com/macros/s/AKfycbxoTMojRbXgNWBkFqSvYXULBRkT1C30nOZdh4luZmLqe_FZ55U3Vv1O2CExgoumeaFy_Q/exec";</script>
 <script src="script.js?v=28"></script>
-<script src="live-fix.js?v=33"></script>
 <script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
 </body>
 </html>

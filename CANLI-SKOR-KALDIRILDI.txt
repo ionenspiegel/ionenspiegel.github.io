@@ -1,0 +1,12 @@
+İonenSpiegel
+
+Bu paket canlı maç ve canlı skor sistemi kaldırılmış güncel sürümdür.
+
+Kaldırılanlar:
+- CANLI SKOR kartı
+- Canlı Maç Merkezi penceresi
+- Canlı Skor özellik kartı
+- live-fix.js
+- ESPN canlı skor API istekleri
+
+Yaklaşan maçlar ve normal Maç Merkezi bölümü korunmuştur.
