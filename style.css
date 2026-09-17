@@ -295,3 +295,7 @@ html{scroll-behavior:smooth;scroll-padding-top:88px}
 /* V26 otomatik haber akışı */
 #newsStatus{margin:.35rem 0 0;color:var(--muted);font-size:.78rem}
 .live-news-row .news-kicker{letter-spacing:.04em}
+
+/* 18 Eylül 2026 güncellemesi: maç sonucu kartları */
+.home-fixture-card.result-card .home-fixture-teams em{color:#e50914;font-weight:900;font-size:1.45em}
+.fixture-match.result-match .fixture-vs{color:#e50914;font-weight:900}
