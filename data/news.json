@@ -14,10 +14,20 @@
     "title": "Fenerbahçe'de Asensio Eyüpspor maçının kadrosunda",
     "description": "Fenerbahçe, sakatlığını atlatan Marco Asensio'nun 20 Eylül'deki Eyüpspor karşılaşmasının kadrosunda yer alacağını açıkladı.",
     "category": "Fenerbahçe",
-    "date": "17 Eylül 2026",
+    "date": "18 Eylül 2026",
     "image": "../local-4.svg",
     "source": "beIN SPORTS Türkiye",
     "link": "https://beinsports.com.tr/haber/fenerbahceden-marco-asensio-aciklamasi"
+  },
+  {
+    "id": "bjk-next",
+    "title": "Beşiktaş'ın sıradaki lig maçı Amedspor deplasmanında",
+    "description": "Beşiktaş, 20 Eylül Pazar günü saat 20.00'de Amed Sportif Faaliyetler ile karşılaşacak.",
+    "category": "Beşiktaş",
+    "date": "18 Eylül 2026",
+    "image": "../local-2.svg",
+    "source": "Anadolu Ajansı",
+    "link": "https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611"
   },
   {
     "id": "superlig-6-hafta",
@@ -41,10 +51,10 @@
   },
   {
     "id": "europa-ilk-gece",
-    "title": "Avrupa Ligi'nde ilk gece tamamlandı",
-    "description": "2026/27 UEFA Avrupa Ligi'nin ilk maç gününde Benfica Milan'ı 2-0, Leverkusen Celje'yi 2-0 ve Lyon Anderlecht'i 2-1 mağlup etti.",
+    "title": "Avrupa Ligi'nde ilk hafta tamamlandı",
+    "description": "2026/27 UEFA Avrupa Ligi'nin ilk maç gününde karşılaşmalar tamamlandı ve sonuçlar netleşti.",
     "category": "Avrupa",
-    "date": "17 Eylül 2026",
+    "date": "18 Eylül 2026",
     "image": "../local-7.svg",
     "source": "UEFA",
     "link": "https://www.uefa.com/uefaeuropaleague/news/02a9-219ba00d8c3a-2fc9c36259e8-1000--europa-league-matchday-1-highlights-and-round-up-benfica-/"
@@ -58,26 +68,6 @@
     "image": "../local-6.svg",
     "source": "Reuters",
     "link": "https://www.reuters.com/sports/soccer/flick-sets-record-barcelona-breeze-past-racing-with-raphinha-hat-trick-2026-09-16/"
-  },
-  {
-    "id": "dursun-ozbek-transfer",
-    "title": "Dursun Özbek'ten transfer açıklaması",
-    "description": "Galatasaray Başkanı Dursun Özbek, bazı transferlerin temmuz ayında yapılması halinde mali farkın yaklaşık 50 milyon euro olacağını söyledi.",
-    "category": "Galatasaray",
-    "date": "17 Eylül 2026",
-    "image": "../local-3.svg",
-    "source": "DHA",
-    "link": "https://www.dha.com.tr/haberleri/transfer"
-  },
-  {
-    "id": "bjk-next",
-    "title": "Beşiktaş'ın sıradaki lig maçı Amedspor deplasmanında",
-    "description": "Beşiktaş, Süper Lig'in 6. haftasında 20 Eylül Pazar günü saat 20.00'de Amed Sportif Faaliyetler'e konuk olacak.",
-    "category": "Beşiktaş",
-    "date": "18 Eylül 2026",
-    "image": "../local-2.svg",
-    "source": "Anadolu Ajansı",
-    "link": "https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611"
   },
   {
     "id": "fb-eyupspor",
