@@ -1,0 +1,14 @@
+İONENSPIEGEL JSON HABER GÜNCELLEMESİ
+
+Bu paket, haber listesini kendi data/news.json dosyasından okumaya geçirir.
+
+GitHub'a yükle:
+1. index.html
+2. style.css
+3. script.js
+4. data/news.json
+5. Paket içinde bulunan local-*.svg, icon dosyaları ve manifest.json zaten mevcut sitede varsa tekrar yüklemene gerek yok.
+
+En güvenlisi: Mevcut dosyaları yedekledikten sonra ilk 4 dosyayı ve data klasöründeki news.json dosyasını değiştir.
+
+Canlı skor sistemi bu pakete eklenmemiştir.

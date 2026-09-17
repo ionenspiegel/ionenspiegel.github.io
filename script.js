@@ -109,8 +109,7 @@ function loadLiveNews(showToast=false){
   };
   script=document.createElement('script');script.src=api+(api.includes('?')?'&':'?')+'action=haberler&callback='+cb+'&t='+Date.now();script.onerror=()=>{cleanup();if(status)status.textContent='Otomatik haber akışına şu anda ulaşılamıyor.';if(showToast)toast('Haber akışı alınamadı')};document.head.appendChild(script);
 }
-$('#refreshNews')?.addEventListener('click',()=>{const feed=$('#newsFeed');feed?.animate([{opacity:.45},{opacity:1}],{duration:450});loadLiveNews(true)});
-loadLiveNews(false);setInterval(()=>loadLiveNews(false),10*60*1000);
+$('#refreshNews')?.addEventListener('click',()=>{loadOwnJsonNews(true)});
 
 /* ---------- THEME: manual + system preference ---------- */
 const themeCard=$('#themeCard');
@@ -278,6 +277,47 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
   $$('.news-row,.content-card,.world-card').forEach(card=>{card.addEventListener('click',()=>{const key=(card.innerText||'').slice(0,80),r=JSON.parse(localStorage.getItem(readsKey)||'{}');r[key]=(r[key]||0)+1;localStorage.setItem(readsKey,JSON.stringify(r))},{once:false})});
 })();
 
+
+
+/* ---------- OWN JSON NEWS FEED ---------- */
+async function loadOwnJsonNews(showToast=false){
+  const feed=$('#newsFeed');
+  if(!feed)return;
+  const status=$('#newsStatus');
+  try{
+    if(status)status.textContent='Haberler yükleniyor…';
+    const response=await fetch('./data/news.json?v='+Date.now(),{cache:'no-store'});
+    if(!response.ok)throw new Error('news.json yüklenemedi');
+    const items=await response.json();
+    if(!Array.isArray(items))throw new Error('Geçersiz haber verisi');
+    const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+    feed.innerHTML=items.map(item=>{
+      const team=liveNewsTeam(item);
+      const id=esc(item.id||item.title);
+      const img=esc(item.image||'./local-6.svg');
+      const desc=esc(item.description||'Haberin ayrıntıları için kaynak sayfasını aç.');
+      const link=esc(item.link||'#');
+      const source=esc(item.source||'İonenSpiegel');
+      const category=esc(item.category||'FUTBOL');
+      const date=esc(item.date||'');
+      return `<article class="news-row has-bookmark" data-news-id="${id}" data-team="${esc(team)}" data-search="${esc(item.title+' '+(item.description||''))}"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="${img}" alt="${esc(item.title)}" loading="lazy"></div><div><div class="news-kicker">${date} · ${category}</div><h3>${esc(item.title)}</h3><p>${desc}</p><a href="${link}" target="_blank" rel="noopener noreferrer">${source} ↗</a></div></article>`;
+    }).join('');
+    $$('.news-row.has-bookmark',feed).forEach(a=>{
+      const b=a.querySelector('.bookmark-btn');
+      b?.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();toggleBookmark(a)});
+      a.addEventListener('click',e=>{if(e.target.closest('.bookmark-btn')||e.target.closest('a'))return;openArticle(a)});
+    });
+    sortNewsByFavorite();
+    updateBookmarkButtons();
+    if(status)status.textContent=`Kendi JSON haber akışı · ${items.length} haber`;
+    if(showToast)toast(`${items.length} haber yenilendi`);
+  }catch(error){
+    console.error(error);
+    if(status)status.textContent='Haber JSON dosyası yüklenemedi.';
+    if(showToast)toast('Haberler yüklenemedi');
+  }
+}
+document.addEventListener('DOMContentLoaded',()=>loadOwnJsonNews(false));
 
 /* V30 DAILY VERIFIED NEWS FALLBACK */
 async function loadDailyVerifiedNewsFallback(){
