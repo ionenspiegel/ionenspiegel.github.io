@@ -64,10 +64,10 @@ $('#savedNewsMenu')?.addEventListener('click',openSaved);$('#savedCard')?.addEve
 
 /* ---------- HERO ---------- */
 const slides=[
- {title:'Beşiktaş - Marseille maçına saatler kaldı',text:'Siyah-beyazlılar UEFA Avrupa Ligi lig aşamasındaki ilk maçında Marseille ile karşılaşacak.',source:'Beşiktaş JK · 16 Eylül',newsId:'bjk-marseille',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./local-2.svg") center/cover',link:'https://bjk.com.tr/tr/fikstur/1/1/718/682/5274'},
- {title:'Thomas Reis Trabzonspor için Trabzon\'da',text:'Trabzonspor\'un anlaşmaya vardığı Alman teknik direktör Thomas Reis, 16 Eylül gündeminin öne çıkan gelişmesi oldu.',source:'Anadolu Ajansı · 16 Eylül',newsId:'thomas-reis-ts',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./local-5.svg") center/cover',link:'https://www.aa.com.tr/tr/spor/thomas-reis-trabzonsporun-13-yabanci-teknik-direktoru/4058780'},
- {title:'Süper Lig derbilerinin tarihleri açıklandı',text:'TFF, ilk yarıdaki önemli derbilerin tarih ve saatlerini açıkladı.',source:'Anadolu Ajansı · 15 Eylül',newsId:'gs-kocaeli',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./local-6.svg") center/cover',link:'https://www.aa.com.tr/tr/spor/trendyol-super-ligde-7-16-haftalarin-programi-aciklandi/4057906'},
- {title:'Avrupa Ligi lig aşaması başlıyor',text:'36 takımlı lig aşaması 16 Eylül’de başlıyor; Beşiktaş 17 Eylül’de Marseille’i ağırlayacak.',source:'UEFA · 16 Eylül',newsId:'fb-gaziantep',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./local-7.svg") center/cover',link:'https://www.uefa.com/uefaeuropaleague/news/02a9-21815eb7babc-62eab180d6e2-1000--europa-league-squads-league-phase-selections-confirmed/'}
+ {title:'Beşiktaş, Marsilya karşısında Avrupa sahnesinde',text:"Beşiktaş, UEFA Avrupa Ligi lig aşamasındaki ilk maçında bugün Marsilya'yı ağırlayacak.",source:'Anadolu Ajansı · 17 Eylül',newsId:'daily-1',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./local-2.svg") center/cover',link:'https://www.aa.com.tr/tr/spor/besiktas-uefa-avrupa-liginde-olimpik-marsilyayi-agirlayacak/4058536'},
+ {title:'Fenerbahçe: Asensio Eyüpspor maçında kadroda',text:"Fenerbahçe, Marco Asensio'nun 20 Eylül'deki Eyüpspor maçının kadrosunda yer alacağını açıkladı.",source:'Habertürk · 17 Eylül',newsId:'daily-3',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./local-4.svg") center/cover',link:'https://www.haberturk.com/spor/son-dakika-fenerbahce-den-asensio-mujdesi-eyupspor-macinda-kadroda-olacak-3912875'},
+ {title:'Trabzonspor-Galatasaray derbisi cumartesi',text:"Süper Lig'in 6. haftasındaki mücadele 19 Eylül Cumartesi saat 20.00'de Papara Park'ta oynanacak.",source:'Anadolu Ajansı · 17 Eylül',newsId:'daily-7',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./local-1.svg") center/cover',link:'https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611'},
+ {title:"Avrupa Ligi ilk gecesinde Benfica, Milan'ı geçti",text:"Benfica, San Siro'da Milan'ı 2-0 yenerek turnuvaya galibiyetle başladı.",source:'UEFA · 16 Eylül',newsId:'daily-8',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./local-6.svg") center/cover',link:'https://www.uefa.com/uefaeuropaleague/news/02a9-219ba00d8c3a-2fc9c36259e8-1000--europa-league-matchday-1-highlights-and-round-up-benfica-/'}
 ];let slideIndex=0;
 function setSocialImage(src){const abs=new URL(src,location.href).href;['og:image','twitter:image'].forEach(n=>{const m=document.querySelector(`meta[property=\"${n}\"],meta[name=\"${n}\"]`);if(m)m.setAttribute('content',abs)})}
 function renderSlide(){const s=slides[slideIndex];const media=$('#heroMedia');if(!media)return;$('#heroTitle').textContent=s.title;$('#heroText').textContent=s.text;$('#heroSource').textContent=s.source;media.style.background=s.bg;$('#heroIndex').textContent=slideIndex+1;const a=$(`.news-row[data-news-id=\"${s.newsId}\"]`);setSocialImage(a?.querySelector('img')?.getAttribute('src')||'./local-1.svg');$('#heroRead').onclick=()=>window.open(s.link,'_blank','noopener');$$('#sliderDots i').forEach((d,i)=>d.classList.toggle('active',i===slideIndex))}
@@ -98,8 +98,10 @@ function loadLiveNews(showToast=false){
   const cleanup=()=>{try{script?.remove()}catch(e){}try{delete window[cb]}catch(e){}};
   window[cb]=(data)=>{
     cleanup();
-    const items=Array.isArray(data?.items)?data.items:[];
-    if(!items.length){if(status)status.textContent='Otomatik akışta yeni futbol haberi bulunamadı.';if(showToast)toast('Yeni haber bulunamadı');return}
+    const rawItems=Array.isArray(data?.items)?data.items:[];
+    const cutoff=Date.now()-48*60*60*1000;
+    const items=rawItems.filter(x=>{const t=Date.parse(x.pubDate||'');return !Number.isNaN(t)&&t>=cutoff});
+    if(!items.length){if(showToast)toast('Günlük doğrulanmış akış korunuyor');return}
     const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
     feed.innerHTML=items.map((item,i)=>{const team=liveNewsTeam(item);const id='live-'+i+'-'+Math.abs((item.link||item.title).split('').reduce((a,c)=>((a<<5)-a)+c.charCodeAt(0)|0,0));const img=liveNewsImage(item);const desc=item.description||'Haberin ayrıntıları için kaynak sayfasını aç.';return `<article class="news-row has-bookmark live-news-row" data-news-id="${esc(id)}" data-team="${esc(team)}" data-search="${esc(item.title+' '+desc)}"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="${img}" alt="Futbol haberi"></div><div><div class="news-kicker">${esc(liveNewsDate(item.pubDate))} · ${esc(item.category||'FUTBOL')}</div><h3>${esc(item.title)}</h3><p>${esc(desc)}</p><a href="${esc(item.link)}" target="_blank" rel="noopener noreferrer">${esc(item.source||'Kaynak')} ↗</a></div></article>`}).join('');
     $$('.news-row.has-bookmark',feed).forEach(a=>a.querySelector('.bookmark-btn')?.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();toggleBookmark(a)}));
@@ -370,17 +372,19 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
 })();
 
 
-/* V30 DAILY VERIFIED NEWS FALLBACK */
-async function loadDailyVerifiedNewsFallback(){
-  try{
-    const r=await fetch('./daily-news.json?v=20260917',{cache:'no-store'});
-    if(!r.ok) return;
-    const d=await r.json();
-    const items=Array.isArray(d.news)?d.news:[];
-    if(!items.length) return;
-    window.IONENSPIEGEL_DAILY_NEWS=items;
-    if(typeof renderNewsItems==='function') renderNewsItems(items);
-    else if(typeof renderNews==='function') renderNews(items);
-  }catch(e){}
+/* V31 DAILY VERIFIED NEWS FALLBACK */
+function renderDailyVerifiedNews(items,updatedAt){
+  const feed=$('#newsFeed'); if(!feed||!Array.isArray(items)||!items.length)return;
+  const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  const teamMap={'Beşiktaş':'photo-bjk','Fenerbahçe':'photo-fb','Galatasaray':'photo-gs','Trabzonspor':'photo-ts'};
+  const imgMap={'Beşiktaş':'./local-2.svg','Fenerbahçe':'./local-4.svg','Galatasaray':'./local-3.svg','Trabzonspor':'./local-1.svg'};
+  feed.innerHTML=items.map((n,i)=>{const team=esc(n.team||'Avrupa');const cls=teamMap[n.team]||'photo-bjk';const img=imgMap[n.team]||'./local-6.svg';return `<article class="news-row has-bookmark" data-news-id="daily-${i+1}" data-team="${team}" data-search="${esc((n.title||'')+' '+(n.summary||''))}"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb ${cls}"><img src="${img}" alt="Futbol haberi"></div><div><div class="news-kicker">${esc(n.date||'17 Eylül 2026')} · ${team.toUpperCase()}</div><h3>${esc(n.title)}</h3><p>${esc(n.summary)}</p><a href="${esc(n.url)}" target="_blank" rel="noopener noreferrer">${esc(n.source||'Kaynak')} ↗</a></div></article>`}).join('');
+  $$('.news-row.has-bookmark',feed).forEach(a=>a.querySelector('.bookmark-btn')?.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();toggleBookmark(a)}));
+  bindNewsInteractions();
+  sortNewsByFavorite();
+  const status=$('#newsStatus'); if(status)status.textContent=`17 Eylül 2026 · ${items.length} doğrulanmış haber`;
 }
-document.addEventListener('DOMContentLoaded',()=>setTimeout(loadDailyVerifiedNewsFallback,800));
+async function loadDailyVerifiedNewsFallback(){
+  try{const r=await fetch('./daily-news.json?v=20260917-1000',{cache:'no-store'});if(!r.ok)return;const d=await r.json();const items=Array.isArray(d.news)?d.news:[];if(items.length)renderDailyVerifiedNews(items,d.updatedAt);}catch(e){}
+}
+document.addEventListener('DOMContentLoaded',()=>setTimeout(loadDailyVerifiedNewsFallback,350));

@@ -1,47 +1,85 @@
 {
-  "updatedAt": "2026-09-17T00:00:00+03:00",
+  "updatedAt": "2026-09-17T10:00:00+03:00",
   "news": [
     {
-      "title": "Beşiktaş-Marsilya maçı bugün UEFA Avrupa Ligi'nde",
-      "summary": "Beşiktaş, UEFA Avrupa Ligi lig aşamasındaki ilk maçında 17 Eylül Perşembe günü Marsilya'yı konuk edecek. Karşılaşma 22.00'de başlayacak.",
+      "title": "Beşiktaş, Avrupa Ligi'nde Marsilya'yı ağırlıyor",
+      "summary": "Beşiktaş, UEFA Avrupa Ligi lig aşamasındaki ilk maçında 17 Eylül Perşembe günü Olimpik Marsilya'yı konuk edecek. Karşılaşma Tüpraş Stadı'nda saat 22.00'de başlayacak.",
+      "source": "Anadolu Ajansı",
+      "url": "https://www.aa.com.tr/tr/spor/besiktas-uefa-avrupa-liginde-olimpik-marsilyayi-agirlayacak/4058536",
+      "date": "17 Eylül 2026",
+      "team": "Beşiktaş"
+    },
+    {
+      "title": "Beşiktaş'ta Orkun Kökçü'nün durumu maç saatinde belli olacak",
+      "summary": "Marsilya maçı öncesinde Orkun Kökçü'nün oynayıp oynamayacağı maç saatinde netleşecek.",
+      "source": "Habertürk",
+      "url": "https://www.haberturk.com/spor/besiktas-marsilya-maci-ne-zaman-saat-kacta-hangi-kanalda-bjk-marsilya-uefa-avrupa-ligi-maci-canli-izle-besiktas-marsilya-muhtemel-11-ler-3913040",
+      "date": "17 Eylül 2026",
+      "team": "Beşiktaş"
+    },
+    {
+      "title": "Fenerbahçe'den Asensio müjdesi: Eyüpspor maçında kadroda olacak",
+      "summary": "Fenerbahçe, sakatlığı nedeniyle bir süredir forma giyemeyen Marco Asensio'nun 20 Eylül'deki Eyüpspor maçının kadrosunda yer alacağını açıkladı.",
+      "source": "Habertürk",
+      "url": "https://www.haberturk.com/spor/son-dakika-fenerbahce-den-asensio-mujdesi-eyupspor-macinda-kadroda-olacak-3912875",
+      "date": "17 Eylül 2026",
+      "team": "Fenerbahçe"
+    },
+    {
+      "title": "Dursun Özbek: Transferleri erken yapsaydık fark yaklaşık 50 milyon euro olacaktı",
+      "summary": "Galatasaray Başkanı Dursun Özbek, Divan Kurulu toplantısında transferlerin neden geç yapıldığına ilişkin açıklamalarda bulundu ve erken transfer halinde mali farkın yaklaşık 50 milyon euro olacağını söyledi.",
+      "source": "Galatasaray",
+      "url": "https://www.galatasaray.org/haber/kulup/divan-kurulu-eylul-ayi-olagan-toplantisi-gerceklestirildi/60976",
+      "date": "16 Eylül 2026",
+      "team": "Galatasaray"
+    },
+    {
+      "title": "Thomas Reis, Trabzonspor'un 13. yabancı teknik direktörü oldu",
+      "summary": "Trabzonspor'un anlaşmaya vardığı Thomas Reis, kulübün 59 yıllık tarihinde görev yapacak 45. teknik direktör ve 13. yabancı teknik adam olarak kayda geçti.",
+      "source": "Anadolu Ajansı",
+      "url": "https://www.aa.com.tr/tr/spor/thomas-reis-trabzonsporun-13-yabanci-teknik-direktoru/4058780",
+      "date": "16 Eylül 2026",
+      "team": "Trabzonspor"
+    },
+    {
+      "title": "Süper Lig'de 6. hafta yarın başlıyor",
+      "summary": "6. hafta 18 Eylül'de Kasımpaşa-TÜMOSAN Konyaspor maçıyla başlayacak. Trabzonspor-Galatasaray karşılaşması 19 Eylül Cumartesi saat 20.00'de oynanacak.",
+      "source": "Anadolu Ajansı",
+      "url": "https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611",
+      "date": "17 Eylül 2026",
+      "team": "Süper Lig"
+    },
+    {
+      "title": "Trabzonspor-Galatasaray derbisi 19 Eylül'de",
+      "summary": "Süper Lig'in 6. haftasındaki Trabzonspor-Galatasaray mücadelesi 19 Eylül Cumartesi günü saat 20.00'de Papara Park'ta oynanacak.",
+      "source": "Anadolu Ajansı",
+      "url": "https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611",
+      "date": "17 Eylül 2026",
+      "team": "Trabzonspor"
+    },
+    {
+      "title": "Avrupa Ligi'nde ilk gece: Benfica, Milan'ı 2-0 yendi",
+      "summary": "2026/27 UEFA Avrupa Ligi'nin ilk gecesinde Benfica deplasmanda Milan'ı 2-0 mağlup etti. Lyon Anderlecht'i 2-1, Leverkusen Celje'yi 2-0 yendi.",
       "source": "UEFA",
-      "url": "https://www.uefa.com/uefaeuropaleague/news/02a9-218b246a8d84-9ca13dac85fb-1000--europa-league-matchday-1-briefing-milan-vs-benfica-plus-t/",
-      "date": "17 Eylül 2026"
+      "url": "https://www.uefa.com/uefaeuropaleague/news/02a9-219ba00d8c3a-2fc9c36259e8-1000--europa-league-matchday-1-highlights-and-round-up-benfica-/",
+      "date": "16 Eylül 2026",
+      "team": "Avrupa"
     },
     {
-      "title": "UEFA Avrupa Ligi'nde ilk hafta heyecanı sürüyor",
-      "summary": "2026-2027 UEFA Avrupa Ligi lig aşamasının ilk haftasında 17 Eylül'de Beşiktaş-Marsilya'nın yanı sıra Celtic-Ferencvaros, Juventus-NEC ve Real Sociedad-Bournemouth gibi maçlar oynanacak.",
-      "source": "UEFA",
-      "url": "https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-europa-league-all-the-league-phase-fixtures/",
-      "date": "17 Eylül 2026"
+      "title": "Manchester United, Lig Kupası'nda 2-0 öne geçtiği maçı 3-2 kaybetti",
+      "summary": "Manchester United, Brighton'a karşı evinde 2-0 öne geçmesine rağmen 3-2 mağlup oldu. Reuters'a göre United 50 yıl sonra Old Trafford'da iki farklı öne geçtiği bir Lig Kupası maçını kaybetti.",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/sports/soccer/man-utd-out-league-cup-after-going-2-0-up-home-then-losing-3-2-50-year-first-2026-09-16/",
+      "date": "16 Eylül 2026",
+      "team": "Avrupa"
     },
     {
-      "title": "Süper Lig'de 6. hafta programı belli",
-      "summary": "6. haftada Kasımpaşa-Konyaspor 18 Eylül'de; Trabzonspor-Galatasaray ve diğer karşılaşmalar 19-20 Eylül'de oynanacak.",
-      "source": "beIN SPORTS Türkiye",
-      "url": "https://beinsports.com.tr/haber/trendyol-super-ligde-5-ve-6-hafta-programi-aciklandi-iste-derbi-tarihi",
-      "date": "17 Eylül 2026"
-    },
-    {
-      "title": "Trabzonspor-Galatasaray maçı 19 Eylül'de",
-      "summary": "Süper Lig'in 6. haftasındaki Trabzonspor-Galatasaray karşılaşması 19 Eylül Cumartesi günü saat 20.00'de Papara Park'ta oynanacak.",
-      "source": "beIN SPORTS Türkiye",
-      "url": "https://beinsports.com.tr/haber/trendyol-super-ligde-5-ve-6-hafta-programi-aciklandi-iste-derbi-tarihi",
-      "date": "17 Eylül 2026"
-    },
-    {
-      "title": "Fenerbahçe-Eyüpspor 20 Eylül'de karşılaşacak",
-      "summary": "Süper Lig'in 6. haftasında Fenerbahçe, Eyüpspor'u 20 Eylül Pazar günü saat 17.00'de konuk edecek.",
-      "source": "Sporx",
-      "url": "https://www.sporx.com/turkiye-super-lig-fikstur",
-      "date": "17 Eylül 2026"
-    },
-    {
-      "title": "Amed Sportif-Beşiktaş maçı 20 Eylül'de",
-      "summary": "Beşiktaş, Avrupa Ligi'ndeki Marsilya maçının ardından Süper Lig'in 6. haftasında 20 Eylül Pazar günü Amed Sportif Faaliyetler'e konuk olacak.",
-      "source": "Sporx",
-      "url": "https://www.sporx.com/turkiye-super-lig-fikstur",
-      "date": "17 Eylül 2026"
+      "title": "Şampiyonlar Ligi finalleri 2028'de Münih, 2029'da Barcelona'da",
+      "summary": "UEFA, 2028 Şampiyonlar Ligi finalinin Münih Allianz Arena'da, 2029 finalinin ise Barcelona Camp Nou'da oynanacağını açıkladı.",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/sports/soccer/munichs-allianz-arena-barcelonas-camp-nou-host-champions-league-finals-2026-09-15/",
+      "date": "15 Eylül 2026",
+      "team": "Avrupa"
     }
   ]
 }

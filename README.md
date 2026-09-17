@@ -1,3 +1,9 @@
+## V31 Günlük Haber Güncellemesi
+- 17 Eylül 2026 doğrulanmış futbol haberleri günlük veri dosyasına işlendi.
+- Fenerbahçe, Galatasaray, Beşiktaş, Trabzonspor, Süper Lig ve Avrupa futbolu kapsandı.
+- Kaynak bağlantıları gerçek haber sayfalarına bağlandı.
+- Apps Script canlı akışı başarısız veya eski kalırsa `daily-news.json` otomatik yedek olarak gösterilir.
+
 İonenSpiegel V16 • Canlı Skor + Ziyaret Sayacı
 
 V10 altyapısına haber detayları, Web Share, PWA install prompt, demo canlı maç simülasyonu, Notification API, skeleton loading, OG/Twitter meta, focus trap, offline banner ve manifest shortcuts/screenshots eklendi. Tüm maç/istatistik verileri demo amaçlıdır; gerçek API bağlantısı yoktur.

@@ -1,0 +1,6 @@
+İonenSpiegel V31
+Tarih: 17 Eylül 2026
+
+Güncellenen: daily-news.json, index.html, script.js, sw.js, README.md
+Yeni Apps Script URL korunmuştur.
+Günlük haberler doğrulanmış kaynak bağlantılarıyla yenilendi.
