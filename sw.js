@@ -1,79 +1,56 @@
-// İonenSpiegel V35 service worker
-const CACHE_NAME = 'ionenspiegel-v39';
-const CORE_ASSETS = ['./manifest.json','./icon-192.png','./icon-512.png'];
-
-const V35_CSS = `
-.home-fixture-card{background:linear-gradient(145deg,#171717,#2a2a2a);color:#fff;border:1px solid #333;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 12px 30px #0002}.home-fixture-kicker{display:flex;align-items:center;gap:8px;font-size:10px;color:#bbb}.home-fixture-kicker b{color:#fff;letter-spacing:.5px}.home-fixture-kicker span:last-child{margin-left:auto;color:#ff6b73;font-weight:900}.home-fixture-teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;font-family:'Barlow Condensed';font-size:27px}.home-fixture-teams strong:last-child{text-align:right}.home-fixture-teams em{font-style:normal;color:#ff5962;font-size:22px}.home-fixture-meta{font-size:11px;color:#aaa}.fixture-toolbar{display:flex;gap:7px;flex-wrap:wrap;margin:-2px 0 12px}.fixture-filter{border:1px solid #d5d5d0;background:#fff;border-radius:999px;padding:9px 14px;font-size:11px;font-weight:900;cursor:pointer}.fixture-filter.active{background:var(--red);color:#fff;border-color:var(--red)}.fixture-board{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}.fixture-day{border-bottom:1px solid #e9e9e5}.fixture-day:last-child{border:0}.fixture-day-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#f1f1ef;font-size:11px}.fixture-day-head span{color:var(--red);font-size:9px;font-weight:900}.fixture-match{display:grid;grid-template-columns:65px minmax(0,1fr) 45px minmax(0,1fr) 55px;align-items:center;gap:10px;padding:14px 16px;border-top:1px solid #eee}.fixture-match time{font-family:'Barlow Condensed';font-size:22px;font-weight:900;color:var(--red)}.fixture-team{display:flex;flex-direction:column;gap:2px}.fixture-team b{font-size:13px}.fixture-team small{font-size:9px;color:#888}.fixture-team.away{text-align:right}.fixture-vs{text-align:center;font-size:10px;color:#999}.fixture-badge{justify-self:end;font-size:8px;font-weight:900;background:#f0f0ed;border-radius:5px;padding:5px 6px;color:#666}.fixture-match.featured{background:linear-gradient(90deg,#fff5f5,#fff)}.fixture-match.featured .fixture-badge{background:#ffe3e5;color:var(--red)}.fixture-source-note{font-size:10px;color:#777;margin-top:9px}.upcoming-section{scroll-margin-top:100px}
-@media(max-width:820px){.container{padding:0 12px}.top-inner{height:58px;padding:0 12px}.brand{font-size:34px}.desktop-nav,.edition,.login-btn{display:none}.hamburger{display:block;width:38px;height:38px;font-size:22px}.top-actions{margin-left:auto}.icon-btn{width:38px;height:38px}.breaking{height:38px}.breaking-label{padding:0 11px;font-size:10px}.breaking-scroll{gap:20px;padding-left:15px}.mobile-team-strip{margin:0 -12px;border-radius:0;grid-template-columns:repeat(5,1fr)}.mobile-team-strip button{padding:10px 2px;font-size:18px}.mobile-team-strip b{font-size:9px}.hero-news{grid-template-columns:1fr;gap:10px;margin-top:12px}.hero-media{height:390px;border-radius:12px}.hero-copy{left:18px;right:18px;bottom:24px}.hero-copy h1{font-size:39px}.hero-copy p{font-size:12px}.hero-meta{gap:8px;flex-wrap:wrap}.hero-side{display:block}.home-fixture-card{border-radius:12px;padding:16px}.home-fixture-teams{font-size:24px}.quick-panel{margin-top:10px}.section{padding:25px 0}.section-head h2{font-size:27px}.section-subtitle,.muted{font-size:10px}.latest-layout{grid-template-columns:1fr}.news-row{grid-template-columns:88px 1fr;gap:10px;padding:11px}.thumb{min-height:88px}.news-row h3{font-size:20px}.news-row p{font-size:11px}.fixture-toolbar{overflow-x:auto;flex-wrap:nowrap;padding-bottom:3px;scrollbar-width:none}.fixture-toolbar::-webkit-scrollbar{display:none}.fixture-filter{white-space:nowrap;padding:8px 12px}.fixture-day-head{padding:11px 12px}.fixture-match{grid-template-columns:48px minmax(0,1fr) 28px minmax(0,1fr);padding:12px;gap:6px}.fixture-badge{display:none}.fixture-match time{font-size:19px}.fixture-team b{font-size:11px}.fixture-team small{display:none}.fixture-vs{font-size:9px}.extras-grid{grid-template-columns:1fr 1fr}.feature-card{padding:14px;grid-template-columns:34px 1fr}.feature-card span{font-size:22px}.footer-grid{grid-template-columns:1fr 1fr;gap:20px}.mobile-nav{display:flex;position:fixed;left:0;right:0;bottom:0;height:62px;background:#fff;border-top:1px solid #ddd;z-index:120;box-shadow:0 -5px 20px #0001;padding-bottom:env(safe-area-inset-bottom)}.mobile-nav a,.mobile-nav button{flex:1;border:0;background:none;text-decoration:none;color:#333;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:18px;gap:2px}.mobile-nav span{font-size:8px;font-weight:900}.mobile-nav a:nth-child(3){color:var(--red)}#backTop{bottom:75px}.toast{bottom:75px}}
-@media(max-width:480px){.hero-media{height:350px}.hero-copy h1{font-size:34px}.hero-copy p{font-size:11px}.slider-arrow{width:36px;height:36px;font-size:28px}.news-row{grid-template-columns:74px 1fr}.thumb{min-height:74px}.news-row h3{font-size:18px}.news-row p{display:none}.home-fixture-teams{font-size:21px}.fixture-match{grid-template-columns:43px minmax(0,1fr) 25px minmax(0,1fr)}.footer-grid{grid-template-columns:1fr}.footer-grid>div:nth-child(3){display:none}}
-
-/* V36 kontrast düzeltmesi: beyaz kart üzerindeki takım ve filtre yazıları görünür olsun */
-.fixture-filter{color:#202124 !important;background:#fff !important;border-color:#d5d5d0 !important}
-.fixture-filter.active{color:#fff !important;background:#d90416 !important;border-color:#d90416 !important}
-.fixture-match{color:#202124 !important}
-.fixture-team,.fixture-team b,.fixture-team strong,.fixture-team span{color:#202124 !important;opacity:1 !important}
-.fixture-team small{color:#777 !important;opacity:1 !important}
-.fixture-team.away,.fixture-team.away b,.fixture-team.away strong{color:#202124 !important}
-.fixture-vs{color:#777 !important;opacity:1 !important}
-.fixture-match time{color:#c90016 !important;opacity:1 !important}
-.fixture-badge{color:#555 !important}
-.fixture-day-head{color:#333 !important}
-`;
-
-const V35_JS = `
-(function(){
-  function setup(){
-    const old=document.querySelector('.live-card');
-    if(old){old.outerHTML='<div class="home-fixture-card"><div class="home-fixture-kicker"><span>⚽</span><b>BUGÜNÜN ÖNE ÇIKANI</b><span>MAÇ SONU</span></div><div class="home-fixture-teams"><strong>BEŞİKTAŞ</strong><em>4 - 1</em><strong>MARSEILLE</strong></div><div class="home-fixture-meta">UEFA Avrupa Ligi · 17 Eylül 2026 · Maç Sonu</div><a href="#maclar" class="wide-btn">Tüm fikstürü gör →</a></div>';}
-    const section=document.querySelector('#maclar');
-    if(!section) return;
-    section.innerHTML='<div class="section-head"><div><h2><span class="red-line"></span> Maçlar ve Fikstür</h2><p class="section-subtitle">18–20 Eylül 2026 · Türkiye ve Avrupa</p></div><a class="text-link" href="https://www.tff.org/?pageID=198" target="_blank" rel="noopener">TFF fikstürü ↗</a></div><div class="fixture-toolbar" role="tablist"><button class="fixture-filter active" data-fixture-filter="all" type="button">Tümü</button><button class="fixture-filter" data-fixture-filter="sonuc" type="button">Sonuçlar</button><button class="fixture-filter" data-fixture-filter="today" type="button">Bugün</button><button class="fixture-filter" data-fixture-filter="turkiye" type="button">Türkiye</button><button class="fixture-filter" data-fixture-filter="avrupa" type="button">Avrupa</button><button class="fixture-filter" data-fixture-filter="bjk" type="button">Beşiktaş</button></div><div class="fixture-board"><div class="fixture-day"><div class="fixture-day-head"><b>17 EYLÜL · PERŞEMBE</b><span>AVRUPA LİGİ</span></div><article class="fixture-match featured" data-cats="sonuc avrupa bjk"><time>MS</time><div class="fixture-team"><b>⚫⚪ Beşiktaş</b><small>4 gol</small></div><strong class="fixture-vs">4 - 1</strong><div class="fixture-team away"><b>Marseille</b><small>1 gol</small></div><span class="fixture-badge">SONUÇ</span></article><article class="fixture-match" data-cats="avrupa today"><time>19:45</time><div class="fixture-team"><b>OFI Crete</b></div><strong class="fixture-vs">VS</strong><div class="fixture-team away"><b>Hoffenheim</b></div><span class="fixture-badge">UEL</span></article><article class="fixture-match" data-cats="avrupa today"><time>19:45</time><div class="fixture-team"><b>Levski Sofia</b></div><strong class="fixture-vs">VS</strong><div class="fixture-team away"><b>Salzburg</b></div><span class="fixture-badge">UEL</span></article></div><div class="fixture-day"><div class="fixture-day-head"><b>18 EYLÜL · CUMA</b><span>SÜPER LİG</span></div><article class="fixture-match" data-cats="turkiye"><time>20:00</time><div class="fixture-team"><b>Kasımpaşa</b></div><strong class="fixture-vs">VS</strong><div class="fixture-team away"><b>Konyaspor</b></div><span class="fixture-badge">SL</span></article></div><div class="fixture-day"><div class="fixture-day-head"><b>19 EYLÜL · CUMARTESİ</b><span>SÜPER LİG</span></div><article class="fixture-match" data-cats="turkiye"><time>17:00</time><div class="fixture-team"><b>Arca Çorum FK</b></div><strong class="fixture-vs">VS</strong><div class="fixture-team away"><b>Alanyaspor</b></div><span class="fixture-badge">SL</span></article><article class="fixture-match" data-cats="turkiye"><time>20:00</time><div class="fixture-team"><b>Trabzonspor</b></div><strong class="fixture-vs">VS</strong><div class="fixture-team away"><b>Galatasaray</b></div><span class="fixture-badge">SL</span></article><article class="fixture-match" data-cats="turkiye"><time>20:00</time><div class="fixture-team"><b>Başakşehir</b></div><strong class="fixture-vs">VS</strong><div class="fixture-team away"><b>Gençlerbirliği</b></div><span class="fixture-badge">SL</span></article></div><div class="fixture-day"><div class="fixture-day-head"><b>20 EYLÜL · PAZAR</b><span>SÜPER LİG</span></div><article class="fixture-match" data-cats="turkiye"><time>17:00</time><div class="fixture-team"><b>Fenerbahçe</b></div><strong class="fixture-vs">VS</strong><div class="fixture-team away"><b>Eyüpspor</b></div><span class="fixture-badge">SL</span></article><article class="fixture-match" data-cats="turkiye"><time>20:00</time><div class="fixture-team"><b>Amed Sportif</b></div><strong class="fixture-vs">VS</strong><div class="fixture-team away"><b>Beşiktaş</b></div><span class="fixture-badge">SL</span></article></div></div><div class="fixture-source-note">Saatler Türkiye saatidir. Avrupa Ligi UEFA, Süper Lig TFF kaynaklıdır.</div>';
-    const filters=[...section.querySelectorAll('.fixture-filter')], matches=[...section.querySelectorAll('.fixture-match')], days=[...section.querySelectorAll('.fixture-day')];
-    function apply(f){matches.forEach(m=>{const c=(m.dataset.cats||'').split(/\\s+/);m.style.display=(f==='all'||c.includes(f))?'grid':'none'});days.forEach(d=>d.style.display=[...d.querySelectorAll('.fixture-match')].some(m=>m.style.display!=='none')?'block':'none');filters.forEach(b=>b.classList.toggle('active',b.dataset.fixtureFilter===f));}
-    filters.forEach(b=>b.addEventListener('click',()=>apply(b.dataset.fixtureFilter)));apply('all');
-    const nav=document.querySelector('.mobile-nav a:nth-child(3) span'); if(nav) nav.textContent='Fikstür';
-  }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',setup); else setup();
-})();
-`;
-
-function transform(html){
-  html=html.replace(/<div class="live-card">[\s\S]*?<\/div>/,'<div class="home-fixture-card"></div>');
-  html=html.replace(/<section class="section upcoming-section" id="maclar">[\s\S]*?<\/section>/, '<section class="section upcoming-section" id="maclar"><div class="section-head"><div><h2><span class="red-line"></span> Maçlar ve Fikstür</h2><p class="section-subtitle">18–20 Eylül 2026 · Türkiye ve Avrupa</p></div></div><div class="fixture-board"></div></section>');
-  const inject='<style id="v35-redesign">'+V35_CSS+'</style><script>'+V35_JS.replace(/<\/script>/g,'<\/script>')+'</script>';
-  return html.replace('</head>',inject+'</head>');
-}
+// İonenSpiegel güncel service worker
+const CACHE_NAME = 'ionenspiegel-v40';
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE_NAME).then(c=>c.addAll(CORE_ASSETS)).catch(()=>{}));
-  self.skipWaiting();
+  event.waitUntil(self.skipWaiting());
 });
+
 self.addEventListener('activate', event => {
-  event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))));
-  self.clients.claim();
+  event.waitUntil(
+    caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))))
+      .then(() => self.clients.claim())
+  );
 });
+
 self.addEventListener('fetch', event => {
-  const req=event.request, url=new URL(req.url);
-  if(req.method!=='GET'||url.origin!==self.location.origin)return;
-  if(req.mode==='navigate'||req.destination==='document'){
-    event.respondWith(fetch(req,{cache:'no-store'}).then(async r=>{
-      const html=await r.clone().text();
-      const transformed=transform(html);
-      const out=new Response(transformed,{status:r.status,statusText:r.statusText,headers:r.headers});
-      caches.open(CACHE_NAME).then(c=>c.put('./index.html',out.clone())).catch(()=>{});
-      return out;
-    }).catch(()=>caches.match('./index.html')));
+  const request = event.request;
+  const url = new URL(request.url);
+  if (request.method !== 'GET' || url.origin !== self.location.origin) return;
+
+  // Service worker dosyasının kendisini asla eski cache'den verme.
+  if (url.pathname.endsWith('/sw.js')) {
+    event.respondWith(fetch(request, {cache:'no-store'}));
     return;
   }
-  // HTML/CSS/JS/JSON gibi içerikler her istekte önce ağdan alınır.
-  // Ağ yoksa daha önce kaydedilmiş kopya kullanılır.
+
+  if (request.mode === 'navigate' || request.destination === 'document') {
+    event.respondWith(
+      fetch(request, {cache:'no-store'}).then(response => {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then(c => c.put('./index.html', copy)).catch(() => {});
+        return response;
+      }).catch(() => caches.match('./index.html'))
+    );
+    return;
+  }
+
+  // JS/CSS/JSON için önce ağ, böylece yeni sürüm ziyaretçiye ulaşır.
+  if (['script','style','json'].includes(request.destination) || url.pathname.endsWith('.json')) {
+    event.respondWith(
+      fetch(request, {cache:'no-store'}).then(response => {
+        const copy = response.clone();
+        caches.open(CACHE_NAME).then(c => c.put(request, copy)).catch(() => {});
+        return response;
+      }).catch(() => caches.match(request))
+    );
+    return;
+  }
+
   event.respondWith(
-    fetch(req, {cache:'no-store'}).then(r => {
-      if (r && r.ok) {
-        const copy = r.clone();
-        caches.open(CACHE_NAME).then(c => c.put(req, copy)).catch(()=>{});
-      }
-      return r;
-    }).catch(() => caches.match(req))
+    caches.match(request).then(cached => cached || fetch(request).then(response => {
+      const copy = response.clone();
+      caches.open(CACHE_NAME).then(c => c.put(request, copy)).catch(() => {});
+      return response;
+    }))
   );
 });
