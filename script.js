@@ -653,3 +653,155 @@ document.addEventListener('DOMContentLoaded',()=>loadOwnJsonNews(false));
     }catch(e){notificationStatus()}
   });
 })();
+
+/* V58 BUTTON REPAIR
+   Visible controls in the current mobile design use newer IDs/classes while
+   legacy listeners still target older controls. This layer binds the visible
+   controls without removing the existing news/fixture logic.
+*/
+(function initV58ButtonRepair(){
+  const q=(s,r=document)=>r.querySelector(s);
+  const qa=(s,r=document)=>[...r.querySelectorAll(s)];
+  const say=(m)=>{try{if(typeof toast==='function')toast(m)}catch(e){}};
+  const more=q('#daha-fazla');
+
+  // Top and drawer controls.
+  q('#mobileMenu')?.addEventListener('click',()=>typeof openDrawer==='function'&&openDrawer(),true);
+  q('#menuBtn')?.addEventListener('click',()=>typeof openDrawer==='function'&&openDrawer(),true);
+  q('#drawerClose')?.addEventListener('click',()=>typeof closeDrawer==='function'&&closeDrawer(),true);
+  q('#drawerBackdrop')?.addEventListener('click',()=>typeof closeDrawer==='function'&&closeDrawer(),true);
+  q('#searchOpen')?.addEventListener('click',()=>{q('#searchModal')?.classList.add('show');q('#globalSearch')?.focus()},true);
+  q('#globalSearchBtn')?.addEventListener('click',()=>typeof globalSearch==='function'&&globalSearch(),true);
+  q('#loginBtn')?.addEventListener('click',()=>q('#loginModal')?.classList.add('show'),true);
+
+  // Visible theme card.
+  const theme=q('#darkThemeCard',more);
+  function refreshThemeCard(){
+    const dark=document.documentElement.classList.contains('dark-theme');
+    const status=q('#themeStatus',more);
+    const title=theme?.querySelector('strong');
+    const sub=theme?.querySelector('small');
+    if(status)status.textContent=dark?'Açık':'Kapalı';
+    if(title)title.textContent=dark?'Açık Tema':'Koyu Tema';
+    if(sub)sub.textContent=dark?'Gündüz okuma görünümü':'Gece okuma görünümü';
+  }
+  theme?.addEventListener('click',()=>{
+    const dark=document.documentElement.classList.contains('dark-theme');
+    document.documentElement.classList.toggle('dark-theme',!dark);
+    localStorage.setItem('ionenspiegel-theme',dark?'light':'dark');
+    q('#themeColorMeta')?.setAttribute('content',dark?'#e50914':'#111419');
+    refreshThemeCard();
+    say(dark?'Açık tema aktif':'Koyu tema aktif');
+  });
+  refreshThemeCard();
+
+  // Visible favorite-team modal. The page also contains a legacy picker, so
+  // deliberately scope this renderer to the new modal.
+  const favModal=q('#favoriteModal');
+  const favGrid=q('#teamPicker',favModal);
+  const favSearch=q('#teamSearch',favModal);
+  const favSave=q('#saveFavoriteTeam',favModal);
+  const favClose=q('#favoriteClose',favModal);
+  let pending=localStorage.getItem('ionenspiegel-favorite-team')||'';
+  const fallbackTeams=['Beşiktaş','Fenerbahçe','Galatasaray','Trabzonspor','Konyaspor','Çorum FK','Başakşehir','Göztepe','Kocaelispor','Samsunspor','Gençlerbirliği','Amed Sportif Faaliyetler','Kasımpaşa','Çaykur Rizespor','Alanyaspor','Eyüpspor'];
+  function teamList(){return typeof allTeams!=='undefined'?allTeams:fallbackTeams}
+  function renderTeams(){
+    if(!favGrid)return;
+    const term=(favSearch?.value||'').trim().toLocaleLowerCase('tr-TR');
+    const list=teamList().filter(t=>!term||t.toLocaleLowerCase('tr-TR').includes(term));
+    favGrid.innerHTML=list.map(t=>'<button type="button" class="team-choice '+(t===pending?'selected':'')+'" data-v58-team="'+t.replace(/"/g,'&quot;')+'"><strong>'+t+'</strong><small>'+(t===pending?'SEÇİLİ':'Favori takım')+'</small></button>').join('');
+    qa('[data-v58-team]',favGrid).forEach(b=>b.addEventListener('click',()=>{
+      pending=b.dataset.v58Team;
+      qa('[data-v58-team]',favGrid).forEach(x=>x.classList.toggle('selected',x===b));
+    }));
+  }
+  function openFavorite(){
+    renderTeams();
+    favModal?.classList.add('open');
+    favModal?.setAttribute('aria-hidden','false');
+    document.body.classList.add('modal-open');
+    favSearch?.focus();
+  }
+  function closeFavorite(){
+    favModal?.classList.remove('open');
+    favModal?.setAttribute('aria-hidden','true');
+    document.body.classList.remove('modal-open');
+  }
+  favSearch?.addEventListener('input',renderTeams);
+  favClose?.addEventListener('click',closeFavorite);
+  favModal?.addEventListener('click',e=>{if(e.target===favModal)closeFavorite()});
+  favSave?.addEventListener('click',()=>{
+    if(!pending){say('Önce bir takım seç');return}
+    localStorage.setItem('ionenspiegel-favorite-team',pending);
+    try{if(typeof applyFavoriteTeam==='function')applyFavoriteTeam(pending)}catch(e){}
+    const status=q('#favoriteStatus',more);
+    if(status)status.textContent=pending;
+    closeFavorite();
+    say(pending+' favori takımın olarak kaydedildi');
+  });
+  qa('#favoriteCard').forEach(b=>b.addEventListener('click',openFavorite));
+  const favStatus=q('#favoriteStatus',more);
+  if(favStatus)favStatus.textContent=pending||'Seçilmedi';
+
+  // Visible notification card.
+  async function notifications(){
+    if(!('Notification' in window)){say('Bu tarayıcı bildirimleri desteklemiyor');return}
+    try{
+      const p=Notification.permission==='default'?await Notification.requestPermission():Notification.permission;
+      const status=q('#notificationStatus',more);
+      if(status)status.textContent=p==='granted'?'Aktif':p==='denied'?'Engellendi':'Kapalı';
+      say(p==='granted'?'Bildirimler açıldı':'Bildirim izni verilmedi');
+    }catch(e){say('Bildirim izni alınamadı')}
+  }
+  qa('#notificationCard').forEach(b=>b.addEventListener('click',notifications));
+  const ns=q('#notificationStatus',more);
+  if(ns&&'Notification' in window)ns.textContent=Notification.permission==='granted'?'Aktif':Notification.permission==='denied'?'Engellendi':'Kapalı';
+
+  // Visible video/gallery cards are links without legacy IDs.
+  const media=q('#mediaModal'), content=q('#mediaContent'), title=q('#mediaTitle');
+  function openMedia(mode){
+    if(!media||!content)return;
+    if(title)title.textContent=mode==='video'?'Video':'Galeri';
+    if(mode==='video'){
+      const items=[
+        ['Beşiktaş 4-1 Marsilya','Beşiktaş · Avrupa Ligi','https://www.youtube.com/results?search_query=Be%C5%9Fikta%C5%9F+Marsilya+4-1'],
+        ['Avrupa Ligi ilk hafta','UEFA Avrupa Ligi','https://www.youtube.com/results?search_query=UEFA+Europa+League+2026+highlights'],
+        ['Trabzonspor-Galatasaray','Süper Lig derbisi','https://www.youtube.com/results?search_query=Trabzonspor+Galatasaray+19+Eyl%C3%BCl+2026']
+      ];
+      content.innerHTML='<div class="media-grid">'+items.map(v=>'<a class="media-item" href="'+v[2]+'" target="_blank" rel="noopener"><div class="media-thumb">▶</div><b>'+v[0]+'</b><small>'+v[1]+'</small><span>Videoları aç ↗</span></a>').join('')+'</div>';
+    }else{
+      const items=[['Beşiktaş 4-1 Marsilya','./hero-bjk.jpg'],['Avrupa kupaları','./photo-europa.jpg'],['Süper Lig','./photo-superlig.jpg']];
+      content.innerHTML='<div class="media-grid">'+items.map(v=>'<div class="media-item gallery-item"><img src="'+v[1]+'" alt="'+v[0]+'"><b>'+v[0]+'</b></div>').join('')+'</div>';
+    }
+    media.classList.add('show');document.body.classList.add('modal-open');
+  }
+  qa('#daha-fazla .simple-feature').forEach(a=>{
+    const t=(a.textContent||'').toLocaleLowerCase('tr-TR');
+    if(t.includes('video'))a.addEventListener('click',e=>{e.preventDefault();openMedia('video')});
+    if(t.includes('galeri'))a.addEventListener('click',e=>{e.preventDefault();openMedia('gallery')});
+  });
+
+  // News chips.
+  qa('#newsChips .news-chip').forEach(chip=>chip.addEventListener('click',()=>{
+    const f=chip.dataset.newsFilter||'all';
+    qa('#newsChips .news-chip').forEach(x=>x.classList.toggle('active',x===chip));
+    qa('#newsFeed .news-row').forEach(row=>{
+      if(f==='all'){row.style.display='grid';return}
+      const team=(row.dataset.team||'').toLocaleLowerCase('tr-TR');
+      const text=(row.dataset.search||row.textContent||'').toLocaleLowerCase('tr-TR');
+      const key=f.toLocaleLowerCase('tr-TR');
+      row.style.display=(team.includes(key)||(f==='Avrupa'&&(text.includes('avrupa ligi')||text.includes('şampiyonlar ligi'))))?'grid':'none';
+    });
+  }));
+
+  q('#refreshNews')?.addEventListener('click',()=>{if(typeof loadOwnJsonNews==='function')loadOwnJsonNews(true);else say('Haber akışı yenileniyor')});
+  q('#backTop')?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+  // Bottom navigation and drawer anchors.
+  qa('.mobile-nav a[href^="#"],.desktop-nav a[href^="#"],.drawer a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
+    const h=a.getAttribute('href');const target=h&&q(h);
+    if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});if(typeof closeDrawer==='function')closeDrawer()}
+  }));
+
+  qa('#daha-fazla button,#daha-fazla a,.mobile-nav button,.mobile-nav a').forEach(el=>{el.style.pointerEvents='auto';el.style.touchAction='manipulation'});
+})();
