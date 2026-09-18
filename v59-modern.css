@@ -40,3 +40,39 @@ body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",san
 }
 .dark-theme body{background:#090b0e}
 .dark-theme .news-row,.dark-theme .content-card,.dark-theme .feature-card,.dark-theme .brief-card,.dark-theme .poll-card,.dark-theme .comments-card{background:#15181d;border-color:#292e36}
+
+
+/* İonenSpiegel V60: Avrupa'daki Türk takımları + takım renkleri */
+.european-turkish{padding-top:28px}
+.euro-team-picker{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:none}
+.euro-team-picker::-webkit-scrollbar{display:none}
+.euro-team-btn{border:1px solid #30343b;background:#171a1f;color:#c7cbd2;border-radius:999px;padding:11px 15px;font-weight:800;white-space:nowrap;cursor:pointer}
+.euro-team-btn.active{background:#e50914;border-color:#e50914;color:#fff}
+.euro-team-panel{display:grid;gap:10px;background:#15181d;border:1px solid #2b3038;border-radius:18px;padding:16px;box-shadow:0 12px 30px rgba(0,0,0,.16)}
+.euro-team-title{display:flex;justify-content:space-between;gap:12px;align-items:center;padding-bottom:4px}
+.euro-team-title b{font-size:25px}.euro-team-title span{font-size:11px;color:#e50914;font-weight:900;text-transform:uppercase}
+.euro-fixture{border:1px solid #292e35;background:#101318;border-radius:14px;padding:14px}
+.euro-fixture small{display:block;color:#8e949d;font-weight:900;font-size:10px;margin-bottom:7px}
+.euro-fixture strong{font-size:20px}.euro-fixture em{font-style:normal;color:#e50914;margin:0 5px}
+.euro-fixture p{margin:7px 0 0;color:#9ba1aa;font-size:13px}
+
+/* Haber görsellerinde takım kimliği */
+.news-row .thumb{position:relative;overflow:hidden}
+.news-row .thumb:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;z-index:3}
+.news-row[data-team="Beşiktaş"] .thumb:before{background:linear-gradient(#fff 0 50%,#111 50%)}
+.news-row[data-team="Galatasaray"] .thumb:before{background:linear-gradient(#c8102e 0 50%,#f5c400 50%)}
+.news-row[data-team="Fenerbahçe"] .thumb:before{background:linear-gradient(#061d49 0 50%,#f5c400 50%)}
+.news-row[data-team="Trabzonspor"] .thumb:before{background:linear-gradient(#7b1e34 0 50%,#6ea6d8 50%)}
+.news-row[data-team="Başakşehir"] .thumb:before{background:linear-gradient(#0d5ca6 0 50%,#f47c20 50%)}
+.news-row[data-team="Avrupa"] .thumb:before{background:#3158d8}
+
+.news-row[data-team="Beşiktaş"] .news-kicker{color:#111}
+.news-row[data-team="Galatasaray"] .news-kicker{color:#c8102e}
+.news-row[data-team="Fenerbahçe"] .news-kicker{color:#123c7a}
+.news-row[data-team="Trabzonspor"] .news-kicker{color:#7b1e34}
+.news-row[data-team="Başakşehir"] .news-kicker{color:#0d5ca6}
+
+@media(max-width:600px){
+  .euro-team-title b{font-size:21px}
+  .euro-fixture strong{font-size:18px}
+}

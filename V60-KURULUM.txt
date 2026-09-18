@@ -1,0 +1,15 @@
+İonenSpiegel V60
+
+V59'un üzerine ekleme paketidir.
+
+Eklenenler:
+- Avrupa'daki Türk takımları için seçilebilir takım sekmeleri
+- Beşiktaş, Galatasaray, Fenerbahçe, Trabzonspor ve Başakşehir
+- Seçilen takımın panelinin açılması
+- Haber görsellerinde takım renklerini belirginleştiren renk şeritleri
+- Takım bazlı haber başlık renkleri
+- Mobil uyumlu Avrupa takım seçici
+- Duplicate Daha Fazla ve duplicate ID temizliği
+- Menü bağlantılarında yumuşak kaydırma
+
+V59 dosyaları korunmuştur.
