@@ -1,7 +1,15 @@
-İonenSpiegel GA4 düzeltmesi
+İONENSPIEGEL İLETİŞİM + GOOGLE APPS SCRIPT
 
-1. Eski ga4.js dosyasını GitHub reposunun ana klasöründen kaldır/değiştir.
-2. Bu ZIP içindeki ga4.js dosyasını ana klasöre yükle.
-3. index.html içindeki <script src="./ga4.js?v=64" defer></script> satırına dokunma.
-4. GitHub Pages güncellendikten sonra siteyi aç.
-5. Google Analytics > Gerçek Zamanlı bölümünden kontrol et.
+Bu paket iletişim ekranını geri getirir ve mevcut Apps Script Web App bağlantısını kullanır.
+
+1. iletisim.html dosyasını sitenin ana klasörüne yükle.
+2. iletisim-geri-yukle.js dosyasını sitenin ana klasörüne yükle.
+3. index.html içinde </head> satırından önce şu satırı ekle:
+<script src="./iletisim-geri-yukle.js?v=1" defer></script>
+
+ÖNEMLİ:
+Mevcut Google Apps Script URL değiştirilmedi.
+Mevcut GA4 koduna dokunma.
+Apps Script'teki mevcut Code.gs dosyanı değiştirme.
+
+Form, Apps Script'e action=iletisim gönderir. Mevcut Code.gs iletişim eylemini destekliyorsa mesaj doğrudan mevcut e-posta sistemine gider.
