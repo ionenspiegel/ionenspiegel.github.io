@@ -1,0 +1,20 @@
+İONENSPIEGEL V3 MENÜ DÜZELTMESİ
+
+Mevcut sitede iki ayrı "Daha Fazla" bölümü vardı. Eski olan kaldırıldı ve modern bölüm bırakıldı.
+
+Kartlar mevcut script.js ile uyumlu ID'lere getirildi:
+Koyu Tema
+Favori Takımlar
+Tarayıcı Bildirimleri
+Kaydedilenler
+Video
+Galeri
+İletişim
+
+Kurulum:
+1. ZIP'i aç.
+2. index.html dosyasını mevcut GitHub Pages index.html üzerine yükle.
+3. iletisim.html ve iletisim-v2.css dosyalarını da yükle veya mevcut çalışan sürümlerini koru.
+4. GitHub Pages güncellemesini bekle.
+
+GitHub'a otomatik yükleme yapılmadı.

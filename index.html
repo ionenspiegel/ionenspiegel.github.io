@@ -37,7 +37,6 @@
 })();
 </script>
 <link rel="stylesheet" href="style.css?v=58">
-<link rel="stylesheet" href="iletisim-v2.css?v=2" id="iletisim-v2-link">
 <style id="live-score-removed">
 #liveScoreWidget,#liveScoreCard,#liveScoreList,.live-score-list,#timelineModal,.live-clock,.live-all-link{display:none!important}
 </style>
@@ -422,17 +421,6 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   </div>
 </section>
 
-<section class="section extras" id="extras">
-    <div class="section-head"><h2><span class="red-line"></span> Daha Fazla</h2><span class="muted">İonenSpiegel özellikleri</span></div>
-    <div class="extras-grid"><button class="feature-card" id="notificationCard" type="button" aria-label="Bildirimleri etkinleştir"><span aria-hidden="true">🔔</span><b>Tarayıcı Bildirimleri</b><small>Bu cihazda bildirim izni ile çalışır</small></button><button class="feature-card" id="favoriteCard" type="button"><span>⭐</span><b>Favori Takımlar</b><small>Takımını seç ve akışı kişiselleştir</small></button><button class="feature-card theme-card" id="themeCard" type="button" aria-label="Koyu veya açık temayı değiştir"><span aria-hidden="true">🌙</span><b>Koyu Tema</b><small>Gece okuma görünümü</small></button><button class="feature-card" id="savedCard" type="button" aria-label="Kaydedilen haberleri aç"><span aria-hidden="true">🔖</span><b>Kaydedilenler</b><small>Sonra okumak için sakladığın haberler</small></button><button class="feature-card media-action" id="videoCard" type="button" aria-label="Video galerisini aç"><span aria-hidden="true">▶</span><b>Video</b><small>Günün futbol videolarını izle</small></button><button class="feature-card media-action" id="galleryCard" type="button" aria-label="Fotoğraf galerisini aç"><span aria-hidden="true">▣</span><b>Galeri</b><small>Maçlardan güncel kareler</small></button><button class="feature-card install-card" id="installCard" type="button" aria-label="Uygulamayı yükle" hidden><span aria-hidden="true">⬇</span><b>Uygulamayı Yükle</b><small>İonenSpiegel'i ana ekrana ekle</small></button></div>
-  </section>
-</div>
-
-
-
-
-
-
 <section class="container section more-ref" id="daha-fazla">
   <div class="ref-heading">
     <div>
@@ -443,7 +431,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   </div>
 
   <div class="ref-feature-grid">
-    <button class="ref-feature-card theme-card" id="darkThemeCard" type="button">
+    <button class="ref-feature-card theme-card" id="themeCard" type="button">
       <img src="photo-europa.jpg" alt="" aria-hidden="true">
       <span class="ref-feature-shade"></span><span class="ref-feature-icon">☾</span>
       <strong>Koyu Tema</strong><small>Gece okuma görünümü</small><em id="themeStatus">Kapalı</em><b>›</b>
@@ -461,19 +449,19 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
       <strong>Tarayıcı Bildirimleri</strong><small>Yeni haberleri anında yakala</small><em id="notificationStatus">Kapalı</em><b>›</b>
     </button>
 
+    <a class="ref-feature-card simple-feature" id="savedCard" href="kaydedilenler.html">
+      <span class="ref-feature-icon">▣</span><strong>Kaydedilenler</strong><small>Sonra okumak için sakladığın haberler</small><em>Aç</em><b>›</b>
+    </a>
+
+    <a class="ref-feature-card simple-feature" id="videoCard" href="video.html">
+      <span class="ref-feature-icon">▶</span><strong>Video</strong><small>Günün futbol videolarını izle</small><em>İzle</em><b>›</b>
+    </a>
+
     <a class="ref-feature-card simple-feature contact-feature" href="iletisim.html">
       <span class="ref-feature-icon">✉</span><strong>İletişim</strong><small>Görüş, öneri ve mesajlarını gönder</small><em>Mesaj Gönder</em><b>›</b>
     </a>
 
-    <a class="ref-feature-card simple-feature" href="kaydedilenler.html">
-      <span class="ref-feature-icon">▣</span><strong>Kaydedilenler</strong><small>Sonra okumak için sakladığın haberler</small><em>Aç</em><b>›</b>
-    </a>
-
-    <a class="ref-feature-card simple-feature" href="video.html">
-      <span class="ref-feature-icon">▶</span><strong>Video</strong><small>Günün futbol videolarını izle</small><em>İzle</em><b>›</b>
-    </a>
-
-    <a class="ref-feature-card simple-feature" href="galeri.html">
+    <a class="ref-feature-card simple-feature" id="galleryCard" href="galeri.html">
       <span class="ref-feature-icon">▧</span><strong>Galeri</strong><small>Maçlardan güncel kareler</small><em>Görüntüle</em><b>›</b>
     </a>
   </div>
