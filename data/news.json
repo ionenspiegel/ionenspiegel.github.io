@@ -2,17 +2,17 @@
   {
     "id": "bjk-marseille-result",
     "title": "Beşiktaş, Marsilya'yı 4-1 mağlup etti",
-    "description": "Beşiktaş, UEFA Avrupa Ligi'nin ilk haftasında Marsilya'yı 4-1 yenerek organizasyona 3 puanla başladı.",
+    "description": "Beşiktaş, UEFA Avrupa Ligi'nin ilk haftasında Marsilya'yı 4-1 yenerek turnuvaya galibiyetle başladı.",
     "category": "Beşiktaş",
     "date": "18 Eylül 2026",
     "image": "./photo-bjk.jpg",
     "source": "Anadolu Ajansı",
-    "link": "https://www.aa.com.tr/tr/spor/besiktas-olimpik-marsilyayi-maglup-etti/4060572"
+    "link": "https://mobile.aa.com.tr/tr/spor/besiktas-olimpik-marsilyayi-maglup-etti/4060572"
   },
   {
     "id": "el-matchday1",
     "title": "UEFA Avrupa Ligi'nde ilk hafta maçları sona erdi",
-    "description": "İlk haftada 9 karşılaşma oynandı. Beşiktaş 4-1, Juventus 5-0, Crystal Palace 4-0 ve Bournemouth 2-1 kazandı.",
+    "description": "İlk haftada 9 karşılaşma oynandı. Beşiktaş 4-1, Juventus 5-0 ve Bournemouth 2-1 kazandı.",
     "category": "Avrupa",
     "date": "18 Eylül 2026",
     "image": "./photo-europa.jpg",
@@ -21,7 +21,7 @@
   },
   {
     "id": "trabzon-gs-derbi",
-    "title": "Trabzonspor-Galatasaray derbisi 19 Eylül'de",
+    "title": "Trabzonspor-Galatasaray derbisi yarın",
     "description": "Trabzonspor ile Galatasaray, 19 Eylül Cumartesi saat 20.00'de Papara Park'ta karşılaşacak.",
     "category": "Süper Lig",
     "date": "18 Eylül 2026",
@@ -42,7 +42,7 @@
   {
     "id": "fener-asensio",
     "title": "Fenerbahçe'de Asensio Eyüpspor maçının kadrosunda",
-    "description": "Fenerbahçe, Marco Asensio'nun 20 Eylül'deki Eyüpspor karşılaşmasının kadrosunda yer alacağını duyurdu.",
+    "description": "Fenerbahçe, Marco Asensio'nun 20 Eylül'deki Eyüpspor karşılaşmasının kadrosunda yer alacağını açıkladı.",
     "category": "Fenerbahçe",
     "date": "17 Eylül 2026",
     "image": "./photo-asensio.jpg",
@@ -52,12 +52,12 @@
   {
     "id": "superlig-program",
     "title": "Süper Lig'de 6. haftanın programı",
-    "description": "18 Eylül'de Kasımpaşa-Konyaspor, 19 Eylül'de Trabzonspor-Galatasaray, 20 Eylül'de Fenerbahçe-Eyüpspor ve Amed Sportif-Beşiktaş maçları oynanacak.",
+    "description": "Kasımpaşa-Konyaspor maçı 18 Eylül Cuma saat 20.00'de başlayacak. Trabzonspor-Galatasaray derbisi 19 Eylül'de oynanacak.",
     "category": "Süper Lig",
     "date": "18 Eylül 2026",
     "image": "./photo-superlig.jpg",
-    "source": "beIN SPORTS Türkiye",
-    "link": "https://beinsports.com.tr/haber/trendyol-super-ligde-5-ve-6-hafta-programi-aciklandi-iste-derbi-tarihi"
+    "source": "Anadolu Ajansı",
+    "link": "https://www.aa.com.tr/tr/spor/futbolda-haftanin-programi/4060705"
   },
   {
     "id": "juventus-nec",
@@ -82,7 +82,7 @@
   {
     "id": "bjk-hoffenheim",
     "title": "Beşiktaş'ın sıradaki Avrupa rakibi Hoffenheim kaybetti",
-    "description": "Hoffenheim, OFI Crete'e 2-0 mağlup oldu. Beşiktaş, 15 Ekim'de Hoffenheim'a konuk olacak.",
+    "description": "Hoffenheim, 17 Eylül'de OFI Crete'e 2-0 mağlup oldu. Beşiktaş, 15 Ekim'de Hoffenheim'a konuk olacak.",
     "category": "Beşiktaş",
     "date": "18 Eylül 2026",
     "image": "./photo-hoffenheim.jpg",
