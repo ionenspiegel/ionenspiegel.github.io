@@ -1,15 +1,9 @@
-İONENSPIEGEL İLETİŞİM + GOOGLE APPS SCRIPT
+İonenSpiegel İletişim + GA4 paketi
 
-Bu paket iletişim ekranını geri getirir ve mevcut Apps Script Web App bağlantısını kullanır.
-
-1. iletisim.html dosyasını sitenin ana klasörüne yükle.
-2. iletisim-geri-yukle.js dosyasını sitenin ana klasörüne yükle.
-3. index.html içinde </head> satırından önce şu satırı ekle:
-<script src="./iletisim-geri-yukle.js?v=1" defer></script>
-
-ÖNEMLİ:
-Mevcut Google Apps Script URL değiştirilmedi.
-Mevcut GA4 koduna dokunma.
-Apps Script'teki mevcut Code.gs dosyanı değiştirme.
-
-Form, Apps Script'e action=iletisim gönderir. Mevcut Code.gs iletişim eylemini destekliyorsa mesaj doğrudan mevcut e-posta sistemine gider.
+1. ZIP içindeki dosyaları mevcut GitHub Pages ana klasörüne yükle ve mevcut aynı isimli dosyaları değiştir.
+2. index.html günceldir ve mevcut GA4 satırını korur.
+3. iletisim.html iletişim formudur.
+4. iletisim-link.js ana sayfadaki özellikler alanına İletişim kartını ekler.
+5. ga4.js mevcut G-PVPMSV7J1F kodunun çalışan sürümüdür.
+6. Form, mevcut İonenSpiegel Google Apps Script /exec adresini kullanır ve mevcut yorum bildirim mekanizmasına iletişim mesajı olarak gönderir.
+7. Apps Script tarafını değiştirme.
