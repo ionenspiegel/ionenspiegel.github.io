@@ -1,0 +1,4 @@
+
+/* Görsel bağlantısı, haber kartının mevcut görünümünü korur. */
+.news-image-link{display:block;text-decoration:none;color:inherit;min-width:0;}
+.news-image-link .thumb{display:block;}

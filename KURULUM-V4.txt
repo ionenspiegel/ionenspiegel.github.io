@@ -1,0 +1,16 @@
+İONENSPIEGEL V4
+
+Bu paket haber kartlarındaki görselleri, o haberin mevcut kaynak bağlantısına tıklanabilir hale getirir.
+
+Örnek: Haber kartındaki görsele dokununca kartın altındaki Anadolu Ajansı / UEFA / Reuters / beIN SPORTS bağlantısının açtığı aynı haber açılır.
+
+Ayrıca mevcut V3 menü düzeltmesi ve çalışan iletişim sayfası korunmuştur.
+
+Kurulum:
+1. index.html
+2. script.js
+3. news-image-link.css
+4. iletisim.html ve iletisim-v2.css mevcutsa koru/yükle.
+
+Ana menü bu pakette değiştirilmedi. Bir sonraki aşama ana menünün yeniden tasarımıdır.
+GitHub'a otomatik yükleme yapılmadı.

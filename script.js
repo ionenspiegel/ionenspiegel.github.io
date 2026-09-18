@@ -805,3 +805,34 @@ document.addEventListener('DOMContentLoaded',()=>loadOwnJsonNews(false));
 
   qa('#daha-fazla button,#daha-fazla a,.mobile-nav button,.mobile-nav a').forEach(el=>{el.style.pointerEvents='auto';el.style.touchAction='manipulation'});
 })();
+
+
+/* ---------- NEWS IMAGE LINKS ----------
+   Haber kartındaki görsele tıklayınca kartın kaynak haberine gider. */
+(function(){
+  function makeNewsImagesClickable(root){
+    const scope=root||document;
+    scope.querySelectorAll('.news-row').forEach(function(row){
+      const thumb=row.querySelector('.thumb');
+      const source=row.querySelector('a[href]');
+      if(!thumb || !source || !source.href || thumb.closest('a.news-image-link')) return;
+      const a=document.createElement('a');
+      a.className='news-image-link';
+      a.href=source.href;
+      a.target='_blank';
+      a.rel='noopener noreferrer';
+      a.setAttribute('aria-label','Haberi aç');
+      thumb.parentNode.insertBefore(a,thumb);
+      a.appendChild(thumb);
+    });
+  }
+  window.ionenspiegelLinkNewsImages=makeNewsImagesClickable;
+  document.addEventListener('DOMContentLoaded',function(){
+    makeNewsImagesClickable(document);
+    const feed=document.getElementById('newsFeed');
+    if(feed){
+      const observer=new MutationObserver(function(){makeNewsImagesClickable(feed)});
+      observer.observe(feed,{childList:true,subtree:true});
+    }
+  });
+})();
