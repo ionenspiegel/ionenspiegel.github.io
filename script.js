@@ -573,3 +573,83 @@ document.addEventListener('DOMContentLoaded',()=>loadOwnJsonNews(false));
   else initV52();
   window.ISFilterFixtures=applyFixtureFilter;
 })();
+
+
+/* Daha Fazla: reference-inspired functionality */
+(function(){
+  const $=s=>document.querySelector(s);
+  const body=document.body;
+
+  function applyTheme(){
+    const dark=localStorage.getItem("ionenspiegel-theme")==="dark";
+    body.classList.toggle("dark",dark);
+    const el=$("#themeStatus");if(el)el.textContent=dark?"Aktif":"Kapalı";
+  }
+  applyTheme();
+  $("#darkThemeCard")?.addEventListener("click",()=>{
+    localStorage.setItem("ionenspiegel-theme",body.classList.contains("dark")?"light":"dark");
+    applyTheme();
+  });
+
+  const teams=[
+    ["Fenerbahçe","Süper Lig","news-asensio.jpg"],["Galatasaray","Süper Lig","news-derbi.jpg"],
+    ["Beşiktaş","Süper Lig","news-bjk.jpg"],["Trabzonspor","Süper Lig","news-derbi.jpg"],
+    ["Başakşehir","Süper Lig","news-superlig.jpg"],["Kasımpaşa","Süper Lig","news-superlig.jpg"],
+    ["Çaykur Rizespor","Süper Lig","news-superlig.jpg"],["Kocaelispor","Süper Lig","news-superlig.jpg"],
+    ["Samsunspor","Süper Lig","news-superlig.jpg"],["Antalyaspor","Süper Lig","news-superlig.jpg"],
+    ["Göztepe","Süper Lig","news-superlig.jpg"],["Amed Sportif Faaliyetler","1. Lig","news-superlig.jpg"]
+  ];
+  const modal=$("#favoriteModal"),picker=$("#teamPicker"),search=$("#teamSearch");
+  let pending=localStorage.getItem("ionenspiegel-favorite-team")||"";
+
+  function renderTeams(filter=""){
+    if(!picker)return;
+    const list=teams.filter(t=>t[0].toLocaleLowerCase("tr-TR").includes(filter.toLocaleLowerCase("tr-TR")));
+    picker.innerHTML=list.map(t=>`
+      <button class="ref-team ${pending===t[0]?"selected":""}" type="button" data-team="${t[0]}">
+        <img src="${t[2]}" alt=""><strong>${t[0]}</strong>
+      </button>`).join("") || `<p style="grid-column:1/-1;color:#9da3ac;font-size:11px">Takım bulunamadı.</p>`;
+    picker.querySelectorAll("[data-team]").forEach(b=>b.onclick=()=>{
+      pending=b.dataset.team;
+      picker.querySelectorAll(".ref-team").forEach(x=>x.classList.remove("selected"));
+      b.classList.add("selected");
+    });
+  }
+  function updateFavorite(){
+    const value=localStorage.getItem("ionenspiegel-favorite-team")||"Seçilmedi";
+    const s=$("#favoriteStatus");if(s)s.textContent=value;
+  }
+  updateFavorite();
+  $("#favoriteCard")?.addEventListener("click",()=>{
+    pending=localStorage.getItem("ionenspiegel-favorite-team")||"";
+    renderTeams(search?.value||"");
+    modal?.classList.add("open");
+    modal?.setAttribute("aria-hidden","false");
+  });
+  search?.addEventListener("input",()=>renderTeams(search.value));
+  $("#saveFavoriteTeam")?.addEventListener("click",()=>{
+    if(pending)localStorage.setItem("ionenspiegel-favorite-team",pending);
+    updateFavorite();
+    modal?.classList.remove("open");
+    modal?.setAttribute("aria-hidden","true");
+  });
+  $("#favoriteClose")?.addEventListener("click",()=>{
+    modal?.classList.remove("open");modal?.setAttribute("aria-hidden","true");
+  });
+  modal?.addEventListener("click",e=>{if(e.target===modal)$("#favoriteClose").click()});
+
+  function notificationStatus(){
+    const s=$("#notificationStatus");if(!s)return;
+    if(!("Notification" in window)){s.textContent="Desteklenmiyor";return}
+    s.textContent=Notification.permission==="granted"?"Aktif":Notification.permission==="denied"?"Engellendi":"Kapalı";
+  }
+  notificationStatus();
+  $("#notificationCard")?.addEventListener("click",async()=>{
+    if(!("Notification" in window)){notificationStatus();return}
+    try{
+      const p=await Notification.requestPermission();
+      notificationStatus();
+      if(p==="granted")new Notification("İonenSpiegel",{body:"Bildirimler aktif. Yeni futbol haberlerini kaçırma."});
+    }catch(e){notificationStatus()}
+  });
+})();

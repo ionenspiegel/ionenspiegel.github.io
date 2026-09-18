@@ -431,6 +431,70 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 
 
 
+
+<section class="container section more-ref" id="daha-fazla">
+  <div class="ref-heading">
+    <div>
+      <span class="ref-kicker">MENÜ</span>
+      <h2>Daha Fazla</h2>
+      <p>İonenSpiegel özellikleri</p>
+    </div>
+  </div>
+
+  <div class="ref-feature-grid">
+    <button class="ref-feature-card theme-card" id="darkThemeCard" type="button">
+      <img src="photo-europa.jpg" alt="" aria-hidden="true">
+      <span class="ref-feature-shade"></span><span class="ref-feature-icon">☾</span>
+      <strong>Koyu Tema</strong><small>Gece okuma görünümü</small><em id="themeStatus">Kapalı</em><b>›</b>
+    </button>
+
+    <button class="ref-feature-card favorite-feature" id="favoriteCard" type="button">
+      <img src="photo-bjk.jpg" alt="" aria-hidden="true">
+      <span class="ref-feature-shade"></span><span class="ref-feature-icon">★</span>
+      <strong>Favori Takımlar</strong><small>Takımını seç ve akışı kişiselleştir</small><em id="favoriteStatus">Seçilmedi</em><b>›</b>
+    </button>
+
+    <button class="ref-feature-card notification-feature" id="notificationCard" type="button">
+      <img src="photo-asensio.jpg" alt="" aria-hidden="true">
+      <span class="ref-feature-shade"></span><span class="ref-feature-icon">♧</span>
+      <strong>Tarayıcı Bildirimleri</strong><small>Yeni haberleri anında yakala</small><em id="notificationStatus">Kapalı</em><b>›</b>
+    </button>
+
+    <a class="ref-feature-card simple-feature" href="kaydedilenler.html">
+      <span class="ref-feature-icon">▣</span><strong>Kaydedilenler</strong><small>Sonra okumak için sakladığın haberler</small><em>Aç</em><b>›</b>
+    </a>
+
+    <a class="ref-feature-card simple-feature" href="video.html">
+      <span class="ref-feature-icon">▶</span><strong>Video</strong><small>Günün futbol videolarını izle</small><em>İzle</em><b>›</b>
+    </a>
+
+    <a class="ref-feature-card simple-feature" href="galeri.html">
+      <span class="ref-feature-icon">▧</span><strong>Galeri</strong><small>Maçlardan güncel kareler</small><em>Görüntüle</em><b>›</b>
+    </a>
+  </div>
+
+  <div class="ref-other">
+    <div class="ref-heading compact"><div><span class="ref-kicker">AYARLAR</span><h2>Diğer</h2></div></div>
+    <div class="ref-list">
+      <a href="gizlilik.html"><span>⚙</span><div><strong>Site Ayarları</strong><small>Tema, bildirim ve kişiselleştirme</small></div><b>›</b></a>
+      <a href="hakkimizda.html"><span>ⓘ</span><div><strong>Hakkımızda</strong><small>İonenSpiegel hakkında bilgi</small></div><b>›</b></a>
+      <a href="iletisim.html"><span>✉</span><div><strong>İletişim</strong><small>Görüş ve önerilerin için</small></div><b>›</b></a>
+    </div>
+  </div>
+</section>
+
+<div class="ref-modal" id="favoriteModal" aria-hidden="true">
+  <div class="ref-modal-box">
+    <button class="ref-close" id="favoriteClose" type="button">×</button>
+    <span class="ref-kicker">KİŞİSELLEŞTİRME</span>
+    <h2>Favori Takımını Seç</h2>
+    <p>Seçimin kaydedilir ve sana özel içerikler sunulur.</p>
+    <div class="team-search"><span>⌕</span><input id="teamSearch" type="search" placeholder="Takım ara..." autocomplete="off"></div>
+    <div class="ref-team-grid" id="teamPicker"></div>
+    <button class="ref-save-team" id="saveFavoriteTeam" type="button">Kaydet</button>
+  </div>
+</div>
+
 </main>
 
 <footer><div class="container footer-grid"><div><a class="brand footer-brand" href="#anasayfa"><span>İonen</span>Spiegel</a><p>Futbol haberleri, maç merkezi ve transfer gündemi.</p></div><div><b>Hızlı Menü</b><a href="#sondakika">Son Dakika</a><a href="#superlig">Süper Lig</a><a href="#transfer">Transfer</a><a href="#dunya">Dünya</a><a href="#gundem">Gündem</a></div><div><b>Kaynaklar</b><a href="https://www.uefa.com/" target="_blank" rel="noopener">UEFA</a><a href="https://www.tff.org/" target="_blank" rel="noopener">TFF</a><a href="https://bjk.com.tr/tr" target="_blank" rel="noopener">Beşiktaş</a><a href="https://www.galatasaray.org/" target="_blank" rel="noopener">Galatasaray</a><a href="https://www.fenerbahce.org/" target="_blank" rel="noopener">Fenerbahçe</a><a href="https://www.trabzonspor.org.tr/" target="_blank" rel="noopener">Trabzonspor</a></div><div class="visitor-counter"><b>Site İstatistikleri</b><div><span>👁️ Toplam ziyaret</span><strong id="visitorTotal">—</strong></div><div><span>📅 Bugünkü ziyaret</span><strong id="visitorToday">—</strong></div></div></div><div class="footer-bottom">
