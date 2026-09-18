@@ -3,6 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <meta name="theme-color" content="#e30613">
   <meta name="description" content="İonenSpiegel, güncel futbol haberleri, maçlar ve puan durumları.">
   <title>İonenSpiegel | Futbol Haber Portalı</title>
@@ -128,37 +131,60 @@
       <div class="calendar-grid" id="calendarGrid"></div>
     </section>
   
-<section class="container section" id="daha-fazla">
+
+<section class="container section premium-more" id="daha-fazla">
   <div class="section-head">
-    <div><span class="eyebrow red">KEŞFET</span><h2>Daha Fazla</h2></div>
+    <div>
+      <span class="eyebrow red">KİŞİSELLEŞTİR</span>
+      <h2>Daha Fazla</h2>
+      <p class="section-subtitle">İonenSpiegel deneyimini kendi futbol tercihlerinle özelleştir.</p>
+    </div>
   </div>
   <div class="more-grid">
-    <button class="more-card" id="darkThemeCard">
-      <span class="more-icon">◐</span><strong>Koyu Tema</strong>
-      <small>Görünümü değiştir</small><em id="themeStatus">Kapalı</em>
+    <button class="more-card" id="darkThemeCard" type="button">
+      <span class="more-card-icon theme-icon">◐</span>
+      <span class="more-card-copy"><strong>Koyu Tema</strong><small>Gece kullanımında daha rahat görünüm</small></span>
+      <span class="more-card-status" id="themeStatus">Kapalı</span>
+      <span class="more-arrow">›</span>
     </button>
-    <button class="more-card" id="favoriteCard">
-      <span class="more-icon">★</span><strong>Favori Takımlar</strong>
-      <small>Takımını seç</small><em id="favoriteStatus">Seçilmedi</em>
+
+    <button class="more-card" id="favoriteCard" type="button">
+      <span class="more-card-icon team-icon">★</span>
+      <span class="more-card-copy"><strong>Favori Takım</strong><small id="favoriteSubtext">Takımını seç ve kaydet</small></span>
+      <span class="more-card-status" id="favoriteStatus">Seçilmedi</span>
+      <span class="more-arrow">›</span>
     </button>
-    <button class="more-card" id="notificationCard">
-      <span class="more-icon">♧</span><strong>Bildirimler</strong>
-      <small>Tarayıcı bildirimleri</small><em id="notificationStatus">Kapalı</em>
+
+    <button class="more-card" id="notificationCard" type="button">
+      <span class="more-card-icon notification-icon">⌁</span>
+      <span class="more-card-copy"><strong>Bildirimler</strong><small>Yeni haberlerden anında haberdar ol</small></span>
+      <span class="more-card-status" id="notificationStatus">Kapalı</span>
+      <span class="more-arrow">›</span>
     </button>
+
     <a class="more-card" href="kaydedilenler.html">
-      <span class="more-icon">🔖</span><strong>Kaydedilenler</strong>
-      <small>Haberlerini burada tut</small><em>Aç</em>
+      <span class="more-card-icon saved-icon">▣</span>
+      <span class="more-card-copy"><strong>Kaydedilenler</strong><small>Sonra okumak istediğin haberler</small></span>
+      <span class="more-card-status">Aç</span>
+      <span class="more-arrow">›</span>
     </a>
+
     <a class="more-card" href="video.html">
-      <span class="more-icon">▶</span><strong>Video</strong>
-      <small>Futbol videoları</small><em>İzle</em>
+      <span class="more-card-icon video-icon">▶</span>
+      <span class="more-card-copy"><strong>Video</strong><small>Maçlar, analizler ve futbol içerikleri</small></span>
+      <span class="more-card-status">İzle</span>
+      <span class="more-arrow">›</span>
     </a>
+
     <a class="more-card" href="galeri.html">
-      <span class="more-icon">▧</span><strong>Galeri</strong>
-      <small>Fotoğraflara göz at</small><em>Görüntüle</em>
+      <span class="more-card-icon gallery-icon">▦</span>
+      <span class="more-card-copy"><strong>Galeri</strong><small>Futbolun en iyi karelerini keşfet</small></span>
+      <span class="more-card-status">Görüntüle</span>
+      <span class="more-arrow">›</span>
     </a>
   </div>
 </section>
+
 
 <div class="modal" id="favoriteModal" aria-hidden="true">
   <div class="modal-box favorite-box">
