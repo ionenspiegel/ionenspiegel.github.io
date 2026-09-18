@@ -1,0 +1,16 @@
+İonenSpiegel V59 yaması
+
+Bu paket mevcut GitHub sitesinin yapısını koruyarak şu düzeltmeleri içerir:
+1. Ana sayfadaki tekrar eden Daha Fazla bölümünü ve duplicate ID kaynaklı buton çakışmalarını temizler.
+2. Beşiktaş-Marsilya ana manşetini düzgün metin, güncel başlık ve daha okunaklı mobil tipografi ile düzeltir.
+3. Ana sayfayı daha modern, temiz ve mobil uyumlu hale getiren CSS katmanı ekler.
+4. Fikstür filtrelerinin tek olay yöneticisiyle daha güvenilir çalışmasını sağlar.
+5. 18 Eylül 2026 haber akışını güncel ve kaynak bağlantılarıyla birlikte yeniler.
+
+GitHub'a uygulanacak dosyalar:
+- index.html içine v59-modern.css içeriğini </head> öncesine ekle.
+- index.html içine v59-fixes.js dosyasını script.js sonrasında çağır.
+- data/news.json dosyasını paket içindekiyle değiştir.
+- data/daily-news.json dosyasını paket içindekiyle değiştir.
+
+Not: Bu oturumdaki GitHub entegrasyonu içerik yazma isteğini 403 ile engelledi. Bu nedenle paket hazırlandı, canlı branch üzerine otomatik commit atılamadı.
