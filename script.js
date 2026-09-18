@@ -446,7 +446,7 @@ document.querySelector('#loginModal')?.querySelectorAll('[data-close-modal],.clo
 }));
 
 /* ---------- OWN JSON NEWS FEED ---------- */
-const IONENSPIEGEL_NEWS_FALLBACK=[{"id":"bjk-marseille-result","title":"Beşiktaş, Marsilya'yı 4-1 mağlup etti","description":"Beşiktaş, UEFA Avrupa Ligi'nin ilk haftasında Marsilya'yı 4-1 yenerek turnuvaya galibiyetle başladı.","category":"Beşiktaş","date":"18 Eylül 2026","image":"./news-bjk.jpg","source":"Anadolu Ajansı","link":"https://mobile.aa.com.tr/tr/spor/besiktas-olimpik-marsilyayi-maglup-etti/4060572"},{"id":"el-matchday1","title":"UEFA Avrupa Ligi'nde ilk hafta maçları sona erdi","description":"İlk haftada 9 karşılaşma oynandı. Beşiktaş 4-1 kazandı, Juventus 5-0, Crystal Palace 4-0 ve Bournemouth 2-1 galip geldi.","category":"Avrupa","date":"18 Eylül 2026","image":"./news-europa.jpg","source":"Anadolu Ajansı","link":"https://h.aa.com.tr/tr/spor/-uefa-avrupa-liginde-ilk-hafta-maclari-sona-erdi/4060642"},{"id":"fener-asensio","title":"Fenerbahçe'de Asensio, Eyüpspor maçının kadrosunda","description":"Fenerbahçe, Marco Asensio'nun 20 Eylül'deki Eyüpspor karşılaşmasının kadrosunda yer alacağını açıkladı.","category":"Fenerbahçe","date":"17 Eylül 2026","image":"./news-asensio.jpg","source":"beIN SPORTS Türkiye","link":"https://beinsports.com.tr/haber/fenerbahceden-marco-asensio-aciklamasi"},{"id":"trabzon-gs-derbi","title":"Trabzonspor-Galatasaray derbisi yarın","description":"Trabzonspor ile Galatasaray, 19 Eylül Cumartesi saat 20.00'de Papara Park'ta karşılaşacak.","category":"Süper Lig","date":"18 Eylül 2026","image":"./news-derbi.jpg","source":"Anadolu Ajansı","link":"https://www.aa.com.tr/tr/spor/trabzonspor-galatasaray-rekabetinde-144-randevu/4060865"},{"id":"superlig-6-hafta","title":"Süper Lig'de 6. haftanın perdesi açılıyor","description":"6. haftanın açılışında Kasımpaşa ile Konyaspor 18 Eylül Cuma saat 20.00'de karşılaşacak.","category":"Süper Lig","date":"17 Eylül 2026","image":"./news-superlig.jpg","source":"Anadolu Ajansı","link":"https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611/4059611"},{"id":"bjk-hoffenheim","title":"Beşiktaş'ın rakibi Hoffenheim, OFI'ye 2-0 kaybetti","description":"Beşiktaş'ın Avrupa Ligi'ndeki sonraki rakibi Hoffenheim, deplasmanda OFI'ye 2-0 mağlup oldu.","category":"Beşiktaş","date":"17 Eylül 2026","image":"./news-hoffenheim.jpg","source":"beIN SPORTS Türkiye","link":"https://www.beinsports.com.tr/haber/besiktasin-rakibi-hoffenheim-yunanistanda-maglup"},{"id":"juventus-nec","title":"Juventus, NEC Nijmegen'i 5-0 yendi","description":"Juventus, Avrupa Ligi ilk haftasında NEC Nijmegen karşısında 5-0'lık galibiyet aldı.","category":"Avrupa","date":"17 Eylül 2026","image":"./news-juventus.jpg","source":"Reuters","link":"https://www.reuters.com/sports/soccer/juventus-hammer-njimigen-5-0-keeper-suffers-europa-league-nightmare-2026-09-17/"},{"id":"bournemouth-real","title":"Bournemouth, Avrupa macerasına galibiyetle başladı","description":"Bournemouth, Real Sociedad'ı deplasmanda 2-1 mağlup ederek Avrupa Ligi'ne galibiyetle başladı.","category":"Avrupa","date":"17 Eylül 2026","image":"./news-bournemouth.jpg","source":"The Guardian","link":"https://www.theguardian.com/football/live/2026/sep/17/real-sociedad-v-bournemouth-crystal-palace-v-lech-poznan-and-more-europa-league-live"},{"id":"bjk-next","title":"Beşiktaş'ın sıradaki lig maçı Amed deplasmanında","description":"Beşiktaş, 20 Eylül Pazar günü saat 20.00'de Amed Sportif Faaliyetler ile karşılaşacak.","category":"Beşiktaş","date":"18 Eylül 2026","image":"./news-bjk.jpg","source":"Anadolu Ajansı","link":"https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611/4059611"}];
+const IONENSPIEGEL_NEWS_FALLBACK=[{"id":"bjk-marseille-result","title":"Beşiktaş, Marsilya'yı 4-1 mağlup etti","description":"Beşiktaş, UEFA Avrupa Ligi'nin ilk haftasında Marsilya'yı 4-1 yenerek turnuvaya galibiyetle başladı.","category":"Beşiktaş","date":"18 Eylül 2026","image":"./photo-bjk.jpg","source":"Anadolu Ajansı","link":"https://mobile.aa.com.tr/tr/spor/besiktas-olimpik-marsilyayi-maglup-etti/4060572"},{"id":"el-matchday1","title":"UEFA Avrupa Ligi'nde ilk hafta maçları sona erdi","description":"İlk haftada 9 karşılaşma oynandı. Beşiktaş 4-1, Juventus 5-0 ve Bournemouth 2-1 kazandı.","category":"Avrupa","date":"18 Eylül 2026","image":"./photo-europa.jpg","source":"Anadolu Ajansı","link":"https://h.aa.com.tr/tr/spor/-uefa-avrupa-liginde-ilk-hafta-maclari-sona-erdi/4060642"},{"id":"trabzon-gs-derbi","title":"Trabzonspor-Galatasaray derbisi yarın","description":"Trabzonspor ile Galatasaray, 19 Eylül Cumartesi saat 20.00'de Papara Park'ta karşılaşacak.","category":"Süper Lig","date":"18 Eylül 2026","image":"./photo-derbi.jpg","source":"Anadolu Ajansı","link":"https://www.aa.com.tr/tr/spor/galatasaray-super-ligde-yarin-trabzonspora-konuk-olacak/4060720"},{"id":"trabzon-gs-randevu","title":"Trabzonspor-Galatasaray rekabetinde 144. randevu","description":"İki takım 19 Eylül'deki mücadeleyle resmi ve özel maçlarda 144. kez karşılaşacak.","category":"Süper Lig","date":"18 Eylül 2026","image":"./photo-derbi.jpg","source":"Anadolu Ajansı","link":"https://www.aa.com.tr/tr/spor/trabzonspor-galatasaray-rekabetinde-144-randevu/4060865"},{"id":"fener-asensio","title":"Fenerbahçe'de Asensio Eyüpspor maçının kadrosunda","description":"Fenerbahçe, Marco Asensio'nun 20 Eylül'deki Eyüpspor karşılaşmasının kadrosunda yer alacağını açıkladı.","category":"Fenerbahçe","date":"17 Eylül 2026","image":"./photo-asensio.jpg","source":"beIN SPORTS Türkiye","link":"https://beinsports.com.tr/haber/fenerbahceden-marco-asensio-aciklamasi"},{"id":"superlig-program","title":"Süper Lig'de 6. haftanın programı","description":"Kasımpaşa-Konyaspor maçı 18 Eylül Cuma saat 20.00'de başlayacak. Trabzonspor-Galatasaray derbisi 19 Eylül'de oynanacak.","category":"Süper Lig","date":"18 Eylül 2026","image":"./photo-superlig.jpg","source":"Anadolu Ajansı","link":"https://www.aa.com.tr/tr/spor/futbolda-haftanin-programi/4060705"},{"id":"juventus-nec","title":"Juventus, NEC Nijmegen'i 5-0 yendi","description":"Juventus, Avrupa Ligi'nin ilk haftasında NEC Nijmegen'i 5-0 mağlup etti.","category":"Avrupa","date":"17 Eylül 2026","image":"./photo-juventus.jpg","source":"Juventus","link":"https://www.juventus.com/en/news/articles/bianconeri-put-five-past-nec-in-the-europa-league"},{"id":"bournemouth-real","title":"Bournemouth, Avrupa macerasına galibiyetle başladı","description":"Bournemouth, Real Sociedad'ı deplasmanda 2-1 mağlup ederek Avrupa Ligi'ne galibiyetle başladı.","category":"Avrupa","date":"17 Eylül 2026","image":"./photo-bournemouth.jpg","source":"Sky Sports","link":"https://www.skysports.com/football/real-sociedad-vs-bournemouth/report/577757"},{"id":"bjk-hoffenheim","title":"Beşiktaş'ın sıradaki Avrupa rakibi Hoffenheim kaybetti","description":"Hoffenheim, 17 Eylül'de OFI Crete'e 2-0 mağlup oldu. Beşiktaş, 15 Ekim'de Hoffenheim'a konuk olacak.","category":"Beşiktaş","date":"18 Eylül 2026","image":"./photo-hoffenheim.jpg","source":"UEFA","link":"https://www.uefa.com/uefaeuropaleague/clubs/2600431/matches/"}];
 function renderOwnNewsItems(items, status){
   const feed=document.querySelector('#newsFeed');
   if(!feed) return;
@@ -572,84 +572,4 @@ document.addEventListener('DOMContentLoaded',()=>loadOwnJsonNews(false));
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initV52);
   else initV52();
   window.ISFilterFixtures=applyFixtureFilter;
-})();
-
-
-/* Daha Fazla: kontrollu ve kalici islevler */
-(function(){
-  const $ = s => document.querySelector(s);
-  const body = document.body;
-
-  function theme(){
-    const on = localStorage.getItem("ionenspiegel-theme") === "dark";
-    body.classList.toggle("dark", on);
-    const el=$("#themeStatus"); if(el) el.textContent=on?"Aktif":"Kapalı";
-  }
-  theme();
-
-  const themeCard=$("#darkThemeCard");
-  if(themeCard) themeCard.addEventListener("click", function(){
-    localStorage.setItem("ionenspiegel-theme",
-      body.classList.contains("dark") ? "light" : "dark");
-    theme();
-  });
-
-  const teams=[
-    ["Fenerbahçe","Süper Lig"],["Galatasaray","Süper Lig"],["Beşiktaş","Süper Lig"],
-    ["Trabzonspor","Süper Lig"],["Başakşehir","Süper Lig"],["Samsunspor","Süper Lig"],
-    ["Konyaspor","Süper Lig"],["Göztepe","Süper Lig"],["Manchester City","Premier League"],
-    ["Liverpool","Premier League"],["Arsenal","Premier League"],["Barcelona","La Liga"],
-    ["Real Madrid","La Liga"],["Bayern Münih","Bundesliga"]
-  ];
-  const favModal=$("#favoriteModal"), picker=$("#teamPicker");
-
-  function favStatus(){
-    const saved=localStorage.getItem("ionenspiegel-favorite-team");
-    const st=$("#favoriteStatus");
-    if(st) st.textContent=saved || "Takım seçilmedi";
-  }
-  function renderTeams(){
-    if(!picker)return;
-    const saved=localStorage.getItem("ionenspiegel-favorite-team")||"";
-    picker.innerHTML=teams.map(t=>`<button type="button" class="team-choice ${saved===t[0]?"selected":""}" data-team="${t[0]}">${t[0]}<span>${t[1]}</span></button>`).join("");
-    picker.querySelectorAll("[data-team]").forEach(btn=>btn.addEventListener("click",function(){
-      localStorage.setItem("ionenspiegel-favorite-team",this.dataset.team);
-      favStatus();
-      picker.querySelectorAll(".team-choice").forEach(x=>x.classList.remove("selected"));
-      this.classList.add("selected");
-      setTimeout(()=>{favModal.classList.remove("open");favModal.setAttribute("aria-hidden","true")},150);
-    }));
-  }
-  favStatus();
-  const fav=$("#favoriteCard");
-  if(fav) fav.addEventListener("click",function(){
-    renderTeams();
-    favModal.classList.add("open");
-    favModal.setAttribute("aria-hidden","false");
-  });
-  const close=$("#favoriteClose");
-  if(close) close.addEventListener("click",()=>{favModal.classList.remove("open");favModal.setAttribute("aria-hidden","true")});
-  if(favModal) favModal.addEventListener("click",e=>{
-    if(e.target===favModal){favModal.classList.remove("open");favModal.setAttribute("aria-hidden","true")}
-  });
-
-  function notifStatus(){
-    const el=$("#notificationStatus");
-    if(!el)return;
-    if(!("Notification" in window)){el.textContent="Desteklenmiyor";return}
-    el.textContent=Notification.permission==="granted"?"Aktif":
-      Notification.permission==="denied"?"Engellendi":"Kapalı";
-  }
-  notifStatus();
-  const notif=$("#notificationCard");
-  if(notif) notif.addEventListener("click",async()=>{
-    if(!("Notification" in window)){notifStatus();return}
-    try{
-      const p=await Notification.requestPermission();
-      notifStatus();
-      if(p==="granted"){
-        new Notification("İonenSpiegel",{body:"Bildirimler aktif. Yeni futbol haberlerini kaçırma."});
-      }
-    }catch(e){notifStatus()}
-  });
 })();
