@@ -1,0 +1,19 @@
+İONENSPIEGEL V63 PAYLAŞIM GÖRSELİ DÜZELTMESİ
+
+Sorun:
+Site linki WhatsApp, Telegram, Facebook vb. yerlerde paylaşılınca yanlış/kötü bir görsel seçilebiliyordu.
+
+Yapılan:
+1. 1200x630 özel paylaşım görseli eklendi: og-image-v63.jpg
+2. index.html içindeki Open Graph görseli bu dosyaya bağlandı.
+3. Twitter/X için summary_large_image ayarı eklendi.
+4. Açık/koyu tema ve site içi görsellere dokunulmadı.
+
+YÜKLEME:
+ZIP içindeki dosyaları mevcut V63 sitenin aynı konumlarına yükle.
+Özellikle:
+- index.html
+- og-image-v63.jpg
+
+Not:
+WhatsApp/Facebook gibi servisler eski önizlemeyi önbellekte tutabilir. Yeni görselin görünmesi bazen biraz zaman alabilir.

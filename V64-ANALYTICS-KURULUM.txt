@@ -1,0 +1,22 @@
+İONENSPIEGEL V64 ANALYTICS KURULUMU
+
+Google Analytics 4 Measurement ID: G-PVPMSV7J1F
+
+Bu pakete Analytics kodu eklendi. Aşağıdaki sayfalarda ölçüm aktiftir:
+- index.html
+- galeri.html
+- kaydedilenler.html
+- video.html
+
+Ayrıca ga4.js dosyası eklendi.
+
+KURULUM
+1. ZIP'i aç.
+2. Dosyaları mevcut İonenSpiegel V63 sitenin aynı konumlarına yükle.
+3. Özellikle index.html, galeri.html, kaydedilenler.html, video.html ve ga4.js dosyalarının yüklenmiş olduğundan emin ol.
+4. Google Analytics > Yönetici > Veri akışları > İonenSpiegel Web bölümünden akışı kontrol et.
+5. Siteye girdikten sonra Analytics > Raporlar > Gerçek zamanlı bölümünde kullanıcıyı görebilirsin.
+
+NOT
+Analytics verilerinin görünmesi birkaç dakika sürebilir.
+GitHub'a otomatik yükleme yapılmadı.
