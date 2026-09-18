@@ -50,7 +50,7 @@ $('#favoriteTeamMenu')?.addEventListener('click',()=>{closeDrawer();openSetup()}
 
 /* Team quick filters: favoriyi sıralar, diğerlerini filtreler only if explicitly clicked */
 function filterTeam(team){$$('.news-row').forEach(row=>row.style.display=(!team||row.dataset.team===team)?'grid':'none');$('#haberler')?.scrollIntoView({behavior:'smooth'});toast(team?`${team} haberleri gösteriliyor`:'Tüm haberler');closeDrawer()}
-$$('.team-link, .mobile-team-strip button[data-team]').forEach(b=>b.addEventListener('click',()=>filterTeam(b.dataset.team)));
+$$('.team-link').forEach(b=>b.addEventListener('click',()=>filterTeam(b.dataset.team)));
 $('#moreTeams')?.addEventListener('click',()=>{openDrawer()});
 
 /* ---------- NEWS BOOKMARKS ---------- */
@@ -66,16 +66,11 @@ function closeSaved(){savedModal?.classList.remove('show');document.body.classLi
 $('#savedNewsMenu')?.addEventListener('click',openSaved);$('#savedCard')?.addEventListener('click',openSaved);$('#savedClose')?.addEventListener('click',closeSaved);savedModal?.addEventListener('click',e=>{if(e.target===savedModal)closeSaved()});
 
 /* ---------- HERO ---------- */
-const slides=[
- {title:'Beşiktaş, Marsilya\'yı 4-1 mağlup etti',text:'Beşiktaş, UEFA Avrupa Ligi lig aşamasındaki ilk maçında Marsilya\'yı 4-1 yenerek turnuvaya galibiyetle başladı.',source:'The Guardian · 18 Eylül',newsId:'bjk-marseille-result',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./local-2.svg") center/cover',link:'https://bjk.com.tr/tr/fikstur/1/1/718/682/5274'},
- {title:'Fenerbahçe\'de Asensio geri dönüyor',text:'Fenerbahçe, Marco Asensio\'nun Eyüpspor maçının kadrosunda yer alacağını açıkladı.',source:'beIN SPORTS Türkiye · 17 Eylül',newsId:'fener-asensio',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./local-4.svg") center/cover',link:'https://beinsports.com.tr/haber/fenerbahceden-marco-asensio-aciklamasi'},
- {title:'Süper Lig derbilerinin tarihleri açıklandı',text:'TFF, ilk yarıdaki önemli derbilerin tarih ve saatlerini açıkladı.',source:'Anadolu Ajansı · 15 Eylül',newsId:'gs-kocaeli',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./local-6.svg") center/cover',link:'https://www.aa.com.tr/tr/spor/trendyol-super-ligde-7-16-haftalarin-programi-aciklandi/4057906'},
- {title:"Avrupa Ligi'nde ilk hafta tamamlandı",text:"2026/27 UEFA Avrupa Ligi'nde ilk hafta karşılaşmaları tamamlandı. Beşiktaş, Marsilya'yı 4-1 mağlup etti.",source:'UEFA · 18 Eylül 2026',newsId:'europa-ilk-gece',bg:'linear-gradient(120deg,#000b,#0003 48%,#000c),url("./local-7.svg") center/cover',link:'https://www.uefa.com/uefaeuropaleague/news/02a9-21815eb7babc-62eab180d6e2-1000--europa-league-squads-league-phase-selections-confirmed/'}
-];let slideIndex=0;
-function setSocialImage(src){const abs=new URL(src,location.href).href;['og:image','twitter:image'].forEach(n=>{const m=document.querySelector(`meta[property=\"${n}\"],meta[name=\"${n}\"]`);if(m)m.setAttribute('content',abs)})}
-function renderSlide(){const s=slides[slideIndex];const media=$('#heroMedia');if(!media)return;$('#heroTitle').textContent=s.title;$('#heroText').textContent=s.text;$('#heroSource').textContent=s.source;media.style.background=s.bg;$('#heroIndex').textContent=slideIndex+1;const a=$(`.news-row[data-news-id=\"${s.newsId}\"]`);setSocialImage(a?.querySelector('img')?.getAttribute('src')||'./local-1.svg');$('#heroRead').onclick=()=>window.open(s.link,'_blank','noopener');$$('#sliderDots i').forEach((d,i)=>d.classList.toggle('active',i===slideIndex))}
-slides.forEach(s=>{const u=s.bg.match(/url\("([^"]+)/)?.[1];if(u){const i=new Image();i.src=u}});
-$('#heroNext')?.addEventListener('click',()=>{slideIndex=(slideIndex+1)%slides.length;renderSlide()});$('#heroPrev')?.addEventListener('click',()=>{slideIndex=(slideIndex-1+slides.length)%slides.length;renderSlide()});let sliderTimer=setInterval(()=>$('#heroNext')?.click(),7000);$('#heroMedia')?.addEventListener('mouseenter',()=>clearInterval(sliderTimer));$('#heroMedia')?.addEventListener('mouseleave',()=>sliderTimer=setInterval(()=>$('#heroNext')?.click(),7000));renderSlide();
+const HERO_BJK_PHOTO='./hero-bjk.jpg';
+const HERO_STATIC={title:"Beşiktaş, Marsilya'yı 4-1 mağlup etti",text:"Beşiktaş, UEFA Avrupa Ligi lig aşamasındaki ilk maçında Marsilya'yı 4-1 yenerek turnuvaya galibiyetle başladı.",source:'Anadolu Ajansı · 17 Eylül',newsId:'bjk-marseille-result',bg:`linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.30)),url("${HERO_BJK_PHOTO}") center/cover`,link:'https://m.aa.com.tr/tr/pg/foto-galeri/besiktas-olimpik-marsilyayi-maglup-etti/167578'};
+function setSocialImage(src){const abs=new URL(src,location.href).href;['og:image','twitter:image'].forEach(n=>{const m=document.querySelector(`meta[property="${n}"],meta[name="${n}"]`);if(m)m.setAttribute('content',abs)})}
+function renderStaticHero(){const s=HERO_STATIC,media=$('#heroMedia');if(!media)return;$('#heroTitle').textContent=s.title;$('#heroText').textContent=s.text;$('#heroSource').textContent=s.source;media.style.background=s.bg;$('#heroIndex').textContent='1';const dots=$('#sliderDots');if(dots)dots.innerHTML='';const a=$(`.news-row[data-news-id="${s.newsId}"]`);setSocialImage(a?.querySelector('img')?.getAttribute('src')||'./hero-bjk.jpg');$('#heroRead').onclick=()=>window.open(s.link,'_blank','noopener')}
+renderStaticHero();
 
 /* ---------- LEAGUE TABS ---------- */
 $$('.table-tabs button').forEach(btn=>btn.addEventListener('click',()=>{
@@ -307,6 +302,28 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
 
 
 /* ---------- OWN JSON NEWS FEED ---------- */
+const IONENSPIEGEL_NEWS_FALLBACK=[{"id":"bjk-marseille-result","title":"Beşiktaş, Marsilya'yı 4-1 mağlup etti","description":"Beşiktaş, UEFA Avrupa Ligi lig aşamasındaki ilk maçında Marsilya'yı 4-1 yenerek turnuvaya galibiyetle başladı.","category":"Beşiktaş","date":"18 Eylül 2026","image":"../local-2.svg","source":"Anadolu Ajansı","link":"https://www.theguardian.com/football/live/2026/sep/17/real-sociedad-v-bournemouth-crystal-palace-v-lech-poznan-and-more-europa-league-live"},{"id":"ucl-fener-roma","title":"Fenerbahçe, Roma ile 1-1 berabere kaldı","description":"Fenerbahçe, 2026/27 UEFA Şampiyonlar Ligi lig aşamasının ilk maçında Roma ile 1-1 berabere kaldı.","category":"Şampiyonlar Ligi","date":"10 Eylül 2026","image":"../local-7.svg","source":"UEFA","link":"https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures/"},{"id":"ucl-gs-sporting","title":"Galatasaray, Sporting CP karşısında 3-1 kaybetti","description":"Galatasaray, Şampiyonlar Ligi lig aşamasının ilk maçında Sporting CP'ye 3-1 mağlup oldu.","category":"Şampiyonlar Ligi","date":"9 Eylül 2026","image":"../local-7.svg","source":"UEFA","link":"https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures/"},{"id":"ucl-matchday1","title":"Şampiyonlar Ligi'nde ilk hafta sonuçlandı","description":"İlk haftada Barcelona Feyenoord'u 5-1, PSG Slovan Bratislava'yı 6-1, Bayern Münih ise Bodø/Glimt'i 5-0 yendi.","category":"Şampiyonlar Ligi","date":"10 Eylül 2026","image":"../local-7.svg","source":"UEFA","link":"https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures/"},{"id":"el-matchday1","title":"Avrupa Ligi'nde ilk hafta tamamlandı","description":"Beşiktaş'ın 4-1'lik galibiyetinin yanında Juventus 5-0, Crystal Palace 4-0 ve Bournemouth 2-1'lik galibiyetler aldı.","category":"Avrupa Ligi","date":"18 Eylül 2026","image":"../local-7.svg","source":"UEFA","link":"https://www.uefa.com/uefaeuropaleague/news/02a9-219ba00d8c3a-2fc9c36259e8-1000--europa-league-matchday-1-highlights-and-round-up-benfica-/"},{"id":"fener-asensio","title":"Fenerbahçe'de Asensio Eyüpspor maçının kadrosunda","description":"Fenerbahçe, sakatlığını atlatan Marco Asensio'nun 20 Eylül'deki Eyüpspor karşılaşmasının kadrosunda yer alacağını açıkladı.","category":"Fenerbahçe","date":"18 Eylül 2026","image":"../local-4.svg","source":"beIN SPORTS Türkiye","link":"https://beinsports.com.tr/haber/fenerbahceden-marco-asensio-aciklamasi"},{"id":"bjk-next","title":"Beşiktaş'ın sıradaki lig maçı Amedspor deplasmanında","description":"Beşiktaş, 20 Eylül Pazar günü saat 20.00'de Amed Sportif Faaliyetler ile karşılaşacak.","category":"Beşiktaş","date":"18 Eylül 2026","image":"../local-2.svg","source":"Anadolu Ajansı","link":"https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611"},{"id":"superlig-6-hafta","title":"Süper Lig'de 6. hafta bugün başlıyor","description":"6. haftanın açılışında Kasımpaşa ile Konyaspor 18 Eylül Cuma günü saat 20.00'de karşılaşacak.","category":"Süper Lig","date":"18 Eylül 2026","image":"../local-6.svg","source":"Anadolu Ajansı","link":"https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611"},{"id":"trabzon-gs-derbi","title":"Trabzonspor-Galatasaray derbisi yarın","description":"Trabzonspor ile Galatasaray, Süper Lig'in 6. haftasında 19 Eylül Cumartesi günü saat 20.00'de Papara Park'ta karşılaşacak.","category":"Süper Lig","date":"18 Eylül 2026","image":"../local-1.svg","source":"Anadolu Ajansı","link":"https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611"},{"id":"europa-ilk-gece","title":"Avrupa Ligi'nde ilk hafta tamamlandı","description":"2026/27 UEFA Avrupa Ligi'nin ilk maç gününde karşılaşmalar tamamlandı ve sonuçlar netleşti.","category":"Avrupa","date":"18 Eylül 2026","image":"../local-7.svg","source":"UEFA","link":"https://www.uefa.com/uefaeuropaleague/news/02a9-219ba00d8c3a-2fc9c36259e8-1000--europa-league-matchday-1-highlights-and-round-up-benfica-/"},{"id":"barcelona-racing","title":"Barcelona, Racing'i 7-2 yendi","description":"Barcelona, LaLiga'da Racing Santander'i 7-2 mağlup etti. Raphinha hat-trick yaparken Barcelona sezonun altıncı lig maçında da yenilmedi.","category":"Dünya","date":"17 Eylül 2026","image":"../local-6.svg","source":"Reuters","link":"https://www.reuters.com/sports/soccer/flick-sets-record-barcelona-breeze-past-racing-with-raphinha-hat-trick-2026-09-16/"},{"id":"fb-eyupspor","title":"Fenerbahçe-Eyüpspor maçı 20 Eylül'de","description":"Fenerbahçe, Süper Lig'in 6. haftasında Eyüpspor'u 20 Eylül Pazar günü saat 17.00'de ağırlayacak.","category":"Fenerbahçe","date":"18 Eylül 2026","image":"../local-4.svg","source":"Anadolu Ajansı","link":"https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611"},{"id":"europe-bournemouth","title":"Bournemouth Avrupa Ligi'ne galibiyetle başladı","description":"Bournemouth, kulüp tarihindeki ilk Avrupa maçında Real Sociedad'ı deplasmanda 2-1 mağlup etti.","category":"Avrupa","date":"17 Eylül 2026","image":"../local-7.svg","source":"Anadolu Ajansı","link":"https://www.theguardian.com/football/live/2026/sep/17/real-sociedad-v-bournemouth-crystal-palace-v-lech-poznan-and-more-europa-league-live"}];
+function renderOwnNewsItems(items, status){
+  const feed=document.querySelector('#newsFeed');
+  if(!feed) return;
+  const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  feed.innerHTML=items.map(item=>{
+    const team=liveNewsTeam(item);
+    const id=esc(item.id||item.title);
+    const img=esc(item.image||'./local-6.svg');
+    const desc=esc(item.description||'Haberin ayrıntıları için kaynak sayfasını aç.');
+    const link=esc(item.link||'#');
+    const source=esc(item.source||'İonenSpiegel');
+    const category=esc(item.category||'FUTBOL');
+    const date=esc(item.date||'');
+    return `<article class="news-row has-bookmark" data-news-id="${id}" data-team="${esc(team)}" data-search="${esc(item.title+' '+(item.description||''))}"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="${img}" alt="${esc(item.title)}" loading="lazy"></div><div><div class="news-kicker">${date} · ${category}</div><h3>${esc(item.title)}</h3><p>${desc}</p><a href="${link}" target="_blank" rel="noopener noreferrer">${source} ↗</a></div></article>`;
+  }).join('');
+  sortNewsByFavorite();
+  updateBookmarkButtons();
+  if(status) status.textContent=`Kendi JSON haber akışı · ${items.length} haber`;
+}
+
+
 async function loadOwnJsonNews(showToast=false){
   const feed=$('#newsFeed');
   if(!feed)return;
@@ -317,41 +334,15 @@ async function loadOwnJsonNews(showToast=false){
     if(!response.ok)throw new Error('news.json yüklenemedi');
     const items=await response.json();
     if(!Array.isArray(items))throw new Error('Geçersiz haber verisi');
-    const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-    feed.innerHTML=items.map(item=>{
-      const team=liveNewsTeam(item);
-      const id=esc(item.id||item.title);
-      const img=esc(item.image||'./local-6.svg');
-      const desc=esc(item.description||'Haberin ayrıntıları için kaynak sayfasını aç.');
-      const link=esc(item.link||'#');
-      const source=esc(item.source||'İonenSpiegel');
-      const category=esc(item.category||'FUTBOL');
-      const date=esc(item.date||'');
-      return `<article class="news-row has-bookmark" data-news-id="${id}" data-team="${esc(team)}" data-search="${esc(item.title+' '+(item.description||''))}"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="${img}" alt="${esc(item.title)}" loading="lazy"></div><div><div class="news-kicker">${date} · ${category}</div><h3>${esc(item.title)}</h3><p>${desc}</p><a href="${link}" target="_blank" rel="noopener noreferrer">${source} ↗</a></div></article>`;
-    }).join('');
-    sortNewsByFavorite();
-    updateBookmarkButtons();
-    if(status)status.textContent=`Kendi JSON haber akışı · ${items.length} haber`;
+    renderOwnNewsItems(items,status);
     if(showToast)toast(`${items.length} haber yenilendi`);
   }catch(error){
-    console.error(error);
-    if(status)status.textContent='Haber JSON dosyası yüklenemedi.';
-    if(showToast)toast('Haberler yüklenemedi');
+    console.warn('Yerel haber JSON alınamadı, gömülü haber verisi kullanılıyor.',error);
+    renderOwnNewsItems(IONENSPIEGEL_NEWS_FALLBACK,status);
+    if(status)status.textContent=`Yerel haber akışı · ${IONENSPIEGEL_NEWS_FALLBACK.length} haber`;
+    if(showToast)toast('Yerel haberler yüklendi');
   }
 }
 document.addEventListener('DOMContentLoaded',()=>loadOwnJsonNews(false));
 
-/* V30 DAILY VERIFIED NEWS FALLBACK */
-async function loadDailyVerifiedNewsFallback(){
-  try{
-    const r=await fetchWithTimeout('./daily-news.json?v=20260918',{cache:'no-store'});
-    if(!r.ok) return;
-    const d=await r.json();
-    const items=Array.isArray(d.news)?d.news:[];
-    if(!items.length) return;
-    window.IONENSPIEGEL_DAILY_NEWS=items;
-    if(typeof renderNewsItems==='function') renderNewsItems(items);
-    else if(typeof renderNews==='function') renderNews(items);
-  }catch(e){}
-}
-document.addEventListener('DOMContentLoaded',()=>setTimeout(loadDailyVerifiedNewsFallback,800));
+/* V30 DAILY VERIFIED NEWS FALLBACK: local JSON is the single source for the homepage feed. */
