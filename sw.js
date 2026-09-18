@@ -1,5 +1,5 @@
-// İonenSpiegel V58 service worker
-const CACHE_NAME='ionenspiegel-v58';
+// İonenSpiegel V62 service worker
+const CACHE_NAME='ionenspiegel-v62';
 self.addEventListener('install',e=>e.waitUntil(self.skipWaiting()));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{

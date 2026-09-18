@@ -1,105 +1,13 @@
-<!doctype html>
-<html lang="tr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#e50914">
-<title>Kaydedilenler | İonenSpiegel</title>
-<link rel="stylesheet" href="style.css?v=58">
-<style>
-:root{--red:#e50914}
-body{margin:0;background:#f3f4f6;color:#17191d;font-family:Inter,system-ui,sans-serif}
-.topbar{position:sticky;top:0;z-index:10}
-.saved-page{padding-top:28px;padding-bottom:60px}
-.saved-head{margin-bottom:20px}
-.saved-kicker{display:block;color:var(--red);font-size:11px;font-weight:900;letter-spacing:.12em;margin-bottom:5px}
-.saved-head h1{margin:0;font-size:42px;line-height:1;font-weight:900}
-.saved-head p{margin:8px 0 0;color:#737780;font-size:13px}
-.saved-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.saved-card{background:#fff;border:1px solid #e1e3e7;border-radius:14px;overflow:hidden;box-shadow:0 8px 24px #1014190b}
-.saved-image{display:block;position:relative;aspect-ratio:16/9;overflow:hidden;background:#17191d;text-decoration:none}
-.saved-image img{width:100%;height:100%;object-fit:cover;display:block}
-.saved-image span{position:absolute;left:10px;right:10px;bottom:10px;background:rgba(229,9,20,.95);color:#fff;border-radius:7px;padding:8px;text-align:center;font-size:10px;font-weight:900}
-.saved-body{padding:15px}
-.saved-meta{color:var(--red);font-size:9px;font-weight:900;text-transform:uppercase}
-.saved-body h2{font-size:20px;line-height:1.12;margin:8px 0 12px}
-.saved-source{display:inline-block;color:var(--red);font-size:11px;font-weight:900;text-decoration:none}
-.saved-empty{padding:35px;background:#fff;border:1px solid #ddd;border-radius:14px;text-align:center;color:#666}
-.back-home{display:inline-flex;align-items:center;gap:6px;color:#fff!important;text-decoration:none}
-@media(max-width:820px){
-  .saved-page{padding:22px 12px 80px}
-  .saved-head h1{font-size:34px}
-  .saved-grid{grid-template-columns:1fr}
-  .saved-card{border-radius:12px}
-  .saved-body h2{font-size:19px}
-}
-.dark-theme body{background:#0b0d10;color:#f3f5f7}
-.dark-theme .saved-card,.dark-theme .saved-empty{background:#15181d;border-color:#292e36;color:#f3f5f7}
-.dark-theme .saved-head p{color:#9da3ad}
-</style>
-<script>
-(function(){
-  const saved=localStorage.getItem('ionenspiegel-theme');
-  if(saved==='dark'||(!saved&&matchMedia('(prefers-color-scheme: dark)').matches))
-    document.documentElement.classList.add('dark-theme');
-})();
-</script>
-</head>
-<body>
-<header class="topbar">
-  <div class="top-inner">
-    <a class="brand" href="index.html"><span>İonen</span>Spiegel</a>
-    <a class="primary-btn back-home" href="index.html">Ana Sayfa</a>
-  </div>
-</header>
-<main class="container saved-page">
-  <header class="saved-head">
-    <span class="saved-kicker">KÜTÜPHANE</span>
-    <h1>Kaydedilenler</h1>
-    <p>Kaydettiğin haberler burada. Haber görseline dokunarak doğrudan kaynak sayfasına gidebilirsin.</p>
-  </header>
-  <div id="savedGrid" class="saved-grid"></div>
-</main>
-<footer>
-  <div class="container footer-inner">
-    <div><strong>İonenSpiegel</strong><p>Bağımsız futbol haber portalı.</p></div>
-    <small>© 2026 İonenSpiegel</small>
-  </div>
-</footer>
-<script>
-(function(){
-  const fallback=[
-    {title:"Beşiktaş, Marsilya'yı 4-1 mağlup etti",meta:"BEŞİKTAŞ · 18 EYLÜL 2026",image:"./photo-bjk.jpg",link:"https://mobile.aa.com.tr/tr/spor/besiktas-olimpik-marsilyayi-maglup-etti/4060572",source:"Anadolu Ajansı"},
-    {title:"Trabzonspor-Galatasaray derbisi yarın",meta:"SÜPER LİG · 18 EYLÜL 2026",image:"./photo-derbi.jpg",link:"https://www.aa.com.tr/tr/spor/galatasaray-super-ligde-yarin-trabzonspora-konuk-olacak/4060720",source:"Anadolu Ajansı"},
-    {title:"Fenerbahçe'de Asensio Eyüpspor maçının kadrosunda",meta:"FENERBAHÇE · 17 EYLÜL 2026",image:"./photo-asensio.jpg",link:"https://beinsports.com.tr/haber/fenerbahceden-marco-asensio-aciklamasi",source:"beIN SPORTS Türkiye"}
-  ];
-  let items=[];
-  try{items=JSON.parse(localStorage.getItem('ionenspiegel-saved-news')||'[]')}catch(e){}
-  if(!Array.isArray(items)||!items.length)items=fallback;
-  const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-  const fixImage=(item)=>{
-    const t=(item.title||'').toLocaleLowerCase('tr-TR');
-    if(t.includes('beşiktaş'))return './photo-bjk.jpg';
-    if(t.includes('fenerbahçe')||t.includes('asensio'))return './photo-asensio.jpg';
-    if(t.includes('galatasaray')||t.includes('trabzonspor'))return './photo-derbi.jpg';
-    return item.image||'./photo-europa.jpg';
-  };
-  document.getElementById('savedGrid').innerHTML=items.map(item=>{
-    const image=fixImage(item);
-    const link=item.source||item.link||'#';
-    return `<article class="saved-card">
-      <a class="saved-image" href="${esc(link)}" target="_blank" rel="noopener noreferrer">
-        <img src="${esc(image)}" alt="${esc(item.title||'Futbol haberi')}" loading="lazy">
-        <span>Haber için tıkla</span>
-      </a>
-      <div class="saved-body">
-        <div class="saved-meta">${esc(item.kicker||item.meta||'FUTBOL')}</div>
-        <h2>${esc(item.title||'Haber')}</h2>
-        <a class="saved-source" href="${esc(link)}" target="_blank" rel="noopener noreferrer">${esc(item.source||'Kaynağı aç')} ↗</a>
-      </div>
-    </article>`;
-  }).join('');
-})();
-</script>
-</body>
-</html>
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>Kaydedilenler | İonenSpiegel</title><link rel="stylesheet" href="style.css?v=62"><link rel="stylesheet" href="v62-modern.css?v=62">
+</head><body>
+<header class="topbar"><div class="top-inner"><a class="brand" href="index.html"><span>İonen</span>Spiegel</a><a class="primary-btn" href="index.html">Ana Sayfa</a></div></header>
+<main class="container section"><div class="section-head"><div><span class="eyebrow red">KÜTÜPHANE</span><h2>Kaydedilenler</h2><p class="section-subtitle">17-18 Eylül 2026'dan seçilmiş haberler.</p></div></div>
+<div class="news-grid">
+<article class="news-card"><div class="news-thumb" style="background-image:url('news-bjk.jpg')"></div><div class="news-info"><span>BEŞİKTAŞ · 18 EYLÜL 2026</span><h3>Beşiktaş, Marsilya'yı 4-1 mağlup etti</h3><a class="secondary-btn" target="_blank" rel="noopener" href="https://mobile.aa.com.tr/tr/spor/besiktas-olimpik-marsilyayi-maglup-etti/4060572">Kaynağı aç ↗</a></div></article>
+<article class="news-card"><div class="news-thumb" style="background-image:url('news-derbi.jpg')"></div><div class="news-info"><span>SÜPER LİG · 18 EYLÜL 2026</span><h3>Trabzonspor-Galatasaray derbisi yarın</h3><a class="secondary-btn" target="_blank" rel="noopener" href="https://www.aa.com.tr/tr/spor/trabzonspor-galatasaray-rekabetinde-144-randevu/4060865">Kaynağı aç ↗</a></div></article>
+<article class="news-card"><div class="news-thumb" style="background-image:url('news-asensio.jpg')"></div><div class="news-info"><span>FENERBAHÇE · 17 EYLÜL 2026</span><h3>Asensio, Eyüpspor maçının kadrosunda</h3><a class="secondary-btn" target="_blank" rel="noopener" href="https://beinsports.com.tr/haber/fenerbahceden-marco-asensio-aciklamasi">Kaynağı aç ↗</a></div></article>
+</div></main>
+<footer><div class="container footer-inner"><div><strong>İonenSpiegel</strong><p>Bağımsız futbol haber portalı.</p></div><small>© 2026 İonenSpiegel</small></div></footer></body></html>

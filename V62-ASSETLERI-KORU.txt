@@ -1,0 +1,30 @@
+MEVCUT ASSETLERİ KORU
+
+Bu V62 paketinin çalışması için mevcut depodaki görsel dosyaları silme.
+
+Özellikle:
+photo-bjk.jpg
+photo-asensio.jpg
+photo-derbi.jpg
+photo-europa.jpg
+photo-hoffenheim.jpg
+photo-juventus.jpg
+photo-bournemouth.jpg
+photo-superlig.jpg
+news-bjk.jpg
+news-asensio.jpg
+news-derbi.jpg
+news-europa.jpg
+news-hoffenheim.jpg
+news-juventus.jpg
+news-bournemouth.jpg
+news-superlig.jpg
+logo.png
+hero-bjk.jpg
+og-image.jpg
+icon.png
+icon-192.png
+icon-512.png
+manifest.json
+
+Not: Eski local-*.svg dosyaları kalsa da V62 Son Dakika akışında kullanılmamalıdır.

@@ -1,36 +1,9 @@
-İONENSPIEGEL V62
+1. ZIP'i aç.
+2. İçindeki dosyaları mevcut ionenspiegel.github.io deposunun köküne koy.
+3. data klasöründeki iki JSON dosyasını data klasörüne koy.
+4. Aynı isimli dosyaların üzerine yaz.
+5. photo-*.jpg, news-*.jpg, logo.png, icon*.png, local-*.svg gibi mevcut görsel dosyalarını silme.
+6. GitHub Pages'in güncellenmesini bekle.
+7. Tarayıcıda siteyi yenile. Service Worker V62 eski önbelleği temizler.
 
-Bu paket GitHub'a otomatik yükleme yapmaz. Dosyaları sen manuel yükleyeceksin.
-
-V62'DE YAPILANLAR
-1. Son Dakika kartlarındaki eski local-*.svg / yarım yazılı görseller kaldırılır.
-2. Her haber doğru photo-*.jpg görselini kullanır.
-3. Görselin tamamı tıklanabilir olur.
-4. Görsel üzerinde "Haber için tıkla" etiketi bulunur.
-5. Tıklama kaynak haber sayfasını yeni sekmede açar.
-6. Mobilde haber başlıklarının sağdan kesilmesi ve görselin aşırı dikey uzaması düzeltilir.
-7. "Gündem ve Etkileşim", anket, yorum alanı ve "Daha Fazla" bölümü kaldırılır.
-8. "Diğer / Site Ayarları" bölümü kaldırılır.
-9. Avrupa Yol Haritası artık Beşiktaş'a bağlı tek bölüm değildir.
-10. Avrupa'da oynayan dört Türk takımı için seçim menüsü gelir:
-   Beşiktaş
-   Galatasaray
-   Fenerbahçe
-   Trabzonspor
-11. Her takım seçildiğinde kendi Avrupa fikstürü gösterilir.
-12. UEFA bağlantısı seçilen takıma göre değişir.
-
-KURULUM
-1. v62-modern.css dosyasını siteye yükle.
-2. v62-fixes.js dosyasını siteye yükle.
-3. index.html içinde style.css satırından sonra şunu ekle:
-   <link rel="stylesheet" href="v62-modern.css?v=62">
-4. index.html içinde script.js satırından hemen sonra şunu ekle:
-   <script src="v62-fixes.js?v=62"></script>
-
-ÖNEMLİ
-Mevcut fotoğraf, ikon ve diğer site dosyalarını silme. Bu iki V62 dosyası mevcut sitenin üstüne güvenli düzeltme katmanı olarak çalışır.
-
-Eski duzeltme.js, site-fix.js, v59-fixes.js veya v60-fixes.js dosyaları index.html tarafından çağrılıyorsa bunları çağıran script satırlarını kaldır. Mevcut index.html'de bunlar çağrılmıyorsa hiçbir şey yapmana gerek yok.
-
-Avrupa fikstürleri 18 Eylül 2026 itibarıyla UEFA'nın yayımladığı 2026/27 fikstürlerine göre hazırlanmıştır.
+Not: Bu paket GitHub'a otomatik yükleme yapmaz.
