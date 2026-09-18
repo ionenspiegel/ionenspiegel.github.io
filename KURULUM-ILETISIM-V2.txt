@@ -1,0 +1,19 @@
+İONENSPIEGEL İLETİŞİM V2
+
+Bu paket mevcut siteye iletişim formunu ekler.
+
+YÜKLENECEK DOSYALAR
+1. index.html
+2. iletisim.html
+3. iletisim-v2.css
+
+GA4 kullanıyorsan ga4.js dosyasını da mevcut sürümdekiyle birlikte koru.
+
+KURULUM
+GitHub Pages deposunda bu ZIP'teki dosyaları mevcut dosyaların üzerine yükle.
+GitHub'a doğrudan bağlantı veya otomatik yükleme yapılmadı.
+
+SONUÇ
+Ana sayfadaki Daha Fazla bölümünde İletişim kartı görünür.
+İletişim sayfasında Ad, E-posta, Konu ve Mesaj alanları bulunur.
+Form mevcut İonenSpiegel Apps Script endpoint'ine gönderim yapar.

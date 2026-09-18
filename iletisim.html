@@ -5,78 +5,135 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#e50914">
 <title>İletişim | İonenSpiegel</title>
-<meta name="description" content="İonenSpiegel iletişim formu. Görüş, öneri ve mesajlarını gönder.">
+<meta name="description" content="İonenSpiegel iletişim sayfası. Görüş, öneri, iş birliği ve hata bildirimleri için mesaj gönder.">
 <link rel="icon" href="icon-192.png" type="image/png">
 <link rel="stylesheet" href="style.css?v=58">
+<link rel="stylesheet" href="iletisim-v2.css?v=2">
 <script src="./ga4.js?v=64" defer></script>
-<style>
-.contact-page{min-height:100vh;padding:22px 0 90px;background:var(--bg,#f5f5f5)}
-.contact-wrap{max-width:760px;margin:0 auto;padding:0 16px}
-.contact-top{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.contact-back{width:42px;height:42px;border-radius:12px;border:1px solid #ddd;background:#fff;color:#222;text-decoration:none;display:grid;place-items:center;font-size:22px}
-.contact-brand{font-weight:900;font-size:22px;color:#222}.contact-brand span{color:#e50914}
-.contact-hero{background:linear-gradient(135deg,#151515,#2b2b2b);color:#fff;border-radius:20px;padding:25px 22px;margin-bottom:16px;box-shadow:0 12px 32px #0002}
-.contact-icon{width:54px;height:54px;border-radius:15px;background:#e50914;display:grid;place-items:center;font-size:27px;margin-bottom:14px}
-.contact-hero h1{margin:0 0 5px;font-size:34px}.contact-hero p{margin:0;color:#d7d7d7;line-height:1.55}
-.contact-card{background:#fff;border:1px solid #ddd;border-radius:20px;padding:20px;box-shadow:0 8px 24px #1014190b}
-.contact-note{background:#f7f7f7;border-radius:13px;padding:13px;margin-bottom:18px;color:#555;font-size:13px;line-height:1.5}
-.form-row{margin-bottom:14px}.form-row label{display:block;font-weight:800;font-size:13px;margin-bottom:7px}.form-row input,.form-row textarea,.form-row select{width:100%;box-sizing:border-box;border:1px solid #d5d5d5;border-radius:12px;padding:13px 14px;background:#fff;color:#111;font:inherit;outline:none}.form-row textarea{min-height:150px;resize:vertical}.form-row input:focus,.form-row textarea:focus,.form-row select:focus{border-color:#e50914;box-shadow:0 0 0 3px #e5091418}
-.contact-submit{width:100%;border:0;border-radius:13px;padding:14px;background:#e50914;color:#fff;font-weight:900;font-size:15px;cursor:pointer}.contact-submit:disabled{opacity:.6;cursor:wait}
-.contact-status{margin-top:12px;min-height:20px;text-align:center;font-weight:700;font-size:13px}.contact-status.ok{color:#16803c}.contact-status.err{color:#c20f18}
-.contact-foot{margin-top:15px;text-align:center;color:#777;font-size:11px}
-.dark-theme .contact-page{background:#101216}.dark-theme .contact-back,.dark-theme .contact-card{background:#171a1f;border-color:#2d323a;color:#fff}.dark-theme .contact-brand{color:#fff}.dark-theme .contact-note{background:#20242a;color:#c9c9c9}.dark-theme .form-row input,.dark-theme .form-row textarea,.dark-theme .form-row select{background:#101216;color:#fff;border-color:#343a43}.dark-theme .contact-foot{color:#8e949d}
-@media(max-width:600px){.contact-page{padding-top:14px}.contact-hero{border-radius:16px;padding:20px 17px}.contact-hero h1{font-size:30px}.contact-card{padding:16px;border-radius:16px}}
-</style>
 </head>
 <body>
 <main class="contact-page">
-<div class="contact-wrap">
-  <div class="contact-top">
-    <a class="contact-back" href="index.html" aria-label="Ana sayfaya dön">‹</a>
-    <div class="contact-brand"><span>İonen</span>Spiegel</div>
+  <div class="contact-wrap">
+    <header class="contact-header">
+      <a class="contact-back" href="index.html" aria-label="Ana sayfaya dön">‹</a>
+      <a class="contact-logo" href="index.html"><span>İonen</span>Spiegel</a>
+    </header>
+
+    <section class="contact-hero">
+      <div class="contact-kicker">İONENSPIEGEL</div>
+      <h1>İletişim</h1>
+      <p>Görüş, öneri, iş birliği veya tüm soruların için bize ulaşabilirsin.</p>
+    </section>
+
+    <section class="contact-card">
+      <div class="contact-info">
+        <strong>Mesajını gönder</strong>
+        <span>Formu doldur. Mesajın İonenSpiegel iletişim sistemine iletilsin.</span>
+      </div>
+
+      <form id="contactForm" novalidate>
+        <label>Adın
+          <input id="contactName" name="name" maxlength="60" autocomplete="name" placeholder="Adını gir" required>
+        </label>
+
+        <label>E-posta adresin
+          <input id="contactEmail" name="email" type="email" maxlength="120" autocomplete="email" placeholder="ornek@mail.com" required>
+        </label>
+
+        <label>Konu
+          <select id="contactSubject" name="subject" required>
+            <option value="">Konu seç</option>
+            <option>Görüş</option>
+            <option>Öneri</option>
+            <option>Hata bildirimi</option>
+            <option>İş birliği</option>
+            <option>Diğer</option>
+          </select>
+        </label>
+
+        <label>Mesajın
+          <textarea id="contactMessage" name="message" maxlength="2000" placeholder="Mesajını buraya yaz..." required></textarea>
+        </label>
+
+        <input id="contactWebsite" class="contact-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <button id="contactSubmit" type="submit">✈ Mesajı Gönder</button>
+        <div id="contactStatus" class="contact-status" aria-live="polite"></div>
+      </form>
+
+      <div class="contact-note">Mesaj gönderildikten sonra kısa bir onay mesajı göreceksin.</div>
+    </section>
+
+    <a class="contact-home" href="index.html">← Ana sayfaya dön</a>
   </div>
-
-  <section class="contact-hero">
-    <div class="contact-icon" aria-hidden="true">✉</div>
-    <h1>İletişim</h1>
-    <p>Görüş, öneri, iş birliği veya tüm soruların için bize ulaşabilirsin.</p>
-  </section>
-
-  <section class="contact-card">
-    <div class="contact-note">Mesajını gönderdiğinde mevcut İonenSpiegel Google Apps Script sistemine iletilir. E-posta bildirimi mevcut topluluk sistemindeki bildirim mekanizması üzerinden yapılır.</div>
-    <form id="contactForm" novalidate>
-      <div class="form-row"><label for="contactName">Adın</label><input id="contactName" maxlength="60" autocomplete="name" placeholder="Adını gir" required></div>
-      <div class="form-row"><label for="contactEmail">E-posta adresin</label><input id="contactEmail" type="email" maxlength="120" autocomplete="email" placeholder="ornek@mail.com" required></div>
-      <div class="form-row"><label for="contactSubject">Konu</label><select id="contactSubject" required><option value="">Konu seç</option><option>Görüş</option><option>Öneri</option><option>Hata bildirimi</option><option>İş birliği</option><option>Diğer</option></select></div>
-      <div class="form-row"><label for="contactMessage">Mesajın</label><textarea id="contactMessage" maxlength="2000" placeholder="Mesajını buraya yaz..." required></textarea></div>
-      <button class="contact-submit" id="contactSubmit" type="submit">✈ Mesajı Gönder</button>
-      <div class="contact-status" id="contactStatus" aria-live="polite"></div>
-    </form>
-  </section>
-  <div class="contact-foot">İonenSpiegel · Bağımsız futbol haber projesi</div>
-</div>
 </main>
+
 <script>
 (function(){
-  const API='https://script.google.com/macros/s/AKfycbxoTMojRbXgNWBkFqSvYXULBRkT1C30nOZdh4luZmLqe_FZ55U3Vv1O2CExgoumeaFy_Q/exec';
-  const form=document.getElementById('contactForm'), btn=document.getElementById('contactSubmit'), status=document.getElementById('contactStatus');
-  form.addEventListener('submit',function(e){
+  const API = "https://script.google.com/macros/s/AKfycbxoTMojRbXgNWBkFqSvYXULBRkT1C30nOZdh4luZmLqe_FZ55U3Vv1O2CExgoumeaFy_Q/exec";
+  const form = document.getElementById("contactForm");
+  const btn = document.getElementById("contactSubmit");
+  const status = document.getElementById("contactStatus");
+  const hp = document.getElementById("contactWebsite");
+
+  form.addEventListener("submit", function(e){
     e.preventDefault();
-    const name=document.getElementById('contactName').value.trim();
-    const email=document.getElementById('contactEmail').value.trim();
-    const subject=document.getElementById('contactSubject').value;
-    const message=document.getElementById('contactMessage').value.trim();
-    status.className='contact-status'; status.textContent='';
-    if(!name||!email||!subject||!message){status.className='contact-status err';status.textContent='Lütfen tüm alanları doldur.';return;}
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){status.className='contact-status err';status.textContent='Geçerli bir e-posta adresi yaz.';return;}
-    if(message.length<5){status.className='contact-status err';status.textContent='Mesajın biraz daha uzun olsun.';return;}
-    btn.disabled=true; btn.textContent='Gönderiliyor…';
-    const body='action=yorum&name='+encodeURIComponent('İLETİŞİM | '+name+' | '+email)+'&text='+encodeURIComponent('Konu: '+subject+'\nE-posta: '+email+'\n\n'+message);
-    fetch(API,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body}).then(function(){
-      status.className='contact-status ok';status.textContent='Mesajın gönderildi. Teşekkürler.';form.reset();
+
+    const name = document.getElementById("contactName").value.trim();
+    const email = document.getElementById("contactEmail").value.trim();
+    const subject = document.getElementById("contactSubject").value;
+    const message = document.getElementById("contactMessage").value.trim();
+
+    status.className = "contact-status";
+    status.textContent = "";
+
+    if (hp.value) return;
+    if (!name || !email || !subject || !message) {
+      status.className = "contact-status error";
+      status.textContent = "Lütfen tüm alanları doldur.";
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      status.className = "contact-status error";
+      status.textContent = "Geçerli bir e-posta adresi yaz.";
+      return;
+    }
+    if (message.length < 5) {
+      status.className = "contact-status error";
+      status.textContent = "Mesajın biraz daha uzun olsun.";
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Gönderiliyor…";
+
+    // Mevcut İonenSpiegel Apps Script topluluk endpoint'inin
+    // doğrulanmış e-posta bildirim mekanizmasını kullanır.
+    const payload =
+      "action=yorum" +
+      "&name=" + encodeURIComponent("İLETİŞİM | " + name + " | " + email) +
+      "&text=" + encodeURIComponent(
+        "Konu: " + subject + "\n" +
+        "E-posta: " + email + "\n\n" +
+        message
+      );
+
+    fetch(API, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},
+      body: payload
+    }).then(function(){
+      status.className = "contact-status success";
+      status.textContent = "Mesaj gönderim isteği alındı. Teşekkürler.";
+      form.reset();
     }).catch(function(){
-      status.className='contact-status err';status.textContent='Mesaj gönderilemedi. Lütfen tekrar dene.';
-    }).finally(function(){btn.disabled=false;btn.textContent='✈ Mesajı Gönder';});
+      status.className = "contact-status error";
+      status.textContent = "Mesaj gönderilemedi. Tekrar dene.";
+    }).finally(function(){
+      btn.disabled = false;
+      btn.textContent = "✈ Mesajı Gönder";
+    });
   });
 })();
 </script>

@@ -1,0 +1,68 @@
+:root{
+  --contact-bg:#080a0d;
+  --contact-card:#15181d;
+  --contact-border:#292e36;
+  --contact-text:#f5f6f8;
+  --contact-muted:#9ca3ad;
+  --contact-red:#e50914;
+}
+.contact-page{
+  min-height:100vh;
+  background:var(--contact-bg);
+  color:var(--contact-text);
+  padding:18px 0 60px;
+}
+.contact-wrap{max-width:720px;margin:0 auto;padding:0 16px}
+.contact-header{display:flex;align-items:center;gap:12px;margin:4px 0 18px}
+.contact-back{
+  width:42px;height:42px;border:1px solid var(--contact-border);border-radius:12px;
+  display:grid;place-items:center;background:#171a1f;color:#fff;text-decoration:none;font-size:27px;
+}
+.contact-logo{font-size:24px;font-weight:900;color:#fff;text-decoration:none;letter-spacing:-1px}
+.contact-logo span{color:var(--contact-red)}
+.contact-hero{
+  border:1px solid #343a43;border-radius:20px;padding:24px 21px;margin-bottom:14px;
+  background:linear-gradient(135deg,#15181d,#242932);
+}
+.contact-kicker{color:#ff3841;font-size:11px;font-weight:900;letter-spacing:1px;margin-bottom:7px}
+.contact-hero h1{margin:0 0 6px;font-size:34px;line-height:1.05}
+.contact-hero p{margin:0;color:#c6cad1;line-height:1.55;font-size:14px}
+.contact-card{
+  background:var(--contact-card);border:1px solid var(--contact-border);
+  border-radius:20px;padding:19px;box-shadow:0 14px 40px #0005;
+}
+.contact-info{display:flex;flex-direction:column;gap:4px;margin-bottom:18px}
+.contact-info strong{font-size:18px}.contact-info span{font-size:12px;color:var(--contact-muted);line-height:1.5}
+#contactForm{display:flex;flex-direction:column;gap:14px}
+#contactForm label{display:flex;flex-direction:column;gap:7px;font-size:12px;font-weight:800}
+#contactForm input:not(.contact-hp),#contactForm select,#contactForm textarea{
+  width:100%;box-sizing:border-box;border:1px solid #343a43;border-radius:12px;
+  padding:13px 14px;background:#0f1216;color:#fff;font:inherit;outline:none;
+}
+#contactForm textarea{min-height:155px;resize:vertical}
+#contactForm input:not(.contact-hp):focus,#contactForm select:focus,#contactForm textarea:focus{
+  border-color:var(--contact-red);box-shadow:0 0 0 3px #e5091420;
+}
+#contactForm select option{background:#15181d;color:#fff}
+#contactSubmit{
+  border:0;border-radius:13px;padding:14px;background:var(--contact-red);color:#fff;
+  font-weight:900;font-size:15px;cursor:pointer;
+}
+#contactSubmit:disabled{opacity:.65;cursor:wait}
+.contact-status{min-height:20px;text-align:center;font-size:13px;font-weight:800}
+.contact-status.success{color:#45d483}.contact-status.error{color:#ff6870}
+.contact-note{
+  margin-top:14px;padding:11px 12px;border-radius:11px;background:#1d2127;
+  color:#9da4ad;font-size:11px;line-height:1.45;text-align:center;
+}
+.contact-home{
+  display:block;margin-top:18px;text-align:center;color:#aeb4bd;
+  text-decoration:none;font-weight:800;font-size:13px;
+}
+.contact-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+@media(max-width:600px){
+  .contact-page{padding-top:10px}
+  .contact-hero{border-radius:16px;padding:21px 17px}
+  .contact-hero h1{font-size:31px}
+  .contact-card{border-radius:16px;padding:16px}
+}
