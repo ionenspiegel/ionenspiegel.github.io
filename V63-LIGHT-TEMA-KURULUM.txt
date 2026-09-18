@@ -1,0 +1,16 @@
+İONENSPIEGEL V63 AÇIK TEMA DÜZELTMESİ
+
+Sorun:
+Koyu temadan açık temaya geçince bazı fikstür ve maç kartları koyu arka planla kalıyordu.
+
+Düzeltme:
+Açık tema için özel CSS eklendi. Özellikle #maclar fikstür alanındaki mobil hard-fix koyu renkleri açık temada eziliyor.
+Koyu tema kuralları korunuyor.
+
+Yüklenecek dosyalar:
+1. index.html
+2. v62-light-theme-fix.css
+3. sw.js
+
+Bu paket mevcut V62 günlük güncellemesinin üzerine hazırlanmıştır.
+GitHub'a otomatik yükleme yapılmamıştır.
