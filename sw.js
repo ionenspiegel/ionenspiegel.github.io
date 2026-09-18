@@ -1,63 +1,14 @@
-// İonenSpiegel güncel service worker
-const CACHE_NAME = 'ionenspiegel-v51';
-
-self.addEventListener('install', event => {
-  event.waitUntil(self.skipWaiting());
-});
-
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys()
-      .then(keys => Promise.all(
-        keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))
-      ))
-      .then(() => self.clients.claim())
-  );
-});
-
-self.addEventListener('fetch', event => {
-  const request = event.request;
-  const url = new URL(request.url);
-  if (request.method !== 'GET' || url.origin !== self.location.origin) return;
-
-  if (url.pathname.endsWith('/sw.js')) {
-    event.respondWith(fetch(request, {cache:'no-store'}));
+// İonenSpiegel V53 service worker
+const CACHE_NAME='ionenspiegel-v53';
+self.addEventListener('install',e=>e.waitUntil(self.skipWaiting()));
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',e=>{
+  const r=e.request,u=new URL(r.url);
+  if(r.method!=='GET'||u.origin!==self.location.origin)return;
+  const fresh=r.mode==='navigate'||r.destination==='document'||['script','style','json'].includes(r.destination)||u.pathname.endsWith('.json')||u.pathname.endsWith('.html');
+  if(fresh){
+    e.respondWith(fetch(r,{cache:'no-store'}).then(res=>{const c=res.clone();caches.open(CACHE_NAME).then(x=>x.put(r,c));return res}).catch(()=>caches.match(r).then(x=>x||caches.match('./index.html'))));
     return;
   }
-
-  if (request.mode === 'navigate' || request.destination === 'document') {
-    event.respondWith(
-      fetch(request, {cache:'no-store'})
-        .then(response => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then(c => c.put('./index.html', copy)).catch(() => {});
-          return response;
-        })
-        .catch(() => caches.match('./index.html'))
-    );
-    return;
-  }
-
-  if (['script','style','json'].includes(request.destination) || url.pathname.endsWith('.json')) {
-    event.respondWith(
-      fetch(request, {cache:'no-store'})
-        .then(response => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then(c => c.put(request, copy)).catch(() => {});
-          return response;
-        })
-        .catch(() => caches.match(request))
-    );
-    return;
-  }
-
-  event.respondWith(
-    caches.match(request).then(cached =>
-      cached || fetch(request).then(response => {
-        const copy = response.clone();
-        caches.open(CACHE_NAME).then(c => c.put(request, copy)).catch(() => {});
-        return response;
-      })
-    )
-  );
+  e.respondWith(caches.match(r).then(c=>c||fetch(r).then(res=>{const x=res.clone();caches.open(CACHE_NAME).then(k=>k.put(r,x));return res})));
 });
