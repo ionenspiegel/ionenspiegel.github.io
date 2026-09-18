@@ -1,6 +1,2 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
-        <rect width="1200" height="700" fill="#171717"/>
-        <circle cx="600" cy="330" r="120" fill="#e30613"/>
-        <text x="600" y="345" text-anchor="middle" font-family="Arial" font-size="70" font-weight="700" fill="white">İS</text>
-        <text x="600" y="510" text-anchor="middle" font-family="Arial" font-size="34" fill="#ddd">İonenSpiegel Futbol</text>
-        </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#111827"/><stop offset=".5" stop-color="#b3131b"/><stop offset="1" stop-color="#050505"/></linearGradient></defs><rect width="1200" height="700" fill="url(#g)"/><circle cx="980" cy="120" r="260" fill="#e50914" opacity=".18"/><circle cx="170" cy="620" r="300" fill="#fff" opacity=".05"/><text x="70" y="530" fill="#fff" font-family="Arial,sans-serif" font-size="72" font-weight="900">TRABZONSPOR
+THOMAS REIS</text><text x="70" y="610" fill="#fff" font-family="Arial,sans-serif" font-size="52" font-weight="700"></text><text x="70" y="90" fill="#fff" opacity=".75" font-family="Arial,sans-serif" font-size="24" font-weight="700">İONENSPIEGEL • 2026</text></svg>
