@@ -1,0 +1,9 @@
+İonenSpiegel V11
+
+Publytics kaldırıldı. Microsoft Clarity eklendi.
+Clarity Project ID: ykfsmk1244
+
+index.html içindeki <head> bölümünde Clarity izleme kodu bulunur.
+Google Analytics 4 korunmuştur.
+
+GitHub Pages için index.html ve diğer paket dosyalarını V11 sürümüyle yükleyin.
