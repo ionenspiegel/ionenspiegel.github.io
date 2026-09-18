@@ -1,25 +1,7 @@
+İonenSpiegel GA4 düzeltmesi
 
-İONENSPIEGEL V59 DÜZELTME PAKETİ
-
-Bu paket GitHub'a kendiliğinden yükleme yapmaz.
-
-Yapılan düzeltmeler:
-1. Son Dakika haber kartlarındaki görseller tıklanabilir hale getirildi.
-2. Görsellerin üzerine "Haber için tıkla" etiketi ekleniyor.
-3. Tıklanınca haberin kaynak sayfası yeni sekmede açılıyor.
-4. Beşiktaş-Marsilya maç kartındaki skorun mobilde satır kırması engelleniyor.
-5. Takım isimlerindeki emoji kaynaklı sıkışıklık gideriliyor.
-6. Kaynak bağlantısının, kaydetme sisteminde görsel bağlantısıyla karışmasını önleyen yardımcı kod eklendi.
-
-KULLANIM
-- duzeltme.css dosyasını style.css'den sonra yükle.
-- duzeltme.js dosyasını script.js'den sonra yükle.
-
-index.html içine:
-<link rel="stylesheet" href="duzeltme.css?v=59">
-
-script.js satırından sonra:
-<script src="duzeltme.js?v=59"></script>
-
-Not:
-Bu paket mevcut sitenin bütün dosyalarının yeniden paketlenmiş kopyası değildir. Mevcut GitHub dosyalarının üzerine küçük ve güvenli bir düzeltme katmanı olarak hazırlanmıştır. Böylece mevcut haber verileri ve diğer bölümler gereksiz yere ezilmez.
+1. Eski ga4.js dosyasını GitHub reposunun ana klasöründen kaldır/değiştir.
+2. Bu ZIP içindeki ga4.js dosyasını ana klasöre yükle.
+3. index.html içindeki <script src="./ga4.js?v=64" defer></script> satırına dokunma.
+4. GitHub Pages güncellendikten sonra siteyi aç.
+5. Google Analytics > Gerçek Zamanlı bölümünden kontrol et.
