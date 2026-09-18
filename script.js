@@ -102,3 +102,66 @@ function renderPoll(){
 
 qs("#menuBtn").onclick=()=>qs("#mobileMenu").classList.toggle("open");
 renderBreaking();renderNews();renderMatches();renderStandings();renderCalendar();renderPoll();
+
+
+/* Daha Fazla özellikleri */
+(function(){
+  const body=document.body;
+  const themeCard=document.getElementById("darkThemeCard");
+  const favoriteCard=document.getElementById("favoriteCard");
+  const notificationCard=document.getElementById("notificationCard");
+  const themeStatus=document.getElementById("themeStatus");
+  const favoriteStatus=document.getElementById("favoriteStatus");
+  const notificationStatus=document.getElementById("notificationStatus");
+  const favoriteModal=document.getElementById("favoriteModal");
+  const favoriteClose=document.getElementById("favoriteClose");
+  const teamPicker=document.getElementById("teamPicker");
+
+  const teams=[
+    ["Fenerbahçe","Süper Lig"],["Galatasaray","Süper Lig"],["Beşiktaş","Süper Lig"],
+    ["Trabzonspor","Süper Lig"],["Başakşehir","Süper Lig"],["Samsunspor","Süper Lig"],
+    ["Manchester City","Premier League"],["Liverpool","Premier League"],["Arsenal","Premier League"],
+    ["Barcelona","La Liga"],["Real Madrid","La Liga"],["Bayern Münih","Bundesliga"]
+  ];
+
+  function setTheme(on){
+    body.classList.toggle("dark",on);
+    localStorage.setItem("ionenspiegel-theme",on?"dark":"light");
+    if(themeStatus) themeStatus.textContent=on?"Aktif":"Kapalı";
+  }
+  setTheme(localStorage.getItem("ionenspiegel-theme")==="dark");
+  if(themeCard) themeCard.onclick=()=>setTheme(!body.classList.contains("dark"));
+
+  function renderTeams(){
+    const saved=localStorage.getItem("ionenspiegel-favorite-team")||"";
+    if(teamPicker) teamPicker.innerHTML=teams.map(t=>`<button class="team-choice ${saved===t[0]?"selected":""}" data-team="${t[0]}">${t[0]}<span>${t[1]}</span></button>`).join("");
+    document.querySelectorAll("[data-team]").forEach(btn=>btn.onclick=()=>{
+      const team=btn.dataset.team;
+      localStorage.setItem("ionenspiegel-favorite-team",team);
+      if(favoriteStatus) favoriteStatus.textContent=team;
+      document.querySelectorAll("[data-team]").forEach(x=>x.classList.remove("selected"));
+      btn.classList.add("selected");
+      setTimeout(()=>favoriteModal.classList.remove("open"),220);
+    });
+    if(favoriteStatus) favoriteStatus.textContent=saved||"Seçilmedi";
+  }
+  renderTeams();
+  if(favoriteCard) favoriteCard.onclick=()=>{renderTeams();favoriteModal.classList.add("open");favoriteModal.setAttribute("aria-hidden","false")};
+  if(favoriteClose) favoriteClose.onclick=()=>favoriteModal.classList.remove("open");
+  if(favoriteModal) favoriteModal.addEventListener("click",e=>{if(e.target===favoriteModal)favoriteModal.classList.remove("open")});
+
+  function notificationState(){
+    if(!notificationStatus)return;
+    if(!("Notification" in window)){notificationStatus.textContent="Desteklenmiyor";return}
+    notificationStatus.textContent=Notification.permission==="granted"?"Aktif":Notification.permission==="denied"?"Engellendi":"Kapalı";
+  }
+  notificationState();
+  if(notificationCard) notificationCard.onclick=async()=>{
+    if(!("Notification" in window)){notificationState();return}
+    try{
+      const permission=await Notification.requestPermission();
+      notificationState();
+      if(permission==="granted") new Notification("İonenSpiegel",{body:"Bildirimler aktif. Yeni futbol gelişmelerini kaçırma."});
+    }catch(e){notificationState()}
+  };
+})();

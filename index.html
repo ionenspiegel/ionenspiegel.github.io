@@ -127,7 +127,50 @@
       </div>
       <div class="calendar-grid" id="calendarGrid"></div>
     </section>
-  </main>
+  
+<section class="container section" id="daha-fazla">
+  <div class="section-head">
+    <div><span class="eyebrow red">KEŞFET</span><h2>Daha Fazla</h2></div>
+  </div>
+  <div class="more-grid">
+    <button class="more-card" id="darkThemeCard">
+      <span class="more-icon">◐</span><strong>Koyu Tema</strong>
+      <small>Görünümü değiştir</small><em id="themeStatus">Kapalı</em>
+    </button>
+    <button class="more-card" id="favoriteCard">
+      <span class="more-icon">★</span><strong>Favori Takımlar</strong>
+      <small>Takımını seç</small><em id="favoriteStatus">Seçilmedi</em>
+    </button>
+    <button class="more-card" id="notificationCard">
+      <span class="more-icon">♧</span><strong>Bildirimler</strong>
+      <small>Tarayıcı bildirimleri</small><em id="notificationStatus">Kapalı</em>
+    </button>
+    <a class="more-card" href="kaydedilenler.html">
+      <span class="more-icon">🔖</span><strong>Kaydedilenler</strong>
+      <small>Haberlerini burada tut</small><em>Aç</em>
+    </a>
+    <a class="more-card" href="video.html">
+      <span class="more-icon">▶</span><strong>Video</strong>
+      <small>Futbol videoları</small><em>İzle</em>
+    </a>
+    <a class="more-card" href="galeri.html">
+      <span class="more-icon">▧</span><strong>Galeri</strong>
+      <small>Fotoğraflara göz at</small><em>Görüntüle</em>
+    </a>
+  </div>
+</section>
+
+<div class="modal" id="favoriteModal" aria-hidden="true">
+  <div class="modal-box favorite-box">
+    <button class="modal-close" id="favoriteClose">×</button>
+    <span class="eyebrow red">FAVORİ TAKIM</span>
+    <h2>Takımını seç</h2>
+    <p class="modal-date">Seçimin bu cihazda kaydedilir.</p>
+    <div class="team-picker" id="teamPicker"></div>
+  </div>
+</div>
+
+</main>
 
   <footer>
     <div class="container footer-inner">
