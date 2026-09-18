@@ -1,0 +1,17 @@
+İONENSPIEGEL V7 - ESKİ SON DAKİKA ŞERİDİ TEMİZLİĞİ
+
+Bu sürüm V6'nın devamıdır.
+
+Yapılan değişiklik:
+- Header'ın altında görünen eski büyük "SON DAKİKA / 01 / 02 / 03" şeridi kaldırıldı.
+- V6 ile gelen yeni üst bant ticker korunmuştur.
+- Ana menü, mobil hamburger menüsü ve diğer özellikler değiştirilmemiştir.
+
+Yükleme:
+1. index.html
+2. Gerekli diğer V6 dosyalarını zaten kullandığın sürümden koru.
+
+Not: GitHub'a doğrudan yükleme yapılmaz. ZIP içindeki dosyayı manuel olarak yükle.
+
+
+GA4: ga4.js dosyası index.html içine bağlandı. Ölçüm kimliği: G-PVPMSV7J1F.

@@ -41,3 +41,6 @@
 }
 @media(prefers-reduced-motion:reduce){.is-ticker-track{animation:none}.is-live-dot{animation:none}}
 .dark-theme .is-main-nav{background:rgba(9,11,14,.96);border-color:rgba(255,255,255,.07)}
+
+/* V7: eski SON DAKİKA şeridini gizle */
+.breaking{display:none!important;}
