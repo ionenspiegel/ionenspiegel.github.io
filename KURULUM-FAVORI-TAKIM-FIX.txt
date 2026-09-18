@@ -1,0 +1,17 @@
+İONENSPIEGEL V9 - FAVORİ TAKIM DÜZELTMESİ
+
+Sorun:
+Favori takım penceresinde takım listesi görünmüyordu. Bunun nedeni index.html içinde aynı ID'lerin iki ayrı favori takım modalında kullanılmasıydı.
+
+Düzeltme:
+Eski/çift favori takım modalı kaldırıldı. Artık tek setupModal ve tek teamPicker kullanılıyor.
+
+Yükle:
+- index.html
+- script.js (V8'deki dosya korunuyor)
+- menu-v5.css (V8'deki dosya korunuyor)
+- ga4.js
+- news-image-link.css
+
+Sonuç:
+Favori Takımına basınca takım listesi görünmeli. Takım seçip 'Seçimi kaydet' ile kaydedebilirsin.

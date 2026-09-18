@@ -1,0 +1,22 @@
+İONENSPIEGEL V10 - PUBLYTICS
+
+V9 üzerine Publytics takip kodu eklendi.
+
+Eklenen takip kodu Publytics panelinden verilen kodla aynıdır:
+data-domain="ionenspiegel.github.io/Sfg3Ei"
+
+Kod index.html dosyasının <head> bölümüne eklenmiştir. Publytics dokümantasyonuna göre bu konum kullanılmalıdır.
+
+Google Analytics 4 de korunmuştur.
+GA4 ölçüm kimliği: G-PVPMSV7J1F
+
+Yüklenecek temel dosyalar:
+- index.html
+- script.js
+- menu-v5.css
+- news-image-link.css
+- ga4.js
+- iletisim.html
+- iletisim-v2.css
+
+V9'daki favori takım düzeltmesi korunmuştur.

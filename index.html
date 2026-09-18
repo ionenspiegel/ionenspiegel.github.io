@@ -37,6 +37,15 @@
 })();
 </script>
 <link rel="stylesheet" href="style.css?v=58">
+<!-- Publytics Analytics -->
+<script defer data-domain="ionenspiegel.github.io/Sfg3Ei" src="https://api.publytics.net/js/script.manual.min.js"></script>
+<script>
+  window.publytics = window.publytics || function() {
+    (window.publytics.q = window.publytics.q || []).push(arguments);
+  };
+  publytics('pageview');
+</script>
+
 <style id="live-score-removed">
 #liveScoreWidget,#liveScoreCard,#liveScoreList,.live-score-list,#timelineModal,.live-clock,.live-all-link{display:none!important}
 </style>
@@ -530,17 +539,6 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   </div>
 </section>
 
-<div class="ref-modal" id="favoriteModal" aria-hidden="true">
-  <div class="ref-modal-box">
-    <button class="ref-close" id="favoriteClose" type="button">×</button>
-    <span class="ref-kicker">KİŞİSELLEŞTİRME</span>
-    <h2>Favori Takımını Seç</h2>
-    <p>Seçimin kaydedilir ve sana özel içerikler sunulur.</p>
-    <div class="team-search"><span>⌕</span><input id="teamSearch" type="search" placeholder="Takım ara..." autocomplete="off"></div>
-    <div class="ref-team-grid" id="teamPicker"></div>
-    <button class="ref-save-team" id="saveFavoriteTeam" type="button">Kaydet</button>
-  </div>
-</div>
 
 </main>
 
