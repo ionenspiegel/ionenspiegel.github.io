@@ -6,8 +6,48 @@
     "category": "Beşiktaş",
     "date": "18 Eylül 2026",
     "image": "../local-2.svg",
-    "source": "The Guardian",
+    "source": "Anadolu Ajansı",
     "link": "https://www.theguardian.com/football/live/2026/sep/17/real-sociedad-v-bournemouth-crystal-palace-v-lech-poznan-and-more-europa-league-live"
+  },
+  {
+    "id": "ucl-fener-roma",
+    "title": "Fenerbahçe, Roma ile 1-1 berabere kaldı",
+    "description": "Fenerbahçe, 2026/27 UEFA Şampiyonlar Ligi lig aşamasının ilk maçında Roma ile 1-1 berabere kaldı.",
+    "category": "Şampiyonlar Ligi",
+    "date": "10 Eylül 2026",
+    "image": "../local-7.svg",
+    "source": "UEFA",
+    "link": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures/"
+  },
+  {
+    "id": "ucl-gs-sporting",
+    "title": "Galatasaray, Sporting CP karşısında 3-1 kaybetti",
+    "description": "Galatasaray, Şampiyonlar Ligi lig aşamasının ilk maçında Sporting CP'ye 3-1 mağlup oldu.",
+    "category": "Şampiyonlar Ligi",
+    "date": "9 Eylül 2026",
+    "image": "../local-7.svg",
+    "source": "UEFA",
+    "link": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures/"
+  },
+  {
+    "id": "ucl-matchday1",
+    "title": "Şampiyonlar Ligi'nde ilk hafta sonuçlandı",
+    "description": "İlk haftada Barcelona Feyenoord'u 5-1, PSG Slovan Bratislava'yı 6-1, Bayern Münih ise Bodø/Glimt'i 5-0 yendi.",
+    "category": "Şampiyonlar Ligi",
+    "date": "10 Eylül 2026",
+    "image": "../local-7.svg",
+    "source": "UEFA",
+    "link": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures/"
+  },
+  {
+    "id": "el-matchday1",
+    "title": "Avrupa Ligi'nde ilk hafta tamamlandı",
+    "description": "Beşiktaş'ın 4-1'lik galibiyetinin yanında Juventus 5-0, Crystal Palace 4-0 ve Bournemouth 2-1'lik galibiyetler aldı.",
+    "category": "Avrupa Ligi",
+    "date": "18 Eylül 2026",
+    "image": "../local-7.svg",
+    "source": "UEFA",
+    "link": "https://www.uefa.com/uefaeuropaleague/news/02a9-219ba00d8c3a-2fc9c36259e8-1000--europa-league-matchday-1-highlights-and-round-up-benfica-/"
   },
   {
     "id": "fener-asensio",
@@ -86,7 +126,7 @@
     "category": "Avrupa",
     "date": "17 Eylül 2026",
     "image": "../local-7.svg",
-    "source": "The Guardian",
+    "source": "Anadolu Ajansı",
     "link": "https://www.theguardian.com/football/live/2026/sep/17/real-sociedad-v-bournemouth-crystal-palace-v-lech-poznan-and-more-europa-league-live"
   }
 ]

@@ -1,85 +1,135 @@
 {
-  "updatedAt": "2026-09-17T10:00:00+03:00",
+  "date": "2026-09-18",
   "news": [
     {
-      "title": "Beşiktaş, Avrupa Ligi'nde Marsilya'yı ağırlıyor",
-      "summary": "Beşiktaş, UEFA Avrupa Ligi lig aşamasındaki ilk maçında 17 Eylül Perşembe günü Olimpik Marsilya'yı konuk edecek. Karşılaşma Tüpraş Stadı'nda saat 22.00'de başlayacak.",
+      "id": "bjk-marseille-result",
+      "title": "Beşiktaş, Marsilya'yı 4-1 mağlup etti",
+      "description": "Beşiktaş, UEFA Avrupa Ligi lig aşamasındaki ilk maçında Marsilya'yı 4-1 yenerek turnuvaya galibiyetle başladı.",
+      "category": "Beşiktaş",
+      "date": "18 Eylül 2026",
+      "image": "../local-2.svg",
       "source": "Anadolu Ajansı",
-      "url": "https://www.aa.com.tr/tr/spor/besiktas-uefa-avrupa-liginde-olimpik-marsilyayi-agirlayacak/4058536",
-      "date": "17 Eylül 2026",
-      "team": "Beşiktaş"
+      "link": "https://www.theguardian.com/football/live/2026/sep/17/real-sociedad-v-bournemouth-crystal-palace-v-lech-poznan-and-more-europa-league-live"
     },
     {
-      "title": "Beşiktaş'ta Orkun Kökçü'nün durumu maç saatinde belli olacak",
-      "summary": "Marsilya maçı öncesinde Orkun Kökçü'nün oynayıp oynamayacağı maç saatinde netleşecek.",
-      "source": "Habertürk",
-      "url": "https://www.haberturk.com/spor/besiktas-marsilya-maci-ne-zaman-saat-kacta-hangi-kanalda-bjk-marsilya-uefa-avrupa-ligi-maci-canli-izle-besiktas-marsilya-muhtemel-11-ler-3913040",
-      "date": "17 Eylül 2026",
-      "team": "Beşiktaş"
-    },
-    {
-      "title": "Fenerbahçe'den Asensio müjdesi: Eyüpspor maçında kadroda olacak",
-      "summary": "Fenerbahçe, sakatlığı nedeniyle bir süredir forma giyemeyen Marco Asensio'nun 20 Eylül'deki Eyüpspor maçının kadrosunda yer alacağını açıkladı.",
-      "source": "Habertürk",
-      "url": "https://www.haberturk.com/spor/son-dakika-fenerbahce-den-asensio-mujdesi-eyupspor-macinda-kadroda-olacak-3912875",
-      "date": "17 Eylül 2026",
-      "team": "Fenerbahçe"
-    },
-    {
-      "title": "Dursun Özbek: Transferleri erken yapsaydık fark yaklaşık 50 milyon euro olacaktı",
-      "summary": "Galatasaray Başkanı Dursun Özbek, Divan Kurulu toplantısında transferlerin neden geç yapıldığına ilişkin açıklamalarda bulundu ve erken transfer halinde mali farkın yaklaşık 50 milyon euro olacağını söyledi.",
-      "source": "Galatasaray",
-      "url": "https://www.galatasaray.org/haber/kulup/divan-kurulu-eylul-ayi-olagan-toplantisi-gerceklestirildi/60976",
-      "date": "16 Eylül 2026",
-      "team": "Galatasaray"
-    },
-    {
-      "title": "Thomas Reis, Trabzonspor'un 13. yabancı teknik direktörü oldu",
-      "summary": "Trabzonspor'un anlaşmaya vardığı Thomas Reis, kulübün 59 yıllık tarihinde görev yapacak 45. teknik direktör ve 13. yabancı teknik adam olarak kayda geçti.",
-      "source": "Anadolu Ajansı",
-      "url": "https://www.aa.com.tr/tr/spor/thomas-reis-trabzonsporun-13-yabanci-teknik-direktoru/4058780",
-      "date": "16 Eylül 2026",
-      "team": "Trabzonspor"
-    },
-    {
-      "title": "Süper Lig'de 6. hafta yarın başlıyor",
-      "summary": "6. hafta 18 Eylül'de Kasımpaşa-TÜMOSAN Konyaspor maçıyla başlayacak. Trabzonspor-Galatasaray karşılaşması 19 Eylül Cumartesi saat 20.00'de oynanacak.",
-      "source": "Anadolu Ajansı",
-      "url": "https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611",
-      "date": "17 Eylül 2026",
-      "team": "Süper Lig"
-    },
-    {
-      "title": "Trabzonspor-Galatasaray derbisi 19 Eylül'de",
-      "summary": "Süper Lig'in 6. haftasındaki Trabzonspor-Galatasaray mücadelesi 19 Eylül Cumartesi günü saat 20.00'de Papara Park'ta oynanacak.",
-      "source": "Anadolu Ajansı",
-      "url": "https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611",
-      "date": "17 Eylül 2026",
-      "team": "Trabzonspor"
-    },
-    {
-      "title": "Avrupa Ligi'nde ilk gece: Benfica, Milan'ı 2-0 yendi",
-      "summary": "2026/27 UEFA Avrupa Ligi'nin ilk gecesinde Benfica deplasmanda Milan'ı 2-0 mağlup etti. Lyon Anderlecht'i 2-1, Leverkusen Celje'yi 2-0 yendi.",
+      "id": "ucl-fener-roma",
+      "title": "Fenerbahçe, Roma ile 1-1 berabere kaldı",
+      "description": "Fenerbahçe, 2026/27 UEFA Şampiyonlar Ligi lig aşamasının ilk maçında Roma ile 1-1 berabere kaldı.",
+      "category": "Şampiyonlar Ligi",
+      "date": "10 Eylül 2026",
+      "image": "../local-7.svg",
       "source": "UEFA",
-      "url": "https://www.uefa.com/uefaeuropaleague/news/02a9-219ba00d8c3a-2fc9c36259e8-1000--europa-league-matchday-1-highlights-and-round-up-benfica-/",
-      "date": "16 Eylül 2026",
-      "team": "Avrupa"
+      "link": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures/"
     },
     {
-      "title": "Manchester United, Lig Kupası'nda 2-0 öne geçtiği maçı 3-2 kaybetti",
-      "summary": "Manchester United, Brighton'a karşı evinde 2-0 öne geçmesine rağmen 3-2 mağlup oldu. Reuters'a göre United 50 yıl sonra Old Trafford'da iki farklı öne geçtiği bir Lig Kupası maçını kaybetti.",
-      "source": "Reuters",
-      "url": "https://www.reuters.com/sports/soccer/man-utd-out-league-cup-after-going-2-0-up-home-then-losing-3-2-50-year-first-2026-09-16/",
-      "date": "16 Eylül 2026",
-      "team": "Avrupa"
+      "id": "ucl-gs-sporting",
+      "title": "Galatasaray, Sporting CP karşısında 3-1 kaybetti",
+      "description": "Galatasaray, Şampiyonlar Ligi lig aşamasının ilk maçında Sporting CP'ye 3-1 mağlup oldu.",
+      "category": "Şampiyonlar Ligi",
+      "date": "9 Eylül 2026",
+      "image": "../local-7.svg",
+      "source": "UEFA",
+      "link": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures/"
     },
     {
-      "title": "Şampiyonlar Ligi finalleri 2028'de Münih, 2029'da Barcelona'da",
-      "summary": "UEFA, 2028 Şampiyonlar Ligi finalinin Münih Allianz Arena'da, 2029 finalinin ise Barcelona Camp Nou'da oynanacağını açıkladı.",
+      "id": "ucl-matchday1",
+      "title": "Şampiyonlar Ligi'nde ilk hafta sonuçlandı",
+      "description": "İlk haftada Barcelona Feyenoord'u 5-1, PSG Slovan Bratislava'yı 6-1, Bayern Münih ise Bodø/Glimt'i 5-0 yendi.",
+      "category": "Şampiyonlar Ligi",
+      "date": "10 Eylül 2026",
+      "image": "../local-7.svg",
+      "source": "UEFA",
+      "link": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures/"
+    },
+    {
+      "id": "el-matchday1",
+      "title": "Avrupa Ligi'nde ilk hafta tamamlandı",
+      "description": "Beşiktaş'ın 4-1'lik galibiyetinin yanında Juventus 5-0, Crystal Palace 4-0 ve Bournemouth 2-1'lik galibiyetler aldı.",
+      "category": "Avrupa Ligi",
+      "date": "18 Eylül 2026",
+      "image": "../local-7.svg",
+      "source": "UEFA",
+      "link": "https://www.uefa.com/uefaeuropaleague/news/02a9-219ba00d8c3a-2fc9c36259e8-1000--europa-league-matchday-1-highlights-and-round-up-benfica-/"
+    },
+    {
+      "id": "fener-asensio",
+      "title": "Fenerbahçe'de Asensio Eyüpspor maçının kadrosunda",
+      "description": "Fenerbahçe, sakatlığını atlatan Marco Asensio'nun 20 Eylül'deki Eyüpspor karşılaşmasının kadrosunda yer alacağını açıkladı.",
+      "category": "Fenerbahçe",
+      "date": "18 Eylül 2026",
+      "image": "../local-4.svg",
+      "source": "beIN SPORTS Türkiye",
+      "link": "https://beinsports.com.tr/haber/fenerbahceden-marco-asensio-aciklamasi"
+    },
+    {
+      "id": "bjk-next",
+      "title": "Beşiktaş'ın sıradaki lig maçı Amedspor deplasmanında",
+      "description": "Beşiktaş, 20 Eylül Pazar günü saat 20.00'de Amed Sportif Faaliyetler ile karşılaşacak.",
+      "category": "Beşiktaş",
+      "date": "18 Eylül 2026",
+      "image": "../local-2.svg",
+      "source": "Anadolu Ajansı",
+      "link": "https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611"
+    },
+    {
+      "id": "superlig-6-hafta",
+      "title": "Süper Lig'de 6. hafta bugün başlıyor",
+      "description": "6. haftanın açılışında Kasımpaşa ile Konyaspor 18 Eylül Cuma günü saat 20.00'de karşılaşacak.",
+      "category": "Süper Lig",
+      "date": "18 Eylül 2026",
+      "image": "../local-6.svg",
+      "source": "Anadolu Ajansı",
+      "link": "https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611"
+    },
+    {
+      "id": "trabzon-gs-derbi",
+      "title": "Trabzonspor-Galatasaray derbisi yarın",
+      "description": "Trabzonspor ile Galatasaray, Süper Lig'in 6. haftasında 19 Eylül Cumartesi günü saat 20.00'de Papara Park'ta karşılaşacak.",
+      "category": "Süper Lig",
+      "date": "18 Eylül 2026",
+      "image": "../local-1.svg",
+      "source": "Anadolu Ajansı",
+      "link": "https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611"
+    },
+    {
+      "id": "europa-ilk-gece",
+      "title": "Avrupa Ligi'nde ilk hafta tamamlandı",
+      "description": "2026/27 UEFA Avrupa Ligi'nin ilk maç gününde karşılaşmalar tamamlandı ve sonuçlar netleşti.",
+      "category": "Avrupa",
+      "date": "18 Eylül 2026",
+      "image": "../local-7.svg",
+      "source": "UEFA",
+      "link": "https://www.uefa.com/uefaeuropaleague/news/02a9-219ba00d8c3a-2fc9c36259e8-1000--europa-league-matchday-1-highlights-and-round-up-benfica-/"
+    },
+    {
+      "id": "barcelona-racing",
+      "title": "Barcelona, Racing'i 7-2 yendi",
+      "description": "Barcelona, LaLiga'da Racing Santander'i 7-2 mağlup etti. Raphinha hat-trick yaparken Barcelona sezonun altıncı lig maçında da yenilmedi.",
+      "category": "Dünya",
+      "date": "17 Eylül 2026",
+      "image": "../local-6.svg",
       "source": "Reuters",
-      "url": "https://www.reuters.com/sports/soccer/munichs-allianz-arena-barcelonas-camp-nou-host-champions-league-finals-2026-09-15/",
-      "date": "15 Eylül 2026",
-      "team": "Avrupa"
+      "link": "https://www.reuters.com/sports/soccer/flick-sets-record-barcelona-breeze-past-racing-with-raphinha-hat-trick-2026-09-16/"
+    },
+    {
+      "id": "fb-eyupspor",
+      "title": "Fenerbahçe-Eyüpspor maçı 20 Eylül'de",
+      "description": "Fenerbahçe, Süper Lig'in 6. haftasında Eyüpspor'u 20 Eylül Pazar günü saat 17.00'de ağırlayacak.",
+      "category": "Fenerbahçe",
+      "date": "18 Eylül 2026",
+      "image": "../local-4.svg",
+      "source": "Anadolu Ajansı",
+      "link": "https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611"
+    },
+    {
+      "id": "europe-bournemouth",
+      "title": "Bournemouth Avrupa Ligi'ne galibiyetle başladı",
+      "description": "Bournemouth, kulüp tarihindeki ilk Avrupa maçında Real Sociedad'ı deplasmanda 2-1 mağlup etti.",
+      "category": "Avrupa",
+      "date": "17 Eylül 2026",
+      "image": "../local-7.svg",
+      "source": "Anadolu Ajansı",
+      "link": "https://www.theguardian.com/football/live/2026/sep/17/real-sociedad-v-bournemouth-crystal-palace-v-lech-poznan-and-more-europa-league-live"
     }
   ]
 }
