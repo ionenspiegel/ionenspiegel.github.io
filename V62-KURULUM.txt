@@ -1,9 +1,8 @@
-1. ZIP'i aç.
-2. İçindeki dosyaları mevcut ionenspiegel.github.io deposunun köküne koy.
-3. data klasöründeki iki JSON dosyasını data klasörüne koy.
-4. Aynı isimli dosyaların üzerine yaz.
-5. photo-*.jpg, news-*.jpg, logo.png, icon*.png, local-*.svg gibi mevcut görsel dosyalarını silme.
-6. GitHub Pages'in güncellenmesini bekle.
-7. Tarayıcıda siteyi yenile. Service Worker V62 eski önbelleği temizler.
+İonenSpiegel V62.1 görsel ve mobil düzeltme paketi
 
-Not: Bu paket GitHub'a otomatik yükleme yapmaz.
+1. Bu paketi GitHub reposuna yüklerken mevcut photo-*.jpg, logo.png ve icon*.png dosyalarını silme.
+2. index.html, style.css, script.js, sw.js, v62-modern.css ve v62-fixes.js dosyalarını güncel paketle değiştir.
+3. index.html artık gerçek photo-*.jpg görsellerini kullanır ve görsele tıklayınca haber kaynağı açılır.
+4. Türk Takımlarının Avrupa Maçları bölümü için v62-modern.css mutlaka index.html ile birlikte yüklenmelidir.
+5. Tarayıcı eski CSS/JS tutarsa sayfayı sert yenile veya site verilerini temizleyip yeniden aç.
+6. GitHub üzerinde dosya yükleme/değiştirme işlemini sen yap.
