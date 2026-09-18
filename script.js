@@ -1,3 +1,7 @@
+/* İonenSpiegel V45 merkezi yapılandırma */
+const COMMUNITY_API='https://script.google.com/macros/s/AKfycbxoTMojRbXgNWBkFqSvYXULBRkT1C30nOZdh4luZmLqe_FZ55U3Vv1O2CExgoumeaFy_Q/exec';
+const REQUEST_TIMEOUT=7000;
+async function fetchWithTimeout(input,options={}){const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),options.timeout||REQUEST_TIMEOUT);try{return await fetch(input,{...options,signal:controller.signal})}finally{clearTimeout(timer)}}
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const toast=(msg)=>{const t=$('#toast');if(!t)return;t.textContent=msg;t.classList.add('show');clearTimeout(window._toast);window._toast=setTimeout(()=>t.classList.remove('show'),2200)};
 
@@ -54,7 +58,6 @@ function articleData(article){const img=article.querySelector('img');const h=art
 function isSaved(id){return getSaved().some(x=>x.id===id)}
 function updateBookmarkButtons(){ $$('.news-row.has-bookmark').forEach(a=>{const b=a.querySelector('.bookmark-btn');if(!b)return;const saved=isSaved(a.dataset.newsId);b.classList.toggle('saved',saved);b.textContent=saved?'🔖':'🔖';b.setAttribute('aria-label',saved?'Kaydedilenlerden çıkar':'Haberi kaydet');})}
 function toggleBookmark(article){const id=article.dataset.newsId;let saved=getSaved();if(saved.some(x=>x.id===id)){saved=saved.filter(x=>x.id!==id);toast('Haber kaydedilenlerden çıkarıldı')}else{saved.unshift(articleData(article));toast('Haber “Sonra Oku”ya kaydedildi')}setSaved(saved);updateBookmarkButtons();renderSavedNews()}
-$$('.news-row.has-bookmark').forEach(a=>a.querySelector('.bookmark-btn')?.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();toggleBookmark(a)}));
 
 const savedModal=$('#savedModal');
 function renderSavedNews(){const box=$('#savedNewsList');if(!box)return;const saved=getSaved();if(!saved.length){box.innerHTML='<div class="saved-empty">🔖<br><br>Henüz kaydedilmiş haber yok.<br><small>Haberlerin sağ üstündeki yer imi düğmesine dokun.</small></div>';return}box.innerHTML=saved.map(x=>`<article class="saved-news-card"><img src="${x.image}" alt=""><div><small>${x.kicker}</small><h3>${x.title}</h3><a href="${x.source}" target="_blank" rel="noopener">Kaynağı aç ↗</a></div><button class="saved-remove" type="button" data-remove-saved="${x.id}" aria-label="Kaydı kaldır">×</button></article>`).join('');$$('[data-remove-saved]').forEach(b=>b.addEventListener('click',()=>{setSaved(getSaved().filter(x=>x.id!==b.dataset.removeSaved));renderSavedNews();updateBookmarkButtons();toast('Kayıt kaldırıldı')}))}
@@ -92,7 +95,7 @@ function liveNewsImage(item){const t=(item.title+' '+item.category).toLocaleLowe
 function liveNewsTeam(item){const t=(item.title+' '+item.description).toLocaleLowerCase('tr-TR');for(const team of Object.keys(teamStyles)){if(t.includes(team.toLocaleLowerCase('tr-TR')))return team}return ''}
 function liveNewsDate(value){if(!value)return 'Şimdi';const d=new Date(value);if(Number.isNaN(d.getTime()))return value;return new Intl.DateTimeFormat('tr-TR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}).format(d)}
 function loadLiveNews(showToast=false){
-  const feed=$('#newsFeed');const api=window.IONENSPIEGEL_COMMUNITY_API||'';if(!feed||!/^https:\/\//.test(api))return;
+  const feed=$('#newsFeed');const api=COMMUNITY_API;if(!feed||!/^https:\/\//.test(api))return;
   const status=$('#newsStatus');if(status)status.textContent='Güncelleniyor…';
   const cb='ionenspiegelNews_'+Date.now();let script;
   const cleanup=()=>{try{script?.remove()}catch(e){}try{delete window[cb]}catch(e){}};
@@ -102,7 +105,6 @@ function loadLiveNews(showToast=false){
     if(!items.length){if(status)status.textContent='Otomatik akışta yeni futbol haberi bulunamadı.';if(showToast)toast('Yeni haber bulunamadı');return}
     const esc=v=>String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
     feed.innerHTML=items.map((item,i)=>{const team=liveNewsTeam(item);const id='live-'+i+'-'+Math.abs((item.link||item.title).split('').reduce((a,c)=>((a<<5)-a)+c.charCodeAt(0)|0,0));const img=liveNewsImage(item);const desc=item.description||'Haberin ayrıntıları için kaynak sayfasını aç.';return `<article class="news-row has-bookmark live-news-row" data-news-id="${esc(id)}" data-team="${esc(team)}" data-search="${esc(item.title+' '+desc)}"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="${img}" alt="Futbol haberi"></div><div><div class="news-kicker">${esc(liveNewsDate(item.pubDate))} · ${esc(item.category||'FUTBOL')}</div><h3>${esc(item.title)}</h3><p>${esc(desc)}</p><a href="${esc(item.link)}" target="_blank" rel="noopener noreferrer">${esc(item.source||'Kaynak')} ↗</a></div></article>`}).join('');
-    $$('.news-row.has-bookmark',feed).forEach(a=>a.querySelector('.bookmark-btn')?.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();toggleBookmark(a)}));
     sortNewsByFavorite();
     if(status)status.textContent=`Otomatik akış · ${items.length} futbol haberi · ${liveNewsDate(data.updatedAt)}`;
     if(showToast)toast(`${items.length} güncel haber yüklendi`);
@@ -111,10 +113,38 @@ function loadLiveNews(showToast=false){
 }
 $('#refreshNews')?.addEventListener('click',()=>{loadOwnJsonNews(true)});
 
+/* ---------- NEWS EVENT DELEGATION ---------- */
+const newsFeedRoot=$('#newsFeed');
+newsFeedRoot?.addEventListener('click',e=>{
+  const bookmark=e.target.closest('.bookmark-btn');
+  const row=e.target.closest('.news-row');
+  if(!row||!newsFeedRoot.contains(row))return;
+  if(bookmark){e.preventDefault();e.stopPropagation();toggleBookmark(row);return;}
+  if(e.target.closest('a'))return;
+  openArticle(row);
+});
+
+/* ---------- MOBILE NAV + SCROLL UX ---------- */
+const mobileNav=$('.mobile-nav');
+let lastScrollY=Math.max(0,window.scrollY),navTick=false;
+function updateMobileNav(){
+  navTick=false;
+  const y=Math.max(0,window.scrollY);
+  if(mobileNav){
+    if(y>120 && y>lastScrollY+4) mobileNav.classList.add('nav-hidden');
+    else if(y<lastScrollY-4 || y<60) mobileNav.classList.remove('nav-hidden');
+  }
+  lastScrollY=y;
+}
+window.addEventListener('scroll',()=>{if(!navTick){navTick=true;requestAnimationFrame(updateMobileNav)}},{passive:true});
+const navLinks=$$('.mobile-nav a[href^="#"]');
+const sectionObserver=('IntersectionObserver' in window)?new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')===`#${entry.target.id}`))}})},{rootMargin:'-35% 0px -55% 0px',threshold:0}):null;
+navLinks.forEach(a=>{const id=a.getAttribute('href')?.slice(1),target=id&&document.getElementById(id);if(target&&sectionObserver)sectionObserver.observe(target)});
+
 /* ---------- THEME: manual + system preference ---------- */
 const themeCard=$('#themeCard');
 function systemTheme(){return window.matchMedia?.('(prefers-color-scheme: dark)').matches?'dark':'light'}
-function applyTheme(theme,save=true){const dark=theme==='dark';document.documentElement.classList.toggle('dark-theme',dark);if(save)localStorage.setItem(STORE.theme,dark?'dark':'light');if(themeCard){themeCard.querySelector('b').textContent=dark?'Açık Tema':'Koyu Tema';themeCard.querySelector('small').textContent=dark?'Gündüz okuma görünümü':'Gece okuma görünümü'}}
+function applyTheme(theme,save=true){const dark=theme==='dark';document.documentElement.classList.toggle('dark-theme',dark);if(save)localStorage.setItem(STORE.theme,dark?'dark':'light');const meta=document.getElementById('themeColorMeta');if(meta)meta.setAttribute('content',dark?'#111419':'#e50914');if(themeCard){themeCard.querySelector('b').textContent=dark?'Açık Tema':'Koyu Tema';themeCard.querySelector('small').textContent=dark?'Gündüz okuma görünümü':'Gece okuma görünümü'}}
 const storedTheme=localStorage.getItem(STORE.theme);applyTheme(storedTheme||systemTheme(),false);
 themeCard?.addEventListener('click',()=>{const dark=document.documentElement.classList.contains('dark-theme');applyTheme(dark?'light':'dark',true);toast(dark?'Açık tema aktif':'Koyu tema aktif')});
 window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change',e=>{if(!localStorage.getItem(STORE.theme))applyTheme(e.matches?'dark':'light',false)});
@@ -133,10 +163,7 @@ const articleLongText={
 function articleDataFull(a){const d=articleData(a),ps=articleLongText[d.id]||[d.text,'Haberin ayrıntıları ve kaynak bağlantısı tam ekran okuma görünümünde sunulur.','Kaynak bağlantısı ve paylaşım araçları haber detayının altında yer alır.'];return {...d,paragraphs:ps}}
 function openArticle(article){if(!articleModal||!article)return;const d=articleDataFull(article);articleKicker.textContent=d.kicker||d.team||'HABER';articleTitle.textContent=d.title;articleMeta.textContent=`${d.team||'Futbol'} · ${new Date().toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'})}`;articleImage.src=d.image;articleImage.alt=d.title;setSocialImage(d.image);articleBody.innerHTML=d.paragraphs.map((x,i)=>`<p class="${i===0?'article-lead':''}">${x}</p>`).join('');articleSource.href=d.source;articleModal.classList.add('show');document.body.classList.add('modal-open');setTimeout(()=>$('#articleClose')?.focus(),30)}
 function closeArticle(){articleModal?.classList.remove('show');document.body.classList.remove('modal-open')}
-function bindNewsInteractions(){
- $$('.news-row.has-bookmark').forEach(a=>{const b=a.querySelector('.bookmark-btn');b?.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();toggleBookmark(a)});a.addEventListener('click',e=>{if(e.target.closest('.bookmark-btn')||e.target.closest('a'))return;openArticle(a)});});
- updateBookmarkButtons();sortNewsByFavorite();
-}
+function bindNewsInteractions(){updateBookmarkButtons();sortNewsByFavorite();}
 $('#articleClose')?.addEventListener('click',closeArticle);articleModal?.addEventListener('click',e=>{if(e.target===articleModal)closeArticle()});$('#heroRead')?.addEventListener('click',()=>{const id=slides[slideIndex]?.newsId;const a=$(`.news-row[data-news-id="${id}"]`);if(a)openArticle(a)});
 const articleShare=$('#articleShare');
 articleShare?.addEventListener('click',async()=>{const title=articleTitle?.textContent||'ionenspiegel';const url=location.href.split('#')[0]+'#haberler';const metaImg=document.querySelector('meta[property="og:image"]')?.content;try{if(navigator.share){let data={title,text:`${title} | İonenSpiegel`,url};if(metaImg&&navigator.canShare){try{const r=await fetch(metaImg,{cache:'no-store'});const b=await r.blob();const ext=b.type.includes('svg')?'svg':'png';const file=new File([b],`ionenspiegel-${Date.now()}.${ext}`,{type:b.type||'image/svg+xml'});if(navigator.canShare({files:[file]}))data.files=[file]}catch(_){}}await navigator.share(data)}else throw 0;toast('Paylaşım penceresi açıldı')}catch(e){if(e?.name==='AbortError')return;try{await navigator.clipboard.writeText(url);toast('Bağlantı kopyalandı')}catch(_){toast('Bağlantı: '+url)}}});
@@ -150,7 +177,7 @@ window.addEventListener('appinstalled',()=>{deferredInstall=null;installCard?.cl
 /* ---------- V12 NOTIFICATIONS ---------- */
 $('#notificationCard')?.addEventListener('click',async()=>{if(!('Notification' in window)){toast('Bu tarayıcı bildirimleri desteklemiyor');return}let p=Notification.permission;if(p==='default')p=await Notification.requestPermission();if(p==='granted'){toast('Bildirimler açıldı');setTimeout(()=>new Notification('ionenspiegel',{body:'Yeni futbol gelişmesi var.',icon:'icon-192.png',tag:'ionenspiegel-news'}),3000)}else toast('Bildirim izni verilmedi')});
 /* ---------- V12 SKELETON NEWS ---------- */
-function runNewsSkeleton(){const feed=$('#newsFeed');if(!feed)return;const html=feed.innerHTML;feed.classList.add('skeleton-mode');feed.setAttribute('aria-busy','true');feed.innerHTML=`<article class="news-row"><div class="thumb"></div><div><div class="news-kicker">YÜKLENİYOR</div><h3>Haber hazırlanıyor...</h3><p>İçerik yükleniyor.</p></div></article><article class="news-row"><div class="thumb"></div><div><div class="news-kicker">YÜKLENİYOR</div><h3>Haber hazırlanıyor...</h3><p>İçerik yükleniyor.</p></div></article><article class="news-row"><div class="thumb"></div><div><div class="news-kicker">YÜKLENİYOR</div><h3>Haber hazırlanıyor...</h3><p>İçerik yükleniyor.</p></div></article>`;setTimeout(()=>{feed.innerHTML=html;feed.classList.remove('skeleton-mode');feed.setAttribute('aria-busy','false');bindNewsInteractions()},650)}
+function runNewsSkeleton(){const feed=$('#newsFeed');if(!feed)return;const html=feed.innerHTML;feed.classList.add('skeleton-mode');feed.setAttribute('aria-busy','true');feed.innerHTML=`<article class="news-row"><div class="thumb"></div><div><div class="news-kicker">YÜKLENİYOR</div><h3>Haber hazırlanıyor...</h3><p>İçerik yükleniyor.</p></div></article><article class="news-row"><div class="thumb"></div><div><div class="news-kicker">YÜKLENİYOR</div><h3>Haber hazırlanıyor...</h3><p>İçerik yükleniyor.</p></div></article><article class="news-row"><div class="thumb"></div><div><div class="news-kicker">YÜKLENİYOR</div><h3>Haber hazırlanıyor...</h3><p>İçerik yükleniyor.</p></div></article>`;setTimeout(()=>{feed.innerHTML=html;feed.classList.remove('skeleton-mode');feed.setAttribute('aria-busy','false');bindNewsInteractions()},420)}
 
 /* ---------- V12 FOCUS TRAP ---------- */
 const modalNodes=()=>$$('.modal-backdrop.show,.timeline-backdrop.show,.media-modal-backdrop.show,.article-backdrop.show');
@@ -286,7 +313,7 @@ async function loadOwnJsonNews(showToast=false){
   const status=$('#newsStatus');
   try{
     if(status)status.textContent='Haberler yükleniyor…';
-    const response=await fetch('./data/news.json?v='+Date.now(),{cache:'no-store'});
+    const response=await fetchWithTimeout('./data/news.json?v='+Date.now(),{cache:'no-store'});
     if(!response.ok)throw new Error('news.json yüklenemedi');
     const items=await response.json();
     if(!Array.isArray(items))throw new Error('Geçersiz haber verisi');
@@ -302,11 +329,6 @@ async function loadOwnJsonNews(showToast=false){
       const date=esc(item.date||'');
       return `<article class="news-row has-bookmark" data-news-id="${id}" data-team="${esc(team)}" data-search="${esc(item.title+' '+(item.description||''))}"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="${img}" alt="${esc(item.title)}" loading="lazy"></div><div><div class="news-kicker">${date} · ${category}</div><h3>${esc(item.title)}</h3><p>${desc}</p><a href="${link}" target="_blank" rel="noopener noreferrer">${source} ↗</a></div></article>`;
     }).join('');
-    $$('.news-row.has-bookmark',feed).forEach(a=>{
-      const b=a.querySelector('.bookmark-btn');
-      b?.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();toggleBookmark(a)});
-      a.addEventListener('click',e=>{if(e.target.closest('.bookmark-btn')||e.target.closest('a'))return;openArticle(a)});
-    });
     sortNewsByFavorite();
     updateBookmarkButtons();
     if(status)status.textContent=`Kendi JSON haber akışı · ${items.length} haber`;
@@ -322,7 +344,7 @@ document.addEventListener('DOMContentLoaded',()=>loadOwnJsonNews(false));
 /* V30 DAILY VERIFIED NEWS FALLBACK */
 async function loadDailyVerifiedNewsFallback(){
   try{
-    const r=await fetch('./daily-news.json?v=20260917',{cache:'no-store'});
+    const r=await fetchWithTimeout('./daily-news.json?v=20260918',{cache:'no-store'});
     if(!r.ok) return;
     const d=await r.json();
     const items=Array.isArray(d.news)?d.news:[];

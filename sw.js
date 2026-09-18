@@ -1,5 +1,5 @@
 // İonenSpiegel güncel service worker
-const CACHE_NAME = 'ionenspiegel-v43';
+const CACHE_NAME = 'ionenspiegel-v45';
 
 self.addEventListener('install', event => {
   event.waitUntil(self.skipWaiting());

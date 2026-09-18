@@ -299,3 +299,27 @@ html{scroll-behavior:smooth;scroll-padding-top:88px}
 /* 18 Eylül 2026 güncellemesi: maç sonucu kartları */
 .home-fixture-card.result-card .home-fixture-teams em{color:#e50914;font-weight:900;font-size:1.45em}
 .fixture-match.result-match .fixture-vs{color:#e50914;font-weight:900}
+
+/* V45 performance + design layer */
+:root{--red:#e50914;--red-deep:#b90712;--accent:#ffb000;--focus:#4d8dff;--z-header:100;--z-drawer:150;--z-modal:200;--z-toast:300;--z-progress:310;--z-bottom-nav:120}
+.mobile-nav{z-index:var(--z-bottom-nav);transition:transform .24s ease,opacity .2s ease;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.mobile-nav.nav-hidden{transform:translateY(110%);opacity:0;pointer-events:none}
+.mobile-nav a,.mobile-nav button{transition:color .18s ease,transform .18s ease}
+.mobile-nav a.active,.mobile-nav button.active{color:var(--red)!important}
+.mobile-nav a:focus-visible,.mobile-nav button:focus-visible,.fixture-filter:focus-visible{outline:3px solid #4d8dff88;outline-offset:2px}
+.fixture-toolbar{scroll-snap-type:x proximity}
+.fixture-filter{scroll-snap-align:start;transition:transform .16s ease,background .18s ease,border-color .18s ease,color .18s ease}
+.fixture-filter:active{transform:scale(.96)}
+.fixture-board,.news-feed,.content-card,.table-card,.widget,.feature-card,.euro-card{box-shadow:0 8px 24px #1014190b}
+.progress{will-change:width}
+.live-pulse{will-change:box-shadow}
+.news-feed.skeleton-mode .news-row:after{background:#eceff2!important;background-image:none!important;animation:skeletonOpacity 1.05s ease-in-out infinite!important}
+.dark-theme .news-feed.skeleton-mode .news-row:after{background:#242a32!important}
+@keyframes skeletonOpacity{0%,100%{opacity:.38}50%{opacity:.82}}
+.dark-theme .poll-result,.dark-theme #pollResult{color:#f5f7fa}
+.dark-theme .poll-result small,.dark-theme #pollResult small{color:#c9ced6}
+.dark-theme .poll-line{color:#eef1f4}
+.dark-theme .poll-line b{color:#fff}
+#progress{z-index:var(--z-progress);background:linear-gradient(90deg,var(--red),var(--accent),#fff)}
+@media(max-width:820px){.mobile-nav{height:64px}.mobile-nav a.active,.mobile-nav button.active{transform:translateY(-2px)}.section{scroll-margin-top:86px}.fixture-board{box-shadow:0 14px 34px #0003}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.mobile-nav,.fixture-filter{transition:none}.breaking-scroll{animation:none!important}.live-pulse{animation:none!important}.news-feed.skeleton-mode .news-row:after{animation:none!important}}
