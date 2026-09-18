@@ -1,0 +1,9 @@
+INDEX.HTML'E EKLENECEK İKİ SATIR
+
+<head> bölümünde style.css satırından sonra:
+<link rel="stylesheet" href="v62-modern.css?v=62">
+
+</body> bölümünde script.js satırından hemen sonra:
+<script src="v62-fixes.js?v=62"></script>
+
+Başka bir dosyayı silme. Mevcut fotoğraflar aynı kalacak.
