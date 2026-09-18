@@ -27,6 +27,7 @@ $$('.accordion-btn').forEach(btn=>btn.addEventListener('click',()=>{btn.nextElem
 /* ---------- MODALS / SEARCH ---------- */
 const searchModal=$('#searchModal');
 $('#searchOpen')?.addEventListener('click',()=>{searchModal?.classList.add('show');setTimeout(()=>$('#globalSearch')?.focus(),50)});
+$('#navSearch')?.addEventListener('click',()=>{searchModal?.classList.add('show');setTimeout(()=>$('#globalSearch')?.focus(),50)});
 $$('[data-close-modal]').forEach(b=>b.addEventListener('click',()=>b.closest('.modal-backdrop')?.classList.remove('show')));
 $('#loginBtn')?.addEventListener('click',()=>$('#loginModal')?.classList.add('show'));
 $$('.modal-backdrop').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('show')}));
@@ -138,10 +139,15 @@ navLinks.forEach(a=>{const id=a.getAttribute('href')?.slice(1),target=id&&docume
 
 /* ---------- THEME: manual + system preference ---------- */
 const themeCard=$('#themeCard');
+const topThemeToggle=$('#topThemeToggle');
+function syncTopTheme(){if(!topThemeToggle)return;const dark=document.documentElement.classList.contains('dark-theme');topThemeToggle.textContent=dark?'☀':'☾';topThemeToggle.setAttribute('aria-label',dark?'Açık temaya geç':'Koyu temaya geç');topThemeToggle.title=dark?'Açık tema':'Koyu tema'}
+
 function systemTheme(){return window.matchMedia?.('(prefers-color-scheme: dark)').matches?'dark':'light'}
 function applyTheme(theme,save=true){const dark=theme==='dark';document.documentElement.classList.toggle('dark-theme',dark);if(save)localStorage.setItem(STORE.theme,dark?'dark':'light');const meta=document.getElementById('themeColorMeta');if(meta)meta.setAttribute('content',dark?'#111419':'#e50914');if(themeCard){themeCard.querySelector('b').textContent=dark?'Açık Tema':'Koyu Tema';themeCard.querySelector('small').textContent=dark?'Gündüz okuma görünümü':'Gece okuma görünümü'}}
 const storedTheme=localStorage.getItem(STORE.theme);applyTheme(storedTheme||systemTheme(),false);
 themeCard?.addEventListener('click',()=>{const dark=document.documentElement.classList.contains('dark-theme');applyTheme(dark?'light':'dark',true);toast(dark?'Açık tema aktif':'Koyu tema aktif')});
+topThemeToggle?.addEventListener('click',()=>{const dark=document.documentElement.classList.contains('dark-theme');applyTheme(dark?'light':'dark',true);syncTopTheme();toast(dark?'Açık tema aktif':'Koyu tema aktif')});
+syncTopTheme();
 window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change',e=>{if(!localStorage.getItem(STORE.theme))applyTheme(e.matches?'dark':'light',false)});
 
 
@@ -836,3 +842,5 @@ document.addEventListener('DOMContentLoaded',()=>loadOwnJsonNews(false));
     }
   });
 })();
+
+(function(){function updateMenuFavorite(){const label=document.getElementById('menuFavoriteLabel');if(label)label.textContent=localStorage.getItem('ionenspiegel-favorite-team')||'Takımını seç'}document.addEventListener('DOMContentLoaded',updateMenuFavorite);window.addEventListener('storage',updateMenuFavorite);document.getElementById('saveFavoriteTeam')?.addEventListener('click',()=>setTimeout(updateMenuFavorite,50))})();

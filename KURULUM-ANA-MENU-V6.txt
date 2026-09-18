@@ -1,0 +1,22 @@
+İonenSpiegel V6 · Ana Menü + Header
+
+Bu sürüm V5 menüsünü korur ve Gemini tasarım fikrindeki güçlü parçaları İonenSpiegel yapısına uyarlar.
+
+EKLENENLER
+- Koyu üst bant ve kayan Son Dakika şeridi
+- Instagram, YouTube ve tema düğmesi
+- Daha sade kırmızı header
+- Masaüstünde sticky ana navigasyon
+- Süper Lig, Avrupa, Canlı Skor, Transferler, Puan Durumu ve İstatistikler bağlantıları
+- Mobilde mevcut hamburger menü korunur
+- Mevcut arama sistemi yeni navbar aramasına bağlanır
+- Mevcut V5 drawer, favori takım, kaydedilenler, video, galeri ve iletişim bağlantıları korunur
+- Haber görseli bağlantı CSS'i korunur
+
+GITHUB
+1. ZIP'i aç.
+2. index.html, script.js ve menu-v5.css dosyalarını repodaki aynı dosyalarla değiştir.
+3. news-image-link.css, iletisim.html, iletisim-v2.css ve ga4.js dosyalarını da mevcut sürümde kullan.
+4. Commit et ve GitHub Pages'in güncellenmesini bekle.
+
+Not: Bu paket GitHub'a otomatik yükleme yapmaz.

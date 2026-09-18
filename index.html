@@ -75,23 +75,52 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.mobile-nav,.fixture-filter{transition:none}.breaking-scroll{animation:none!important}.live-pulse{animation:none!important}.news-feed.skeleton-mode .news-row:after{animation:none!important}.slider-arrow,.slider-dots{transition:none!important}}
 </style>
 <link rel="stylesheet" href="news-image-link.css?v=1">
+<link rel="stylesheet" href="menu-v5.css?v=5">
 </head>
 <body>
 <div id="progress"></div>
+<div class="is-topbar" role="banner">
+  <div class="is-topbar-inner">
+    <div class="is-ticker" aria-label="Son dakika akışı">
+      <span class="is-ticker-label"><span class="is-live-dot"></span> SON DAKİKA</span>
+      <div class="is-ticker-track">
+        <a href="#haberler">Beşiktaş 4-1 Marsilya</a>
+        <a href="#transfer">Transfer gündeminden son gelişmeler</a>
+        <a href="#maclar">Bugünün maçları ve fikstür</a>
+        <a href="#avrupa">Avrupa kupalarında son durum</a>
+      </div>
+    </div>
+    <div class="is-top-actions">
+      <a href="https://www.instagram.com/benim_llhg?stkn=aGprY3NnY3ZxNnc2" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a>
+      <a href="https://youtube.com/@ionicmirror?si=8CMNWHStWK9-hT_D" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶</a>
+      <button id="topThemeToggle" type="button" aria-label="Temayı değiştir" title="Koyu/Açık tema">☾</button>
+    </div>
+  </div>
+</div>
 <header class="topbar">
   <div class="top-inner">
     <button class="icon-btn hamburger" id="menuBtn" aria-label="Menüyü aç">☰</button>
     <a class="brand" href="#anasayfa" aria-label="İonenSpiegel ana sayfa"><span>İonen</span>Spiegel</a>
     <span class="edition" id="editionLabel">SPOR</span>
-    <nav class="desktop-nav">
-      <a href="#sondakika">Son Dakika</a><a href="#dunya">Dünya</a><a href="#superlig">Süper Lig</a><a href="#avrupa">Avrupa</a><a href="#transfer">Transfer</a><a href="#maclar">Fikstür</a>
-    </nav>
     <div class="top-actions">
       <button class="icon-btn" id="searchOpen" aria-label="Ara">⌕</button>
-      <button class="login-btn" id="loginBtn" type="button">Yakında</button>
+      <button class="login-btn is-profile-btn" id="loginBtn" type="button" aria-label="Profil">●</button>
     </div>
   </div>
 </header>
+
+<nav class="is-main-nav" aria-label="Ana menü">
+  <div class="is-main-nav-inner">
+    <a class="is-nav-home" href="#anasayfa">⌂ <span>Ana Sayfa</span></a>
+    <a href="#superlig">Süper Lig</a>
+    <a href="#avrupa-kupalari">Avrupa</a>
+    <a href="#maclar">⚽ Canlı Skor</a>
+    <a href="#transfer">Transferler</a>
+    <a href="#puan">Puan Durumu</a>
+    <a href="#dunya">İstatistikler</a>
+    <button class="is-nav-search" id="navSearch" type="button">⌕ <span>Ara</span></button>
+  </div>
+</nav>
 
 <div class="breaking" id="sondakika">
   <div class="breaking-label"><span class="live-dot"></span> SON DAKİKA</div>
@@ -103,18 +132,42 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 </div>
 
 <div class="drawer-backdrop" id="drawerBackdrop"></div>
-<aside class="drawer" id="drawer" aria-hidden="true">
-  <div class="drawer-head"><b>İonenSpiegel</b><button class="close-btn" id="drawerClose">×</button></div>
-  <button class="drawer-link" id="favoriteTeamMenu">⭐ Favori Takımım</button>
-  <button class="drawer-link" id="savedNewsMenu">🔖 Kaydedilenler</button>
-  <button class="drawer-link accordion-btn">⚽ Futbol <span>⌄</span></button>
-  <div class="accordion"><a href="#superlig">Süper Lig</a><a href="#avrupa">Şampiyonlar Ligi</a><a href="#avrupa">Avrupa Ligi</a><a href="#avrupa">Konferans Ligi</a></div>
-  <button class="drawer-link accordion-btn">🏆 Avrupa Kupaları <span>⌄</span></button>
-  <div class="accordion"><a href="#avrupa-kupalari">Şampiyonlar Ligi</a><a href="#avrupa-kupalari">Avrupa Ligi</a></div>
-  <button class="drawer-link accordion-btn">📊 Diğer <span>⌄</span></button>
-  <div class="accordion"><a href="#puan">Puan Durumu</a><a href="#dunya">Dünya</a><a href="#transfer">Transfer</a><a href="#maclar">Fikstür</a><a href="#haberler">Video / Galeri</a></div>
-  <div class="drawer-ad">REKLAM ALANI<br><small>İonenSpiegel sponsor alanı</small></div>
-  <div class="drawer-social"><a href="https://www.instagram.com/benim_llhg?stkn=aGprY3NnY3ZxNnc2" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://youtube.com/@ionicmirror?si=8CMNWHStWK9-hT_D" target="_blank" rel="noopener noreferrer">YouTube</a></div>
+<aside class="drawer menu-v5" id="drawer" aria-hidden="true">
+  <div class="menu-v5-head">
+    <div class="menu-v5-brand"><span>İonen</span>Spiegel<small>FUTBOLUN GÜNCEL ADRESİ</small></div>
+    <button class="menu-v5-close" id="drawerClose" type="button" aria-label="Menüyü kapat">×</button>
+  </div>
+  <div class="menu-v5-profile" id="favoriteTeamMenu">
+    <div class="menu-v5-profile-icon">★</div>
+    <div><small>FAVORİ TAKIM</small><strong id="menuFavoriteLabel">Takımını seç</strong></div><span>›</span>
+  </div>
+  <div class="menu-v5-grid">
+    <a href="#anasayfa"><b>⌂</b><span>Ana Sayfa</span></a>
+    <a href="#sondakika"><b>⚡</b><span>Son Dakika</span></a>
+    <a href="#maclar"><b>⚽</b><span>Maçlar</span></a>
+    <a href="#transfer"><b>₺</b><span>Transfer</span></a>
+    <button id="savedNewsMenu" type="button"><b>🔖</b><span>Kaydedilenler</span></button>
+    <a href="video.html"><b>▶</b><span>Videolar</span></a>
+    <a href="galeri.html"><b>▣</b><span>Galeri</span></a>
+    <a href="iletisim.html"><b>✉</b><span>İletişim</span></a>
+  </div>
+  <div class="menu-v5-section">
+    <div class="menu-v5-title">FUTBOL</div>
+    <a class="menu-v5-link" href="#superlig"><span>🇹🇷</span><div><strong>Süper Lig</strong><small>Türkiye'den son gelişmeler</small></div><i>›</i></a>
+    <a class="menu-v5-link" href="#puan"><span>📊</span><div><strong>Puan Durumu</strong><small>Lig tablosu ve sıralama</small></div><i>›</i></a>
+    <a class="menu-v5-link" href="#dunya"><span>🌍</span><div><strong>Dünya Gündemi</strong><small>Futbol dünyasından gelişmeler</small></div><i>›</i></a>
+  </div>
+  <div class="menu-v5-section">
+    <div class="menu-v5-title">AVRUPA KUPALARI</div>
+    <div class="menu-v5-compact">
+      <a href="#avrupa-kupalari">🏆 Şampiyonlar Ligi</a><a href="#avrupa-kupalari">🏆 Avrupa Ligi</a><a href="#avrupa-kupalari">🏆 Konferans Ligi</a>
+    </div>
+  </div>
+  <div class="menu-v5-section menu-v5-more">
+    <div class="menu-v5-title">DAHA FAZLA</div>
+    <a href="hakkimizda.html">Hakkımızda <i>›</i></a><a href="gizlilik.html">Gizlilik <i>›</i></a>
+  </div>
+  <div class="menu-v5-footer"><span>İonenSpiegel · 2026</span><div><a href="https://www.instagram.com/benim_llhg?stkn=aGprY3NnY3ZxNnc2" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://youtube.com/@ionicmirror?si=8CMNWHStWK9-hT_D" target="_blank" rel="noopener noreferrer">YouTube</a></div></div>
 </aside>
 
 <main id="anasayfa">

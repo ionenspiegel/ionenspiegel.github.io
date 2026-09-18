@@ -1,0 +1,22 @@
+İONENSPIEGEL V5 ANA MENÜ
+
+Yüklenecekler:
+- index.html
+- script.js
+- menu-v5.css
+- news-image-link.css
+- iletisim.html
+- iletisim-v2.css
+- ga4.js
+
+Yeni menü:
+- Modern kırmızı başlık
+- Favori takım kartı
+- 8 hızlı erişim kutusu
+- Futbol bölümü
+- Avrupa kupaları
+- Hakkımızda ve Gizlilik
+- Instagram ve YouTube
+
+Haber görseli link düzeltmesi de korunmuştur.
+GitHub'a otomatik yükleme yapılmaz.
