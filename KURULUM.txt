@@ -1,23 +1,25 @@
-İonenSpiegel düzeltme paketi
+
+İONENSPIEGEL V59 DÜZELTME PAKETİ
+
+Bu paket GitHub'a kendiliğinden yükleme yapmaz.
 
 Yapılan düzeltmeler:
-1. Maçlar bölümündeki Beşiktaş satırındaki ⚫⚪ gibi gereksiz takım emojileri kaldırılır.
-2. 4 - 1 skorunun mobilde alt alta kırılması engellenir.
-3. Son Dakika haber görselleri gerçek site görsellerine yönlendirilir.
-4. Son Dakika görsellerine Haber için tıkla etiketi eklenir.
-5. Görsele basınca haberin kaynak sitesi yeni sekmede açılır.
-6. Dinamik olarak yüklenen haberlerde de aynı düzeltme uygulanır.
-7. Kaydedilenler sayfasındaki eski news-*.jpg yolları photo-*.jpg yollarıyla düzeltilir.
-8. Kaydedilenler sayfası mobil ve koyu tema ile uyumlu hale getirilir.
-9. Kaydedilenler görselleri de doğrudan kaynak haberine bağlanır.
+1. Son Dakika haber kartlarındaki görseller tıklanabilir hale getirildi.
+2. Görsellerin üzerine "Haber için tıkla" etiketi ekleniyor.
+3. Tıklanınca haberin kaynak sayfası yeni sekmede açılıyor.
+4. Beşiktaş-Marsilya maç kartındaki skorun mobilde satır kırması engelleniyor.
+5. Takım isimlerindeki emoji kaynaklı sıkışıklık gideriliyor.
+6. Kaynak bağlantısının, kaydetme sisteminde görsel bağlantısıyla karışmasını önleyen yardımcı kod eklendi.
 
-Kullanım:
-- index.html dosyasında mevcut script.js satırının hemen altına:
-  <script src="site-fix.js"></script>
-  ekle.
-- style-fix.css dosyasını style.css'in en altına ekle veya index.html'de style.css'ten sonra bağla:
-  <link rel="stylesheet" href="style-fix.css">
-- kaydedilenler.html dosyasını bu paketteki sürümle değiştir.
+KULLANIM
+- duzeltme.css dosyasını style.css'den sonra yükle.
+- duzeltme.js dosyasını script.js'den sonra yükle.
+
+index.html içine:
+<link rel="stylesheet" href="duzeltme.css?v=59">
+
+script.js satırından sonra:
+<script src="duzeltme.js?v=59"></script>
 
 Not:
-Bu paket GitHub'a otomatik yükleme yapmaz. Dosyaları sen yükleyeceksin.
+Bu paket mevcut sitenin bütün dosyalarının yeniden paketlenmiş kopyası değildir. Mevcut GitHub dosyalarının üzerine küçük ve güvenli bir düzeltme katmanı olarak hazırlanmıştır. Böylece mevcut haber verileri ve diğer bölümler gereksiz yere ezilmez.

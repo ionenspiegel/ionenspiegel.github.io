@@ -1,0 +1,91 @@
+
+/* İonenSpiegel V59 düzeltmeleri */
+
+/* Haber görseli artık tıklanabilir ve üzerinde "Haber için tıkla" etiketi var. */
+.news-thumb-link{
+  position:relative;
+  display:block;
+  width:100%;
+  min-height:88px;
+  overflow:hidden;
+  border-radius:10px;
+  background:#17191d;
+  color:#fff;
+  text-decoration:none;
+}
+.news-thumb-link img{
+  display:block;
+  width:100%;
+  height:100%;
+  min-height:88px;
+  object-fit:cover;
+}
+.news-thumb-link span{
+  position:absolute;
+  left:7px;
+  right:7px;
+  bottom:7px;
+  padding:7px 8px;
+  border-radius:7px;
+  background:rgba(229,9,20,.95);
+  color:#fff;
+  font-size:10px;
+  line-height:1;
+  font-weight:900;
+  text-align:center;
+  box-shadow:0 3px 10px rgba(0,0,0,.28);
+}
+
+/* Mobilde Beşiktaş-Marsilya skoru taşmasın. */
+#maclar .fixture-match{
+  grid-template-columns:52px minmax(0,1fr) 48px minmax(0,1fr);
+}
+#maclar .fixture-match .fixture-vs{
+  white-space:nowrap;
+  min-width:48px;
+  text-align:center;
+  font-weight:900;
+}
+#maclar .fixture-match .fixture-team{
+  min-width:0;
+}
+#maclar .fixture-match .fixture-team b{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+#maclar .fixture-match .fixture-team.away{
+  text-align:right;
+}
+#maclar .fixture-match.featured{
+  min-height:64px;
+}
+#maclar .fixture-match.featured time{
+  white-space:nowrap;
+}
+
+@media(max-width:480px){
+  #maclar .fixture-match{
+    grid-template-columns:40px minmax(0,1fr) 46px minmax(0,1fr);
+    gap:5px;
+    padding:12px 9px;
+  }
+  #maclar .fixture-match .fixture-vs{
+    min-width:46px;
+    font-size:10px;
+  }
+  #maclar .fixture-match .fixture-team b{
+    font-size:11px;
+  }
+}
+
+/* Eski yer tutucu görselleri daha tutarlı göster. */
+.news-row .thumb{
+  overflow:hidden;
+  border-radius:10px;
+}
+
+/* Kaydedilenler sayfası için görsel tıklama etiketi. */
+.saved-image span{
+  pointer-events:none;
+}
