@@ -1,92 +1,82 @@
 [
   {
-    "id": "bjk-orkun-18-eylul",
-    "title": "Orkun Kökçü: Çok iyi başladık",
-    "description": "Beşiktaş kaptanı Orkun Kökçü, Marsilya karşısındaki 4-1'lik galibiyetin ardından takımın Avrupa Ligi'ne güçlü başladığını söyledi.",
-    "category": "Beşiktaş",
-    "date": "18 Eylül 2026",
-    "image": "./photo-bjk.jpg",
-    "source": "DHA",
-    "link": "https://www.haberturk.com/spor/orkun-kokcu-cok-iyi-basladik-3913297"
-  },
-  {
-    "id": "bjk-genesio-18-eylul",
-    "title": "Bruno Genesio: Beşiktaş çok ileri gidebilir",
-    "description": "Marsilya Teknik Direktörü Bruno Genesio, Beşiktaş'ın Avrupa Ligi'nde güçlü bir takım olduğunu ve turnuvada ileri gidebileceğini söyledi.",
-    "category": "Beşiktaş",
-    "date": "18 Eylül 2026",
-    "image": "./photo-bjk.jpg",
-    "source": "DHA",
-    "link": "https://www.dha.com.tr/yerel-haberler/istanbul/bruno-genesio-besiktas-cok-ileri-gidebilir-2946712"
-  },
-  {
-    "id": "gs-osimhen-18-eylul",
-    "title": "Osimhen, Trabzonspor maçının kadrosunda yok",
-    "description": "Galatasaray'da Victor Osimhen, Mario Lemina, Wilfried Singo ve Kaan Ayhan Trabzonspor karşılaşmasının kamp kadrosunda yer almadı.",
+    "id": "ts-gs-derbi-19-eylul",
+    "title": "Trabzonspor-Galatasaray derbisi bugün",
+    "description": "Süper Lig'in 6. haftasında Trabzonspor ile Galatasaray, 19 Eylül Cumartesi günü saat 20.00'de Papara Park'ta karşılaşacak.",
     "category": "Galatasaray",
-    "date": "18 Eylül 2026",
-    "image": "./photo-derbi.jpg",
-    "source": "Anadolu Ajansı",
-    "link": "https://www.aa.com.tr/tr/spor/osimhen-galatasarayin-trabzonspor-maci-kamp-kadrosunda-yer-almadi/4061438"
-  },
-  {
-    "id": "fb-mert-muldur-18-eylul",
-    "title": "Fenerbahçe'de Mert Müldür sakatlığı",
-    "description": "Fenerbahçe, Mert Müldür'ün antrenmanda dizine aldığı darbe sonrası yapılan MR'da menisküsünde yırtık tespit edildiğini açıkladı.",
-    "category": "Fenerbahçe",
-    "date": "18 Eylül 2026",
-    "image": "./photo-asensio.jpg",
-    "source": "Habertürk",
-    "link": "https://www.haberturk.com/spor/son-dakika-fenerbahce-ye-mert-muldur-soku-3913445"
-  },
-  {
-    "id": "fb-eyup-idman-18-eylul",
-    "title": "Fenerbahçe, Eyüpspor hazırlıklarını sürdürdü",
-    "description": "Fenerbahçe, Süper Lig'in 6. haftasında 20 Eylül'de oynayacağı Eyüpspor maçının hazırlıklarına devam etti.",
-    "category": "Fenerbahçe",
-    "date": "18 Eylül 2026",
-    "image": "./photo-asensio.jpg",
-    "source": "beIN SPORTS Türkiye",
-    "link": "https://beinsports.com.tr/haber/fenerbahce-eyupspor-macinin-hazirliklarina-devam-etti"
-  },
-  {
-    "id": "ts-gs-144-randevu",
-    "title": "Trabzonspor-Galatasaray rekabetinde 144. randevu",
-    "description": "Trabzonspor ile Galatasaray, 19 Eylül Cumartesi saat 20.00'de Papara Park'ta 144. kez karşılaşacak.",
-    "category": "Trabzonspor",
-    "date": "18 Eylül 2026",
+    "date": "19 Eylül 2026",
     "image": "./photo-derbi.jpg",
     "source": "Anadolu Ajansı",
     "link": "https://www.aa.com.tr/tr/spor/trabzonspor-galatasaray-rekabetinde-144-randevu/4060865"
   },
   {
-    "id": "superlig-6-hafta-program-18-eylul",
-    "title": "Süper Lig'de 6. hafta programı",
-    "description": "6. haftada Trabzonspor-Galatasaray 19 Eylül'de, Fenerbahçe-Eyüpspor ve Amed Sportif Faaliyetler-Beşiktaş 20 Eylül'de oynanacak.",
-    "category": "Süper Lig",
-    "date": "18 Eylül 2026",
-    "image": "./photo-superlig.jpg",
-    "source": "Anadolu Ajansı",
-    "link": "https://www.aa.com.tr/tr/spor/futbolda-haftanin-programi/4060705"
-  },
-  {
-    "id": "europa-matchday1-18-eylul",
-    "title": "Avrupa Ligi'nde ilk hafta tamamlandı",
-    "description": "2026/27 UEFA Avrupa Ligi'nin ilk haftasında Beşiktaş 4-1, Juventus 5-0, Crystal Palace 4-0 ve Bournemouth 2-1 kazandı.",
-    "category": "Avrupa",
-    "date": "18 Eylül 2026",
-    "image": "./photo-europa.jpg",
-    "source": "UEFA",
-    "link": "https://www.uefa.com/uefaeuropaleague/news/02a9-219ba00d8c3a-2fc9c36259e8-1000--europa-league-matchday-1-highlights-and-round-up-benfica-/"
-  },
-  {
-    "id": "trabzon-reis-17-eylul",
-    "title": "Trabzonspor'da Thomas Reis dönemi başladı",
-    "description": "Trabzonspor, teknik direktör Thomas Reis için imza töreni düzenledi. Alman çalıştırıcı Galatasaray maçı öncesi takımın başında ilk çalışmalarını yaptı.",
-    "category": "Trabzonspor",
-    "date": "17 Eylül 2026",
+    "id": "gs-kadro-19-eylul",
+    "title": "Galatasaray'da Osimhen ve üç isim kadroda yok",
+    "description": "Galatasaray'ın Trabzonspor maçı kamp kadrosunda Victor Osimhen, Mario Lemina, Wilfried Singo ve Kaan Ayhan yer almadı.",
+    "category": "Galatasaray",
+    "date": "19 Eylül 2026",
     "image": "./photo-derbi.jpg",
-    "source": "Trabzonspor",
-    "link": "https://www.trabzonspor.org.tr/tr/haberler"
+    "source": "Anadolu Ajansı",
+    "link": "https://www.aa.com.tr/tr/spor/osimhen-galatasarayin-trabzonspor-maci-kamp-kadrosunda-yer-almadi/4061438"
+  },
+  {
+    "id": "superlig-19-eylul-program",
+    "title": "Süper Lig'de bugün dört maç var",
+    "description": "19 Eylül Cumartesi günü Kocaelispor-Gaziantep FK, Arca Çorum FK-Alanyaspor, Trabzonspor-Galatasaray ve Başakşehir-Gençlerbirliği oynanacak.",
+    "category": "Süper Lig",
+    "date": "19 Eylül 2026",
+    "image": "./photo-superlig.jpg",
+    "source": "TRT Haber",
+    "link": "https://www.trthaber.com/haber/turkiye/super-ligde-6-hafta-yarin-basliyor-iste-mac-programi-957089.html"
+  },
+  {
+    "id": "derbi-hakemi-19-eylul",
+    "title": "Trabzonspor-Galatasaray maçının hakemi Batuhan Kolak",
+    "description": "19 Eylül Cumartesi günü Papara Park'ta oynanacak Trabzonspor-Galatasaray karşılaşmasını Batuhan Kolak yönetecek.",
+    "category": "Süper Lig",
+    "date": "19 Eylül 2026",
+    "image": "./photo-derbi.jpg",
+    "source": "A Spor",
+    "link": "https://www.aspor.com.tr/spor-toto-super-lig/2026/09/17/trendyol-super-ligde-6-haftanin-hakemleri-belli-oldu"
+  },
+  {
+    "id": "fb-eyup-20-eylul",
+    "title": "Fenerbahçe yarın Eyüpspor'u ağırlayacak",
+    "description": "Fenerbahçe, Süper Lig'in 6. haftasında 20 Eylül Pazar günü saat 17.00'de Eyüpspor ile karşılaşacak.",
+    "category": "Fenerbahçe",
+    "date": "19 Eylül 2026",
+    "image": "./photo-asensio.jpg",
+    "source": "beIN SPORTS Türkiye",
+    "link": "https://www.beinsports.com.tr/haber/trendyol-super-ligde-5-ve-6-hafta-programi-aciklandi-iste-derbi-tarihi"
+  },
+  {
+    "id": "bjk-amed-20-eylul",
+    "title": "Beşiktaş'ın sıradaki rakibi Amed Sportif",
+    "description": "Beşiktaş, 20 Eylül Pazar günü saat 20.00'de Amed Sportif Faaliyetler'e konuk olacak.",
+    "category": "Beşiktaş",
+    "date": "19 Eylül 2026",
+    "image": "./photo-bjk.jpg",
+    "source": "Sporx",
+    "link": "https://cdnorigin.sporx.com/besiktas-fiksturu-ve-mac-sonuclari"
+  },
+  {
+    "id": "bjk-marseille-result",
+    "title": "Beşiktaş Avrupa Ligi'ne 4-1'lik galibiyetle başladı",
+    "description": "Beşiktaş, UEFA Avrupa Ligi'nin ilk haftasında Marsilya'yı 4-1 mağlup etti.",
+    "category": "Beşiktaş",
+    "date": "19 Eylül 2026",
+    "image": "./photo-bjk.jpg",
+    "source": "UEFA",
+    "link": "https://www.uefa.com/uefaeuropaleague/"
+  },
+  {
+    "id": "trabzon-reis-19-eylul",
+    "title": "Trabzonspor'da Thomas Reis dönemi başladı",
+    "description": "Trabzonspor, Thomas Reis ile iki sezonluk anlaşma yaptı. Alman teknik direktör Galatasaray derbisi öncesi takımın başında.",
+    "category": "Trabzonspor",
+    "date": "19 Eylül 2026",
+    "image": "./photo-derbi.jpg",
+    "source": "Reuters",
+    "link": "https://www.reuters.com/sports/soccer/turkeys-trabzonspor-appoint-thomas-reis-manager-2026-09-17/"
   }
 ]
