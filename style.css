@@ -600,3 +600,73 @@ body.dark .ref-list{background:#15181d;border-color:#2b3038;color:#fff}.dark .re
 .league-panel-enter{animation:leaguePanelIn .24s ease both}
 @keyframes leaguePanelIn{from{opacity:.25;transform:translateY(6px)}to{opacity:1;transform:none}}
 .hidden-panel[hidden]{display:none!important}
+
+/* V66: üstteki beyaz ilerleme çizgisini temizle ve mobil Son Dakika şeridini kompaktlaştır */
+#progress{
+  height:2px!important;
+  background:var(--red)!important;
+  box-shadow:none!important;
+  z-index:300!important;
+}
+
+@media(max-width:560px){
+  .breaking{
+    height:46px!important;
+    min-height:46px!important;
+    max-height:46px!important;
+    align-items:stretch!important;
+  }
+  .breaking-label{
+    height:46px!important;
+    min-height:46px!important;
+    padding:0 12px!important;
+    font-size:10px!important;
+    flex:0 0 auto!important;
+  }
+  .breaking-scroll{
+    height:46px!important;
+    max-height:46px!important;
+    min-height:46px!important;
+    display:flex!important;
+    grid-template-columns:none!important;
+    grid-template-rows:none!important;
+    flex:1 1 auto!important;
+    gap:0!important;
+    overflow-x:auto!important;
+    overflow-y:hidden!important;
+    padding:0!important;
+    white-space:nowrap!important;
+  }
+  .breaking-scroll a,
+  .breaking-scroll a:first-child,
+  .breaking-scroll a:nth-child(2),
+  .breaking-scroll a:nth-child(3){
+    display:flex!important;
+    align-items:center!important;
+    height:46px!important;
+    min-height:46px!important;
+    flex:0 0 155px!important;
+    min-width:155px!important;
+    padding:0 10px!important;
+    border-left:1px solid rgba(255,255,255,.08)!important;
+    overflow:hidden!important;
+  }
+  .breaking-scroll a span{
+    display:inline-grid!important;
+    place-items:center!important;
+    width:24px!important;
+    height:18px!important;
+    margin-right:7px!important;
+    flex:0 0 24px!important;
+    font-size:8px!important;
+  }
+  .breaking-scroll a b{
+    display:block!important;
+    min-width:0!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    white-space:nowrap!important;
+    font-size:10px!important;
+    line-height:1!important;
+  }
+}

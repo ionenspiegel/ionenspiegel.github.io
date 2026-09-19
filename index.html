@@ -108,6 +108,18 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   .table-tabs button{padding:0 14px;font-size:10px}
 }
 </style>
+<style id="v67-breaking-fix">
+/* V67: ÜST SON DAKİKA BANDI */
+.breaking{height:46px!important;display:flex!important;align-items:stretch!important;overflow:hidden!important;background:#08090b!important;border-top:1px solid #252830!important;border-bottom:1px solid #252830!important}
+.breaking-label{flex:0 0 118px!important;width:118px!important;min-width:118px!important;height:46px!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:0 10px!important;font-size:11px!important;letter-spacing:.2px!important;line-height:1!important;white-space:nowrap!important;overflow:hidden!important}
+.breaking-label .live-dot{width:7px!important;height:7px!important;min-width:7px!important;margin-right:7px!important}
+.breaking-scroll{flex:1 1 auto!important;height:46px!important;min-width:0!important;display:flex!important;align-items:center!important;gap:0!important;overflow-x:auto!important;overflow-y:hidden!important;padding:0!important;scrollbar-width:none!important;white-space:nowrap!important;scroll-behavior:auto!important}
+.breaking-scroll::-webkit-scrollbar{display:none!important}
+.breaking-scroll a{flex:0 0 auto!important;min-width:180px!important;height:46px!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;padding:0 16px!important;border-left:1px solid #252830!important;color:#f2f3f5!important;text-decoration:none!important;font-size:11px!important;font-weight:800!important;overflow:hidden!important}
+.breaking-scroll a span{display:inline-grid!important;place-items:center!important;width:24px!important;height:18px!important;flex:0 0 24px!important;margin-right:8px!important;border-radius:5px!important;background:#171a20!important;color:#e50914!important;font-size:8px!important}
+.breaking-scroll a b{display:block!important;min-width:0!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;line-height:1.1!important}
+@media(max-width:480px){.breaking{height:44px!important}.breaking-label{flex-basis:108px!important;width:108px!important;min-width:108px!important;height:44px!important;font-size:10px!important}.breaking-scroll{height:44px!important}.breaking-scroll a{height:44px!important;min-width:175px!important;padding:0 13px!important;font-size:10px!important}}
+</style>
 </head>
 <body>
 <div id="progress"></div>
@@ -709,5 +721,26 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 @media(max-width:800px){.euro-news-grid .content-card{padding:16px}}
 </style>
 
+<script id="v67-breaking-scroll">
+(function(){
+  function initBreaking(){
+    const el=document.getElementById('breakingScroll');
+    if(!el || el.dataset.v67Ready) return;
+    el.dataset.v67Ready='1';
+    let paused=false;
+    el.addEventListener('touchstart',()=>paused=true,{passive:true});
+    el.addEventListener('touchend',()=>setTimeout(()=>paused=false,900),{passive:true});
+    el.addEventListener('mouseenter',()=>paused=true);
+    el.addEventListener('mouseleave',()=>paused=false);
+    setInterval(function(){
+      if(paused) return;
+      if(el.scrollWidth <= el.clientWidth) return;
+      el.scrollLeft += 0.7;
+      if(el.scrollLeft + el.clientWidth >= el.scrollWidth - 2) el.scrollLeft=0;
+    },30);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initBreaking); else initBreaking();
+})();
+</script>
 </body>
 </html>
