@@ -1,0 +1,14 @@
+İonenSpiegel V62 uyumlu günlük güncelleme
+Tarih: 19 Eylül 2026
+
+Bu paket yalnızca data/news.json dosyasını değiştirir.
+Mevcut index.html, script.js, style.css ve V62 düzeltme dosyalarına dokunmaz.
+Böylece mevcut sitenin tasarım ve işlevleri ezilmez.
+
+Kurulum:
+1. GitHub deposunda data klasörünü aç.
+2. Mevcut news.json dosyasını bu paketteki data/news.json ile değiştir.
+3. Commit et.
+4. GitHub Pages önbelleği nedeniyle birkaç dakika bekle.
+
+İçerik 19 Eylül 2026 güncel maç programı ve doğrulanmış haber başlıklarına göre hazırlanmıştır.
