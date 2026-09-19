@@ -27,7 +27,6 @@ $$('.accordion-btn').forEach(btn=>btn.addEventListener('click',()=>{btn.nextElem
 /* ---------- MODALS / SEARCH ---------- */
 const searchModal=$('#searchModal');
 $('#searchOpen')?.addEventListener('click',()=>{searchModal?.classList.add('show');setTimeout(()=>$('#globalSearch')?.focus(),50)});
-$('#navSearch')?.addEventListener('click',()=>{searchModal?.classList.add('show');setTimeout(()=>$('#globalSearch')?.focus(),50)});
 $$('[data-close-modal]').forEach(b=>b.addEventListener('click',()=>b.closest('.modal-backdrop')?.classList.remove('show')));
 $('#loginBtn')?.addEventListener('click',()=>$('#loginModal')?.classList.add('show'));
 $$('.modal-backdrop').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('show')}));
@@ -73,17 +72,65 @@ function setSocialImage(src){const abs=new URL(src,location.href).href;['og:imag
 function renderStaticHero(){const s=HERO_STATIC,media=$('#heroMedia');if(!media)return;$('#heroTitle').textContent=s.title;$('#heroText').textContent=s.text;$('#heroSource').textContent=s.source;media.style.background=s.bg;$('#heroIndex').textContent='1';const dots=$('#sliderDots');if(dots)dots.innerHTML='';const a=$(`.news-row[data-news-id="${s.newsId}"]`);setSocialImage(a?.querySelector('img')?.getAttribute('src')||'./hero-bjk.jpg');$('#heroRead').onclick=()=>window.open(s.link,'_blank','noopener')}
 renderStaticHero();
 
-/* ---------- LEAGUE TABS ---------- */
-$$('.table-tabs button').forEach(btn=>btn.addEventListener('click',()=>{
-  $$('.table-tabs button').forEach(x=>x.classList.remove('active'));
-  btn.classList.add('active');
-  ['standings','results','fixtures','goals','assists'].forEach(id=>$('#'+id+'Panel')?.classList.remove('show'));
-  const panel=$('#'+btn.dataset.table+'Panel');
-  panel?.classList.add('show');
-  $('#puan')?.scrollIntoView({behavior:'smooth',block:'start'});
-  panel?.animate([{opacity:.35,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:320,easing:'cubic-bezier(.2,.8,.2,1)'});
-  if(btn.dataset.table==='fixtures') renderUpcomingFixtures();
-}));
+/* ---------- LEAGUE TABS V65: sağlam, dokunmatik ve erişilebilir sekme sistemi ---------- */
+function activateLeagueTab(btn, smoothScroll=true){
+  if(!btn || !btn.dataset.table)return;
+  const table=btn.dataset.table;
+  const tabs=$$('.table-tabs button');
+  tabs.forEach(x=>{
+    const active=x===btn;
+    x.classList.toggle('active',active);
+    x.setAttribute('aria-selected',active?'true':'false');
+    x.tabIndex=active?0:-1;
+  });
+  ['standings','results','fixtures','goals','assists'].forEach(id=>{
+    const panel=$('#'+id+'Panel');
+    if(!panel)return;
+    const active=id===table;
+    panel.classList.toggle('show',active);
+    panel.hidden=!active;
+    panel.setAttribute('aria-hidden',active?'false':'true');
+  });
+  const activePanel=$('#'+table+'Panel');
+  if(table==='fixtures' && typeof renderUpcomingFixtures==='function')renderUpcomingFixtures();
+  if(activePanel){
+    activePanel.hidden=false;
+    activePanel.classList.remove('league-panel-enter');
+    void activePanel.offsetWidth;
+    activePanel.classList.add('league-panel-enter');
+  }
+  if(smoothScroll){
+    const section=$('#puan');
+    if(section)section.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+
+function initLeagueTabs(){
+  const root=$('.table-tabs');
+  if(!root)return;
+  root.addEventListener('click',e=>{
+    const btn=e.target.closest('button[data-table]');
+    if(!btn || !root.contains(btn))return;
+    e.preventDefault();
+    e.stopPropagation();
+    activateLeagueTab(btn,true);
+  });
+  root.addEventListener('keydown',e=>{
+    const current=e.target.closest('button[data-table]');
+    if(!current)return;
+    const tabs=$$('button[data-table]',root);
+    const i=tabs.indexOf(current);
+    let next=-1;
+    if(e.key==='ArrowRight')next=(i+1)%tabs.length;
+    if(e.key==='ArrowLeft')next=(i-1+tabs.length)%tabs.length;
+    if(e.key==='Home')next=0;
+    if(e.key==='End')next=tabs.length-1;
+    if(next>=0){e.preventDefault();tabs[next].focus();activateLeagueTab(tabs[next],false);}
+  });
+  const initial=$('button[data-table].active',root)||$('button[data-table]',root);
+  if(initial)activateLeagueTab(initial,false);
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initLeagueTabs);else initLeagueTabs();
 $$('.transfer-tabs button').forEach(btn=>btn.addEventListener('click',()=>{$$('.transfer-tabs button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const type=btn.dataset.transfer;$$('#transferGrid article').forEach(a=>a.style.display=(type==='all'||a.dataset.type===type)?'block':'none')}));
 $$('.match-filters button').forEach(btn=>btn.addEventListener('click',()=>{$$('.match-filters button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const day=btn.dataset.day;$$('.match-row').forEach(r=>r.style.display=(day==='all'||r.dataset.day===day)?'grid':'none')}));
 $('#todayBtn')?.addEventListener('click',()=>{document.querySelector('[data-fixture-day="today"]')?.scrollIntoView({behavior:'smooth',block:'center'});toast('17 Eylül maç sonucu gösteriliyor')});
@@ -139,15 +186,10 @@ navLinks.forEach(a=>{const id=a.getAttribute('href')?.slice(1),target=id&&docume
 
 /* ---------- THEME: manual + system preference ---------- */
 const themeCard=$('#themeCard');
-const topThemeToggle=$('#topThemeToggle');
-function syncTopTheme(){if(!topThemeToggle)return;const dark=document.documentElement.classList.contains('dark-theme');topThemeToggle.textContent=dark?'☀':'☾';topThemeToggle.setAttribute('aria-label',dark?'Açık temaya geç':'Koyu temaya geç');topThemeToggle.title=dark?'Açık tema':'Koyu tema'}
-
 function systemTheme(){return window.matchMedia?.('(prefers-color-scheme: dark)').matches?'dark':'light'}
 function applyTheme(theme,save=true){const dark=theme==='dark';document.documentElement.classList.toggle('dark-theme',dark);if(save)localStorage.setItem(STORE.theme,dark?'dark':'light');const meta=document.getElementById('themeColorMeta');if(meta)meta.setAttribute('content',dark?'#111419':'#e50914');if(themeCard){themeCard.querySelector('b').textContent=dark?'Açık Tema':'Koyu Tema';themeCard.querySelector('small').textContent=dark?'Gündüz okuma görünümü':'Gece okuma görünümü'}}
 const storedTheme=localStorage.getItem(STORE.theme);applyTheme(storedTheme||systemTheme(),false);
 themeCard?.addEventListener('click',()=>{const dark=document.documentElement.classList.contains('dark-theme');applyTheme(dark?'light':'dark',true);toast(dark?'Açık tema aktif':'Koyu tema aktif')});
-topThemeToggle?.addEventListener('click',()=>{const dark=document.documentElement.classList.contains('dark-theme');applyTheme(dark?'light':'dark',true);syncTopTheme();toast(dark?'Açık tema aktif':'Koyu tema aktif')});
-syncTopTheme();
 window.matchMedia?.('(prefers-color-scheme: dark)').addEventListener?.('change',e=>{if(!localStorage.getItem(STORE.theme))applyTheme(e.matches?'dark':'light',false)});
 
 
@@ -811,36 +853,3 @@ document.addEventListener('DOMContentLoaded',()=>loadOwnJsonNews(false));
 
   qa('#daha-fazla button,#daha-fazla a,.mobile-nav button,.mobile-nav a').forEach(el=>{el.style.pointerEvents='auto';el.style.touchAction='manipulation'});
 })();
-
-
-/* ---------- NEWS IMAGE LINKS ----------
-   Haber kartındaki görsele tıklayınca kartın kaynak haberine gider. */
-(function(){
-  function makeNewsImagesClickable(root){
-    const scope=root||document;
-    scope.querySelectorAll('.news-row').forEach(function(row){
-      const thumb=row.querySelector('.thumb');
-      const source=row.querySelector('a[href]');
-      if(!thumb || !source || !source.href || thumb.closest('a.news-image-link')) return;
-      const a=document.createElement('a');
-      a.className='news-image-link';
-      a.href=source.href;
-      a.target='_blank';
-      a.rel='noopener noreferrer';
-      a.setAttribute('aria-label','Haberi aç');
-      thumb.parentNode.insertBefore(a,thumb);
-      a.appendChild(thumb);
-    });
-  }
-  window.ionenspiegelLinkNewsImages=makeNewsImagesClickable;
-  document.addEventListener('DOMContentLoaded',function(){
-    makeNewsImagesClickable(document);
-    const feed=document.getElementById('newsFeed');
-    if(feed){
-      const observer=new MutationObserver(function(){makeNewsImagesClickable(feed)});
-      observer.observe(feed,{childList:true,subtree:true});
-    }
-  });
-})();
-
-(function(){function updateMenuFavorite(){const label=document.getElementById('menuFavoriteLabel');if(label)label.textContent=localStorage.getItem('ionenspiegel-favorite-team')||'Takımını seç'}document.addEventListener('DOMContentLoaded',updateMenuFavorite);window.addEventListener('storage',updateMenuFavorite);document.getElementById('saveFavoriteTeam')?.addEventListener('click',()=>setTimeout(updateMenuFavorite,50))})();

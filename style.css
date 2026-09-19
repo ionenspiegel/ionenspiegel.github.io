@@ -595,3 +595,8 @@ body.dark .ref-list{background:#15181d;border-color:#2b3038;color:#fff}.dark .re
  .ref-feature-card em{font-size:7px;right:9px;top:9px}.ref-feature-card b{right:9px;bottom:8px;font-size:18px}
  .ref-other{margin-top:28px}.ref-team-grid{grid-template-columns:repeat(3,1fr)}.ref-modal-box{padding:22px 14px 15px}
 }
+
+/* V65 league tab reliability */
+.league-panel-enter{animation:leaguePanelIn .24s ease both}
+@keyframes leaguePanelIn{from{opacity:.25;transform:translateY(6px)}to{opacity:1;transform:none}}
+.hidden-panel[hidden]{display:none!important}

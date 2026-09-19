@@ -7,7 +7,7 @@
 <link rel="icon" href="icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="manifest" href="manifest.json">
-<title>İonenSpiegel | Güncel Futbol Haberleri • V58</title>
+<title>İonenSpiegel V62 | Güncel Futbol Haberleri • V58</title>
 <meta name="description" content="İonenSpiegel - Son dakika futbol haberleri, transferler, puan durumları ve maç merkezi.">
 <meta property="og:title" content="İonenSpiegel | Futbol Haberleri">
 <meta property="og:description" content="Son dakika futbol haberleri, Şampiyonlar Ligi, Avrupa Ligi, transferler ve Süper Lig.">
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="İonenSpiegel">
 <meta property="og:locale" content="tr_TR">
 <meta property="og:url" content="https://ionenspiegel.github.io/">
-<meta property="og:image" content="https://ionenspiegel.github.io/og-image.jpg">
+<meta property="og:image" content="https://ionenspiegel.github.io/og-image-v63.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -23,7 +23,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="İonenSpiegel | Futbol Haberleri">
 <meta name="twitter:description" content="Son dakika futbol haberleri, Şampiyonlar Ligi, Avrupa Ligi, maç merkezi ve transfer gündemi.">
-<meta name="twitter:image" content="https://ionenspiegel.github.io/og-image.jpg">
+<meta name="twitter:image" content="https://ionenspiegel.github.io/og-image-v63.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -36,8 +36,8 @@
   }catch(e){}
 })();
 </script>
-<link rel="stylesheet" href="style.css?v=58">
-<!-- Publytics Analytics -->
+<link rel="stylesheet" href="style.css?v=65">
+<link rel="stylesheet" href="v62-modern.css?v=65">
 <style id="live-score-removed">
 #liveScoreWidget,#liveScoreCard,#liveScoreList,.live-score-list,#timelineModal,.live-clock,.live-all-link{display:none!important}
 </style>
@@ -75,63 +75,56 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 @media(max-width:820px){.mobile-nav{height:64px}.mobile-nav a.active,.mobile-nav button.active{transform:translateY(-2px)}.section{scroll-margin-top:86px}.hero-media{box-shadow:0 18px 45px #0003}.fixture-board{box-shadow:0 14px 34px #0003}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.mobile-nav,.fixture-filter{transition:none}.breaking-scroll{animation:none!important}.live-pulse{animation:none!important}.news-feed.skeleton-mode .news-row:after{animation:none!important}.slider-arrow,.slider-dots{transition:none!important}}
 </style>
-<link rel="stylesheet" href="news-image-link.css?v=1">
-<link rel="stylesheet" href="menu-v5.css?v=5">
+<link rel="stylesheet" href="v62-light-theme-fix.css?v=63">
+  <script src="./ga4.js?v=64" defer></script>
 
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "ykfsmk1244");
-</script>
-
+<style id="v65-professional-fixes">
+/* V65: profesyonel header, logo ve Süper Lig sekmeleri */
+.topbar .top-inner{align-items:center;min-height:72px}
+.brand.is-logo{display:inline-flex;align-items:baseline;justify-content:flex-start;gap:0;white-space:nowrap;font-family:'Barlow Condensed',Arial,sans-serif;font-size:clamp(35px,4vw,43px);font-weight:900;line-height:.9;letter-spacing:0;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+.brand.is-logo .logo-first{font-weight:600;letter-spacing:-.35px}
+.brand.is-logo .logo-second{font-weight:900;letter-spacing:-.45px}
+.brand.is-logo:hover{opacity:.98}
+.derby-card{border-color:#e50914;box-shadow:0 14px 32px #e5091422}
+.derby-card .home-fixture-kicker b{color:#ff5962}
+.derby-card .home-fixture-teams em{font-size:18px;font-weight:900}
+.table-tabs{position:relative;z-index:20;display:flex;align-items:stretch;gap:6px;overflow-x:auto;overflow-y:hidden;touch-action:pan-x;pointer-events:auto;-webkit-overflow-scrolling:touch}
+.table-tabs button{position:relative;z-index:21;flex:0 0 auto;min-height:48px;padding:11px 18px;cursor:pointer!important;pointer-events:auto!important;user-select:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;font-weight:900}
+.table-tabs button.active{box-shadow:0 7px 18px #e5091428}
+.hidden-panel{position:relative;z-index:1}
+.result-item.featured-result{background:linear-gradient(90deg,#fff5f5,#fff);border-left:3px solid var(--red);font-weight:800}
+.dark-theme .result-item.featured-result{background:linear-gradient(90deg,#211619,#15181d)}
+@media(max-width:820px){
+  .topbar .top-inner{height:62px;min-height:62px}
+  .brand.is-logo{font-size:34px;letter-spacing:0;line-height:.9}
+  .brand.is-logo .logo-first{letter-spacing:-.25px}
+  .brand.is-logo .logo-second{letter-spacing:-.35px}
+  .table-tabs{gap:7px;padding:10px 8px}
+  .table-tabs button{min-height:48px;padding:0 16px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center}
+}
+@media(max-width:430px){
+  .brand.is-logo{font-size:31px}
+  .table-tabs{padding:10px 6px}
+  .table-tabs button{padding:0 14px;font-size:10px}
+}
+</style>
 </head>
 <body>
 <div id="progress"></div>
-<div class="is-topbar" role="banner">
-  <div class="is-topbar-inner">
-    <div class="is-ticker" aria-label="Son dakika akışı">
-      <span class="is-ticker-label"><span class="is-live-dot"></span> SON DAKİKA</span>
-      <div class="is-ticker-track">
-        <a href="#haberler">Beşiktaş 4-1 Marsilya</a>
-        <a href="#transfer">Transfer gündeminden son gelişmeler</a>
-        <a href="#maclar">Bugünün maçları ve fikstür</a>
-        <a href="#avrupa">Avrupa kupalarında son durum</a>
-      </div>
-    </div>
-    <div class="is-top-actions">
-      <a href="https://www.instagram.com/benim_llhg?stkn=aGprY3NnY3ZxNnc2" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a>
-      <a href="https://youtube.com/@ionicmirror?si=8CMNWHStWK9-hT_D" target="_blank" rel="noopener noreferrer" aria-label="YouTube">▶</a>
-      <button id="topThemeToggle" type="button" aria-label="Temayı değiştir" title="Koyu/Açık tema">☾</button>
-    </div>
-  </div>
-</div>
 <header class="topbar">
   <div class="top-inner">
     <button class="icon-btn hamburger" id="menuBtn" aria-label="Menüyü aç">☰</button>
-    <a class="brand" href="#anasayfa" aria-label="İonenSpiegel ana sayfa"><span>İonen</span>Spiegel</a>
+    <a class="brand is-logo" href="#anasayfa" aria-label="İonenSpiegel ana sayfa"><span class="logo-first">İonen</span><span class="logo-second">Spiegel</span></a>
     <span class="edition" id="editionLabel">SPOR</span>
+    <nav class="desktop-nav">
+      <a href="#sondakika">Son Dakika</a><a href="#dunya">Dünya</a><a href="#superlig">Süper Lig</a><a href="#avrupa">Avrupa</a><a href="#transfer">Transfer</a><a href="#maclar">Fikstür</a>
+    </nav>
     <div class="top-actions">
       <button class="icon-btn" id="searchOpen" aria-label="Ara">⌕</button>
-      <button class="login-btn is-profile-btn" id="loginBtn" type="button" aria-label="Profil">●</button>
+      <button class="login-btn" id="loginBtn" type="button">Yakında</button>
     </div>
   </div>
 </header>
-
-<nav class="is-main-nav" aria-label="Ana menü">
-  <div class="is-main-nav-inner">
-    <a class="is-nav-home" href="#anasayfa">⌂ <span>Ana Sayfa</span></a>
-    <a href="#superlig">Süper Lig</a>
-    <a href="#avrupa-kupalari">Avrupa</a>
-    <a href="#maclar">⚽ Canlı Skor</a>
-    <a href="#transfer">Transferler</a>
-    <a href="#puan">Puan Durumu</a>
-    <a href="#dunya">İstatistikler</a>
-    <button class="is-nav-search" id="navSearch" type="button">⌕ <span>Ara</span></button>
-  </div>
-</nav>
 
 <div class="breaking" id="sondakika">
   <div class="breaking-label"><span class="live-dot"></span> SON DAKİKA</div>
@@ -143,42 +136,16 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 </div>
 
 <div class="drawer-backdrop" id="drawerBackdrop"></div>
-<aside class="drawer menu-v5" id="drawer" aria-hidden="true">
-  <div class="menu-v5-head">
-    <div class="menu-v5-brand"><span>İonen</span>Spiegel<small>FUTBOLUN GÜNCEL ADRESİ</small></div>
-    <button class="menu-v5-close" id="drawerClose" type="button" aria-label="Menüyü kapat">×</button>
-  </div>
-  <div class="menu-v5-profile" id="favoriteTeamMenu">
-    <div class="menu-v5-profile-icon">★</div>
-    <div><small>FAVORİ TAKIM</small><strong id="menuFavoriteLabel">Takımını seç</strong></div><span>›</span>
-  </div>
-  <div class="menu-v5-grid">
-    <a href="#anasayfa"><b>⌂</b><span>Ana Sayfa</span></a>
-    <a href="#sondakika"><b>⚡</b><span>Son Dakika</span></a>
-    <a href="#maclar"><b>⚽</b><span>Maçlar</span></a>
-    <a href="#transfer"><b>₺</b><span>Transfer</span></a>
-    <button id="savedNewsMenu" type="button"><b>🔖</b><span>Kaydedilenler</span></button>
-    <a href="video.html"><b>▶</b><span>Videolar</span></a>
-    <a href="galeri.html"><b>▣</b><span>Galeri</span></a>
-    <a href="iletisim.html"><b>✉</b><span>İletişim</span></a>
-  </div>
-  <div class="menu-v5-section">
-    <div class="menu-v5-title">FUTBOL</div>
-    <a class="menu-v5-link" href="#superlig"><span>🇹🇷</span><div><strong>Süper Lig</strong><small>Türkiye'den son gelişmeler</small></div><i>›</i></a>
-    <a class="menu-v5-link" href="#puan"><span>📊</span><div><strong>Puan Durumu</strong><small>Lig tablosu ve sıralama</small></div><i>›</i></a>
-    <a class="menu-v5-link" href="#dunya"><span>🌍</span><div><strong>Dünya Gündemi</strong><small>Futbol dünyasından gelişmeler</small></div><i>›</i></a>
-  </div>
-  <div class="menu-v5-section">
-    <div class="menu-v5-title">AVRUPA KUPALARI</div>
-    <div class="menu-v5-compact">
-      <a href="#avrupa-kupalari">🏆 Şampiyonlar Ligi</a><a href="#avrupa-kupalari">🏆 Avrupa Ligi</a><a href="#avrupa-kupalari">🏆 Konferans Ligi</a>
-    </div>
-  </div>
-  <div class="menu-v5-section menu-v5-more">
-    <div class="menu-v5-title">DAHA FAZLA</div>
-    <a href="hakkimizda.html">Hakkımızda <i>›</i></a><a href="gizlilik.html">Gizlilik <i>›</i></a>
-  </div>
-  <div class="menu-v5-footer"><span>İonenSpiegel · 2026</span><div><a href="https://www.instagram.com/benim_llhg?stkn=aGprY3NnY3ZxNnc2" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://youtube.com/@ionicmirror?si=8CMNWHStWK9-hT_D" target="_blank" rel="noopener noreferrer">YouTube</a></div></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-head"><b>İonenSpiegel</b><button class="close-btn" id="drawerClose">×</button></div>
+  <button class="drawer-link" id="favoriteTeamMenu">⭐ Favori Takımım</button>
+  <button class="drawer-link" id="savedNewsMenu">🔖 Kaydedilenler</button>
+  <button class="drawer-link accordion-btn">⚽ Futbol <span>⌄</span></button>
+  <div class="accordion"><a href="#superlig">Süper Lig</a><a href="#avrupa">Şampiyonlar Ligi</a><a href="#avrupa">Avrupa Ligi</a><a href="#avrupa">Konferans Ligi</a></div>
+  <button class="drawer-link accordion-btn">🏆 Avrupa Kupaları <span>⌄</span></button>
+  <div class="accordion"><a href="#avrupa-kupalari">Şampiyonlar Ligi</a><a href="#avrupa-kupalari">Avrupa Ligi</a></div>
+  <div class="drawer-ad">REKLAM ALANI<br><small>İonenSpiegel sponsor alanı</small></div>
+  <div class="drawer-social"><a href="https://www.instagram.com/benim_llhg?stkn=aGprY3NnY3ZxNnc2" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://youtube.com/@ionicmirror?si=8CMNWHStWK9-hT_D" target="_blank" rel="noopener noreferrer">YouTube</a></div>
 </aside>
 
 <main id="anasayfa">
@@ -198,8 +165,8 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
       
     </div>
     <aside class="hero-side">
-      <div class="home-fixture-card result-card"><div class="home-fixture-kicker"><span>🏆</span><b>MAÇ SONUCU</b><span>17 EYLÜL</span></div><div class="home-fixture-teams"><strong>BEŞİKTAŞ</strong><em>4 - 1</em><strong>MARSEILLE</strong></div><div class="home-fixture-meta">UEFA Avrupa Ligi · Tüpraş Stadyumu</div><a href="#maclar" class="wide-btn">Maç detaylarına git →</a></div>
-      <div class="quick-panel"><div class="panel-title">BUGÜN ÖNE ÇIKANLAR</div><button data-scroll="#transfer"><b>01</b> Transfer gündemi <span>→</span></button><button data-scroll="#superlig"><b>02</b> Süper Lig tablosu <span>→</span></button><button data-scroll="#avrupa-kupalari"><b>03</b> Avrupa kupaları <span>→</span></button><button data-scroll="#bjk-avrupa"><b>04</b> Beşiktaş Avrupa yol haritası <span>→</span></button></div>
+      <div class="home-fixture-card derby-card"><div class="home-fixture-kicker"><span>🔥</span><b>MAÇ ÖNCESİ</b><span>19 EYLÜL</span></div><div class="home-fixture-teams"><strong>TRABZONSPOR</strong><em>VS</em><strong>GALATASARAY</strong></div><div class="home-fixture-meta">Süper Lig · 20:00 · Papara Park</div><a href="#maclar" class="wide-btn">Maç detaylarına git →</a></div>
+      <div class="quick-panel"><div class="panel-title">BUGÜN ÖNE ÇIKANLAR</div><button data-scroll="#transfer"><b>01</b> Transfer gündemi <span>→</span></button><button data-scroll="#superlig"><b>02</b> Süper Lig tablosu <span>→</span></button><button data-scroll="#avrupa-kupalari"><b>03</b> Avrupa kupaları <span>→</span></button><button data-scroll="#bjk-avrupa"><b>04</b> Türk takımları Avrupa maçları <span>→</span></button></div>
     </aside>
   </section>
 
@@ -214,18 +181,15 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
     </div>
     <div class="latest-layout">
       <div class="news-feed" id="newsFeed">
-<article class="news-row has-bookmark" data-news-id="bjk-marseille-result" data-team="Beşiktaş" data-search="Beşiktaş, Marsilya'yı 4-1 mağlup etti Beşiktaş, UEFA Avrupa Ligi lig aşamasındaki ilk maçında Marsilya'yı 4-1 yenerek turnuvaya galibiyetle başladı."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="./local-2.svg" alt="Beşiktaş futbol haberi"></div><div><div class="news-kicker">18 Eylül 2026 · BEŞİKTAŞ</div><h3>Beşiktaş, Marsilya'yı 4-1 mağlup etti</h3><p>Beşiktaş, UEFA Avrupa Ligi lig aşamasındaki ilk maçında Marsilya'yı 4-1 yenerek turnuvaya galibiyetle başladı.</p><a href="https://www.aa.com.tr/tr/spor/besiktas-olimpik-marsilyayi-maglup-etti/" target="_blank" rel="noopener noreferrer">Anadolu Ajansı ↗</a></div></article>
-<article class="news-row has-bookmark" data-news-id="ucl-fener-roma" data-team="Avrupa" data-search="Fenerbahçe Roma ile 1-1 berabere kaldı Şampiyonlar Ligi Fenerbahçe Roma 1-1 10 Eylül 2026"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="./local-7.svg" alt="Şampiyonlar Ligi haberi"></div><div><div class="news-kicker">10 Eylül 2026 · ŞAMPİYONLAR LİGİ</div><h3>Fenerbahçe, Roma ile 1-1 berabere kaldı</h3><p>Fenerbahçe, 2026/27 Şampiyonlar Ligi lig aşamasının ilk maçında Roma ile 1-1 berabere kaldı.</p><a href="https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures/" target="_blank" rel="noopener noreferrer">UEFA ↗</a></div></article>
-<article class="news-row has-bookmark" data-news-id="ucl-gs-sporting" data-team="Avrupa" data-search="Galatasaray Sporting CP 1-3 Şampiyonlar Ligi 9 Eylül 2026"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="./local-7.svg" alt="Şampiyonlar Ligi haberi"></div><div><div class="news-kicker">9 Eylül 2026 · ŞAMPİYONLAR LİGİ</div><h3>Galatasaray, Sporting CP karşısında 3-1 kaybetti</h3><p>Galatasaray, Şampiyonlar Ligi lig aşamasının ilk maçında Sporting CP'ye 3-1 mağlup oldu.</p><a href="https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures/" target="_blank" rel="noopener noreferrer">UEFA ↗</a></div></article>
-<article class="news-row has-bookmark" data-news-id="ucl-matchday1" data-team="Avrupa" data-search="Şampiyonlar Ligi ilk hafta sonuçları Barcelona PSG Bayern Manchester City Real Madrid 2026"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="./local-7.svg" alt="Şampiyonlar Ligi sonuçları"></div><div><div class="news-kicker">10 Eylül 2026 · ŞAMPİYONLAR LİGİ</div><h3>Şampiyonlar Ligi'nde ilk hafta sonuçlandı</h3><p>İlk haftada Barcelona Feyenoord'u 5-1, PSG Slovan Bratislava'yı 6-1, Bayern Münih ise Bodø/Glimt'i 5-0 yendi.</p><a href="https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures/" target="_blank" rel="noopener noreferrer">UEFA ↗</a></div></article>
-<article class="news-row has-bookmark" data-news-id="el-matchday1" data-team="Avrupa" data-search="Avrupa Ligi ilk hafta Beşiktaş Marsilya Juventus Crystal Palace Bournemouth 2026"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="./local-7.svg" alt="Avrupa Ligi haberi"></div><div><div class="news-kicker">18 Eylül 2026 · AVRUPA LİGİ</div><h3>Avrupa Ligi'nde ilk hafta tamamlandı</h3><p>Beşiktaş'ın 4-1'lik galibiyetinin yanında Juventus 5-0, Crystal Palace 4-0 ve Bournemouth 2-1'lik galibiyetler aldı.</p><a href="https://www.uefa.com/uefaeuropaleague/news/02a9-219ba00d8c3a-2fc9c36259e8-1000--europa-league-matchday-1-highlights-and-round-up-benfica-/" target="_blank" rel="noopener noreferrer">UEFA ↗</a></div></article>
-<article class="news-row has-bookmark" data-news-id="fener-asensio" data-team="Fenerbahçe" data-search="Fenerbahçe'de Asensio Eyüpspor maçının kadrosunda Fenerbahçe, sakatlığını atlatan Marco Asensio'nun 20 Eylül'deki Eyüpspor karşılaşmasının kadrosunda yer alacağını açıkladı."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="./local-4.svg" alt="Fenerbahçe futbol haberi"></div><div><div class="news-kicker">18 Eylül 2026 · FENERBAHÇE</div><h3>Fenerbahçe'de Asensio Eyüpspor maçının kadrosunda</h3><p>Fenerbahçe, sakatlığını atlatan Marco Asensio'nun 20 Eylül'deki Eyüpspor karşılaşmasının kadrosunda yer alacağını açıkladı.</p><a href="https://beinsports.com.tr/haber/fenerbahceden-marco-asensio-aciklamasi" target="_blank" rel="noopener noreferrer">beIN SPORTS Türkiye ↗</a></div></article>
-<article class="news-row has-bookmark" data-news-id="bjk-next" data-team="Beşiktaş" data-search="Beşiktaş'ın sıradaki lig maçı Amedspor deplasmanında Beşiktaş, 20 Eylül Pazar günü saat 20.00'de Amed Sportif Faaliyetler ile karşılaşacak."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="./local-2.svg" alt="Beşiktaş futbol haberi"></div><div><div class="news-kicker">18 Eylül 2026 · BEŞİKTAŞ</div><h3>Beşiktaş'ın sıradaki lig maçı Amedspor deplasmanında</h3><p>Beşiktaş, 20 Eylül Pazar günü saat 20.00'de Amed Sportif Faaliyetler ile karşılaşacak.</p><a href="https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611" target="_blank" rel="noopener noreferrer">Anadolu Ajansı ↗</a></div></article>
-<article class="news-row has-bookmark" data-news-id="superlig-6-hafta" data-team="Süper Lig" data-search="Süper Lig'de 6. hafta bugün başlıyor 6. haftanın açılışında Kasımpaşa ile Konyaspor 18 Eylül Cuma günü saat 20.00'de karşılaşacak."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="./local-6.svg" alt="Süper Lig futbol haberi"></div><div><div class="news-kicker">18 Eylül 2026 · SÜPER LİG</div><h3>Süper Lig'de 6. hafta bugün başlıyor</h3><p>6. haftanın açılışında Kasımpaşa ile Konyaspor 18 Eylül Cuma günü saat 20.00'de karşılaşacak.</p><a href="https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611" target="_blank" rel="noopener noreferrer">Anadolu Ajansı ↗</a></div></article>
-<article class="news-row has-bookmark" data-news-id="trabzon-gs-derbi" data-team="Trabzonspor" data-search="Trabzonspor-Galatasaray derbisi yarın Trabzonspor ile Galatasaray, 19 Eylül Cumartesi günü saat 20.00'de Papara Park'ta karşılaşacak."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="./local-1.svg" alt="Trabzonspor futbol haberi"></div><div><div class="news-kicker">18 Eylül 2026 · SÜPER LİG</div><h3>Trabzonspor-Galatasaray derbisi yarın</h3><p>Trabzonspor ile Galatasaray, 19 Eylül Cumartesi günü saat 20.00'de Papara Park'ta karşılaşacak.</p><a href="https://www.aa.com.tr/tr/spor/super-ligde-6-haftanin-perdesi-yarin-acilacak/4059611" target="_blank" rel="noopener noreferrer">Anadolu Ajansı ↗</a></div></article>
-<article class="news-row has-bookmark" data-news-id="europa-ilk-gece" data-team="Avrupa" data-search="Avrupa Ligi'nde ilk hafta tamamlandı 2026/27 UEFA Avrupa Ligi'nin ilk maç gününde karşılaşmalar tamamlandı ve sonuçlar netleşti."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="./local-7.svg" alt="Avrupa futbol haberi"></div><div><div class="news-kicker">18 Eylül 2026 · AVRUPA</div><h3>Avrupa Ligi'nde ilk hafta tamamlandı</h3><p>2026/27 UEFA Avrupa Ligi'nin ilk maç gününde karşılaşmalar tamamlandı ve sonuçlar netleşti.</p><a href="https://www.uefa.com/uefaeuropaleague/" target="_blank" rel="noopener noreferrer">UEFA ↗</a></div></article>
-<article class="news-row has-bookmark" data-news-id="barcelona-racing" data-team="Dünya" data-search="Barcelona, Racing'i 7-2 yendi Barcelona, LaLiga'da Racing Santander'i 7-2 mağlup etti."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="./local-6.svg" alt="Dünya futbol haberi"></div><div><div class="news-kicker">17 Eylül 2026 · DÜNYA</div><h3>Barcelona, Racing'i 7-2 yendi</h3><p>Barcelona, LaLiga'da Racing Santander'i 7-2 mağlup etti.</p><a href="https://www.reuters.com/sports/soccer/flick-sets-record-barcelona-breeze-past-racing-with-raphinha-hat-trick-2026-09-16/" target="_blank" rel="noopener noreferrer">Reuters ↗</a></div></article>
-<article class="news-row has-bookmark" data-news-id="europe-bournemouth" data-team="Avrupa" data-search="Bournemouth Avrupa Ligi'ne galibiyetle başladı Bournemouth, Real Sociedad'ı deplasmanda 2-1 mağlup etti."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><img src="./local-7.svg" alt="Avrupa futbol haberi"></div><div><div class="news-kicker">17 Eylül 2026 · AVRUPA</div><h3>Bournemouth Avrupa Ligi'ne galibiyetle başladı</h3><p>Bournemouth, Real Sociedad'ı deplasmanda 2-1 mağlup etti.</p><a href="https://www.aa.com.tr/tr/spor/besiktas-olimpik-marsilyayi-maglup-etti/" target="_blank" rel="noopener noreferrer">Anadolu Ajansı ↗</a></div></article>
+<article class="news-row has-bookmark" data-news-id="bjk-orkun-18-eylul" data-team="Beşiktaş" data-search="Orkun Kökçü: Çok iyi başladık Beşiktaş kaptanı Orkun Kökçü, Marsilya karşısındaki 4-1'lik galibiyetin ardından takımın Avrupa Ligi'ne güçlü başladığını söyledi."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><a class="v62-image-link" href="https://www.haberturk.com/spor/orkun-kokcu-cok-iyi-basladik-3913297" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><img src="./photo-bjk.jpg" alt="Orkun Kökçü: Çok iyi başladık" loading="lazy" decoding="async"></a></div><div><div class="news-kicker">18 Eylül 2026 · BEŞIKTAŞ</div><h3>Orkun Kökçü: Çok iyi başladık</h3><p>Beşiktaş kaptanı Orkun Kökçü, Marsilya karşısındaki 4-1'lik galibiyetin ardından takımın Avrupa Ligi'ne güçlü başladığını söyledi.</p><a href="https://www.haberturk.com/spor/orkun-kokcu-cok-iyi-basladik-3913297" target="_blank" rel="noopener noreferrer">DHA ↗</a></div></article>
+<article class="news-row has-bookmark" data-news-id="bjk-genesio-18-eylul" data-team="Beşiktaş" data-search="Bruno Genesio: Beşiktaş çok ileri gidebilir Marsilya Teknik Direktörü Bruno Genesio, Beşiktaş'ın Avrupa Ligi'nde güçlü bir takım olduğunu ve turnuvada ileri gidebileceğini söyledi."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><a class="v62-image-link" href="https://www.dha.com.tr/yerel-haberler/istanbul/bruno-genesio-besiktas-cok-ileri-gidebilir-2946712" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><img src="./photo-bjk.jpg" alt="Bruno Genesio: Beşiktaş çok ileri gidebilir" loading="lazy" decoding="async"></a></div><div><div class="news-kicker">18 Eylül 2026 · BEŞIKTAŞ</div><h3>Bruno Genesio: Beşiktaş çok ileri gidebilir</h3><p>Marsilya Teknik Direktörü Bruno Genesio, Beşiktaş'ın Avrupa Ligi'nde güçlü bir takım olduğunu ve turnuvada ileri gidebileceğini söyledi.</p><a href="https://www.dha.com.tr/yerel-haberler/istanbul/bruno-genesio-besiktas-cok-ileri-gidebilir-2946712" target="_blank" rel="noopener noreferrer">DHA ↗</a></div></article>
+<article class="news-row has-bookmark" data-news-id="gs-osimhen-18-eylul" data-team="Galatasaray" data-search="Osimhen, Trabzonspor maçının kadrosunda yok Galatasaray'da Victor Osimhen, Mario Lemina, Wilfried Singo ve Kaan Ayhan Trabzonspor karşılaşmasının kamp kadrosunda yer almadı."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><a class="v62-image-link" href="https://www.aa.com.tr/tr/spor/osimhen-galatasarayin-trabzonspor-maci-kamp-kadrosunda-yer-almadi/4061438" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><img src="./photo-derbi.jpg" alt="Osimhen, Trabzonspor maçının kadrosunda yok" loading="lazy" decoding="async"></a></div><div><div class="news-kicker">18 Eylül 2026 · GALATASARAY</div><h3>Osimhen, Trabzonspor maçının kadrosunda yok</h3><p>Galatasaray'da Victor Osimhen, Mario Lemina, Wilfried Singo ve Kaan Ayhan Trabzonspor karşılaşmasının kamp kadrosunda yer almadı.</p><a href="https://www.aa.com.tr/tr/spor/osimhen-galatasarayin-trabzonspor-maci-kamp-kadrosunda-yer-almadi/4061438" target="_blank" rel="noopener noreferrer">Anadolu Ajansı ↗</a></div></article>
+<article class="news-row has-bookmark" data-news-id="fb-mert-muldur-18-eylul" data-team="Fenerbahçe" data-search="Fenerbahçe'de Mert Müldür sakatlığı Fenerbahçe, Mert Müldür'ün antrenmanda dizine aldığı darbe sonrası yapılan MR'da menisküsünde yırtık tespit edildiğini açıkladı."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><a class="v62-image-link" href="https://www.haberturk.com/spor/son-dakika-fenerbahce-ye-mert-muldur-soku-3913445" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><img src="./photo-asensio.jpg" alt="Fenerbahçe'de Mert Müldür sakatlığı" loading="lazy" decoding="async"></a></div><div><div class="news-kicker">18 Eylül 2026 · FENERBAHÇE</div><h3>Fenerbahçe'de Mert Müldür sakatlığı</h3><p>Fenerbahçe, Mert Müldür'ün antrenmanda dizine aldığı darbe sonrası yapılan MR'da menisküsünde yırtık tespit edildiğini açıkladı.</p><a href="https://www.haberturk.com/spor/son-dakika-fenerbahce-ye-mert-muldur-soku-3913445" target="_blank" rel="noopener noreferrer">Habertürk ↗</a></div></article>
+<article class="news-row has-bookmark" data-news-id="fb-eyup-idman-18-eylul" data-team="Fenerbahçe" data-search="Fenerbahçe, Eyüpspor hazırlıklarını sürdürdü Fenerbahçe, Süper Lig'in 6. haftasında 20 Eylül'de oynayacağı Eyüpspor maçının hazırlıklarına devam etti."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><a class="v62-image-link" href="https://beinsports.com.tr/haber/fenerbahce-eyupspor-macinin-hazirliklarina-devam-etti" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><img src="./photo-asensio.jpg" alt="Fenerbahçe, Eyüpspor hazırlıklarını sürdürdü" loading="lazy" decoding="async"></a></div><div><div class="news-kicker">18 Eylül 2026 · FENERBAHÇE</div><h3>Fenerbahçe, Eyüpspor hazırlıklarını sürdürdü</h3><p>Fenerbahçe, Süper Lig'in 6. haftasında 20 Eylül'de oynayacağı Eyüpspor maçının hazırlıklarına devam etti.</p><a href="https://beinsports.com.tr/haber/fenerbahce-eyupspor-macinin-hazirliklarina-devam-etti" target="_blank" rel="noopener noreferrer">beIN SPORTS Türkiye ↗</a></div></article>
+<article class="news-row has-bookmark" data-news-id="ts-gs-144-randevu" data-team="Trabzonspor" data-search="Trabzonspor-Galatasaray rekabetinde 144. randevu Trabzonspor ile Galatasaray, 19 Eylül Cumartesi saat 20.00'de Papara Park'ta 144. kez karşılaşacak."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><a class="v62-image-link" href="https://www.aa.com.tr/tr/spor/trabzonspor-galatasaray-rekabetinde-144-randevu/4060865" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><img src="./photo-derbi.jpg" alt="Trabzonspor-Galatasaray rekabetinde 144. randevu" loading="lazy" decoding="async"></a></div><div><div class="news-kicker">18 Eylül 2026 · TRABZONSPOR</div><h3>Trabzonspor-Galatasaray rekabetinde 144. randevu</h3><p>Trabzonspor ile Galatasaray, 19 Eylül Cumartesi saat 20.00'de Papara Park'ta 144. kez karşılaşacak.</p><a href="https://www.aa.com.tr/tr/spor/trabzonspor-galatasaray-rekabetinde-144-randevu/4060865" target="_blank" rel="noopener noreferrer">Anadolu Ajansı ↗</a></div></article>
+<article class="news-row has-bookmark" data-news-id="superlig-6-hafta-program-18-eylul" data-team="Süper Lig" data-search="Süper Lig'de 6. hafta programı 6. haftada Trabzonspor-Galatasaray 19 Eylül'de, Fenerbahçe-Eyüpspor ve Amed Sportif Faaliyetler-Beşiktaş 20 Eylül'de oynanacak."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><a class="v62-image-link" href="https://www.aa.com.tr/tr/spor/futbolda-haftanin-programi/4060705" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><img src="./photo-superlig.jpg" alt="Süper Lig'de 6. hafta programı" loading="lazy" decoding="async"></a></div><div><div class="news-kicker">18 Eylül 2026 · SÜPER LIG</div><h3>Süper Lig'de 6. hafta programı</h3><p>6. haftada Trabzonspor-Galatasaray 19 Eylül'de, Fenerbahçe-Eyüpspor ve Amed Sportif Faaliyetler-Beşiktaş 20 Eylül'de oynanacak.</p><a href="https://www.aa.com.tr/tr/spor/futbolda-haftanin-programi/4060705" target="_blank" rel="noopener noreferrer">Anadolu Ajansı ↗</a></div></article>
+<article class="news-row has-bookmark" data-news-id="europa-matchday1-18-eylul" data-team="Avrupa" data-search="Avrupa Ligi'nde ilk hafta tamamlandı 2026/27 UEFA Avrupa Ligi'nin ilk haftasında Beşiktaş 4-1, Juventus 5-0, Crystal Palace 4-0 ve Bournemouth 2-1 kazandı."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><a class="v62-image-link" href="https://www.uefa.com/uefaeuropaleague/news/02a9-219ba00d8c3a-2fc9c36259e8-1000--europa-league-matchday-1-highlights-and-round-up-benfica-/" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><img src="./photo-europa.jpg" alt="Avrupa Ligi'nde ilk hafta tamamlandı" loading="lazy" decoding="async"></a></div><div><div class="news-kicker">18 Eylül 2026 · AVRUPA</div><h3>Avrupa Ligi'nde ilk hafta tamamlandı</h3><p>2026/27 UEFA Avrupa Ligi'nin ilk haftasında Beşiktaş 4-1, Juventus 5-0, Crystal Palace 4-0 ve Bournemouth 2-1 kazandı.</p><a href="https://www.uefa.com/uefaeuropaleague/news/02a9-219ba00d8c3a-2fc9c36259e8-1000--europa-league-matchday-1-highlights-and-round-up-benfica-/" target="_blank" rel="noopener noreferrer">UEFA ↗</a></div></article>
+<article class="news-row has-bookmark" data-news-id="trabzon-reis-17-eylul" data-team="Trabzonspor" data-search="Trabzonspor'da Thomas Reis dönemi başladı Trabzonspor, teknik direktör Thomas Reis için imza töreni düzenledi. Alman çalıştırıcı Galatasaray maçı öncesi takımın başında ilk çalışmalarını yaptı."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><div class="thumb"><a class="v62-image-link" href="https://www.trabzonspor.org.tr/tr/haberler" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><img src="./photo-derbi.jpg" alt="Trabzonspor'da Thomas Reis dönemi başladı" loading="lazy" decoding="async"></a></div><div><div class="news-kicker">17 Eylül 2026 · TRABZONSPOR</div><h3>Trabzonspor'da Thomas Reis dönemi başladı</h3><p>Trabzonspor, teknik direktör Thomas Reis için imza töreni düzenledi. Alman çalıştırıcı Galatasaray maçı öncesi takımın başında ilk çalışmalarını yaptı.</p><a href="https://www.trabzonspor.org.tr/tr/haberler" target="_blank" rel="noopener noreferrer">Trabzonspor ↗</a></div></article>
 </div>
       <aside class="side-column">
       </div><a href="#maclar" class="wide-btn">Maç detaylarına git</a></div>
@@ -333,12 +297,12 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
     <div class="section-head"><h2><span class="red-line"></span> Süper Lig</h2><a class="text-link" href="#puan">Puan durumunun tamamı →</a></div>
     <div class="league-grid">
       <div class="table-card" id="puan">
-  <div class="table-tabs stats-tabs">
-    <button class="active" data-table="standings">Puan Durumu</button>
-    <button data-table="results">Sonuçlar</button>
-    <button data-table="fixtures">Fikstür</button>
-    <button data-table="goals">Gol Krallığı</button>
-    <button data-table="assists">Asist Krallığı</button>
+  <div class="table-tabs stats-tabs" role="tablist" aria-label="Süper Lig bölümleri">
+    <button class="active" id="tab-standings" type="button" role="tab" aria-selected="true" aria-controls="standingsPanel" data-table="standings">Puan Durumu</button>
+    <button id="tab-results" type="button" role="tab" aria-selected="false" aria-controls="resultsPanel" data-table="results">Sonuçlar</button>
+    <button id="tab-fixtures" type="button" role="tab" aria-selected="false" aria-controls="fixturesPanel" data-table="fixtures">Fikstür</button>
+    <button id="tab-goals" type="button" role="tab" aria-selected="false" aria-controls="goalsPanel" data-table="goals">Gol Krallığı</button>
+    <button id="tab-assists" type="button" role="tab" aria-selected="false" aria-controls="assistsPanel" data-table="assists">Asist Krallığı</button>
   </div>
 
   <div id="standingsPanel" class="standings-modern show">
@@ -346,31 +310,31 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
       <table>
         <thead><tr><th>#</th><th>Takım</th><th>O</th><th>G</th><th>B</th><th>M</th><th>A:Y</th><th>AV</th><th>P</th><th>Form</th></tr></thead>
         <tbody>
-          <tr id="team-gs" class="highlight"><td>1</td><td><strong>🟡🔴 Galatasaray</strong></td><td>5</td><td>4</td><td>1</td><td>0</td><td>13:6</td><td class="positive">+7</td><td class="points">13</td><td><div class="form-dots"><i class="win">G</i><i class="draw">B</i><i class="win">G</i><i class="win">G</i><i class="win">G</i></div></td></tr>
-          <tr id="team-bjk"><td>2</td><td><strong>⚫⚪ Beşiktaş</strong></td><td>5</td><td>4</td><td>0</td><td>1</td><td>12:4</td><td class="positive">+8</td><td class="points">12</td><td><div class="form-dots"><i class="win">G</i><i class="win">G</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i></div></td></tr>
-          <tr><td>3</td><td><strong>🟢🔴 Amed Sportif</strong></td><td>5</td><td>3</td><td>1</td><td>1</td><td>12:5</td><td class="positive">+7</td><td class="points">10</td><td><div class="form-dots"><i class="win">G</i><i class="draw">B</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i></div></td></tr>
-          <tr><td>4</td><td>Kasımpaşa</td><td>5</td><td>2</td><td>3</td><td>0</td><td>7:5</td><td class="positive">+2</td><td class="points">9</td><td><div class="form-dots"><i class="win">G</i><i class="draw">B</i><i class="draw">B</i><i class="win">G</i><i class="draw">B</i></div></td></tr>
-          <tr><td>5</td><td>Çaykur Rizespor</td><td>5</td><td>3</td><td>0</td><td>2</td><td>5:4</td><td class="positive">+1</td><td class="points">9</td><td><div class="form-dots"><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i></div></td></tr>
-          <tr><td>6</td><td>Kocaelispor</td><td>5</td><td>3</td><td>0</td><td>2</td><td>5:4</td><td class="positive">+1</td><td class="points">9</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="win">G</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
-          <tr><td>7</td><td>Gaziantep FK</td><td>5</td><td>2</td><td>2</td><td>1</td><td>7:5</td><td class="positive">+2</td><td class="points">8</td><td><div class="form-dots"><i class="draw">B</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="draw">B</i></div></td></tr>
-          <tr><td>8</td><td>Corendon Alanyaspor</td><td>5</td><td>2</td><td>2</td><td>1</td><td>6:5</td><td class="positive">+1</td><td class="points">8</td><td><div class="form-dots"><i class="draw">B</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="draw">B</i></div></td></tr>
-          <tr id="team-ts"><td>9</td><td><strong>🔵🔴 Trabzonspor</strong></td><td>5</td><td>2</td><td>1</td><td>2</td><td>9:5</td><td class="positive">+4</td><td class="points">7</td><td><div class="form-dots"><i class="draw">B</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
-          <tr id="team-corum"><td>10</td><td><strong>🔴⚪ Arca Çorum FK</strong></td><td>5</td><td>2</td><td>1</td><td>2</td><td>12:10</td><td class="positive">+2</td><td class="points">7</td><td><div class="form-dots"><i class="draw">B</i><i class="loss">M</i><i class="loss">M</i><i class="win">G</i><i class="win">G</i></div></td></tr>
-          <tr id="team-fb"><td>11</td><td><strong>🟡🔵 Fenerbahçe</strong></td><td>5</td><td>2</td><td>1</td><td>2</td><td>8:6</td><td class="positive">+2</td><td class="points">7</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="win">G</i><i class="loss">M</i><i class="draw">B</i></div></td></tr>
-          <tr><td>12</td><td>Gençlerbirliği</td><td>5</td><td>2</td><td>1</td><td>2</td><td>5:9</td><td class="negative">-4</td><td class="points">7</td><td><div class="form-dots"><i class="win">G</i><i class="draw">B</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
-          <tr><td>13</td><td>İstanbul Başakşehir</td><td>5</td><td>1</td><td>1</td><td>3</td><td>6:11</td><td class="negative">-5</td><td class="points">4</td><td><div class="form-dots"><i class="win">G</i><i class="loss">M</i><i class="loss">M</i><i class="draw">B</i><i class="loss">M</i></div></td></tr>
-          <tr><td>14</td><td>Samsunspor</td><td>5</td><td>1</td><td>1</td><td>3</td><td>6:11</td><td class="negative">-5</td><td class="points">4</td><td><div class="form-dots"><i class="loss">M</i><i class="draw">B</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
-          <tr><td>15</td><td>Erzurumspor FK</td><td>5</td><td>1</td><td>1</td><td>3</td><td>2:11</td><td class="negative">-9</td><td class="points">4</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
-          <tr><td>16</td><td>TÜMOSAN Konyaspor</td><td>5</td><td>1</td><td>0</td><td>4</td><td>4:8</td><td class="negative">-4</td><td class="points">3</td><td><div class="form-dots"><i class="loss">M</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
+          <tr class="highlight"><td>1</td><td>Galatasaray</td><td>5</td><td>4</td><td>1</td><td>0</td><td>13:6</td><td class="positive">+7</td><td class="points">13</td><td><div class="form-dots"><i class="win">G</i><i class="win">G</i><i class="win">G</i><i class="draw">B</i><i class="win">G</i></div></td></tr>
+          <tr><td>2</td><td>Beşiktaş</td><td>5</td><td>4</td><td>0</td><td>1</td><td>12:4</td><td class="positive">+8</td><td class="points">12</td><td><div class="form-dots"><i class="win">G</i><i class="win">G</i><i class="win">G</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
+          <tr><td>3</td><td>Amed Sportif</td><td>5</td><td>3</td><td>1</td><td>1</td><td>12:5</td><td class="positive">+7</td><td class="points">10</td><td><div class="form-dots"><i class="win">G</i><i class="draw">B</i><i class="win">G</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
+          <tr><td>4</td><td>Kasımpaşa</td><td>6</td><td>2</td><td>4</td><td>0</td><td>7:5</td><td class="positive">+2</td><td class="points">10</td><td><div class="form-dots"><i class="win">G</i><i class="draw">B</i><i class="draw">B</i><i class="win">G</i><i class="draw">B</i><i class="draw">B</i></div></td></tr>
+          <tr><td>5</td><td>Çaykur Rizespor</td><td>5</td><td>3</td><td>0</td><td>2</td><td>5:4</td><td class="positive">+1</td><td class="points">9</td><td><div class="form-dots"><i class="win">G</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
+          <tr><td>6</td><td>Kocaelispor</td><td>5</td><td>3</td><td>0</td><td>2</td><td>5:4</td><td class="positive">+1</td><td class="points">9</td><td><div class="form-dots"><i class="win">G</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
+          <tr><td>7</td><td>Gaziantep FK</td><td>5</td><td>2</td><td>2</td><td>1</td><td>7:5</td><td class="positive">+2</td><td class="points">8</td><td><div class="form-dots"><i class="win">G</i><i class="draw">B</i><i class="win">G</i><i class="draw">B</i><i class="loss">M</i></div></td></tr>
+          <tr><td>8</td><td>Corendon Alanyaspor</td><td>5</td><td>2</td><td>2</td><td>1</td><td>6:5</td><td class="positive">+1</td><td class="points">8</td><td><div class="form-dots"><i class="win">G</i><i class="draw">B</i><i class="win">G</i><i class="draw">B</i><i class="loss">M</i></div></td></tr>
+          <tr><td>9</td><td>Trabzonspor</td><td>5</td><td>2</td><td>1</td><td>2</td><td>9:5</td><td class="positive">+4</td><td class="points">7</td><td><div class="form-dots"><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="loss">M</i></div></td></tr>
+          <tr><td>10</td><td>Arca Çorum FK</td><td>5</td><td>2</td><td>1</td><td>2</td><td>12:10</td><td class="positive">+2</td><td class="points">7</td><td><div class="form-dots"><i class="draw">B</i><i class="win">G</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
+          <tr><td>11</td><td>Fenerbahçe</td><td>5</td><td>2</td><td>1</td><td>2</td><td>8:6</td><td class="positive">+2</td><td class="points">7</td><td><div class="form-dots"><i class="win">G</i><i class="draw">B</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
+          <tr><td>12</td><td>Gençlerbirliği</td><td>5</td><td>2</td><td>1</td><td>2</td><td>5:9</td><td class="negative">-4</td><td class="points">7</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
+          <tr><td>13</td><td>TÜMOSAN Konyaspor</td><td>6</td><td>1</td><td>1</td><td>4</td><td>4:8</td><td class="negative">-4</td><td class="points">4</td><td><div class="form-dots"><i class="loss">M</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i><i class="draw">B</i></div></td></tr>
+          <tr><td>14</td><td>İstanbul Başakşehir</td><td>5</td><td>1</td><td>1</td><td>3</td><td>6:11</td><td class="negative">-5</td><td class="points">4</td><td><div class="form-dots"><i class="loss">M</i><i class="draw">B</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
+          <tr><td>15</td><td>Samsunspor</td><td>5</td><td>1</td><td>1</td><td>3</td><td>6:11</td><td class="negative">-5</td><td class="points">4</td><td><div class="form-dots"><i class="loss">M</i><i class="draw">B</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
+          <tr><td>16</td><td>Erzurumspor FK</td><td>5</td><td>1</td><td>1</td><td>3</td><td>2:11</td><td class="negative">-9</td><td class="points">4</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
           <tr><td>17</td><td>Eyüpspor</td><td>5</td><td>1</td><td>0</td><td>4</td><td>2:8</td><td class="negative">-6</td><td class="points">3</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
           <tr><td>18</td><td>Göztepe</td><td>5</td><td>0</td><td>2</td><td>3</td><td>9:13</td><td class="negative">-4</td><td class="points">2</td><td><div class="form-dots"><i class="draw">B</i><i class="draw">B</i><i class="loss">M</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
         </tbody>
       </table>
     </div>
-    <div class="standings-note"><span>●</span> 5. hafta sonu itibarıyla güncel tablo · 2026/27 sezonunda 18 takım mücadele ediyor.</div>
+    <div class="standings-note"><span>●</span> 18 Eylül 2026 akşamı itibarıyla güncel tablo · 2026/27 sezonunda 18 takım mücadele ediyor.</div>
   </div>
 
-  <div id="resultsPanel" class="hidden-panel"><div class="result-item"><span>Beşiktaş</span><strong>3 - 0</strong><span>Erzurumspor FK</span></div><div class="result-item"><span>Galatasaray</span><strong>1 - 0</strong><span>Kocaelispor</span></div><div class="result-item"><span>Gaziantep FK</span><strong>0 - 0</strong><span>Fenerbahçe</span></div><div class="result-item"><span>Samsunspor</span><strong>1 - 5</strong><span>Çorum FK</span></div></div>
+  <div id="resultsPanel" class="hidden-panel"><div class="result-item featured-result"><span>Kasımpaşa</span><strong>0 - 0</strong><span>Konyaspor</span></div><div class="result-item"><span>Beşiktaş</span><strong>3 - 0</strong><span>Erzurumspor FK</span></div><div class="result-item"><span>Galatasaray</span><strong>1 - 0</strong><span>Kocaelispor</span></div><div class="result-item"><span>Gaziantep FK</span><strong>0 - 0</strong><span>Fenerbahçe</span></div><div class="result-item"><span>Samsunspor</span><strong>1 - 5</strong><span>Çorum FK</span></div></div>
   <div id="fixturesPanel" class="hidden-panel fixtures-panel">
     <div class="fixtures-panel-head"><div><b>YAKLAŞAN MAÇLAR</b><small>Başlama saatine göre sıralanır</small></div><span id="fixtureCount">0 maç</span></div>
     <div id="upcomingFixtures" class="upcoming-fixtures"></div>
@@ -436,13 +400,76 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 </section>
 
 
-<section class="section content-section bjk-roadmap-section" id="bjk-avrupa">
-  <div class="section-head"><div><h2><span class="red-line"></span> Beşiktaş'ın Avrupa Yol Haritası</h2><p class="section-subtitle">UEFA Avrupa Ligi · lig aşamasındaki sıradaki maçlar</p></div><a class="text-link" href="https://www.uefa.com/uefaeuropaleague/news/02a8-2177782493b9-69ba3288701d-1000--europa-league-league-phase-fixtures-and-results-by-team/" target="_blank" rel="noopener">UEFA ↗</a></div>
-  <div class="roadmap-grid">
-    <article class="roadmap-card done"><span class="roadmap-status">TAMAMLANDI</span><small>17 EYLÜL</small><strong>Beşiktaş <em>4 - 1</em> Marseille</strong><span>UEFA Avrupa Ligi</span></article>
-    <article class="roadmap-card"><span class="roadmap-status next">SIRADAKİ</span><small>15 EKİM</small><strong>Hoffenheim <em>vs</em> Beşiktaş</strong><span>UEFA Avrupa Ligi</span></article>
-    <article class="roadmap-card"><span class="roadmap-status">22 EKİM</span><small>22 EKİM</small><strong>Beşiktaş <em>vs</em> Crystal Palace</strong><span>Tüpraş Stadyumu</span></article>
-    <article class="roadmap-card"><span class="roadmap-status">5 KASIM</span><small>5 KASIM</small><strong>Celtic <em>vs</em> Beşiktaş</strong><span>UEFA Avrupa Ligi</span></article>
+<section class="section content-section v62-europe-section" id="bjk-avrupa">
+  <div class="section-head">
+    <div>
+      <h2><span class="red-line"></span> Türk Takımlarının Avrupa Maçları</h2>
+      <p class="section-subtitle">2026-27 sezonu · Avrupa kupalarında mücadele eden Türk kulüpleri</p>
+    </div>
+    <a class="text-link" href="https://www.uefa.com/" target="_blank" rel="noopener">UEFA ↗</a>
+  </div>
+
+  <div class="v62-europe-tabs" role="tablist" aria-label="Avrupa'daki Türk takımları">
+    <button type="button" class="v62-europe-tab active" data-europe-team="besiktas" role="tab" aria-selected="true">⚫⚪ Beşiktaş</button>
+    <button type="button" class="v62-europe-tab" data-europe-team="galatasaray" role="tab" aria-selected="false">🟡🔴 Galatasaray</button>
+    <button type="button" class="v62-europe-tab" data-europe-team="fenerbahce" role="tab" aria-selected="false">🔵🟡 Fenerbahçe</button>
+    <button type="button" class="v62-europe-tab" data-europe-team="trabzonspor" role="tab" aria-selected="false">🔴🔵 Trabzonspor</button>
+  </div>
+
+  <div class="v62-europe-panels">
+    <div class="v62-europe-panel active" data-europe-panel="besiktas" role="tabpanel">
+      <div class="v62-europe-panel-head"><div><strong>Beşiktaş</strong><small>UEFA Avrupa Ligi</small></div><span>Lig aşaması</span></div>
+      <div class="v62-europe-fixtures">
+        <article class="v62-europe-fixture done"><small>17 EYLÜL 2026</small><strong>Beşiktaş <em>4 - 1</em> Marseille</strong><span>TAMAMLANDI</span></article>
+        <article class="v62-europe-fixture next"><small>15 EKİM 2026</small><strong>Hoffenheim <em>vs</em> Beşiktaş</strong><span>SIRADAKİ</span></article>
+        <article class="v62-europe-fixture"><small>22 EKİM 2026</small><strong>Beşiktaş <em>vs</em> Crystal Palace</strong><span>UEFA Avrupa Ligi</span></article>
+        <article class="v62-europe-fixture"><small>5 KASIM 2026</small><strong>Celtic <em>vs</em> Beşiktaş</strong><span>UEFA Avrupa Ligi</span></article>
+        <article class="v62-europe-fixture"><small>26 KASIM 2026</small><strong>Beşiktaş <em>vs</em> Hapoel Beer-Sheva</strong><span>UEFA Avrupa Ligi</span></article>
+        <article class="v62-europe-fixture"><small>10 ARALIK 2026</small><strong>Leverkusen <em>vs</em> Beşiktaş</strong><span>UEFA Avrupa Ligi</span></article>
+        <article class="v62-europe-fixture"><small>21 OCAK 2027</small><strong>Beşiktaş <em>vs</em> Union SG</strong><span>UEFA Avrupa Ligi</span></article>
+        <article class="v62-europe-fixture"><small>28 OCAK 2027</small><strong>Omonia <em>vs</em> Beşiktaş</strong><span>UEFA Avrupa Ligi</span></article>
+      </div>
+    </div>
+
+    <div class="v62-europe-panel" data-europe-panel="galatasaray" role="tabpanel" hidden>
+      <div class="v62-europe-panel-head"><div><strong>Galatasaray</strong><small>UEFA Şampiyonlar Ligi</small></div><span>Lig aşaması</span></div>
+      <div class="v62-europe-fixtures">
+        <article class="v62-europe-fixture done"><small>9 EYLÜL 2026</small><strong>Sporting CP <em>3 - 1</em> Galatasaray</strong><span>TAMAMLANDI</span></article>
+        <article class="v62-europe-fixture next"><small>13 EKİM 2026</small><strong>Galatasaray <em>vs</em> Barcelona</strong><span>SIRADAKİ</span></article>
+        <article class="v62-europe-fixture"><small>21 EKİM 2026</small><strong>Lille <em>vs</em> Galatasaray</strong><span>Şampiyonlar Ligi</span></article>
+        <article class="v62-europe-fixture"><small>3 KASIM 2026</small><strong>Galatasaray <em>vs</em> Stuttgart</strong><span>Şampiyonlar Ligi</span></article>
+        <article class="v62-europe-fixture"><small>24 KASIM 2026</small><strong>Galatasaray <em>vs</em> Aston Villa</strong><span>Şampiyonlar Ligi</span></article>
+        <article class="v62-europe-fixture"><small>8 ARALIK 2026</small><strong>AEK Athens <em>vs</em> Galatasaray</strong><span>Şampiyonlar Ligi</span></article>
+        <article class="v62-europe-fixture"><small>19 OCAK 2027</small><strong>Galatasaray <em>vs</em> Feyenoord</strong><span>Şampiyonlar Ligi</span></article>
+        <article class="v62-europe-fixture"><small>27 OCAK 2027</small><strong>Paris <em>vs</em> Galatasaray</strong><span>Şampiyonlar Ligi</span></article>
+      </div>
+    </div>
+
+    <div class="v62-europe-panel" data-europe-panel="fenerbahce" role="tabpanel" hidden>
+      <div class="v62-europe-panel-head"><div><strong>Fenerbahçe</strong><small>UEFA Şampiyonlar Ligi</small></div><span>Lig aşaması</span></div>
+      <div class="v62-europe-fixtures">
+        <article class="v62-europe-fixture done"><small>10 EYLÜL 2026</small><strong>Fenerbahçe <em>1 - 1</em> Roma</strong><span>TAMAMLANDI</span></article>
+        <article class="v62-europe-fixture next"><small>14 EKİM 2026</small><strong>Aston Villa <em>vs</em> Fenerbahçe</strong><span>SIRADAKİ</span></article>
+        <article class="v62-europe-fixture"><small>20 EKİM 2026</small><strong>Fenerbahçe <em>vs</em> Slavia Praha</strong><span>Şampiyonlar Ligi</span></article>
+        <article class="v62-europe-fixture"><small>4 KASIM 2026</small><strong>Fenerbahçe <em>vs</em> Liverpool</strong><span>Şampiyonlar Ligi</span></article>
+        <article class="v62-europe-fixture"><small>25 KASIM 2026</small><strong>Shakhtar Donetsk <em>vs</em> Fenerbahçe</strong><span>Şampiyonlar Ligi</span></article>
+        <article class="v62-europe-fixture"><small>9 ARALIK 2026</small><strong>LASK <em>vs</em> Fenerbahçe</strong><span>Şampiyonlar Ligi</span></article>
+        <article class="v62-europe-fixture"><small>20 OCAK 2027</small><strong>Fenerbahçe <em>vs</em> Villarreal</strong><span>Şampiyonlar Ligi</span></article>
+        <article class="v62-europe-fixture"><small>27 OCAK 2027</small><strong>Atlético de Madrid <em>vs</em> Fenerbahçe</strong><span>Şampiyonlar Ligi</span></article>
+      </div>
+    </div>
+
+    <div class="v62-europe-panel" data-europe-panel="trabzonspor" role="tabpanel" hidden>
+      <div class="v62-europe-panel-head"><div><strong>Trabzonspor</strong><small>UEFA Konferans Ligi</small></div><span>Lig aşaması</span></div>
+      <div class="v62-europe-fixtures">
+        <article class="v62-europe-fixture next"><small>15 EKİM 2026</small><strong>KuPS Kuopio <em>vs</em> Trabzonspor</strong><span>SIRADAKİ</span></article>
+        <article class="v62-europe-fixture"><small>22 EKİM 2026</small><strong>Trabzonspor <em>vs</em> Hearts</strong><span>Konferans Ligi</span></article>
+        <article class="v62-europe-fixture"><small>5 KASIM 2026</small><strong>Trabzonspor <em>vs</em> Freiburg</strong><span>Konferans Ligi</span></article>
+        <article class="v62-europe-fixture"><small>26 KASIM 2026</small><strong>CSKA Sofia <em>vs</em> Trabzonspor</strong><span>Konferans Ligi</span></article>
+        <article class="v62-europe-fixture"><small>10 ARALIK 2026</small><strong>Trabzonspor <em>vs</em> Jablonec</strong><span>Konferans Ligi</span></article>
+        <article class="v62-europe-fixture"><small>17 ARALIK 2026</small><strong>Crvena Zvezda <em>vs</em> Trabzonspor</strong><span>Konferans Ligi</span></article>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -478,73 +505,10 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   </div>
 </section>
 
-<section class="section content-section" id="gundem">
-  <div class="section-head"><div><h2><span class="red-line"></span> Gündem ve Etkileşim</h2><p class="section-subtitle">Okuma, yorum ve haftanın oyuncusu</p></div></div>
-  <div class="engage-grid">
-    <div class="poll-card"><span class="tag news">ANKET</span><h3>Haftanın oyuncusu kim?</h3><p>Oyunu seç. Sonuçlar tüm ziyaretçiler için ortaktır.</p><div id="playerPoll"></div><div class="poll-result" id="pollResult"></div></div>
-    <div class="comments-card"><h3>Haber tartışması</h3><p>Yorumunu yaz. Bu statik sürümde yorumlar bu cihazda saklanır.</p><input id="commentName" placeholder="Adın"><textarea id="commentText" rows="3" placeholder="Bu haber hakkında ne düşünüyorsun?"></textarea><button class="primary-btn" id="commentAdd">Yorum gönder</button><div id="commentList"></div></div>
-  </div>
-</section>
-
-<section class="container section more-ref" id="daha-fazla">
-  <div class="ref-heading">
-    <div>
-      <span class="ref-kicker">MENÜ</span>
-      <h2>Daha Fazla</h2>
-      <p>İonenSpiegel özellikleri</p>
-    </div>
-  </div>
-
-  <div class="ref-feature-grid">
-    <button class="ref-feature-card theme-card" id="themeCard" type="button">
-      <img src="photo-europa.jpg" alt="" aria-hidden="true">
-      <span class="ref-feature-shade"></span><span class="ref-feature-icon">☾</span>
-      <strong>Koyu Tema</strong><small>Gece okuma görünümü</small><em id="themeStatus">Kapalı</em><b>›</b>
-    </button>
-
-    <button class="ref-feature-card favorite-feature" id="favoriteCard" type="button">
-      <img src="photo-bjk.jpg" alt="" aria-hidden="true">
-      <span class="ref-feature-shade"></span><span class="ref-feature-icon">★</span>
-      <strong>Favori Takımlar</strong><small>Takımını seç ve akışı kişiselleştir</small><em id="favoriteStatus">Seçilmedi</em><b>›</b>
-    </button>
-
-    <button class="ref-feature-card notification-feature" id="notificationCard" type="button">
-      <img src="photo-asensio.jpg" alt="" aria-hidden="true">
-      <span class="ref-feature-shade"></span><span class="ref-feature-icon">♧</span>
-      <strong>Tarayıcı Bildirimleri</strong><small>Yeni haberleri anında yakala</small><em id="notificationStatus">Kapalı</em><b>›</b>
-    </button>
-
-    <a class="ref-feature-card simple-feature" id="savedCard" href="kaydedilenler.html">
-      <span class="ref-feature-icon">▣</span><strong>Kaydedilenler</strong><small>Sonra okumak için sakladığın haberler</small><em>Aç</em><b>›</b>
-    </a>
-
-    <a class="ref-feature-card simple-feature" id="videoCard" href="video.html">
-      <span class="ref-feature-icon">▶</span><strong>Video</strong><small>Günün futbol videolarını izle</small><em>İzle</em><b>›</b>
-    </a>
-
-    <a class="ref-feature-card simple-feature contact-feature" href="iletisim.html">
-      <span class="ref-feature-icon">✉</span><strong>İletişim</strong><small>Görüş, öneri ve mesajlarını gönder</small><em>Mesaj Gönder</em><b>›</b>
-    </a>
-
-    <a class="ref-feature-card simple-feature" id="galleryCard" href="galeri.html">
-      <span class="ref-feature-icon">▧</span><strong>Galeri</strong><small>Maçlardan güncel kareler</small><em>Görüntüle</em><b>›</b>
-    </a>
-  </div>
-
-  <div class="ref-other">
-    <div class="ref-heading compact"><div><span class="ref-kicker">AYARLAR</span><h2>Diğer</h2></div></div>
-    <div class="ref-list">
-      <a href="gizlilik.html"><span>⚙</span><div><strong>Site Ayarları</strong><small>Tema, bildirim ve kişiselleştirme</small></div><b>›</b></a>
-      <a href="hakkimizda.html"><span>ⓘ</span><div><strong>Hakkımızda</strong><small>İonenSpiegel hakkında bilgi</small></div><b>›</b></a>
-      <a href="iletisim.html"><span>✉</span><div><strong>İletişim</strong><small>Görüş ve önerilerin için</small></div><b>›</b></a>
-    </div>
-  </div>
-</section>
-
-
+</div>
 </main>
 
-<footer><div class="container footer-grid"><div><a class="brand footer-brand" href="#anasayfa"><span>İonen</span>Spiegel</a><p>Futbol haberleri, maç merkezi ve transfer gündemi.</p></div><div><b>Hızlı Menü</b><a href="#sondakika">Son Dakika</a><a href="#superlig">Süper Lig</a><a href="#transfer">Transfer</a><a href="#dunya">Dünya</a><a href="#gundem">Gündem</a></div><div><b>Kaynaklar</b><a href="https://www.uefa.com/" target="_blank" rel="noopener">UEFA</a><a href="https://www.tff.org/" target="_blank" rel="noopener">TFF</a><a href="https://bjk.com.tr/tr" target="_blank" rel="noopener">Beşiktaş</a><a href="https://www.galatasaray.org/" target="_blank" rel="noopener">Galatasaray</a><a href="https://www.fenerbahce.org/" target="_blank" rel="noopener">Fenerbahçe</a><a href="https://www.trabzonspor.org.tr/" target="_blank" rel="noopener">Trabzonspor</a></div><div class="visitor-counter"><b>Site İstatistikleri</b><div><span>👁️ Toplam ziyaret</span><strong id="visitorTotal">—</strong></div><div><span>📅 Bugünkü ziyaret</span><strong id="visitorToday">—</strong></div></div></div><div class="footer-bottom">
+<footer><div class="container footer-grid"><div><a class="brand footer-brand is-logo" href="#anasayfa"><span class="logo-first">İonen</span><span class="logo-second">Spiegel</span></a><p>Futbol haberleri, maç merkezi ve transfer gündemi.</p></div><div><b>Hızlı Menü</b><a href="#sondakika">Son Dakika</a><a href="#superlig">Süper Lig</a><a href="#transfer">Transfer</a><a href="#dunya">Dünya</a><a href="#gundem">Gündem</a></div><div><b>Kaynaklar</b><a href="https://www.uefa.com/" target="_blank" rel="noopener">UEFA</a><a href="https://www.tff.org/" target="_blank" rel="noopener">TFF</a><a href="https://bjk.com.tr/tr" target="_blank" rel="noopener">Beşiktaş</a><a href="https://www.galatasaray.org/" target="_blank" rel="noopener">Galatasaray</a><a href="https://www.fenerbahce.org/" target="_blank" rel="noopener">Fenerbahçe</a><a href="https://www.trabzonspor.org.tr/" target="_blank" rel="noopener">Trabzonspor</a></div><div class="visitor-counter"><b>Site İstatistikleri</b><div><span>👁️ Toplam ziyaret</span><strong id="visitorTotal">—</strong></div><div><span>📅 Bugünkü ziyaret</span><strong id="visitorToday">—</strong></div></div></div><div class="footer-bottom">
   <div class="footer-legal"><a href="hakkimizda.html">Hakkımızda</a><a href="iletisim.html">İletişim</a><a href="gizlilik.html">Gizlilik</a></div>
   <p>© 2026 İonenSpiegel · Bağımsız, taraftar odaklı futbol haber projesidir. İonenSpiegel, kulüplerin, UEFA'nın, TFF'nin veya haber ajanslarının resmi sitesi değildir.</p>
 </div></footer>
@@ -606,8 +570,8 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 </div>
 <div class="modal-backdrop" id="loginModal"><div class="modal"><button class="close-btn" type="button" data-close-modal aria-label="Kapat">×</button><div class="modal-logo">İonenSpiegel</div><h2>Hesap özelliği yakında</h2><p>Giriş ve hesap senkronizasyonu henüz etkin değil. Favori takım, tema ve kaydedilen haberler bu cihazda çalışmaya devam eder.</p><button class="primary-btn" data-close-modal>Kapat</button></div></div>
 <div class="modal-backdrop" id="searchModal"><div class="search-modal"><button class="close-btn" type="button" data-close-modal aria-label="Kapat">×</button><h2>Site içinde ara</h2><div class="big-search"><input id="globalSearch" placeholder="Takım, oyuncu, haber ara..."><button id="globalSearchBtn">Ara</button></div><div id="globalResults"></div></div></div>
-<script src="ga4.js"></script>
-<script src="script.js?v=58"></script>
+<script src="script.js?v=65"></script>
+<script src="v62-fixes.js?v=65" defer></script>
 <script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
 
 <script id="v50-fixture-ui">
