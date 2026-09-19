@@ -120,6 +120,27 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 .breaking-scroll a b{display:block!important;min-width:0!important;overflow:hidden!important;text-overflow:ellipsis!important;white-space:nowrap!important;line-height:1.1!important}
 @media(max-width:480px){.breaking{height:44px!important}.breaking-label{flex-basis:108px!important;width:108px!important;min-width:108px!important;height:44px!important;font-size:10px!important}.breaking-scroll{height:44px!important}.breaking-scroll a{height:44px!important;min-width:175px!important;padding:0 13px!important;font-size:10px!important}}
 </style>
+<style id="v68-final-tabs-ticker">
+/* V68 final: Süper Lig sekmeleri ve kesintisiz son dakika bandı */
+.table-tabs{display:flex!important;flex-wrap:nowrap!important;gap:6px!important;overflow-x:auto!important;overflow-y:hidden!important;max-width:100%!important;padding:10px!important;scrollbar-width:none!important;touch-action:pan-x!important;-webkit-overflow-scrolling:touch!important;}
+.table-tabs::-webkit-scrollbar{display:none!important}
+.table-tabs button{flex:0 0 auto!important;width:auto!important;min-width:max-content!important;height:44px!important;min-height:44px!important;padding:0 15px!important;white-space:nowrap!important;line-height:1!important;border-radius:9px!important;pointer-events:auto!important;touch-action:manipulation!important;}
+@media(max-width:560px){.table-tabs{gap:5px!important;padding:9px 7px!important}.table-tabs button{height:42px!important;min-height:42px!important;padding:0 13px!important;font-size:10px!important}}
+.hidden-panel{display:none!important}
+.hidden-panel.show{display:block!important}
+.league-panel-enter{animation:leaguePanelIn .2s ease both}
+@keyframes leaguePanelIn{from{opacity:.15;transform:translateY(5px)}to{opacity:1;transform:none}}
+.breaking{height:44px!important;background:#08090b!important;border-top:1px solid #252830!important;border-bottom:1px solid #252830!important;display:block!important;overflow:hidden!important;}
+.breaking-viewport{width:100%!important;height:44px!important;overflow:hidden!important;display:flex!important;align-items:center!important;}
+.breaking-track{display:flex!important;align-items:center!important;width:max-content!important;min-width:max-content!important;animation:v68Ticker 34s linear infinite!important;will-change:transform!important;}
+.breaking-track:hover{animation-play-state:paused!important}
+.breaking-track a{height:44px!important;display:flex!important;align-items:center!important;gap:8px!important;flex:0 0 auto!important;padding:0 18px!important;border-right:1px solid #252830!important;color:#f2f3f5!important;text-decoration:none!important;font-size:11px!important;font-weight:800!important;white-space:nowrap!important;}
+.breaking-track a span{display:inline-grid!important;place-items:center!important;width:24px!important;height:18px!important;border-radius:5px!important;background:#171a20!important;color:#e50914!important;font-size:8px!important;font-weight:900!important;}
+.breaking-track a b{font-weight:800!important;}
+@keyframes v68Ticker{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@media(max-width:560px){.breaking,.breaking-viewport,.breaking-track,.breaking-track a{height:42px!important}.breaking-track{animation-duration:30s!important}.breaking-track a{padding:0 14px!important;font-size:10px!important}}
+@media(prefers-reduced-motion:reduce){.breaking-track{animation:none!important}}
+</style>
 </head>
 <body>
 <div id="progress"></div>
@@ -138,13 +159,23 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   </div>
 </header>
 
-<div class="breaking" id="sondakika">
-  <div class="breaking-label"><span class="live-dot"></span> SON DAKİKA</div>
-  <div class="breaking-scroll" id="breakingScroll" aria-label="Son dakika haberleri">
-  <a href="#haberler"><span>01</span><b>Beşiktaş 4-1 Marsilya</b></a>
-  <a href="#haberler"><span>02</span><b>Fenerbahçe'de Asensio gelişmesi</b></a>
-  <a href="#maclar"><span>03</span><b>Trabzonspor-Galatasaray derbisi 19 Eylül'de</b></a>
-</div>
+<div class="breaking" id="sondakika" aria-label="Son dakika haberleri">
+  <div class="breaking-viewport">
+    <div class="breaking-track">
+      <a href="#haberler"><span>01</span><b>Beşiktaş 4-1 Marsilya</b></a>
+      <a href="#haberler"><span>02</span><b>Fenerbahçe'de Asensio gelişmesi</b></a>
+      <a href="#maclar"><span>03</span><b>Trabzonspor-Galatasaray 19 Eylül'de</b></a>
+      <a href="#superlig"><span>04</span><b>Kasımpaşa 0-0 Konyaspor, maç sona erdi</b></a>
+      <a href="#haberler"><span>05</span><b>Süper Lig'de 6. hafta başladı</b></a>
+      <a href="#haberler"><span>06</span><b>Beşiktaş Avrupa Ligi'ne 4-1'lik galibiyetle başladı</b></a>
+      <a href="#haberler"><span>01</span><b>Beşiktaş 4-1 Marsilya</b></a>
+      <a href="#haberler"><span>02</span><b>Fenerbahçe'de Asensio gelişmesi</b></a>
+      <a href="#maclar"><span>03</span><b>Trabzonspor-Galatasaray 19 Eylül'de</b></a>
+      <a href="#superlig"><span>04</span><b>Kasımpaşa 0-0 Konyaspor, maç sona erdi</b></a>
+      <a href="#haberler"><span>05</span><b>Süper Lig'de 6. hafta başladı</b></a>
+      <a href="#haberler"><span>06</span><b>Beşiktaş Avrupa Ligi'ne 4-1'lik galibiyetle başladı</b></a>
+    </div>
+  </div>
 </div>
 
 <div class="drawer-backdrop" id="drawerBackdrop"></div>
@@ -393,7 +424,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
     </div>
     <div class="fixture-day" data-fixture-day="today">
       <div class="fixture-day-head"><b>18 EYLÜL · CUMA</b><span>SÜPER LİG</span></div>
-      <article class="fixture-match" data-fixture-category="turkiye today"><time>20:00</time><div class="fixture-team"><b>Kasımpaşa</b></div><strong class="fixture-vs">VS</strong><div class="fixture-team away"><b>Konyaspor</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match featured result-match" data-fixture-category="turkiye today"><time>MS</time><div class="fixture-team"><b>Kasımpaşa</b><small>Ev sahibi</small></div><strong class="fixture-vs">0 - 0</strong><div class="fixture-team away"><b>Konyaspor</b><small>Deplasman</small></div><span class="fixture-badge">SL</span></article>
     </div>
     <div class="fixture-day" data-fixture-day="turkiye">
       <div class="fixture-day-head"><b>19 EYLÜL · CUMARTESİ</b><span>SÜPER LİG</span></div>
@@ -582,8 +613,8 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 </div>
 <div class="modal-backdrop" id="loginModal"><div class="modal"><button class="close-btn" type="button" data-close-modal aria-label="Kapat">×</button><div class="modal-logo">İonenSpiegel</div><h2>Hesap özelliği yakında</h2><p>Giriş ve hesap senkronizasyonu henüz etkin değil. Favori takım, tema ve kaydedilen haberler bu cihazda çalışmaya devam eder.</p><button class="primary-btn" data-close-modal>Kapat</button></div></div>
 <div class="modal-backdrop" id="searchModal"><div class="search-modal"><button class="close-btn" type="button" data-close-modal aria-label="Kapat">×</button><h2>Site içinde ara</h2><div class="big-search"><input id="globalSearch" placeholder="Takım, oyuncu, haber ara..."><button id="globalSearchBtn">Ara</button></div><div id="globalResults"></div></div></div>
-<script src="script.js?v=65"></script>
-<script src="v62-fixes.js?v=65" defer></script>
+<script src="script.js?v=68"></script>
+<script src="v62-fixes.js?v=68" defer></script>
 <script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
 
 <script id="v50-fixture-ui">
@@ -740,6 +771,62 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
     },30);
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initBreaking); else initBreaking();
+})();
+</script>
+<script id="v68-final-tabs">
+(function(){
+  'use strict';
+  function setupTabs(){
+    const root=document.querySelector('.table-tabs[data-v68-tabs]') || document.querySelector('.table-tabs');
+    if(!root || root.dataset.v68Ready==='1') return;
+    root.dataset.v68Ready='1';
+    const ids=['standings','results','fixtures','goals','assists'];
+    const buttons=[...root.querySelectorAll('button[data-table]')];
+    function show(key,button){
+      buttons.forEach(b=>{
+        const active=b===button;
+        b.classList.toggle('active',active);
+        b.setAttribute('aria-selected',active?'true':'false');
+        b.tabIndex=active?0:-1;
+      });
+      ids.forEach(id=>{
+        const panel=document.getElementById(id+'Panel');
+        if(!panel)return;
+        const active=id===key;
+        panel.hidden=!active;
+        panel.classList.toggle('show',active);
+        panel.setAttribute('aria-hidden',active?'false':'true');
+        panel.style.display=active?'block':'none';
+        if(active){
+          panel.classList.remove('league-panel-enter');
+          void panel.offsetWidth;
+          panel.classList.add('league-panel-enter');
+        }
+      });
+      if(key==='fixtures' && typeof window.renderUpcomingFixtures==='function') window.renderUpcomingFixtures();
+    }
+    root.addEventListener('click',function(e){
+      const b=e.target.closest('button[data-table]');
+      if(!b || !root.contains(b))return;
+      e.preventDefault();
+      e.stopPropagation();
+      show(b.dataset.table,b);
+    },true);
+    root.addEventListener('keydown',function(e){
+      const b=e.target.closest('button[data-table]');
+      if(!b)return;
+      const i=buttons.indexOf(b);
+      let n=-1;
+      if(e.key==='ArrowRight')n=(i+1)%buttons.length;
+      if(e.key==='ArrowLeft')n=(i-1+buttons.length)%buttons.length;
+      if(e.key==='Home')n=0;
+      if(e.key==='End')n=buttons.length-1;
+      if(n>=0){e.preventDefault();buttons[n].focus();show(buttons[n].dataset.table,buttons[n]);}
+    });
+    const initial=buttons.find(b=>b.classList.contains('active'))||buttons[0];
+    if(initial)show(initial.dataset.table,initial);
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',setupTabs,{once:true});else setupTabs();
 })();
 </script>
 </body>
