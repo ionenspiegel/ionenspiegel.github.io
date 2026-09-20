@@ -727,3 +727,5 @@ body.dark .ref-list{background:#15181d;border-color:#2b3038;color:#fff}.dark .re
 .stats-tabs{min-width:0;max-width:100%;overflow:hidden}
 .table-scroll{min-width:0;max-width:100%;overflow-x:auto;overflow-y:hidden}
 @media(max-width:850px){.league-grid{display:block;width:100%;min-width:0}.league-grid .table-card{width:100%;min-width:0}.section#superlig{width:100%;min-width:0}.section#superlig .section-head{min-width:0}.section#superlig .text-link{white-space:nowrap}}
+
+.news-row>.thumb{display:block;overflow:hidden;text-decoration:none}.news-row>.thumb img{width:100%;height:100%;object-fit:cover;display:block}

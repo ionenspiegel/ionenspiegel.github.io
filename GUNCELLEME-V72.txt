@@ -1,0 +1,12 @@
+V72 GÜNCELLEME - 20 EYLÜL 2026
+
+- 20 Eylül Süper Lig maçları sonuç olarak işlendi.
+- Fenerbahçe 8-0 Eyüpspor
+- Erzurumspor FK 1-0 Samsunspor
+- Amed Sportif Faaliyetler 3-2 Beşiktaş
+- Göztepe 2-2 Çaykur Rizespor
+- Amedspor-Beşiktaş canlı / 90+11 ifadeleri kaldırıldı.
+- Ana sayfadaki Fenerbahçe-Eyüpspor kartı MAÇ SONUCU olarak güncellendi.
+- Son Dakika haber görselleri verilen iS görseliyle değiştirildi.
+- Haber görselleri ilgili haber bağlantısına tıklanabilir hale getirildi.
+- Service Worker V72 cache adıyla yenilendi.

@@ -5,17 +5,17 @@
     "description": "Fenerbahçe, Süper Lig'in 6. haftasında Eyüpspor'u 8-0 mağlup etti. Vedat Muriç dört gol attı.",
     "category": "Fenerbahçe",
     "date": "20 Eylül 2026",
-    "image": "./photo-asensio.jpg",
+    "image": "./is-logo.png",
     "source": "FOTOMAÇ",
     "link": "https://www.fotomac.com.tr/fenerbahce/2026/09/20/fenerbahce-evinde-gol-oldu-yagdi-vedat-muric-maca-damga-vurdu"
   },
   {
     "id": "amed-bjk-3-2-20-eylul",
     "title": "Amedspor-Beşiktaş maçında skor 3-2",
-    "description": "20 Eylül akşamı 90+11 oynanırken Amedspor 3-2 önde. Skor canlı takip ediliyor.",
+    "description": "Amed Sportif Faaliyetler, Süper Lig'in 6. haftasında Beşiktaş'ı 3-2 mağlup etti. Karşılaşma sona erdi.",
     "category": "Beşiktaş",
     "date": "20 Eylül 2026",
-    "image": "./photo-bjk.jpg",
+    "image": "./is-logo.png",
     "source": "Beşiktaş",
     "link": "https://www.bjk.com.tr/tr/fikstur/1/1/704/668"
   },
@@ -25,7 +25,7 @@
     "description": "Göztepe ile Çaykur Rizespor arasındaki Süper Lig 6. hafta mücadelesi 2-2 tamamlandı.",
     "category": "Süper Lig",
     "date": "20 Eylül 2026",
-    "image": "./photo-superlig.jpg",
+    "image": "./is-logo.png",
     "source": "Maçkolik",
     "link": "https://www.mackolik.com/mac/g%C3%B6ztepe-vs-%C3%A7aykur-rizespor/karsilastirma/cizsw1hg6g8wzusyinxuvtudw"
   },
@@ -35,7 +35,7 @@
     "description": "Miguel Cardoso'nun 45. dakikadaki golü Erzurumspor'a üç puanı getirdi.",
     "category": "Süper Lig",
     "date": "20 Eylül 2026",
-    "image": "./photo-superlig.jpg",
+    "image": "./is-logo.png",
     "source": "DHA",
     "link": "https://www.dha.com.tr/yerel-haberler/erzurum/erzurumspor-fk-samsunspor-1-0-2948246"
   },
@@ -45,7 +45,7 @@
     "description": "Madrid derbisinde Atlético Madrid, Real Madrid'i 2-1 mağlup etti.",
     "category": "İspanya",
     "date": "20 Eylül 2026",
-    "image": "./photo-europa.jpg",
+    "image": "./is-logo.png",
     "source": "Reuters",
     "link": "https://www.reuters.com/sports/soccer/atletico-ride-derby-storm-beat-10-man-real-madrid-2-1-2026-09-20/"
   },
@@ -55,7 +55,7 @@
     "description": "Barcelona, Sevilla'yı 3-1 yendi. Raphinha hat-trick yaptı.",
     "category": "İspanya",
     "date": "20 Eylül 2026",
-    "image": "./photo-europa.jpg",
+    "image": "./is-logo.png",
     "source": "Reuters",
     "link": "https://www.reuters.com/sports/soccer/raphinha-hat-trick-maintains-barcelonas-perfect-laliga-start-2026-09-19/"
   },
@@ -65,7 +65,7 @@
     "description": "Erzurumspor FK, Miguel Cardoso'nun golüyle Samsunspor'u 1-0 mağlup etti.",
     "category": "Süper Lig",
     "date": "20 Eylül 2026",
-    "image": "./photo-superlig.jpg",
+    "image": "./is-logo.png",
     "source": "beIN SPORTS Türkiye",
     "link": "https://beinsports.com.tr/haber/erzurumspor-fk-samsunspor"
   },
@@ -75,7 +75,7 @@
     "description": "Trabzonspor, Süper Lig'in 6. haftasında Galatasaray'ı 4-0 yendi. Mohamed Salah üç gol attı.",
     "category": "Trabzonspor",
     "date": "20 Eylül 2026",
-    "image": "./photo-derbi.jpg",
+    "image": "./is-logo.png",
     "source": "Trabzonspor",
     "link": "https://www.trabzonspor.org.tr/tr/haberler/trabzonspor-4-0-galatasaray-1-19-09-2026"
   }
