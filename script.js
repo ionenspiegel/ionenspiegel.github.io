@@ -167,6 +167,50 @@ newsFeedRoot?.addEventListener('click',e=>{
   openArticle(row);
 });
 
+
+/* ---------- SON DAKİKA OTOMATİK KAYAN ŞERİT ---------- */
+(function initBreakingTicker(){
+  const track=document.getElementById('breakingScroll');
+  if(!track) return;
+  const originals=[...track.querySelectorAll('a')];
+  if(!originals.length) return;
+
+  // İçerik ekrana sığsa bile şerit hareket edebilsin diye listeyi bir kez kopyala.
+  if(!track.dataset.loopReady){
+    originals.forEach(a=>{
+      const clone=a.cloneNode(true);
+      clone.setAttribute('aria-hidden','true');
+      clone.tabIndex=-1;
+      track.appendChild(clone);
+    });
+    track.dataset.loopReady='1';
+  }
+
+  let paused=false;
+  let last=performance.now();
+  const speed=34; // px/sn
+
+  const tick=(now)=>{
+    const dt=Math.min(50,now-last)/1000;
+    last=now;
+    if(!paused && track.scrollWidth>track.clientWidth+2){
+      track.scrollLeft += speed*dt;
+      const loopWidth=track.scrollWidth/2;
+      if(track.scrollLeft>=loopWidth) track.scrollLeft-=loopWidth;
+    }
+    requestAnimationFrame(tick);
+  };
+
+  const pauseBriefly=()=>{
+    paused=true;
+    clearTimeout(track._resumeTimer);
+    track._resumeTimer=setTimeout(()=>{paused=false;last=performance.now()},1800);
+  };
+  track.addEventListener('touchstart',pauseBriefly,{passive:true});
+  track.addEventListener('pointerdown',pauseBriefly,{passive:true});
+  requestAnimationFrame(tick);
+})();
+
 /* ---------- MOBILE NAV + SCROLL UX ---------- */
 const mobileNav=$('.mobile-nav');
 let lastScrollY=Math.max(0,window.scrollY),navTick=false;

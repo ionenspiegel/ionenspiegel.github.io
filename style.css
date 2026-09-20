@@ -670,3 +670,48 @@ body.dark .ref-list{background:#15181d;border-color:#2b3038;color:#fff}.dark .re
     line-height:1!important;
   }
 }
+
+
+/* V68: Son Dakika yeniden otomatik ve kesintisiz kayar. */
+#breakingScroll{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:0!important;
+  overflow-x:hidden!important;
+  overflow-y:hidden!important;
+  white-space:nowrap!important;
+  scroll-behavior:auto!important;
+  animation:none!important;
+  transform:none!important;
+  padding:0!important;
+  min-width:0!important;
+  scrollbar-width:none!important;
+}
+#breakingScroll::-webkit-scrollbar{display:none!important}
+#breakingScroll a{
+  display:flex!important;
+  align-items:center!important;
+  flex:0 0 240px!important;
+  width:240px!important;
+  min-width:240px!important;
+  height:100%!important;
+  padding:0 14px!important;
+  border-left:1px solid rgba(255,255,255,.08)!important;
+  overflow:hidden!important;
+  white-space:nowrap!important;
+  text-overflow:ellipsis!important;
+  animation:none!important;
+  transform:none!important;
+}
+#breakingScroll a b{
+  display:block!important;
+  min-width:0!important;
+  overflow:hidden!important;
+  white-space:nowrap!important;
+  text-overflow:ellipsis!important;
+}
+@media(max-width:560px){
+  #breakingScroll a{flex-basis:240px!important;width:240px!important;min-width:240px!important;height:46px!important;min-height:46px!important;padding:0 10px!important}
+  #breakingScroll a span{flex:0 0 24px!important;margin-right:7px!important}
+}
