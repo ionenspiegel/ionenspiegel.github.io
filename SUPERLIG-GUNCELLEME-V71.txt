@@ -1,0 +1,12 @@
+İonenSpiegel V71
+
+20 Eylül 2026 Süper Lig bölümü güncellendi.
+
+- Mobilde Süper Lig kartının yatay taşma sorunu düzeltildi.
+- Puan tablosu 6. hafta sonuçlarına göre güncellendi.
+- Amed Sportif 3-2 Beşiktaş, Fenerbahçe 8-0 Eyüpspor, Göztepe 2-2 Çaykur Rizespor ve Erzurumspor 1-0 Samsunspor sonuçları işlendi.
+- Gol Krallığı güncellendi.
+- Asist Krallığı güncellendi.
+- Sekmeler Puan Durumu, Sonuçlar, Fikstür, Gol Krallığı ve Asist Krallığı olarak çalışmaya devam eder.
+- İletişim ve Apps Script bağlantısına dokunulmadı.
+- Service Worker önbelleği V71 olarak yenilendi.

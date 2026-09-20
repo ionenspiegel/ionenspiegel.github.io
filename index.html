@@ -297,55 +297,97 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
     <div class="section-head"><h2><span class="red-line"></span> Süper Lig</h2><a class="text-link" href="#puan">Puan durumunun tamamı →</a></div>
     <div class="league-grid">
       <div class="table-card" id="puan">
-  <div class="table-tabs stats-tabs" role="tablist" aria-label="Süper Lig bölümleri">
-    <button class="active" id="tab-standings" type="button" role="tab" aria-selected="true" aria-controls="standingsPanel" data-table="standings">Puan Durumu</button>
-    <button id="tab-results" type="button" role="tab" aria-selected="false" aria-controls="resultsPanel" data-table="results">Sonuçlar</button>
-    <button id="tab-fixtures" type="button" role="tab" aria-selected="false" aria-controls="fixturesPanel" data-table="fixtures">Fikstür</button>
-    <button id="tab-goals" type="button" role="tab" aria-selected="false" aria-controls="goalsPanel" data-table="goals">Gol Krallığı</button>
-    <button id="tab-assists" type="button" role="tab" aria-selected="false" aria-controls="assistsPanel" data-table="assists">Asist Krallığı</button>
-  </div>
+        <div class="table-tabs stats-tabs" role="tablist" aria-label="Süper Lig bölümleri">
+          <button class="active" id="tab-standings" type="button" role="tab" aria-selected="true" aria-controls="standingsPanel" data-table="standings">Puan Durumu</button>
+          <button id="tab-results" type="button" role="tab" aria-selected="false" aria-controls="resultsPanel" data-table="results">Sonuçlar</button>
+          <button id="tab-fixtures" type="button" role="tab" aria-selected="false" aria-controls="fixturesPanel" data-table="fixtures">Fikstür</button>
+          <button id="tab-goals" type="button" role="tab" aria-selected="false" aria-controls="goalsPanel" data-table="goals">Gol Krallığı</button>
+          <button id="tab-assists" type="button" role="tab" aria-selected="false" aria-controls="assistsPanel" data-table="assists">Asist Krallığı</button>
+        </div>
 
-  <div id="standingsPanel" class="standings-modern show">
-    <div class="table-scroll">
-      <table>
-        <thead><tr><th>#</th><th>Takım</th><th>O</th><th>G</th><th>B</th><th>M</th><th>A:Y</th><th>AV</th><th>P</th><th>Form</th></tr></thead>
-        <tbody>
-          <tr class="highlight"><td>1</td><td>Galatasaray</td><td>5</td><td>4</td><td>1</td><td>0</td><td>13:10</td><td class="positive">+3</td><td class="points">13</td><td><div class="form-dots"><i class="draw">B</i><i class="win">G</i><i class="win">G</i><i class="win">G</i><i class="win">G</i></div></td></tr>
-          <tr><td>2</td><td>Beşiktaş</td><td>5</td><td>4</td><td>0</td><td>1</td><td>12:4</td><td class="positive">+8</td><td class="points">12</td><td><div class="form-dots"><i class="win">G</i><i class="win">G</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i></div></td></tr>
-          <tr><td>3</td><td>Kocaelispor</td><td>5</td><td>3</td><td>0</td><td>2</td><td>7:4</td><td class="positive">+3</td><td class="points">12</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="win">G</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
-          <tr><td>4</td><td>Corendon Alanyaspor</td><td>6</td><td>3</td><td>2</td><td>1</td><td>8:6</td><td class="positive">+2</td><td class="points">11</td><td><div class="form-dots"><i class="draw">B</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="win">G</i></div></td></tr>
-          <tr><td>5</td><td>Trabzonspor</td><td>6</td><td>3</td><td>1</td><td>2</td><td>13:5</td><td class="positive">+8</td><td class="points">10</td><td><div class="form-dots"><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="loss">M</i><i class="win">G</i></div></td></tr>
-          <tr><td>6</td><td>Amed Sportif</td><td>5</td><td>3</td><td>1</td><td>1</td><td>12:5</td><td class="positive">+7</td><td class="points">10</td><td><div class="form-dots"><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="win">G</i></div></td></tr>
-          <tr><td>7</td><td>Kasımpaşa</td><td>6</td><td>2</td><td>4</td><td>0</td><td>7:5</td><td class="positive">+2</td><td class="points">10</td><td><div class="form-dots"><i class="draw">B</i><i class="win">G</i><i class="draw">B</i><i class="draw">B</i><i class="win">G</i><i class="draw">B</i></div></td></tr>
-          <tr><td>8</td><td>Çaykur Rizespor</td><td>5</td><td>3</td><td>0</td><td>2</td><td>5:4</td><td class="positive">+1</td><td class="points">9</td><td><div class="form-dots"><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i></div></td></tr>
-          <tr><td>9</td><td>Gaziantep FK</td><td>5</td><td>2</td><td>2</td><td>1</td><td>7:7</td><td class="positive">0</td><td class="points">8</td><td><div class="form-dots"><i class="win">G</i><i class="draw">B</i><i class="win">G</i><i class="draw">B</i><i class="loss">M</i></div></td></tr>
-          <tr><td>10</td><td>Fenerbahçe</td><td>5</td><td>2</td><td>1</td><td>2</td><td>8:6</td><td class="positive">+2</td><td class="points">7</td><td><div class="form-dots"><i class="win">G</i><i class="draw">B</i><i class="loss">M</i><i class="win">G</i><i class="draw">B</i></div></td></tr>
-          <tr><td>11</td><td>Arca Çorum FK</td><td>6</td><td>2</td><td>1</td><td>3</td><td>13:12</td><td class="positive">+1</td><td class="points">7</td><td><div class="form-dots"><i class="draw">B</i><i class="win">G</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
-          <tr><td>12</td><td>İstanbul Başakşehir</td><td>6</td><td>2</td><td>1</td><td>3</td><td>10:11</td><td class="negative">-1</td><td class="points">7</td><td><div class="form-dots"><i class="loss">M</i><i class="draw">B</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i></div></td></tr>
-          <tr><td>13</td><td>Gençlerbirliği</td><td>6</td><td>2</td><td>1</td><td>3</td><td>5:13</td><td class="negative">-8</td><td class="points">7</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
-          <tr><td>14</td><td>TÜMOSAN Konyaspor</td><td>6</td><td>1</td><td>1</td><td>4</td><td>4:8</td><td class="negative">-4</td><td class="points">4</td><td><div class="form-dots"><i class="loss">M</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i><i class="draw">B</i></div></td></tr>
-          <tr><td>15</td><td>Samsunspor</td><td>5</td><td>1</td><td>1</td><td>3</td><td>6:11</td><td class="negative">-5</td><td class="points">4</td><td><div class="form-dots"><i class="loss">M</i><i class="draw">B</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
-          <tr><td>16</td><td>Erzurumspor FK</td><td>5</td><td>1</td><td>1</td><td>3</td><td>2:11</td><td class="negative">-9</td><td class="points">4</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
-          <tr><td>17</td><td>Eyüpspor</td><td>5</td><td>1</td><td>0</td><td>4</td><td>2:8</td><td class="negative">-6</td><td class="points">3</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
-          <tr><td>18</td><td>Göztepe</td><td>5</td><td>0</td><td>2</td><td>3</td><td>9:13</td><td class="negative">-4</td><td class="points">2</td><td><div class="form-dots"><i class="draw">B</i><i class="draw">B</i><i class="loss">M</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
-        </tbody>
-      </table>
+        <div id="standingsPanel" class="standings-modern show">
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>#</th><th>Takım</th><th>O</th><th>G</th><th>B</th><th>M</th><th>A:Y</th><th>AV</th><th>P</th><th>Form</th></tr></thead>
+              <tbody>
+                <tr class="highlight"><td>1</td><td>Amed Sportif</td><td>6</td><td>4</td><td>1</td><td>1</td><td>15:7</td><td class="positive">+8</td><td class="points">13</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="win">G</i><i class="draw">B</i><i class="win">G</i><i class="win">G</i></div></td></tr>
+                <tr><td>2</td><td>Galatasaray</td><td>6</td><td>4</td><td>1</td><td>1</td><td>13:10</td><td class="positive">+3</td><td class="points">13</td><td><div class="form-dots"><i class="draw">B</i><i class="win">G</i><i class="win">G</i><i class="win">G</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
+                <tr><td>3</td><td>Beşiktaş</td><td>6</td><td>4</td><td>0</td><td>2</td><td>14:7</td><td class="positive">+7</td><td class="points">12</td><td><div class="form-dots"><i class="win">G</i><i class="win">G</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
+                <tr><td>4</td><td>Kocaelispor</td><td>6</td><td>4</td><td>0</td><td>2</td><td>7:4</td><td class="positive">+3</td><td class="points">12</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="win">G</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i></div></td></tr>
+                <tr><td>5</td><td>Corendon Alanyaspor</td><td>6</td><td>3</td><td>2</td><td>1</td><td>8:6</td><td class="positive">+2</td><td class="points">11</td><td><div class="form-dots"><i class="draw">B</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="win">G</i></div></td></tr>
+                <tr><td>6</td><td>Fenerbahçe</td><td>6</td><td>3</td><td>1</td><td>2</td><td>16:6</td><td class="positive">+10</td><td class="points">10</td><td><div class="form-dots"><i class="win">G</i><i class="draw">B</i><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="win">G</i></div></td></tr>
+                <tr><td>7</td><td>Trabzonspor</td><td>6</td><td>3</td><td>1</td><td>2</td><td>13:5</td><td class="positive">+8</td><td class="points">10</td><td><div class="form-dots"><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="loss">M</i><i class="win">G</i></div></td></tr>
+                <tr><td>8</td><td>Kasımpaşa</td><td>6</td><td>2</td><td>4</td><td>0</td><td>7:5</td><td class="positive">+2</td><td class="points">10</td><td><div class="form-dots"><i class="draw">B</i><i class="win">G</i><i class="draw">B</i><i class="draw">B</i><i class="win">G</i><i class="draw">B</i></div></td></tr>
+                <tr><td>9</td><td>Çaykur Rizespor</td><td>6</td><td>3</td><td>1</td><td>2</td><td>7:6</td><td class="positive">+1</td><td class="points">10</td><td><div class="form-dots"><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="draw">B</i></div></td></tr>
+                <tr><td>10</td><td>Gaziantep FK</td><td>6</td><td>2</td><td>2</td><td>2</td><td>7:7</td><td>0</td><td class="points">8</td><td><div class="form-dots"><i class="win">G</i><i class="draw">B</i><i class="win">G</i><i class="draw">B</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
+                <tr><td>11</td><td>Arca Çorum FK</td><td>6</td><td>2</td><td>1</td><td>3</td><td>13:12</td><td class="positive">+1</td><td class="points">7</td><td><div class="form-dots"><i class="draw">B</i><i class="win">G</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
+                <tr><td>12</td><td>İstanbul Başakşehir</td><td>6</td><td>2</td><td>1</td><td>3</td><td>10:11</td><td class="negative">-1</td><td class="points">7</td><td><div class="form-dots"><i class="loss">M</i><i class="draw">B</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i></div></td></tr>
+                <tr><td>13</td><td>Gençlerbirliği</td><td>6</td><td>2</td><td>1</td><td>3</td><td>5:13</td><td class="negative">-8</td><td class="points">7</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
+                <tr><td>14</td><td>Erzurumspor FK</td><td>6</td><td>2</td><td>1</td><td>3</td><td>3:11</td><td class="negative">-8</td><td class="points">7</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="loss">M</i><i class="loss">M</i><i class="win">G</i></div></td></tr>
+                <tr><td>15</td><td>TÜMOSAN Konyaspor</td><td>6</td><td>1</td><td>1</td><td>4</td><td>4:8</td><td class="negative">-4</td><td class="points">4</td><td><div class="form-dots"><i class="loss">M</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i><i class="draw">B</i></div></td></tr>
+                <tr><td>16</td><td>Samsunspor</td><td>1</td><td>1</td><td>1</td><td>4</td><td>6:12</td><td class="negative">-6</td><td class="points">4</td><td><div class="form-dots"><i class="loss">M</i><i class="draw">B</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
+                <tr><td>17</td><td>Eyüpspor</td><td>6</td><td>1</td><td>0</td><td>5</td><td>2:16</td><td class="negative">-14</td><td class="points">3</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
+                <tr><td>18</td><td>Göztepe</td><td>6</td><td>0</td><td>3</td><td>3</td><td>11:15</td><td class="negative">-4</td><td class="points">3</td><td><div class="form-dots"><i class="draw">B</i><i class="draw">B</i><i class="loss">M</i><i class="loss">M</i><i class="loss">M</i><i class="draw">B</i></div></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="standings-note"><span>●</span> 20 Eylül 2026 · 6. hafta maçları güncellendi. Amed Sportif 3-2 Beşiktaş, Fenerbahçe 8-0 Eyüpspor ve Göztepe 2-2 Çaykur Rizespor sonuçları işlendi.</div>
+        </div>
+
+        <div id="resultsPanel" class="hidden-panel">
+          <div class="result-item featured-result"><span>Amed Sportif</span><strong>3 - 2</strong><span>Beşiktaş</span></div>
+          <div class="result-item"><span>Fenerbahçe</span><strong>8 - 0</strong><span>Eyüpspor</span></div>
+          <div class="result-item"><span>Göztepe</span><strong>2 - 2</strong><span>Çaykur Rizespor</span></div>
+          <div class="result-item"><span>Erzurumspor FK</span><strong>1 - 0</strong><span>Samsunspor</span></div>
+          <div class="result-item"><span>Trabzonspor</span><strong>4 - 0</strong><span>Galatasaray</span></div>
+          <div class="result-item"><span>İstanbul Başakşehir</span><strong>4 - 0</strong><span>Gençlerbirliği</span></div>
+          <div class="result-item"><span>Kocaelispor</span><strong>2 - 0</strong><span>Gaziantep FK</span></div>
+          <div class="result-item"><span>Çorum FK</span><strong>1 - 2</strong><span>Corendon Alanyaspor</span></div>
+          <div class="result-item"><span>Kasımpaşa</span><strong>0 - 0</strong><span>Konyaspor</span></div>
+        </div>
+
+        <div id="fixturesPanel" class="hidden-panel fixtures-panel">
+          <div class="fixtures-panel-head"><div><b>SONRAKİ MAÇLAR</b><small>Milli ara sonrası 7. hafta</small></div><span>8 maç</span></div>
+          <div class="upcoming-fixtures">
+            <div class="fixture-item"><span>9 Ekim</span><b>Galatasaray - Kasımpaşa</b></div>
+            <div class="fixture-item"><span>10 Ekim</span><b>Gençlerbirliği - Amed Sportif</b></div>
+            <div class="fixture-item"><span>10 Ekim</span><b>Alanyaspor - Erzurumspor FK</b></div>
+            <div class="fixture-item"><span>10 Ekim</span><b>Samsunspor - Trabzonspor</b></div>
+            <div class="fixture-item"><span>10 Ekim</span><b>Rizespor - Fenerbahçe</b></div>
+            <div class="fixture-item"><span>11 Ekim</span><b>Konyaspor - Başakşehir</b></div>
+            <div class="fixture-item"><span>11 Ekim</span><b>Gaziantep FK - Çorum FK</b></div>
+            <div class="fixture-item"><span>11 Ekim</span><b>Beşiktaş - Kocaelispor</b></div>
+          </div>
+        </div>
+
+        <div id="goalsPanel" class="hidden-panel stats-panel"><div class="stat-list">
+          <div class="stat-row"><b>1</b><strong>Mohamed Salah</strong><span>Trabzonspor</span><em>7 gol</em></div>
+          <div class="stat-row"><b>2</b><strong>Gift Orban</strong><span>Amed Sportif</span><em>7 gol</em></div>
+          <div class="stat-row"><b>3</b><strong>Victor Osimhen</strong><span>Galatasaray</span><em>6 gol</em></div>
+          <div class="stat-row"><b>4</b><strong>Vedat Muriqi</strong><span>Fenerbahçe</span><em>6 gol</em></div>
+          <div class="stat-row"><b>5</b><strong>Eldor Shomurodov</strong><span>Başakşehir</span><em>6 gol</em></div>
+          <div class="stat-row"><b>6</b><strong>Dušan Vlahović</strong><span>Beşiktaş</span><em>5 gol</em></div>
+          <div class="stat-row"><b>7</b><strong>Adrian Benedyczak</strong><span>Kasımpaşa</span><em>4 gol</em></div>
+          <div class="stat-row"><b>8</b><strong>Juan</strong><span>Göztepe</span><em>4 gol</em></div>
+          <div class="stat-row"><b>9</b><strong>Mason Greenwood</strong><span>Fenerbahçe</span><em>4 gol</em></div>
+          <div class="stat-row"><b>10</b><strong>Alexandros Kyziridis</strong><span>Çorum FK</span><em>3 gol</em></div>
+        </div></div>
+
+        <div id="assistsPanel" class="hidden-panel stats-panel"><div class="stat-list">
+          <div class="stat-row"><b>1</b><strong>Alexandros Kyziridis</strong><span>Çorum FK</span><em>2 asist</em></div>
+          <div class="stat-row"><b>2</b><strong>Alexandru Maxim</strong><span>Gaziantep FK</span><em>2 asist</em></div>
+          <div class="stat-row"><b>3</b><strong>Cláudio Winck</strong><span>Kasımpaşa</span><em>2 asist</em></div>
+          <div class="stat-row"><b>4</b><strong>Ermal Krasniqi</strong><span>Amed Sportif</span><em>2 asist</em></div>
+          <div class="stat-row"><b>5</b><strong>Ernest Muçi</strong><span>Trabzonspor</span><em>2 asist</em></div>
+          <div class="stat-row"><b>6</b><strong>Florent Hadergjonaj</strong><span>Alanyaspor</span><em>2 asist</em></div>
+          <div class="stat-row"><b>7</b><strong>Fredy</strong><span>Çorum FK</span><em>2 asist</em></div>
+          <div class="stat-row"><b>8</b><strong>Gabriel Sara</strong><span>Galatasaray</span><em>2 asist</em></div>
+          <div class="stat-row"><b>9</b><strong>Gonçalo Sousa</strong><span>Kocaelispor</span><em>2 asist</em></div>
+          <div class="stat-row"><b>10</b><strong>Mohamed Salah</strong><span>Trabzonspor</span><em>2 asist</em></div>
+        </div></div>
+      </div>
     </div>
-    <div class="standings-note"><span>●</span> 20 Eylül 2026 sabahı itibarıyla güncel tablo · 20 Eylül maçları henüz başlamadı.</div>
-  </div>
-
-  <div id="resultsPanel" class="hidden-panel"><div class="result-item featured-result"><span>Trabzonspor</span><strong>4 - 0</strong><span>Galatasaray</span></div><div class="result-item"><span>İstanbul Başakşehir</span><strong>4 - 0</strong><span>Gençlerbirliği</span></div><div class="result-item"><span>Kocaelispor</span><strong>2 - 0</strong><span>Gaziantep FK</span></div><div class="result-item"><span>Çorum FK</span><strong>1 - 2</strong><span>Alanyaspor</span></div><div class="result-item"><span>Kasımpaşa</span><strong>0 - 0</strong><span>Konyaspor</span></div></div>
-  <div id="fixturesPanel" class="hidden-panel fixtures-panel">
-    <div class="fixtures-panel-head"><div><b>YAKLAŞAN MAÇLAR</b><small>Başlama saatine göre sıralanır</small></div><span id="fixtureCount">0 maç</span></div>
-    <div id="upcomingFixtures" class="upcoming-fixtures"></div>
-  </div>
-  <div id="goalsPanel" class="hidden-panel stats-panel"><div class="stat-list">
-    <div class="stat-row"><b>1</b><strong>Victor Osimhen</strong><span>Galatasaray</span><em>6 gol</em></div><div class="stat-row"><b>2</b><strong>Gift Orban</strong><span>Amed Sportif</span><em>6 gol</em></div><div class="stat-row"><b>3</b><strong>Mohamed Salah</strong><span>Trabzonspor</span><em>4 gol</em></div><div class="stat-row"><b>4</b><strong>Adrian Benedyczak</strong><span>Kasımpaşa</span><em>4 gol</em></div><div class="stat-row"><b>5</b><strong>Eldor Shomurodov</strong><span>Başakşehir</span><em>4 gol</em></div><div class="stat-row"><b>6</b><strong>Juan</strong><span>Göztepe</span><em>4 gol</em></div><div class="stat-row"><b>7</b><strong>Dušan Vlahović</strong><span>Beşiktaş</span><em>4 gol</em></div><div class="stat-row"><b>8</b><strong>Alexandros Kyziridis</strong><span>Çorum FK</span><em>3 gol</em></div><div class="stat-row"><b>9</b><strong>Jesús Ramírez</strong><span>Çorum FK</span><em>3 gol</em></div><div class="stat-row"><b>10</b><strong>Gabriel Sara</strong><span>Galatasaray</span><em>2 gol</em></div>
-  </div></div>
-  <div id="assistsPanel" class="hidden-panel stats-panel"><div class="stat-list">
-    <div class="stat-row"><b>1</b><strong>Gabriel Sara</strong><span>Galatasaray</span><em>2 asist</em></div><div class="stat-row"><b>2</b><strong>Fredy</strong><span>Çorum FK</span><em>2 asist</em></div><div class="stat-row"><b>3</b><strong>Victor Osimhen</strong><span>Galatasaray</span><em>2 asist</em></div><div class="stat-row"><b>4</b><strong>Lucas Torreira</strong><span>Galatasaray</span><em>2 asist</em></div><div class="stat-row"><b>5</b><strong>Alexandru Maxim</strong><span>Gaziantep FK</span><em>2 asist</em></div><div class="stat-row"><b>6</b><strong>Claudio Winck</strong><span>Kasımpaşa</span><em>2 asist</em></div><div class="stat-row"><b>7</b><strong>Ermal Krasniqi</strong><span>Amed Sportif</span><em>2 asist</em></div><div class="stat-row"><b>8</b><strong>Orkun Kökçü</strong><span>Beşiktaş</span><em>2 asist</em></div><div class="stat-row"><b>9</b><strong>Junior Olaitan</strong><span>Beşiktaş</span><em>2 asist</em></div><div class="stat-row"><b>10</b><strong>Saikuba Jarju</strong><span>Samsunspor</span><em>2 asist</em></div>
-  </div></div>
-</div></section>
+  </section>
 
 <section class="section upcoming-section" id="maclar">
   <div class="section-head"><div><h2><span class="red-line"></span> Maçlar ve Fikstür</h2><p class="section-subtitle">19–20 Eylül 2026 · sonuçlar ve bugünün yaklaşan maçları</p></div><a class="text-link" href="https://www.tff.org/?pageID=198" target="_blank" rel="noopener">TFF fikstürü ↗</a></div>
