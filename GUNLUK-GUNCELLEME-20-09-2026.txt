@@ -1,0 +1,27 @@
+İonenSpiegel Günlük Güncelleme Paketi
+Tarih: 20 Eylül 2026
+
+KURULUM
+1. ZIP arşivini bilgisayarında aç.
+2. Açılan dosyaların tamamını mevcut İonenSpiegel GitHub Pages deposunun kök dizinine kopyala.
+3. Aynı isimli dosyalar varsa yenileriyle değiştir.
+4. GitHub'a manuel olarak yükleyip commit/push yap.
+5. GitHub Pages'ın yayınlanmasını bekle ve siteyi önbelleği temizleyerek kontrol et.
+
+GÜNCELLENENLER
+- data/news.json ve news.json güncellendi.
+- data/daily-news.json ve daily-news.json 20 Eylül 2026 tarihine çekildi.
+- Süper Lig puan durumu 19 Eylül maçları sonrası güncellendi.
+- Kasımpaşa 0-0 Konyaspor korunarak doğru sonuç ve puanlar işlendi.
+- Kocaelispor 2-0 Gaziantep FK, Çorum FK 1-2 Alanyaspor, Trabzonspor 4-0 Galatasaray ve Başakşehir 4-0 Gençlerbirliği sonuçları eklendi.
+- 20 Eylül Fenerbahçe-Eyüpspor, Erzurumspor-Samsunspor, Amedspor-Beşiktaş ve Göztepe-Rizespor fikstürü güncellendi.
+- Mohamed Salah 7 golle gol krallığı liderliğine güncellendi.
+- Son Dakika kayan bant güncel başlıklarla yenilendi.
+- Dünya Gündemi, Avrupa Türk takımları bölümü, mobil düzeltmeler ve V62 özellikleri korunmuştur.
+- Sekmeli Süper Lig panel sistemi korunmuştur.
+
+KAYNAK DOĞRULAMA
+Güncellemede Anadolu Ajansı, beIN SPORTS Türkiye, ilgili kulüp açıklamaları ve güncel haber kaynakları karşılaştırılmıştır.
+
+NOT
+Bu paket doğrudan GitHub'a yükleme yapmaz. Manuel kurulum içindir.
