@@ -1,11 +1,16 @@
-İonenSpiegel 20 Eylül 2026 güncellemesi
+İonenSpiegel V69 akşam güncellemesi
 
-Eski 17-18 Eylül haberleri ana akıştan çıkarıldı.
-Son Dakika akışı 20 Eylül 2026 gündemine göre yenilendi.
-Dünyadan Güncel Futbol bölümü 19-20 Eylül sonuçlarıyla yenilendi.
-Avrupa bölümü 19 Eylül sonuçları ve 20 Eylül maç programıyla yenilendi.
-Bugünün Futbol Özeti 20 Eylül maçlarına göre yenilendi.
-Fenerbahçe-Eyüpspor 17.00 ve Amedspor-Beşiktaş 20.00 maçları yaklaşan olarak gösteriliyor.
-19 Eylül Trabzonspor-Galatasaray 4-0 sonucu işlendi.
-Service Worker sürümü yenilendi, eski önbelleğin siteyi göstermemesi için cache adı değiştirildi.
-Kaynaklar: beIN SPORTS, Trabzonspor, Beşiktaş, DHA, Reuters, FOTOMAÇ, Habertürk.
+- Son Dakika şeridinin HTML/CSS/JS yapısı korunmuştur. Hareketli ticker bozulmamıştır.
+- Son Dakika başlıkları akşam sonuçlarıyla yenilendi.
+- Fenerbahçe 8-0 Eyüpspor haberi eklendi.
+- Amedspor-Beşiktaş 3-2 canlı durum haberi eklendi.
+- Göztepe-Rizespor 2-2 sonucu eklendi.
+- Erzurumspor-Samsunspor 1-0 sonucu eklendi.
+- Atlético Madrid-Real Madrid 2-1 sonucu eklendi.
+- Barcelona-Sevilla 3-1 sonucu güncellendi.
+- Alt bilgi alanına İletişim sütunu geri eklendi.
+- İletişim sayfası yeniden oluşturuldu.
+- Doğrulanmış bir e-posta adresi dosyalarda bulunmadığı için sahte e-posta adresi eklenmedi.
+- Service Worker önbellek sürümü V69 yapıldı.
+
+Kaynaklar: FOTOMAÇ, DHA, Reuters, Beşiktaş resmi sitesi, mevcut site verileri.
