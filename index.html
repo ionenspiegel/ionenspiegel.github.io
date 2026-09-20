@@ -408,7 +408,25 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 </div>
 </main>
 
-<footer><div class="container footer-grid"><div><a class="brand footer-brand is-logo" href="#anasayfa"><span class="logo-first">İonen</span><span class="logo-second">Spiegel</span></a><p>Futbol haberleri, maç merkezi ve transfer gündemi.</p></div><div><b>Hızlı Menü</b><a href="#sondakika">Son Dakika</a><a href="#superlig">Süper Lig</a><a href="#transfer">Transfer</a><a href="#dunya">Dünya</a><a href="#gundem">Gündem</a></div><div><b>Kaynaklar</b><a href="https://www.uefa.com/" target="_blank" rel="noopener">UEFA</a><a href="https://www.tff.org/" target="_blank" rel="noopener">TFF</a><a href="https://bjk.com.tr/tr" target="_blank" rel="noopener">Beşiktaş</a><a href="https://www.galatasaray.org/" target="_blank" rel="noopener">Galatasaray</a><a href="https://www.fenerbahce.org/" target="_blank" rel="noopener">Fenerbahçe</a><a href="https://www.trabzonspor.org.tr/" target="_blank" rel="noopener">Trabzonspor</a></div><div class="footer-contact"><b>İletişim</b><a href="iletisim.html">İletişim sayfası</a><a href="https://www.instagram.com/benim_llhg?stkn=aGprY3NnY3ZxNnc2" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://youtube.com/@ionicmirror?si=8CMNWHStWK9-hT_D" target="_blank" rel="noopener noreferrer">YouTube</a><small>E-posta adresi iletişim sayfasında yer alır.</small></div><div class="visitor-counter"><b>Site İstatistikleri</b><div><span>👁️ Toplam ziyaret</span><strong id="visitorTotal">—</strong></div><div><span>📅 Bugünkü ziyaret</span><strong id="visitorToday">—</strong></div></div></div><div class="footer-bottom">
+<section class="section content-section" id="iletisim" style="padding-bottom:20px">
+  <div class="container">
+    <div class="section-head"><div><h2><span class="red-line"></span> İletişim</h2><p class="section-subtitle">Haber, düzeltme, öneri veya iş birliği için bize mesaj gönder.</p></div></div>
+    <div class="content-card contact-form-card">
+      <form id="contactForm" class="contact-form" novalidate>
+        <div class="contact-grid">
+          <label><span>Adınız</span><input id="contactName" name="name" autocomplete="name" maxlength="80" placeholder="Adınızı girin" required></label>
+          <label><span>E-posta adresiniz</span><input id="contactEmail" name="email" type="email" autocomplete="email" maxlength="120" placeholder="ornek@mail.com" required></label>
+        </div>
+        <label><span>Konu</span><select id="contactSubject" name="subject" required><option value="">Konu seçin</option><option>Haber / Düzeltme</option><option>Öneri</option><option>İş birliği</option><option>Diğer</option></select></label>
+        <label><span>Mesajınız</span><textarea id="contactMessage" name="message" rows="5" maxlength="2000" placeholder="Mesajınızı buraya yazın..." required></textarea></label>
+        <button class="primary-btn" type="submit">✈ Mesajı Gönder</button>
+        <p id="contactStatus" class="muted" aria-live="polite" style="margin:8px 0 0"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer><div class="container footer-grid"><div><a class="brand footer-brand is-logo" href="#anasayfa"><span class="logo-first">İonen</span><span class="logo-second">Spiegel</span></a><p>Futbol haberleri, maç merkezi ve transfer gündemi.</p></div><div><b>Hızlı Menü</b><a href="#sondakika">Son Dakika</a><a href="#superlig">Süper Lig</a><a href="#transfer">Transfer</a><a href="#dunya">Dünya</a><a href="#gundem">Gündem</a><a href="#iletisim">İletişim</a></div><div><b>Kaynaklar</b><a href="https://www.uefa.com/" target="_blank" rel="noopener">UEFA</a><a href="https://www.tff.org/" target="_blank" rel="noopener">TFF</a><a href="https://bjk.com.tr/tr" target="_blank" rel="noopener">Beşiktaş</a><a href="https://www.galatasaray.org/" target="_blank" rel="noopener">Galatasaray</a><a href="https://www.fenerbahce.org/" target="_blank" rel="noopener">Fenerbahçe</a><a href="https://www.trabzonspor.org.tr/" target="_blank" rel="noopener">Trabzonspor</a></div><div class="footer-contact"><b>İletişim</b><a href="#iletisim">Mesaj gönder</a><a href="iletisim.html">İletişim sayfası</a><a href="https://www.instagram.com/benim_llhg?stkn=aGprY3NnY3ZxNnc2" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://youtube.com/@ionicmirror?si=8CMNWHStWK9-hT_D" target="_blank" rel="noopener noreferrer">YouTube</a><small>E-posta adresi iletişim sayfasında yer alır.</small></div><div class="visitor-counter"><b>Site İstatistikleri</b><div><span>👁️ Toplam ziyaret</span><strong id="visitorTotal">—</strong></div><div><span>📅 Bugünkü ziyaret</span><strong id="visitorToday">—</strong></div></div></div><div class="footer-bottom">
   <div class="footer-legal"><a href="hakkimizda.html">Hakkımızda</a><a href="iletisim.html">İletişim</a><a href="gizlilik.html">Gizlilik</a></div>
   <p>© 2026 İonenSpiegel · Bağımsız, taraftar odaklı futbol haber projesidir. İonenSpiegel, kulüplerin, UEFA'nın, TFF'nin veya haber ajanslarının resmi sitesi değildir.</p>
 </div></footer>
@@ -628,6 +646,32 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
     },30);
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initBreaking); else initBreaking();
+})();
+</script>
+<script id="v69-contact-form">
+(function(){
+  const form=document.getElementById('contactForm');
+  if(!form)return;
+  const api=window.IONENSPIEGEL_COMMUNITY_API;
+  const status=document.getElementById('contactStatus');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    const name=document.getElementById('contactName').value.trim();
+    const email=document.getElementById('contactEmail').value.trim();
+    const konu=document.getElementById('contactSubject').value.trim();
+    const message=document.getElementById('contactMessage').value.trim();
+    if(!name||!email||!konu||!message){status.textContent='Lütfen tüm alanları doldur.';return;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){status.textContent='Geçerli bir e-posta adresi gir.';return;}
+    if(!/^https:\/\//.test(api)){status.textContent='İletişim sistemi bağlı değil.';return;}
+    const body='action=iletisim&name='+encodeURIComponent(name)+'&email='+encodeURIComponent(email)+'&konu='+encodeURIComponent(konu)+'&subject='+encodeURIComponent(konu)+'&message='+encodeURIComponent(message)+'&text='+encodeURIComponent(message);
+    status.textContent='Mesaj gönderiliyor...';
+    fetch(api,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body}).then(function(){
+      form.reset();
+      status.textContent='Mesajın gönderildi. Teşekkürler.';
+    }).catch(function(){
+      status.textContent='Mesaj gönderilemedi. Lütfen tekrar dene.';
+    });
+  });
 })();
 </script>
 </body>

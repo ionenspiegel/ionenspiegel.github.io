@@ -717,3 +717,5 @@ body.dark .ref-list{background:#15181d;border-color:#2b3038;color:#fff}.dark .re
 }
 
 .footer-contact small{display:block;color:var(--muted);font-size:10px;line-height:1.5;margin-top:10px}.footer-contact a{display:block}
+
+.contact-form-card{padding:22px}.contact-form{display:grid;gap:14px}.contact-form label{display:grid;gap:7px;font-weight:800}.contact-form input,.contact-form select,.contact-form textarea{width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:12px;padding:13px 14px;background:var(--surface);color:var(--text);font:inherit}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:650px){.contact-grid{grid-template-columns:1fr}}

@@ -1,0 +1,3 @@
+İonenSpiegel V70 iletişim güncellemesi
+
+Ana sayfanın en altına İletişim formu geri eklendi. Ad, e-posta, konu ve mesaj alanları bulunuyor. Form mevcut Google Apps Script Web App adresine bağlandı ve action=iletisim ile gönderim yapıyor. İletişim sayfası da aynı sistemi kullanıyor. Son Dakika hareketli şeridine dokunulmadı.
