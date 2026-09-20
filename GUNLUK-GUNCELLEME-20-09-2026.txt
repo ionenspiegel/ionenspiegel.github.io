@@ -1,28 +1,11 @@
-İonenSpiegel Günlük Güncelleme · 20 Eylül 2026
+İonenSpiegel 20 Eylül 2026 güncellemesi
 
-Bu paket mevcut V62/V67 devam yapısını koruyarak yalnızca günlük içerikleri günceller.
-
-Güncellenenler:
-- Ana sayfa son dakika/hero haberi
-- Son dakika kayan bant
-- 20 Eylül Süper Lig puan tablosu
-- 18-19 Eylül oynanan Süper Lig maç sonuçları
-- 20 Eylül yaklaşan maçlar
-- Haber JSON dosyaları
-- Dünya Gündemi
-- Haber akışı fallback verisi
-
-Korunanlar:
-- V62 modern yapı ve mobil sekme düzeltmeleri
-- Mobil alt menü
-- Dünya Gündemi bölümü
-- Avrupa/Türk takımları bölümleri
-- Favori takım, kaydetme, arama ve diğer JS özellikleri
-
-Kurulum:
-1. ZIP içeriğini GitHub Pages deposunun mevcut dosyalarının üzerine çıkar.
-2. Özellikle index.html, script.js, news.json, daily-news.json ve data/ altındaki JSON dosyalarını yükle.
-3. Eski service worker önbelleği görünürse tarayıcıda siteyi yenile.
-4. GitHub'a bu paket üzerinden otomatik yükleme yapılmaz.
-
-Veri kontrolü 20 Eylül 2026 sabahı yapılmıştır. 20 Eylül maçları başlamadan önceki durum gösterilir.
+Eski 17-18 Eylül haberleri ana akıştan çıkarıldı.
+Son Dakika akışı 20 Eylül 2026 gündemine göre yenilendi.
+Dünyadan Güncel Futbol bölümü 19-20 Eylül sonuçlarıyla yenilendi.
+Avrupa bölümü 19 Eylül sonuçları ve 20 Eylül maç programıyla yenilendi.
+Bugünün Futbol Özeti 20 Eylül maçlarına göre yenilendi.
+Fenerbahçe-Eyüpspor 17.00 ve Amedspor-Beşiktaş 20.00 maçları yaklaşan olarak gösteriliyor.
+19 Eylül Trabzonspor-Galatasaray 4-0 sonucu işlendi.
+Service Worker sürümü yenilendi, eski önbelleğin siteyi göstermemesi için cache adı değiştirildi.
+Kaynaklar: beIN SPORTS, Trabzonspor, Beşiktaş, DHA, Reuters, FOTOMAÇ, Habertürk.

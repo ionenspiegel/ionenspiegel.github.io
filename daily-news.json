@@ -4,27 +4,17 @@
     {
       "id": "ts-gs-4-0-20-eylul",
       "title": "Trabzonspor, Galatasaray'ı 4-0 mağlup etti",
-      "description": "Trabzonspor, Süper Lig'in 6. haftasında Galatasaray'ı 4-0 yendi. Mohamed Salah üç gol atarken Noah Saviolo da bir gol kaydetti.",
+      "description": "Trabzonspor, Süper Lig'in 6. haftasında Galatasaray'ı 4-0 yendi. Mohamed Salah üç gol attı.",
       "category": "Trabzonspor",
       "date": "20 Eylül 2026",
       "image": "./photo-derbi.jpg",
-      "source": "Anadolu Ajansı",
-      "link": "https://www.aa.com.tr/tr/spor/trabzonspor-galatasarayi-farkli-yendi/4062172"
+      "source": "Trabzonspor",
+      "link": "https://www.trabzonspor.org.tr/tr/haberler/trabzonspor-4-0-galatasaray-1-19-09-2026"
     },
     {
-      "id": "salah-7-gol-20-eylul",
-      "title": "Mohamed Salah, hat-trick sonrası 7 gole ulaştı",
-      "description": "Galatasaray karşısında üç gol atan Mohamed Salah, Süper Lig'deki gol sayısını 7'ye yükseltti.",
-      "category": "Süper Lig",
-      "date": "20 Eylül 2026",
-      "image": "./photo-derbi.jpg",
-      "source": "beIN SPORTS Türkiye",
-      "link": "https://beinsports.com.tr/haber/trabzonspor-galatasaray-11"
-    },
-    {
-      "id": "superlig-6-hafta-sonuclari",
+      "id": "superlig-cumartesi-sonuclari",
       "title": "Süper Lig'de cumartesi sonuçları belli oldu",
-      "description": "Kocaelispor 2-0 Gaziantep FK, Çorum FK 1-2 Alanyaspor, Başakşehir 4-0 Gençlerbirliği ve Trabzonspor 4-0 Galatasaray kazandı. Kasımpaşa-Konyaspor 0-0 bitti.",
+      "description": "Kasımpaşa-Konyaspor 0-0, Kocaelispor-Gaziantep FK 2-0, Çorum FK-Alanyaspor 1-2, Başakşehir-Gençlerbirliği 4-0 ve Trabzonspor-Galatasaray 4-0 tamamlandı.",
       "category": "Süper Lig",
       "date": "20 Eylül 2026",
       "image": "./photo-superlig.jpg",
@@ -33,28 +23,28 @@
     },
     {
       "id": "fb-eyup-20-eylul",
-      "title": "Fenerbahçe-Eyüpspor maçı bugün oynanacak",
+      "title": "Fenerbahçe-Eyüpspor bugün 17.00'de",
       "description": "Fenerbahçe ile Eyüpspor, Süper Lig'in 6. haftasında 20 Eylül Pazar günü saat 17.00'de karşılaşacak.",
       "category": "Fenerbahçe",
       "date": "20 Eylül 2026",
       "image": "./photo-asensio.jpg",
-      "source": "Türkiye Futbol Federasyonu",
-      "link": "https://www.tff.org/?pageID=198"
+      "source": "DHA",
+      "link": "https://www.dha.com.tr/yerel-haberler/istanbul/fenerbahce-galibiyet-hasretine-eyupspor-karsis-2947608"
     },
     {
       "id": "amed-bjk-20-eylul",
-      "title": "Amed Sportif Faaliyetler-Beşiktaş maçı bugün",
-      "description": "Amed Sportif Faaliyetler ile Beşiktaş, 20 Eylül Pazar günü saat 20.00'de Diyarbakır'da karşılaşacak.",
+      "title": "Amedspor-Beşiktaş bugün 20.00'de",
+      "description": "Amed Sportif Faaliyetler ile Beşiktaş, 20 Eylül Pazar günü saat 20.00'de Diyarbakır Stadyumu'nda karşılaşacak.",
       "category": "Beşiktaş",
       "date": "20 Eylül 2026",
       "image": "./photo-bjk.jpg",
-      "source": "Anadolu Ajansı",
-      "link": "https://www.aa.com.tr/tr/spor/futbolda-haftanin-programi/4060705"
+      "source": "Beşiktaş",
+      "link": "https://www.bjk.com.tr/tr/mobil/mac_merkezi_canli/25456"
     },
     {
       "id": "brighton-arsenal-19-eylul",
       "title": "Brighton, Arsenal'ı 3-0 yendi",
-      "description": "Brighton, Premier League'de Arsenal'ın yenilmez başlangıcını 3-0'lık galibiyetle sonlandırdı.",
+      "description": "Brighton, 19 Eylül'deki Premier League maçında Arsenal'ı 3-0 mağlup etti.",
       "category": "İngiltere",
       "date": "20 Eylül 2026",
       "image": "./photo-europa.jpg",
@@ -64,7 +54,7 @@
     {
       "id": "dortmund-stuttgart-19-eylul",
       "title": "Dortmund, Stuttgart'ı 1-0 geçti",
-      "description": "Borussia Dortmund, Stuttgart'ı 1-0 yenerek Bundesliga'da 4 maçta 12 puana ulaştı.",
+      "description": "Borussia Dortmund, Stuttgart'ı 1-0 yenerek Bundesliga'da dört maç sonunda 12 puana ulaştı.",
       "category": "Almanya",
       "date": "20 Eylül 2026",
       "image": "./photo-europa.jpg",
@@ -74,22 +64,22 @@
     {
       "id": "barcelona-sevilla-19-eylul",
       "title": "Barcelona, Sevilla'yı 3-1 mağlup etti",
-      "description": "Barcelona, Raphinha'nın hat-trick yaptığı karşılaşmada Sevilla'yı 3-1 yenerek LaLiga'daki galibiyet serisini sürdürdü.",
+      "description": "Barcelona, 19 Eylül'deki LaLiga maçında Sevilla'yı 3-1 yendi.",
       "category": "İspanya",
       "date": "20 Eylül 2026",
       "image": "./photo-europa.jpg",
-      "source": "Reuters",
-      "link": "https://www.reuters.com/"
+      "source": "Habertürk",
+      "link": "https://www.haberturk.com/spor/iddaa/canlisonuclar"
     },
     {
       "id": "roma-inter-19-eylul",
-      "title": "Roma ve Inter 2-2 berabere kaldı",
-      "description": "Inter, Roma karşısında iki farklı geriye düştüğü maçta Lautaro Martinez'in iki golüyle 2-2'lik beraberliği aldı.",
+      "title": "Roma ile Inter 2-2 berabere kaldı",
+      "description": "Serie A'da Roma ile Inter karşılaşması 2-2 tamamlandı.",
       "category": "İtalya",
       "date": "20 Eylül 2026",
       "image": "./photo-europa.jpg",
-      "source": "Reuters",
-      "link": "https://www.reuters.com/"
+      "source": "FOTOMAÇ",
+      "link": "https://www.fotomac.com.tr/italyaseriea/2026/09/19/roma-ile-inter-yenisemedi-iste-macin-ozeti"
     }
   ]
 }
