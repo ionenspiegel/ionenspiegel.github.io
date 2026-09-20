@@ -577,6 +577,14 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 })();
 </script>
 
+<style id="v73-fixture-overlap-fix">
+/* V73: Mobil maç satırlarında skor ve takım adlarının birbirine girmesini önle */
+@media(max-width:480px){
+  #maclar .fixture-match .fixture-vs{min-width:45px;white-space:nowrap!important;display:block}
+  #maclar .fixture-match .fixture-team b{display:block;max-width:100%}
+}
+</style>
+
 <style id="v45-fixture-mobile-fix">
 /* V43: Fikstür filtreleri ve mobil düzen düzeltmesi */
 .fixture-filter{
@@ -659,8 +667,11 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 @media(max-width:480px){
   #maclar .section{padding-top:22px}
   #maclar .fixture-filter{min-width:72px;height:38px;padding:0 12px;font-size:10px}
-  #maclar .fixture-match{grid-template-columns:45px minmax(0,1fr) 24px minmax(0,1fr);padding:12px 10px}
-  #maclar .fixture-team b{font-size:11px}
+  #maclar .fixture-match{grid-template-columns:42px minmax(0,1fr) 45px minmax(0,1fr);padding:13px 10px;gap:7px;min-height:82px}
+  #maclar .fixture-match time{font-size:17px;white-space:nowrap}
+  #maclar .fixture-team{min-width:0}
+  #maclar .fixture-team b{font-size:11px;line-height:1.18;overflow-wrap:break-word;word-break:normal}
+  #maclar .fixture-vs{font-size:12px!important;line-height:1;white-space:nowrap;overflow:visible;text-align:center}
 }
 .fixture-hidden{display:none!important}
 .euro-news-grid .content-card{border-top:3px solid #e50914}
