@@ -1,27 +1,28 @@
-İonenSpiegel Günlük Güncelleme Paketi
-Tarih: 20 Eylül 2026
+İonenSpiegel Günlük Güncelleme · 20 Eylül 2026
 
-KURULUM
-1. ZIP arşivini bilgisayarında aç.
-2. Açılan dosyaların tamamını mevcut İonenSpiegel GitHub Pages deposunun kök dizinine kopyala.
-3. Aynı isimli dosyalar varsa yenileriyle değiştir.
-4. GitHub'a manuel olarak yükleyip commit/push yap.
-5. GitHub Pages'ın yayınlanmasını bekle ve siteyi önbelleği temizleyerek kontrol et.
+Bu paket mevcut V62/V67 devam yapısını koruyarak yalnızca günlük içerikleri günceller.
 
-GÜNCELLENENLER
-- data/news.json ve news.json güncellendi.
-- data/daily-news.json ve daily-news.json 20 Eylül 2026 tarihine çekildi.
-- Süper Lig puan durumu 19 Eylül maçları sonrası güncellendi.
-- Kasımpaşa 0-0 Konyaspor korunarak doğru sonuç ve puanlar işlendi.
-- Kocaelispor 2-0 Gaziantep FK, Çorum FK 1-2 Alanyaspor, Trabzonspor 4-0 Galatasaray ve Başakşehir 4-0 Gençlerbirliği sonuçları eklendi.
-- 20 Eylül Fenerbahçe-Eyüpspor, Erzurumspor-Samsunspor, Amedspor-Beşiktaş ve Göztepe-Rizespor fikstürü güncellendi.
-- Mohamed Salah 7 golle gol krallığı liderliğine güncellendi.
-- Son Dakika kayan bant güncel başlıklarla yenilendi.
-- Dünya Gündemi, Avrupa Türk takımları bölümü, mobil düzeltmeler ve V62 özellikleri korunmuştur.
-- Sekmeli Süper Lig panel sistemi korunmuştur.
+Güncellenenler:
+- Ana sayfa son dakika/hero haberi
+- Son dakika kayan bant
+- 20 Eylül Süper Lig puan tablosu
+- 18-19 Eylül oynanan Süper Lig maç sonuçları
+- 20 Eylül yaklaşan maçlar
+- Haber JSON dosyaları
+- Dünya Gündemi
+- Haber akışı fallback verisi
 
-KAYNAK DOĞRULAMA
-Güncellemede Anadolu Ajansı, beIN SPORTS Türkiye, ilgili kulüp açıklamaları ve güncel haber kaynakları karşılaştırılmıştır.
+Korunanlar:
+- V62 modern yapı ve mobil sekme düzeltmeleri
+- Mobil alt menü
+- Dünya Gündemi bölümü
+- Avrupa/Türk takımları bölümleri
+- Favori takım, kaydetme, arama ve diğer JS özellikleri
 
-NOT
-Bu paket doğrudan GitHub'a yükleme yapmaz. Manuel kurulum içindir.
+Kurulum:
+1. ZIP içeriğini GitHub Pages deposunun mevcut dosyalarının üzerine çıkar.
+2. Özellikle index.html, script.js, news.json, daily-news.json ve data/ altındaki JSON dosyalarını yükle.
+3. Eski service worker önbelleği görünürse tarayıcıda siteyi yenile.
+4. GitHub'a bu paket üzerinden otomatik yükleme yapılmaz.
+
+Veri kontrolü 20 Eylül 2026 sabahı yapılmıştır. 20 Eylül maçları başlamadan önceki durum gösterilir.
