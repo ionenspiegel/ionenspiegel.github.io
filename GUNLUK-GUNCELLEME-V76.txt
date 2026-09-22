@@ -1,0 +1,28 @@
+İonenSpiegel V76
+Tarih: 22 Eylül 2026
+
+Günlük paket güncellendi.
+
+Eklenenler:
+- 21 Eylül 2026 Avrupa futbolu sonuçları
+- Manchester City 5-3 Sunderland
+- Bournemouth 0-1 Liverpool
+- Atlético Madrid 2-1 Real Madrid
+- Juventus 2-0 Atalanta
+- Marseille 1-2 PSG
+- 22 Eylül 2026 günlük programı
+- Süper Lig'de bugün maç olmadığı bilgisi
+- UEFA Kadınlar Şampiyonlar Ligi'nin öne çıkan 22 Eylül maçları
+
+Korunanlar:
+- Microsoft Clarity: ykfsmk1244
+- Publytics: ionenspiegel.github.io/Sfg3Ei
+- Google Analytics 4: G-PVPMSV7J1F
+- İletişim bölümü ve Apps Script bağlantısı
+- V75 görsel ve maç sonucu düzenlemeleri
+
+Kaynaklar:
+- Habertürk, 22 Eylül 2026 günlük maç programı
+- t-online, Premier League sonuçları
+- macistatistik.com, 21 Eylül sonuçları
+- Telefootball, 21 Eylül sonuçları
