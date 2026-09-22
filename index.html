@@ -149,6 +149,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 @media(max-width:520px){.national-fixtures-grid,.national-news-grid{grid-template-columns:1fr}.national-hero{grid-template-columns:45px 1fr}.national-hero h3{font-size:22px}}
 </style>
 
+<style id="v78-fixture-team-refresh">.upcoming-fixture-day .fixture-day-head{background:#fff7f7}.upcoming-match{background:#fff}.upcoming-match time{font-size:13px;line-height:1.1}.upcoming-match time small{font-size:8px;color:#888}.upcoming-match .fixture-vs{color:var(--red);font-weight:900}@media(max-width:520px){.upcoming-match time{font-size:11px}}</style>
 </head>
 <body>
 <div id="progress"></div>
@@ -354,7 +355,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
                 <tr><td>13</td><td>Gençlerbirliği</td><td>6</td><td>2</td><td>1</td><td>3</td><td>5:13</td><td class="negative">-8</td><td class="points">7</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
                 <tr><td>14</td><td>Erzurumspor FK</td><td>6</td><td>2</td><td>1</td><td>3</td><td>3:11</td><td class="negative">-8</td><td class="points">7</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="loss">M</i><i class="loss">M</i><i class="win">G</i></div></td></tr>
                 <tr><td>15</td><td>TÜMOSAN Konyaspor</td><td>6</td><td>1</td><td>1</td><td>4</td><td>4:8</td><td class="negative">-4</td><td class="points">4</td><td><div class="form-dots"><i class="loss">M</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i><i class="draw">B</i></div></td></tr>
-                <tr><td>16</td><td>Samsunspor</td><td>1</td><td>1</td><td>1</td><td>4</td><td>6:12</td><td class="negative">-6</td><td class="points">4</td><td><div class="form-dots"><i class="loss">M</i><i class="draw">B</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
+                <tr><td>16</td><td>Samsunspor</td><td>6</td><td>1</td><td>1</td><td>4</td><td>6:12</td><td class="negative">-6</td><td class="points">4</td><td><div class="form-dots"><i class="loss">M</i><i class="draw">B</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
                 <tr><td>17</td><td>Eyüpspor</td><td>6</td><td>1</td><td>0</td><td>5</td><td>2:16</td><td class="negative">-14</td><td class="points">3</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
                 <tr><td>18</td><td>Göztepe</td><td>6</td><td>0</td><td>3</td><td>3</td><td>11:15</td><td class="negative">-4</td><td class="points">3</td><td><div class="form-dots"><i class="draw">B</i><i class="draw">B</i><i class="loss">M</i><i class="loss">M</i><i class="loss">M</i><i class="draw">B</i></div></td></tr>
               </tbody>
@@ -472,13 +473,17 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 </section>
 
 <section class="section upcoming-section" id="maclar">
-  <div class="section-head"><div><h2><span class="red-line"></span> Maçlar ve Fikstür</h2><p class="section-subtitle">19–20 Eylül 2026 · sonuçlar ve bugünün yaklaşan maçları</p></div><a class="text-link" href="https://www.tff.org/?pageID=198" target="_blank" rel="noopener">TFF fikstürü ↗</a></div>
+  <div class="section-head"><div><h2><span class="red-line"></span> Maçlar ve Fikstür</h2><p class="section-subtitle">20 Eylül 2026 sonrası · sonuçlar ve millî ara sonrası yaklaşan maçlar</p></div><a class="text-link" href="https://www.tff.org/?pageID=198" target="_blank" rel="noopener">TFF fikstürü ↗</a></div>
   <div class="fixture-toolbar" role="tablist" aria-label="Fikstür filtreleri">
     <button class="fixture-filter active" data-fixture-filter="all" type="button">Tümü</button>
-    <button class="fixture-filter" data-fixture-filter="today" type="button">Bugün</button>
+    <button class="fixture-filter" data-fixture-filter="upcoming" type="button">Yaklaşan</button>
     <button class="fixture-filter" data-fixture-filter="turkiye" type="button">Türkiye</button>
     <button class="fixture-filter" data-fixture-filter="avrupa" type="button">Avrupa</button>
     <button class="fixture-filter" data-fixture-filter="bjk" type="button">Beşiktaş</button>
+    <button class="fixture-filter" data-fixture-filter="fenerbahce" type="button">Fenerbahçe</button>
+    <button class="fixture-filter" data-fixture-filter="galatasaray" type="button">Galatasaray</button>
+    <button class="fixture-filter" data-fixture-filter="trabzonspor" type="button">Trabzonspor</button>
+    <button class="fixture-filter" data-fixture-filter="amed" type="button">Amedspor</button>
   </div>
   <div class="fixture-board" id="upcomingMainList" aria-live="polite">
     <div class="fixture-day" data-fixture-day="19-eylul">
@@ -486,14 +491,43 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
       <article class="fixture-match" data-fixture-category="turkiye"><time>MS</time><div class="fixture-team"><b>Kocaelispor</b></div><strong class="fixture-vs">2 - 0</strong><div class="fixture-team away"><b>Gaziantep FK</b></div><span class="fixture-badge">SL</span></article>
       <article class="fixture-match" data-fixture-category="turkiye"><time>MS</time><div class="fixture-team"><b>Arca Çorum FK</b></div><strong class="fixture-vs">1 - 2</strong><div class="fixture-team away"><b>Corendon Alanyaspor</b></div><span class="fixture-badge">SL</span></article>
       <article class="fixture-match" data-fixture-category="turkiye"><time>MS</time><div class="fixture-team"><b>İstanbul Başakşehir</b></div><strong class="fixture-vs">4 - 0</strong><div class="fixture-team away"><b>Gençlerbirliği</b></div><span class="fixture-badge">SL</span></article>
-      <article class="fixture-match featured result-match" data-fixture-category="turkiye"><time>MS</time><div class="fixture-team"><b>Trabzonspor</b></div><strong class="fixture-vs">4 - 0</strong><div class="fixture-team away"><b>Galatasaray</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match featured result-match" data-fixture-category="trabzonspor galatasaray turkiye"><time>MS</time><div class="fixture-team"><b>Trabzonspor</b></div><strong class="fixture-vs">4 - 0</strong><div class="fixture-team away"><b>Galatasaray</b></div><span class="fixture-badge">SL</span></article>
     </div>
     <div class="fixture-day" data-fixture-day="today">
       <div class="fixture-day-head"><b>20 EYLÜL · PAZAR</b><span>SÜPER LİG · SONUÇLAR</span></div>
-      <article class="fixture-match result-match" data-fixture-category="turkiye today"><time>MS</time><div class="fixture-team"><b>Fenerbahçe</b></div><strong class="fixture-vs">8 - 0</strong><div class="fixture-team away"><b>Eyüpspor</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match result-match" data-fixture-category="fenerbahce turkiye today"><time>MS</time><div class="fixture-team"><b>Fenerbahçe</b></div><strong class="fixture-vs">8 - 0</strong><div class="fixture-team away"><b>Eyüpspor</b></div><span class="fixture-badge">SL</span></article>
       <article class="fixture-match result-match" data-fixture-category="turkiye today"><time>MS</time><div class="fixture-team"><b>Erzurumspor FK</b></div><strong class="fixture-vs">1 - 0</strong><div class="fixture-team away"><b>Samsunspor</b></div><span class="fixture-badge">SL</span></article>
-      <article class="fixture-match result-match" data-fixture-category="turkiye today bjk"><time>MS</time><div class="fixture-team"><b>Amed Sportif Faaliyetler</b></div><strong class="fixture-vs">3 - 2</strong><div class="fixture-team away"><b>Beşiktaş</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match result-match" data-fixture-category="amed turkiye today bjk"><time>MS</time><div class="fixture-team"><b>Amed Sportif Faaliyetler</b></div><strong class="fixture-vs">3 - 2</strong><div class="fixture-team away"><b>Beşiktaş</b></div><span class="fixture-badge">SL</span></article>
       <article class="fixture-match result-match" data-fixture-category="turkiye today"><time>MS</time><div class="fixture-team"><b>Göztepe</b></div><strong class="fixture-vs">2 - 2</strong><div class="fixture-team away"><b>Çaykur Rizespor</b></div><span class="fixture-badge">SL</span></article>
+    </div>
+    <div class="fixture-day upcoming-fixture-day" data-fixture-day="7-hafta">
+      <div class="fixture-day-head"><b>9–12 EKİM · 7. HAFTA</b><span>SÜPER LİG · YAKLAŞAN</span></div>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming galatasaray"><time>09 Eki<br><small>20:00</small></time><div class="fixture-team"><b>Galatasaray</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Kasımpaşa</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming amed"><time>10 Eki<br><small>13:30</small></time><div class="fixture-team"><b>Gençlerbirliği</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Amed Sportif</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming trabzonspor"><time>10 Eki<br><small>16:00</small></time><div class="fixture-team"><b>Samsunspor</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Trabzonspor</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming fenerbahce"><time>10 Eki<br><small>19:00</small></time><div class="fixture-team"><b>Çaykur Rizespor</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Fenerbahçe</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming bjk"><time>11 Eki<br><small>19:00</small></time><div class="fixture-team"><b>Beşiktaş</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Kocaelispor</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming"><time>11 Eki<br><small>13:30</small></time><div class="fixture-team"><b>Konyaspor</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Başakşehir</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming"><time>11 Eki<br><small>16:00</small></time><div class="fixture-team"><b>Gaziantep FK</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Çorum FK</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming"><time>12 Eki<br><small>20:00</small></time><div class="fixture-team"><b>Eyüpspor</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Göztepe</b></div><span class="fixture-badge">SL</span></article>
+    </div>
+    <div class="fixture-day upcoming-fixture-day" data-fixture-day="8-hafta">
+      <div class="fixture-day-head"><b>16–19 EKİM · 8. HAFTA</b><span>SÜPER LİG · YAKLAŞAN</span></div>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming fenerbahce"><time>17 Eki<br><small>19:00</small></time><div class="fixture-team"><b>Fenerbahçe</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Alanyaspor</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming galatasaray"><time>17 Eki<br><small>16:00</small></time><div class="fixture-team"><b>Gençlerbirliği</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Galatasaray</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming amed"><time>17 Eki<br><small>16:00</small></time><div class="fixture-team"><b>Amed Sportif</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Konyaspor</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming"><time>16 Eki<br><small>20:00</small></time><div class="fixture-team"><b>Çorum FK</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Çaykur Rizespor</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming"><time>17 Eki<br><small>13:30</small></time><div class="fixture-team"><b>Erzurumspor FK</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Eyüpspor</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming"><time>18 Eki<br><small>13:30</small></time><div class="fixture-team"><b>Kasımpaşa</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Samsunspor</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming"><time>18 Eki<br><small>16:00</small></time><div class="fixture-team"><b>Kocaelispor</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Göztepe</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming"><time>18 Eki<br><small>19:00</small></time><div class="fixture-team"><b>Başakşehir</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Gaziantep FK</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="turkiye upcoming bjk trabzonspor"><time>19 Eki<br><small>20:00</small></time><div class="fixture-team"><b>Trabzonspor</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Beşiktaş</b></div><span class="fixture-badge">SL</span></article>
+    </div>
+    <div class="fixture-day upcoming-fixture-day" data-fixture-day="avrupa">
+      <div class="fixture-day-head"><b>13–15 EKİM · AVRUPA KUPALARI</b><span>UEFA · YAKLAŞAN</span></div>
+      <article class="fixture-match upcoming-match" data-fixture-category="avrupa upcoming galatasaray"><time>13 Eki<br><small>CL</small></time><div class="fixture-team"><b>Galatasaray</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Barcelona</b></div><span class="fixture-badge">UCL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="avrupa upcoming fenerbahce"><time>14 Eki<br><small>CL</small></time><div class="fixture-team"><b>Aston Villa</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Fenerbahçe</b></div><span class="fixture-badge">UCL</span></article>
+      <article class="fixture-match upcoming-match" data-fixture-category="avrupa upcoming bjk"><time>15 Eki<br><small>22:00</small></time><div class="fixture-team"><b>Hoffenheim</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Beşiktaş</b></div><span class="fixture-badge">UEL</span></article>
     </div>
   </div>
 </section>
@@ -629,6 +663,8 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
       else if(filter==='turkiye') show=cats.includes('turkiye');
       else if(filter==='avrupa') show=cats.includes('avrupa');
       else if(filter==='bjk') show=cats.includes('bjk');
+      else if(filter==='upcoming') show=cats.includes('upcoming');
+      else show=cats.includes(filter);
       m.style.display=show?'grid':'none';
       m.setAttribute('aria-hidden',show?'false':'true');
     });

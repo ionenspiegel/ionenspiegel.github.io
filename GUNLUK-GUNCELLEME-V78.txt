@@ -1,0 +1,9 @@
+İonenSpiegel V78 · 22 Eylül 2026
+- Maçlar ve Fikstür bölümü yenilendi.
+- Yaklaşan, Türkiye ve Avrupa filtreleri korundu ve takım filtreleri genişletildi.
+- Beşiktaş yanında Fenerbahçe, Galatasaray, Trabzonspor ve Amedspor sekmeleri eklendi.
+- 7. ve 8. hafta Süper Lig fikstürleri eklendi.
+- Galatasaray, Fenerbahçe ve Beşiktaş'ın yaklaşan Avrupa kupası maçları eklendi.
+- 6. hafta sonuçları korundu ve Samsunspor oynanan maç sayısı düzeltildi.
+- Millî Takım bölümü ile Clarity, Publytics ve GA4 korunmuştur.
+Kaynaklar: TFF ve ilgili kulüplerin resmi fikstür bilgileri.
