@@ -1,0 +1,4 @@
+İonenSpiegel V79
+22 Eylül 2026
+
+Millî Takım bölümünün koyu tema renkleri ana site temasıyla uyumlu hale getirildi. Beyaz arka planlı bölüm, tablo, sekmeler, fikstür kartları ve haber kartları koyu tema paletine uyarlandı. Kırmızı vurgu rengi korunarak ana siteyle bütünlük sağlandı.
