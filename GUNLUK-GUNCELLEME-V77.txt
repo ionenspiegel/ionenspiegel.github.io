@@ -1,0 +1,13 @@
+İonenSpiegel V77
+Tarih: 22 Eylül 2026
+
+Yeni bölüm: A Millî Takım
+- UEFA Uluslar Ligi A Ligi 1. Grup puan durumu
+- Türkiye'nin 6 maçlık fikstürü
+- Millî Takım haberleri
+- Puan Durumu / Fikstür / Haberler sekmeleri
+- Mobil menüye Millî Takım bağlantısı
+- Masaüstü menüye Millî Takım bağlantısı
+
+Kaynaklar: TFF ve UEFA.
+Clarity, Publytics ve GA4 korunmuştur.
