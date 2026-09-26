@@ -1,85 +1,66 @@
 {
-  "date": "20 Eylül 2026",
+  "date": "26 Eylül 2026",
   "items": [
     {
-      "id": "fb-eyup-8-0-20-eylul",
-      "title": "Fenerbahçe, Eyüpspor'u 8-0 yendi",
-      "description": "Fenerbahçe, Süper Lig'in 6. haftasında Eyüpspor'u 8-0 mağlup etti. Vedat Muriç dört gol attı.",
+      "id": "montella-fransa-26-09-2026",
+      "title": "Montella: Daha fazlasını hak ettik",
+      "description": "A Millî Takım Teknik Direktörü Vincenzo Montella, Fransa karşısındaki 1-0'lık yenilginin ardından oyuncularının çok iyi mücadele ettiğini ve daha fazlasını hak ettiklerini söyledi.",
+      "category": "Millî Takım",
+      "date": "26 Eylül 2026",
+      "image": "./is-logo.png",
+      "source": "TFF",
+      "link": "https://www.tff.org/default.aspx?ftxtID=51442&pageID=202"
+    },
+    {
+      "id": "turkiye-fransa-0-1-25-09-2026",
+      "title": "Türkiye, Fransa'ya 1-0 mağlup oldu",
+      "description": "UEFA Uluslar Ligi A1 Grubu'nun ilk maçında Türkiye, Kocaeli'de Fransa'ya 1-0 kaybetti. UEFA'nın resmi sonuçlarında maç 0-1 olarak yer alıyor.",
+      "category": "Millî Takım",
+      "date": "26 Eylül 2026",
+      "image": "./is-logo.png",
+      "source": "UEFA",
+      "link": "https://www.uefa.com/uefanationsleague/news/02a2-1fea18abbcbc-456e846509e7-1000--2026-27-uefa-nations-league-all-the-league-phase-fixtures-a/"
+    },
+    {
+      "id": "uefa-unl-26-eylul-programi",
+      "title": "Uluslar Ligi'nde 26 Eylül programı",
+      "description": "UEFA'nın resmi programına göre 26 Eylül'de İngiltere-İspanya, Çekya-Hırvatistan ve Kuzey Makedonya-İsviçre dahil olmak üzere 10 karşılaşma oynanacak.",
+      "category": "Uluslar Ligi",
+      "date": "26 Eylül 2026",
+      "image": "./is-logo.png",
+      "source": "UEFA",
+      "link": "https://www.uefa.com/uefanationsleague/news/02a2-1fea18abbcbc-456e846509e7-1000--2026-27-uefa-nations-league-all-the-league-phase-fixtures-a/"
+    },
+    {
+      "id": "england-spain-26-09-2026",
+      "title": "İngiltere-İspanya maçı bugün",
+      "description": "UEFA Uluslar Ligi A3 Grubu'nun ilk haftasında İngiltere, 26 Eylül'de Wembley'de İspanya'yı ağırlayacak.",
+      "category": "Uluslar Ligi",
+      "date": "26 Eylül 2026",
+      "image": "./is-logo.png",
+      "source": "UEFA",
+      "link": "https://www.uefa.com/uefanationsleague/teams/39/matches/"
+    },
+    {
+      "id": "fenerbahce-fifa-kayit-3-donem-26-09-2026",
+      "title": "Fenerbahçe için FIFA kayıtlarında 3 dönemlik transfer yasağı görünüyor",
+      "description": "26 Eylül tarihli haberlerde, FIFA'nın resmi transfer yasağı kayıtlarında Fenerbahçe için üç transfer dönemini kapsayan bir kayıt bulunduğu aktarılıyor. Yasağın dosya nedeni ve uygulanma ayrıntıları konusunda kulüpten resmi açıklama bulunmadığı belirtiliyor.",
       "category": "Fenerbahçe",
-      "date": "20 Eylül 2026",
+      "date": "26 Eylül 2026",
       "image": "./is-logo.png",
-      "source": "FOTOMAÇ",
-      "link": "https://www.fotomac.com.tr/fenerbahce/2026/09/20/fenerbahce-evinde-gol-oldu-yagdi-vedat-muric-maca-damga-vurdu"
+      "source": "Türkiye Gazetesi",
+      "link": "https://www.turkiyegazetesi.com.tr/spor/fifa-duyurdu-fenerbahceye-3-donem-transfer-yasagi-1818643",
+      "label": "FIFA kaydına dayalı haber"
     },
     {
-      "id": "amed-bjk-3-2-20-eylul",
-      "title": "Amedspor-Beşiktaş maçında skor 3-2",
-      "description": "Amed Sportif Faaliyetler, Süper Lig'in 6. haftasında Beşiktaş'ı 3-2 mağlup etti. Karşılaşma sona erdi.",
-      "category": "Beşiktaş",
-      "date": "20 Eylül 2026",
+      "id": "uefa-unl-matchday-1-sonuclari-26-09-2026",
+      "title": "Uluslar Ligi ilk hafta sonuçları güncellendi",
+      "description": "UEFA, 24-25 Eylül'de oynanan ilk hafta karşılaşmalarının sonuçlarını yayımladı. Türkiye-Fransa 0-1, İtalya-Belçika 0-2 ve Hollanda-Almanya 1-1 sonuçları resmi listede yer alıyor.",
+      "category": "Uluslar Ligi",
+      "date": "26 Eylül 2026",
       "image": "./is-logo.png",
-      "source": "Beşiktaş",
-      "link": "https://www.bjk.com.tr/tr/fikstur/1/1/704/668"
-    },
-    {
-      "id": "goztepe-rize-2-2-20-eylul",
-      "title": "Göztepe-Rizespor 2-2 sona erdi",
-      "description": "Göztepe ile Çaykur Rizespor arasındaki Süper Lig 6. hafta mücadelesi 2-2 tamamlandı.",
-      "category": "Süper Lig",
-      "date": "20 Eylül 2026",
-      "image": "./is-logo.png",
-      "source": "Maçkolik",
-      "link": "https://www.mackolik.com/mac/g%C3%B6ztepe-vs-%C3%A7aykur-rizespor/karsilastirma/cizsw1hg6g8wzusyinxuvtudw"
-    },
-    {
-      "id": "erzurum-samsun-1-0-20-eylul",
-      "title": "Erzurumspor, Samsunspor'u 1-0 yendi",
-      "description": "Miguel Cardoso'nun 45. dakikadaki golü Erzurumspor'a üç puanı getirdi.",
-      "category": "Süper Lig",
-      "date": "20 Eylül 2026",
-      "image": "./is-logo.png",
-      "source": "DHA",
-      "link": "https://www.dha.com.tr/yerel-haberler/erzurum/erzurumspor-fk-samsunspor-1-0-2948246"
-    },
-    {
-      "id": "atletico-real-2-1-20-eylul",
-      "title": "Atlético Madrid, Real Madrid'i 2-1 yendi",
-      "description": "Madrid derbisinde Atlético Madrid, Real Madrid'i 2-1 mağlup etti.",
-      "category": "İspanya",
-      "date": "20 Eylül 2026",
-      "image": "./is-logo.png",
-      "source": "Reuters",
-      "link": "https://www.reuters.com/sports/soccer/atletico-ride-derby-storm-beat-10-man-real-madrid-2-1-2026-09-20/"
-    },
-    {
-      "id": "barcelona-sevilla-19-eylul",
-      "title": "Barcelona, Sevilla'yı 3-1 mağlup etti",
-      "description": "Barcelona, Sevilla'yı 3-1 yendi. Raphinha hat-trick yaptı.",
-      "category": "İspanya",
-      "date": "20 Eylül 2026",
-      "image": "./is-logo.png",
-      "source": "Reuters",
-      "link": "https://www.reuters.com/sports/soccer/raphinha-hat-trick-maintains-barcelonas-perfect-laliga-start-2026-09-19/"
-    },
-    {
-      "id": "erzurum-samsun-1-0-20-eylul-brief",
-      "title": "Erzurumspor'dan Samsunspor karşısında 1-0'lık galibiyet",
-      "description": "Erzurumspor FK, Miguel Cardoso'nun golüyle Samsunspor'u 1-0 mağlup etti.",
-      "category": "Süper Lig",
-      "date": "20 Eylül 2026",
-      "image": "./is-logo.png",
-      "source": "beIN SPORTS Türkiye",
-      "link": "https://beinsports.com.tr/haber/erzurumspor-fk-samsunspor"
-    },
-    {
-      "id": "ts-gs-4-0-20-eylul",
-      "title": "Trabzonspor, Galatasaray'ı 4-0 mağlup etti",
-      "description": "Trabzonspor, Süper Lig'in 6. haftasında Galatasaray'ı 4-0 yendi. Mohamed Salah üç gol attı.",
-      "category": "Trabzonspor",
-      "date": "20 Eylül 2026",
-      "image": "./is-logo.png",
-      "source": "Trabzonspor",
-      "link": "https://www.trabzonspor.org.tr/tr/haberler/trabzonspor-4-0-galatasaray-1-19-09-2026"
+      "source": "UEFA",
+      "link": "https://www.uefa.com/uefanationsleague/news/02a2-1fea18abbcbc-456e846509e7-1000--2026-27-uefa-nations-league-all-the-league-phase-fixtures-a/"
     }
   ]
 }
