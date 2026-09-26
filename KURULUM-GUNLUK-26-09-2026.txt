@@ -1,21 +1,17 @@
-İonenSpiegel günlük güncelleme, 26 Eylül 2026
+İonenSpiegel günlük düzeltme paketi · 26 Eylül 2026
 
-Bu paket mevcut İonenSpiegel güncel site tabanı üzerine hazırlanmıştır. V62'ye geri dönüş yapılmamıştır.
+- Ana hero haber Fenerbahçe için FIFA'nın 3 dönemlik kayıt yasağı gelişmesiyle güncellendi.
+- Son Dakika bandına haber eklendi.
+- Günlük haber akışına aynı haber tekilleştirilerek eklendi.
+- Kaynak olarak FIFA'nın Registration Bans kaydı kullanıldı.
+- FIFA kayıtlarında dosyanın mali bağlantısı ve 3 dönemlik kısıtlama görüldüğünü bildiren güncel haberler ayrıca kontrol edildi.
+- Ödeme, dosya nedeni veya tutar konusunda FIFA kaydında yer almayan ayrıntılar kesin bilgi gibi yazılmadı.
+- Mevcut site tasarımı ve özellikleri değiştirilmedi.
 
-Güncellenen içerik:
-- data/daily-news.json
-- Günlük kurulum notu
 
-Mevcut HTML, mobil tasarım, millî takım bölümü, takım sekmeleri, analitik kodları, iletişim formu ve diğer mevcut dosyalar korunmuştur.
-
-Haber politikası:
-- Yalnızca doğrulanabilen güncel futbol bilgileri kullanıldı.
-- Maç sonucu UEFA/TFF kayıtlarıyla kontrol edildi.
-- Fenerbahçe haberi, FIFA kayıtlarına ilişkin ikincil kaynak aktarımı olarak yazıldı. Dosyanın nedeni hakkında doğrulanmamış ayrıntı eklenmedi.
-- Söylenti gerçek haber gibi sunulmadı.
-- Aynı olay farklı başlıklarla çoğaltılmadı.
-
-Manuel kurulum:
-1. data/daily-news.json dosyasını mevcut sitedeki aynı dosyayla değiştir.
-2. Diğer dosyaları değiştirme.
-3. GitHub Pages dağıtımının güncellenmesini bekle.
+SLAYTLI ANA HABER ALANI
+- Trabzonspor-Galatasaray gibi tek ve sabit haber yerine ana haber alanı 4 slaytlı yapıya dönüştürüldü.
+- Slaytlar 6 saniyede bir otomatik değişir.
+- Sağ/sol oklar, nokta göstergeleri ve mobil parmakla kaydırma desteklenir.
+- Slaytlardaki içerikler 25-26 Eylül 2026 tarihli güncel haberlerden seçildi.
+- Beşiktaş transfer içeriği doğrulanmış transfer olarak değil, açıkça İDDİA etiketiyle gösterilir.

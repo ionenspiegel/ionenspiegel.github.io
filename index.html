@@ -193,7 +193,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 <div class="breaking" id="sondakika">
   <div class="breaking-label"><span class="live-dot"></span> SON DAKİKA</div>
   <div class="breaking-scroll" id="breakingScroll" aria-label="Son dakika haberleri">
-  <a href="#haberler"><span>01</span><b>Fenerbahçe, Eyüpspor'u 8-0 yendi</b></a>
+  <a href="#haberler"><span>01</span><b>Fenerbahçe'ye FIFA'dan 3 dönem transfer yasağı</b></a>
   <a href="#haberler"><span>02</span><b>Amedspor-Beşiktaş 3-2 sona erdi</b></a>
   <a href="#haberler"><span>03</span><b>Göztepe-Rizespor 2-2 sona erdi</b></a>
   <a href="#haberler"><span>04</span><b>Erzurumspor, Samsunspor'u 1-0 yendi</b></a>
@@ -218,16 +218,18 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   
 
   <section class="hero-news" id="haberler">
-    <div class="hero-media" id="heroMedia">
+    <div class="hero-media hero-slider" id="heroMedia" aria-label="Güncel haberler">
       <div class="hero-overlay"></div>
       <div class="hero-copy">
-        <span class="category red">SON DAKİKA</span>
-        
-        <h1 id="heroTitle">Türkiye, Fransa'ya 1-0 mağlup oldu</h1>
-        <p id="heroText">A Millî Takım, UEFA Uluslar Ligi A Ligi'ndeki ilk maçında Kocaeli'de Fransa'ya 1-0 yenildi. Kylian Mbappé 54. dakikada golü attı.</p>
-        <div class="hero-meta"><span id="heroSource">TFF · 25 Eylül 2026</span><a class="ghost-btn" id="heroRead" href="https://www.tff.org/default.aspx?ftxtID=51428&pageID=202" target="_blank" rel="noopener noreferrer">Haberi görüntüle ↗</a></div>
+        <span class="category red" id="heroCategory">SON DAKİKA</span>
+        <div class="hero-slide-counter" id="heroCounter">1 / 4</div>
+        <h1 id="heroTitle">Fenerbahçe'ye FIFA'dan 3 dönem transfer yasağı</h1>
+        <p id="heroText">FIFA'nın güncel kayıtlarında Fenerbahçe için 3 transfer ve tescil dönemi süren bir kayıt yasağı yer aldı. Yaptırımın mali bir dosyayla bağlantılı olduğu bildirildi.</p>
+        <div class="hero-meta"><span id="heroSource">FIFA kayıtları · 26 Eylül 2026</span><a class="ghost-btn" id="heroRead" href="https://knowledge.fifa.com/registration-bans" target="_blank" rel="noopener noreferrer">Haberi görüntüle ↗</a></div>
       </div>
-      
+      <button class="hero-nav hero-prev" id="heroPrev" type="button" aria-label="Önceki haber">‹</button>
+      <button class="hero-nav hero-next" id="heroNext" type="button" aria-label="Sonraki haber">›</button>
+      <div class="hero-dots" id="heroDots" aria-label="Haber slaytları"></div>
     </div>
     <aside class="hero-side">
       <div class="home-fixture-card derby-card"><div class="home-fixture-kicker"><span>🏁</span><b>MAÇ SONUCU</b><span>25 EYLÜL</span></div><div class="home-fixture-teams"><strong>TÜRKİYE</strong><em>0 - 1</em><strong>FRANSA</strong></div><div class="home-fixture-meta">UEFA Uluslar Ligi · Kocaeli Stadyumu · MS</div><a href="#milli-takim" class="wide-btn">Maç detaylarına git →</a></div>
@@ -247,6 +249,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
     <div class="latest-layout">
       <div class="news-feed" id="newsFeed">
 <article class="news-row has-bookmark" data-news-id="turkiye-fransa-0-1-26-eylul" data-team="Milli Takım" data-search="Türkiye Fransa 0-1 Uluslar Ligi Mbappe"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb" href="https://www.tff.org/default.aspx?ftxtID=51428&pageID=202" target="_blank" rel="noopener noreferrer"><img src="./is-logo.png" alt="Türkiye Fransa Uluslar Ligi" loading="lazy"></a><div><div class="news-kicker">26 EYLÜL 2026 · MİLLÎ TAKIM</div><h3>Türkiye, Fransa'ya 1-0 mağlup oldu</h3><p>Türkiye'nin A Ligi'ndeki ilk maçında Fransa kazandı. Kylian Mbappé 54. dakikada gol attı, Uğurcan Çakır 87. dakikada kırmızı kart gördü.</p><a href="https://www.tff.org/default.aspx?ftxtID=51428&pageID=202" target="_blank" rel="noopener noreferrer">TFF ↗</a></div></article>
+<article class="news-row has-bookmark" data-news-id="fenerbahce-fifa-3-donem-yasak-26-eylul" data-team="Fenerbahçe" data-search="Fenerbahçe FIFA 3 dönem transfer yasağı 26 Eylül 2026"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb" href="https://knowledge.fifa.com/registration-bans" target="_blank" rel="noopener noreferrer"><img src="./is-logo.png" alt="Fenerbahçe FIFA transfer yasağı" loading="lazy"></a><div><div class="news-kicker">26 EYLÜL 2026 · FENERBAHÇE · RESMİ KAYIT</div><h3>Fenerbahçe'ye FIFA'dan 3 dönem transfer yasağı</h3><p>FIFA'nın güncel kayıtlarında Fenerbahçe için 3 transfer ve tescil dönemi süren bir kayıt yasağı yer aldı. Yaptırımın mali bir dosyayla bağlantılı olduğu bildirildi. Dosyanın ayrıntıları ve ödeme tutarı mevcut kayıtta açıklanmadı.</p><a href="https://knowledge.fifa.com/registration-bans" target="_blank" rel="noopener noreferrer">FIFA ↗</a></div></article>
 <article class="news-row has-bookmark" data-news-id="montella-daha-fazlasini-hak-ettik" data-team="Milli Takım" data-search="Montella daha fazlasını hak ettik Fransa Türkiye"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb" href="https://www.tff.org/default.aspx?ftxtID=51442&pageID=202" target="_blank" rel="noopener noreferrer"><img src="./is-logo.png" alt="Montella Türkiye Fransa" loading="lazy"></a><div><div class="news-kicker">26 EYLÜL 2026 · MİLLÎ TAKIM</div><h3>Montella: "Daha fazlasını hak ettik"</h3><p>Vincenzo Montella, Fransa karşısında oyuncularının çok iyi mücadele ettiğini ve yenilgiyi hak etmediklerini söyledi.</p><a href="https://www.tff.org/default.aspx?ftxtID=51442&pageID=202" target="_blank" rel="noopener noreferrer">TFF ↗</a></div></article>
 <article class="news-row has-bookmark" data-news-id="belcika-italya-2-0" data-team="Avrupa" data-search="Belçika İtalya 2-0 Uluslar Ligi"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb" href="https://www.uefa.com/uefanationsleague/news/02a9-21abb9d8b85c-0d9416d472ce-1000--uefa-nations-league-matchday-1-highlights-round-up-kylian-/" target="_blank" rel="noopener noreferrer"><img src="./is-logo.png" alt="Belçika İtalya" loading="lazy"></a><div><div class="news-kicker">26 EYLÜL 2026 · AVRUPA</div><h3>Belçika, İtalya'yı 2-0 yendi</h3><p>Belçika, Uluslar Ligi A Ligi 1. Grup açılışında İtalya'yı deplasmanda 2-0 mağlup etti.</p><a href="https://www.uefa.com/uefanationsleague/news/02a9-21abb9d8b85c-0d9416d472ce-1000--uefa-nations-league-matchday-1-highlights-round-up-kylian-/" target="_blank" rel="noopener noreferrer">UEFA ↗</a></div></article>
 <article class="news-row has-bookmark" data-news-id="uefa-england-spain-26-eylul" data-team="Avrupa" data-search="İngiltere İspanya 26 Eylül 2026 Uluslar Ligi"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb" href="https://www.uefa.com/uefanationsleague/news/02a9-21a4f1803092-7aad154369dc-1000--uefa-nations-league-matchday-1-preview-italy-vs-belgium-eng/" target="_blank" rel="noopener noreferrer"><img src="./is-logo.png" alt="İngiltere İspanya" loading="lazy"></a><div><div class="news-kicker">26 EYLÜL 2026 · AVRUPA</div><h3>İngiltere-İspanya maçı bugün oynanacak</h3><p>Uluslar Ligi A Ligi'nde 1. haftanın dikkat çeken karşılaşmalarından biri bugün İngiltere ile İspanya arasında.</p><a href="https://www.uefa.com/uefanationsleague/news/02a9-21a4f1803092-7aad154369dc-1000--uefa-nations-league-matchday-1-preview-italy-vs-belgium-eng/" target="_blank" rel="noopener noreferrer">UEFA ↗</a></div></article>
@@ -521,6 +524,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   <div class="section-head"><div><h2><span class="red-line"></span> Güncel Gündem</h2><p class="section-subtitle">20 Eylül 2026 · güncel gelişmeler</p></div><span class="muted">Kaynak bağlantıları mevcut</span></div>
   <div class="news-grid transfer-live-grid">
     <article class="content-card"><span class="tag news">FENERBAHÇE</span><h3>Fenerbahçe, Eyüpspor'u 8-0 yendi</h3><p>Fenerbahçe, 20 Eylül'de Eyüpspor'u 8-0 mağlup etti. Vedat Muriç dört gol attı.</p><a href="https://www.fotomac.com.tr/fenerbahce/2026/09/20/fenerbahce-evinde-gol-oldu-yagdi-vedat-muric-maca-damga-vurdu" target="_blank" rel="noopener">FOTOMAÇ ↗</a></article>
+    <article class="content-card"><span class="tag news">FENERBAHÇE</span><h3>Fenerbahçe'ye FIFA'dan 3 dönem transfer yasağı</h3><p>FIFA'nın güncel kayıtlarında Fenerbahçe için 3 dönemlik kayıt yasağı yer aldı. Yaptırımın mali bir dosyayla bağlantılı olduğu bildirildi.</p><a href="https://knowledge.fifa.com/registration-bans" target="_blank" rel="noopener">FIFA ↗</a></article>
     <article class="content-card"><span class="tag news">BEŞİKTAŞ</span><h3>Amedspor, Beşiktaş'ı 3-2 mağlup etti</h3><p>Amed Sportif Faaliyetler, Beşiktaş'ı 3-2 mağlup etti.</p><a href="https://www.bjk.com.tr/tr/fikstur/1/1/704/668" target="_blank" rel="noopener">Beşiktaş ↗</a></article>
     <article class="content-card"><span class="tag news">TRABZONSPOR</span><h3>Trabzonspor, Galatasaray'ı 4-0 yendi</h3><p>Trabzonspor, 19 Eylül'deki maçta Galatasaray'ı 4-0 mağlup etti. Mohamed Salah üç gol attı.</p><a href="https://www.trabzonspor.org.tr/tr/haberler/trabzonspor-4-0-galatasaray-1-19-09-2026" target="_blank" rel="noopener">Trabzonspor ↗</a></article>
   </div>
@@ -781,6 +785,39 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 .dark-theme .euro-news-grid .content-card{background:#15181d;border-color:#292e36}
 @media(max-width:800px){.euro-news-grid .content-card{padding:16px}}
 </style>
+<style id="v80-hero-news-slider">
+.hero-slider{position:relative;overflow:hidden;transition:background .45s ease}
+.hero-slide-counter{position:absolute;right:18px;top:18px;padding:6px 9px;border-radius:999px;background:#0008;color:#fff;font-size:9px;font-weight:900;letter-spacing:.5px}
+.hero-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border:1px solid #fff6;border-radius:50%;background:#0006;color:#fff;font-size:31px;line-height:1;z-index:5;cursor:pointer;backdrop-filter:blur(4px)}
+.hero-prev{left:16px}.hero-next{right:16px}
+.hero-nav:hover{background:#000a}
+.hero-dots{position:absolute;right:18px;bottom:18px;display:flex;gap:6px;z-index:5}
+.hero-dot{width:7px;height:7px;border:0;border-radius:50%;padding:0;background:#fff7;cursor:pointer}.hero-dot.active{width:22px;border-radius:8px;background:#fff}
+.hero-slider.is-changing .hero-copy{animation:heroFade .28s ease}
+@keyframes heroFade{from{opacity:.35;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media(max-width:480px){.hero-slide-counter{right:14px;top:14px}.hero-nav{width:36px;height:36px;font-size:27px}.hero-prev{left:10px}.hero-next{right:10px}.hero-dots{right:14px;bottom:14px}}
+</style>
+<script id="v80-hero-news-slider-js">
+(function(){
+  const slides=[
+    {cat:'SON DAKİKA',title:"Fenerbahçe'ye FIFA'dan 3 dönem transfer yasağı",text:"FIFA'nın güncel kayıtlarında Fenerbahçe için 3 transfer ve tescil dönemi süren bir kayıt yasağı yer aldı. Yaptırımın mali bir dosyayla bağlantılı olduğu bildirildi.",source:'FIFA kayıtları · 26 Eylül 2026',url:'https://knowledge.fifa.com/registration-bans'},
+    {cat:'MİLLÎ TAKIM',title:"A Millî Takım, Fransa'ya 1-0 mağlup oldu",text:"Türkiye, UEFA Uluslar Ligi A Ligi 1. Grup'taki ilk maçında Fransa'ya 1-0 yenildi. Kylian Mbappé 54. dakikada golü attı.",source:'TRT Spor / AA · 26 Eylül 2026',url:'https://www.trthaber.com/haber/gundem/a-milli-futbol-takimimiz-fransaya-maglup-oldu-958184.html'},
+    {cat:'GÜNCEL',title:"Süper Lig'in en değerli oyuncuları güncellendi",text:"CIES, Süper Lig'de forma giyen futbolcuların tahmini piyasa değerlerine ilişkin güncel listesini yayımladı.",source:'CIES · 26 Eylül 2026',url:'https://www.yenisafak.com/galeri/spor/super-ligin-en-degerlisi-belli-oldu-milyon-euroluk-dev-fark-osimheni-tahtindan-etti-4859119'},
+    {cat:'İDDİA · BEŞİKTAŞ',title:"Beşiktaş için Fares Ghedjemis iddiası",text:"A Spor, Beşiktaş'ın ocak transfer dönemi için Fares Ghedjemis'i yeniden gündemine aldığı yönünde bir haber yayımladı. Bu bilgi henüz kulüp tarafından doğrulanmadı.",source:'A Spor · 26 Eylül 2026',url:'https://www.aspor.com.tr/besiktas/2026/09/26/transfer-haberi-besiktasta-fares-ghedjemis-sesleri',rumor:true}
+  ];
+  let i=0,timer=null,paused=false;
+  const media=document.getElementById('heroMedia'),title=document.getElementById('heroTitle'),text=document.getElementById('heroText'),source=document.getElementById('heroSource'),read=document.getElementById('heroRead'),cat=document.getElementById('heroCategory'),counter=document.getElementById('heroCounter'),dots=document.getElementById('heroDots');
+  if(!media||!title||!text||!source||!read||!cat||!counter||!dots)return;
+  slides.forEach((_,n)=>{const b=document.createElement('button');b.className='hero-dot'+(n===0?' active':'');b.type='button';b.setAttribute('aria-label',(n+1)+'. haber');b.addEventListener('click',()=>show(n,true));dots.appendChild(b)});
+  function show(n,user){i=(n+slides.length)%slides.length;const x=slides[i];media.classList.remove('is-changing');void media.offsetWidth;media.classList.add('is-changing');cat.textContent=x.cat;cat.classList.toggle('red',!x.rumor);title.textContent=x.title;text.textContent=x.text;source.textContent=x.source;read.href=x.url;counter.textContent=(i+1)+' / '+slides.length;[...dots.children].forEach((d,k)=>d.classList.toggle('active',k===i));if(user)restart();}
+  function next(){show(i+1,false)} function prev(){show(i-1,true)}
+  function restart(){clearInterval(timer);timer=setInterval(()=>{if(!paused)next()},6000)}
+  document.getElementById('heroNext')?.addEventListener('click',next);document.getElementById('heroPrev')?.addEventListener('click',prev);
+  media.addEventListener('mouseenter',()=>paused=true);media.addEventListener('mouseleave',()=>paused=false);media.addEventListener('touchstart',()=>paused=true,{passive:true});media.addEventListener('touchend',()=>setTimeout(()=>paused=false,700),{passive:true});
+  let sx=0;media.addEventListener('touchstart',e=>sx=e.changedTouches[0].clientX,{passive:true});media.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>45){if(dx<0)next();else prev();restart()}},{passive:true});
+  restart();
+})();
+</script>
 
 <script id="v67-breaking-scroll">
 (function(){

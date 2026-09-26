@@ -22,3 +22,6 @@ A Spor, iddia: https://www.aspor.com.tr/besiktas/2026/09/26/transfer-haberi-besi
 Reuters: https://www.reuters.com/sports/soccer/fifas-infantino-letter-is-ploy-re-election-says-german-fa-chief-2026-09-22/
 
 Not: GitHub'a otomatik yükleme yapılmamıştır. Bu ZIP manuel yükleme için hazırlanmıştır.
+
+
+Ana hero alanı 4 haberlik otomatik slayta çevrildi. Eski tekil Trabzonspor-Galatasaray başlığı artık ana slayt olarak kullanılmıyor.
