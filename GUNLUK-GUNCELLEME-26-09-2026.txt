@@ -1,0 +1,24 @@
+İonenSpiegel Günlük Paket · 26 Eylül 2026
+
+Güncellenen içerik
+- Son Dakika haber kartları tamamen 26 Eylül gündemine göre yenilendi.
+- Türkiye 0-1 Fransa ve Belçika 2-0 İtalya sonuçları doğrulanmış kaynaklarla eklendi.
+- 26 Eylül İngiltere-İspanya ve Çekya-Hırvatistan Uluslar Ligi maçları yaklaşan fikstüre eklendi.
+- A Millî Takım puan durumu 25 Eylül sonuçlarına göre güncellendi.
+- Beşiktaş, Galatasaray ve Fenerbahçe için güncel kulüp/kadın futbol haberleri eklendi.
+- Beşiktaş Fares Ghedjemis haberi özellikle İDDİA olarak işaretlendi.
+- FIFA reform gündemi Reuters kaynağıyla eklendi.
+- Mevcut tasarım, mobil yapı, milli takım sekmeleri, takım filtreleri, iletişim formu ve diğer mevcut özellikler korunmuştur.
+
+Kaynaklar
+TFF: https://www.tff.org/default.aspx?ftxtID=51428&pageID=202
+TFF Montella: https://www.tff.org/default.aspx?ftxtID=51442&pageID=202
+UEFA: https://www.uefa.com/uefanationsleague/news/02a9-21abb9d8b85c-0d9416d472ce-1000--uefa-nations-league-matchday-1-highlights-round-up-kylian-/
+UEFA ön izleme: https://www.uefa.com/uefanationsleague/news/02a9-21a4f1803092-7aad154369dc-1000--uefa-nations-league-matchday-1-preview-italy-vs-belgium-eng/
+Beşiktaş: https://bjk.com.tr/tr/haber/95082
+Galatasaray: https://www.galatasaray.org/haber/futbol/kadin-futbol/maca-dogru-galatasaray-amed-sportif-faaliyetler/61015
+Fenerbahçe: https://www.fenerbahce.org/haberler/futbol-kadin/2026/9/fenerbahce-arsavev-avrupa-kupasi-2-on-eleme-turun-ilk-macinda-belarus-temsilcisi-minsk-e-konuk-olu
+A Spor, iddia: https://www.aspor.com.tr/besiktas/2026/09/26/transfer-haberi-besiktasta-fares-ghedjemis-sesleri
+Reuters: https://www.reuters.com/sports/soccer/fifas-infantino-letter-is-ploy-re-election-says-german-fa-chief-2026-09-22/
+
+Not: GitHub'a otomatik yükleme yapılmamıştır. Bu ZIP manuel yükleme için hazırlanmıştır.
