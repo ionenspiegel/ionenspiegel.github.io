@@ -786,7 +786,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 @media(max-width:800px){.euro-news-grid .content-card{padding:16px}}
 </style>
 <style id="v80-hero-news-slider">
-.hero-slider{position:relative;overflow:hidden;transition:background .45s ease}
+.hero-slider{position:relative;overflow:hidden;transition:background .45s ease;background-size:cover;background-position:center}
 .hero-slide-counter{position:absolute;right:18px;top:18px;padding:6px 9px;border-radius:999px;background:#0008;color:#fff;font-size:9px;font-weight:900;letter-spacing:.5px}
 .hero-nav{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border:1px solid #fff6;border-radius:50%;background:#0006;color:#fff;font-size:31px;line-height:1;z-index:5;cursor:pointer;backdrop-filter:blur(4px)}
 .hero-prev{left:16px}.hero-next{right:16px}
@@ -800,16 +800,15 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 <script id="v80-hero-news-slider-js">
 (function(){
   const slides=[
-    {cat:'SON DAKİKA',title:"Fenerbahçe'ye FIFA'dan 3 dönem transfer yasağı",text:"FIFA'nın güncel kayıtlarında Fenerbahçe için 3 transfer ve tescil dönemi süren bir kayıt yasağı yer aldı. Yaptırımın mali bir dosyayla bağlantılı olduğu bildirildi.",source:'FIFA kayıtları · 26 Eylül 2026',url:'https://knowledge.fifa.com/registration-bans'},
-    {cat:'MİLLÎ TAKIM',title:"A Millî Takım, Fransa'ya 1-0 mağlup oldu",text:"Türkiye, UEFA Uluslar Ligi A Ligi 1. Grup'taki ilk maçında Fransa'ya 1-0 yenildi. Kylian Mbappé 54. dakikada golü attı.",source:'TRT Spor / AA · 26 Eylül 2026',url:'https://www.trthaber.com/haber/gundem/a-milli-futbol-takimimiz-fransaya-maglup-oldu-958184.html'},
-    {cat:'GÜNCEL',title:"Süper Lig'in en değerli oyuncuları güncellendi",text:"CIES, Süper Lig'de forma giyen futbolcuların tahmini piyasa değerlerine ilişkin güncel listesini yayımladı.",source:'CIES · 26 Eylül 2026',url:'https://www.yenisafak.com/galeri/spor/super-ligin-en-degerlisi-belli-oldu-milyon-euroluk-dev-fark-osimheni-tahtindan-etti-4859119'},
-    {cat:'İDDİA · BEŞİKTAŞ',title:"Beşiktaş için Fares Ghedjemis iddiası",text:"A Spor, Beşiktaş'ın ocak transfer dönemi için Fares Ghedjemis'i yeniden gündemine aldığı yönünde bir haber yayımladı. Bu bilgi henüz kulüp tarafından doğrulanmadı.",source:'A Spor · 26 Eylül 2026',url:'https://www.aspor.com.tr/besiktas/2026/09/26/transfer-haberi-besiktasta-fares-ghedjemis-sesleri',rumor:true}
-  ];
-  let i=0,timer=null,paused=false;
+    {cat:'SON DAKİKA',title:"Fenerbahçe'ye FIFA'dan 3 dönem transfer yasağı",text:"FIFA'nın güncel transfer yasağı kayıtlarında Fenerbahçe için 3 transfer dönemini kapsayan bir yaptırım yer aldı. Dosyanın ayrıntıları ve ödeme tutarı mevcut kayıtta açıklanmadı.",source:'FIFA kayıtları · 26 Eylül 2026',url:'https://knowledge.fifa.com/registration-bans',image:'./assets/hero/fenerbahce-fifa-26-09-2026.svg'},
+    {cat:'TFF · DİSİPLİN',title:"PFDK sevkleri açıklandı",text:"TFF Hukuk Müşavirliği, aralarında Trabzonspor, Galatasaray, Fenerbahçe ve Beşiktaş'ın da bulunduğu kulüp ve futbol görevlilerini PFDK'ya sevk etti.",source:'DHA · 25 Eylül 2026',url:'https://www.dha.com.tr/yerel-haberler/istanbul/pfdk-sevkleri-aciklandi-2951471',image:'./assets/hero/pfdk-26-09-2026.svg'},
+    {cat:'SÜPER LİG · CIES',title:"Greenwood, Süper Lig'in en değerli oyuncusu",text:"CIES Football Observatory'nin güncel araştırmasında Mason Greenwood, 61 milyon avroluk tahmini bonservis değeriyle Süper Lig listesinin zirvesinde yer aldı.",source:'CIES / Mackolik · 24 Eylül 2026',url:'https://www.mackolik.com/index.php/futbol/haber/mason-greenwood-super-ligin-zirvesinde/33dc28c2-5253-494a-bb67-57bb85798498',image:'./assets/hero/cies-26-09-2026.svg'},
+    {cat:'BEŞİKTAŞ · BUGÜN',title:"Beşiktaş'ın olağan idari ve mali genel kurulu bugün",text:"Beşiktaş'ın resmi duyurusuna göre 2025-2026 dönemine ait Olağan İdari ve Mali Genel Kurul Toplantısı 26 Eylül'de Haliç Kongre Merkezi'nde yapılacak.",source:'Beşiktaş JK · 26 Eylül 2026',url:'https://bjk.com.tr/tr/haber/95082',image:'./assets/hero/besiktas-genel-kurul-26-09-2026.svg'}
+  ];  let i=0,timer=null,paused=false;
   const media=document.getElementById('heroMedia'),title=document.getElementById('heroTitle'),text=document.getElementById('heroText'),source=document.getElementById('heroSource'),read=document.getElementById('heroRead'),cat=document.getElementById('heroCategory'),counter=document.getElementById('heroCounter'),dots=document.getElementById('heroDots');
   if(!media||!title||!text||!source||!read||!cat||!counter||!dots)return;
   slides.forEach((_,n)=>{const b=document.createElement('button');b.className='hero-dot'+(n===0?' active':'');b.type='button';b.setAttribute('aria-label',(n+1)+'. haber');b.addEventListener('click',()=>show(n,true));dots.appendChild(b)});
-  function show(n,user){i=(n+slides.length)%slides.length;const x=slides[i];media.classList.remove('is-changing');void media.offsetWidth;media.classList.add('is-changing');cat.textContent=x.cat;cat.classList.toggle('red',!x.rumor);title.textContent=x.title;text.textContent=x.text;source.textContent=x.source;read.href=x.url;counter.textContent=(i+1)+' / '+slides.length;[...dots.children].forEach((d,k)=>d.classList.toggle('active',k===i));if(user)restart();}
+  function show(n,user){i=(n+slides.length)%slides.length;const x=slides[i];media.classList.remove('is-changing');void media.offsetWidth;media.classList.add('is-changing');media.style.backgroundImage='url(\"'+x.image+'\")';cat.textContent=x.cat;cat.classList.toggle('red',!x.rumor);title.textContent=x.title;text.textContent=x.text;source.textContent=x.source;read.href=x.url;counter.textContent=(i+1)+' / '+slides.length;[...dots.children].forEach((d,k)=>d.classList.toggle('active',k===i));if(user)restart();}
   function next(){show(i+1,false)} function prev(){show(i-1,true)}
   function restart(){clearInterval(timer);timer=setInterval(()=>{if(!paused)next()},6000)}
   document.getElementById('heroNext')?.addEventListener('click',next);document.getElementById('heroPrev')?.addEventListener('click',prev);
