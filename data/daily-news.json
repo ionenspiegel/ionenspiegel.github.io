@@ -2,6 +2,16 @@
   "date": "26 Eylül 2026",
   "items": [
     {
+      "id": "fenerbahce-fifa-3-donem-yasak-26-eylul",
+      "title": "Fenerbahçe'ye FIFA'dan 3 dönem transfer yasağı",
+      "description": "FIFA'nın güncel kayıtlarında Fenerbahçe için 3 transfer ve tescil dönemi süren bir kayıt yasağı yer aldı. Yaptırımın mali bir dosyayla bağlantılı olduğu bildirildi. Dosyanın ayrıntıları ve ödeme tutarı mevcut kayıtta açıklanmadı.",
+      "category": "Fenerbahçe",
+      "date": "26 Eylül 2026",
+      "image": "./is-logo.png",
+      "source": "FIFA kayıtları",
+      "link": "https://knowledge.fifa.com/registration-bans"
+    },
+    {
       "id": "montella-fransa-26-09-2026",
       "title": "Montella: Daha fazlasını hak ettik",
       "description": "A Millî Takım Teknik Direktörü Vincenzo Montella, Fransa karşısındaki 1-0'lık yenilginin ardından oyuncularının çok iyi mücadele ettiğini ve daha fazlasını hak ettiklerini söyledi.",
