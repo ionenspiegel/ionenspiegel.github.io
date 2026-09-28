@@ -1,0 +1,21 @@
+İonenSpiegel V84
+Tarih: 29 Eylül 2026
+
+Bu paket V83'teki içerik hatalarını düzelten kapsamlı içerik güncellemesidir.
+
+Düzeltilenler:
+- A Millî Takım bölümü tamamen güncellendi.
+- Uluslar Ligi A1 puan durumu 28 Eylül maçları sonrasına getirildi.
+- Türkiye 0-1 Fransa, Türkiye 1-4 İtalya ve Belçika 0-1 Fransa sonuçları işlendi.
+- Millî Takım fikstüründeki eski ve tamamlanmış maçlar düzeltildi.
+- Sıradaki maç Belçika - Türkiye olarak güncellendi.
+- Millî Takım Haberler sekmesi yenilendi.
+- Güncel Gündem, Avrupa Futbolu ve Bugünün Futbol Özeti 29 Eylül 2026'ya göre yenilendi.
+- Galatasaray-Barcelona, Aston Villa-Fenerbahçe ve Hoffenheim-Beşiktaş Avrupa fikstürü güncellendi.
+- Süper Lig 6. hafta puan durumu ve 7-8. hafta fikstürü korunarak mevcut yapıyla uyumlu bırakıldı.
+- İletişim sayfası, galeri, video, kaydedilenler ve mevcut site özellikleri korunmuştur.
+
+ÖNEMLİ:
+Bu ZIP, mevcut İonenSpiegel projesindeki dosyaların üzerine güncel dosyaları koymak içindir. Mevcut style.css, script.js, v62-modern.css, v62-fixes.js, ga4.js ve diğer yardımcı dosyaları silme.
+
+Kaynaklar: TFF, UEFA, Anadolu Ajansı ve doğrulanan haber kaynakları.
