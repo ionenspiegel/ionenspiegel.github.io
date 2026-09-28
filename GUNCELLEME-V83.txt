@@ -1,0 +1,22 @@
+İonenSpiegel V83
+Tarih: 29 Eylül 2026
+
+Bu paket V82 yapısı temel alınarak hazırlanmıştır. Mevcut site dosyaları korunmuş, ana sayfaya güncel ve doğrulanmış futbol gelişmeleri eklenmiştir.
+
+Yapılanlar:
+- Ana manşet 28 Eylül 2026 Türkiye-İtalya 1-4 sonucuna güncellendi.
+- Son Dakika bandı güncel gelişmelere yenilendi.
+- 29 Eylül 2026 Güncel Gündem bölümü eklendi.
+- A Milli Takım bölümü Türkiye-Fransa 0-1, Türkiye-İtalya 1-4 ve Belçika-Türkiye 2 Ekim programıyla yenilendi.
+- Süper Lig puan durumu 6. hafta sonrası korunarak güncel ara bilgisi eklendi.
+- 7. hafta ve Galatasaray-Fenerbahçe derbisi program bilgileri korundu ve güncel gündemle desteklendi.
+- Beşiktaş olağanüstü genel kurulunun 4 Ekim'e kaldığı bilgisi eklendi.
+- Galatasaray Kasımpaşa hazırlıkları, Trabzonspor'un Salah duyurusu ve Fenerbahçe kadın takımının Minsk karşısında 4-1 galibiyeti eklendi.
+- UEFA Uluslar Ligi ve Şampiyonlar Ligi fikstür gelişmeleri eklendi.
+- V82 iletişim sistemi, analitik kodları ve diğer mevcut sayfalar değiştirilmedi.
+- Harici script sürüm sorguları önbellek yenilemesi için güncellendi.
+
+Doğrulama kaynakları:
+TFF, UEFA, DHA, Beşiktaş JK, Galatasaray.org, Trabzonspor.org.tr, Anadolu Ajansı/Habertürk.
+
+GitHub'a otomatik yükleme yapılmadı.
