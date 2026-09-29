@@ -1,0 +1,25 @@
+İonenSpiegel V85 — Modern Tasarım
+Tarih: 29 Eylül 2026
+
+V84 ana sayfa içeriği ve mevcut işlevler korunarak modern editoryal tasarım katmanı eklendi.
+- Yeni görünüm v85-modern.css dosyasındadır.
+- Ana sayfa index.html bu CSS dosyasını yükler.
+- Mobil uyumlu hero alanı, tipografi, haber kartları, header, bölüm başlıkları ve footer güncellendi.
+- Haber filtreleri, puan tabloları, fikstürler, takım sekmeleri, iletişim ve analitik kodları V84 paketinden korunmuştur.
+
+GitHub Pages'e yükleme:
+Bu klasördeki dosyaların tamamını GitHub Pages deposunun köküne kopyala ve var olan dosyalarla değiştir. Yeni v85-modern.css dosyası da aynı kökte bulunmalı. index.html ve v85-modern.css dosyalarını birlikte yükle.
+
+MISSING-ASSETS.txt içinde listelenen ve depoda zaten bulunan varlıkları silme. Code.gs, sitenin statik dosyası değildir; Apps Script projesine aittir.
+
+V85.2 DÜZELTMELERİ
+- Koyu/açık tema kontrastı düzeltildi; bölüm başlıkları ve haber başlıkları görünür.
+- Puan Durumu, Sonuçlar, Fikstür, Gol Krallığı ve Asist Krallığı sekmeleri için ayrı panel geçişi eklendi.
+- Haber akışı 29 Eylül 2026 güncellemeleriyle yenilendi.
+- Haber JSON yolu data/news.json olarak pakete eklendi; news.json ve daily-news.json da yenilendi.
+- Genel görünüm sıcak açık zemin, koyu antrasit ve uyumlu bordo vurgularla düzenlendi.
+
+V85.3 TEMA DÜZENLEMESİ
+- Açık tema: sıcak açık zemin, koyu okunaklı metin ve ölçülü bordo vurgu.
+- Koyu tema: antrasit zemin, açık metin, ayrı kart/çizgi tonları ve bordo vurgu.
+- Üst çubuğa güneş/ay düğmesi eklendi. Tema tercihi cihazda saklanır ve menüdeki tema seçeneğiyle senkronize olur.

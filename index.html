@@ -174,7 +174,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 </style>
 
 <style id="v78-fixture-team-refresh">.upcoming-fixture-day .fixture-day-head{background:#fff7f7}.upcoming-match{background:#fff}.upcoming-match time{font-size:13px;line-height:1.1}.upcoming-match time small{font-size:8px;color:#888}.upcoming-match .fixture-vs{color:var(--red);font-weight:900}@media(max-width:520px){.upcoming-match time{font-size:11px}}</style>
-</head>
+<link rel="stylesheet" href="v85-modern.css?v=85.3"></head>
 <body>
 <div id="progress"></div>
 <header class="topbar">
@@ -186,6 +186,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
       <a href="#sondakika">Son Dakika</a><a href="#dunya">Dünya</a><a href="#superlig">Süper Lig</a><a href="#milli-takim">Milli Takım</a><a href="#avrupa">Avrupa</a><a href="#transfer">Transfer</a><a href="#maclar">Fikstür</a>
     </nav>
     <div class="top-actions">
+      <button class="icon-btn theme-toggle" id="themeToggleButton" type="button" aria-label="Koyu temaya geç" title="Tema değiştir">☾</button>
       <button class="icon-btn" id="searchOpen" aria-label="Ara">⌕</button>
       <button class="login-btn" id="loginBtn" type="button">Yakında</button>
     </div>
@@ -900,5 +901,6 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   tabs.forEach(tab=>tab.addEventListener('click',()=>{const key=tab.dataset.nationalTab;tabs.forEach(t=>{const on=t===tab;t.classList.toggle('active',on);t.setAttribute('aria-selected',on?'true':'false')});Object.entries(panels).forEach(([k,p])=>p?.classList.toggle('show',k===key))}));
 })();
 </script>
+<script src="v85-fixes.js?v=85.3" defer></script>
 </body>
 </html>

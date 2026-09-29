@@ -1,0 +1,27 @@
+İonenSpiegel tam kod paketi notu
+
+Bu paket V84 index.html dahil güncel HTML/CSS/JS/JSON/Apps Script kodlarını içerir.
+
+Mevcut GitHub deposunda ayrıca kullanılan görsel ve yardımcı dosyalar vardır. Bu çalışma ortamında binary GitHub dosyalarını doğrudan çekemediğim için aşağıdaki dosyaları bu ZIP'e uydurma içerikle eklemedim:
+hero-bjk.jpg
+local-6.svg
+local-7.svg
+news-asensio.jpg
+news-bjk.jpg
+news-derbi.jpg
+news-superlig.jpg
+photo-asensio.jpg
+photo-bjk.jpg
+photo-bournemouth.jpg
+photo-derbi.jpg
+photo-europa.jpg
+photo-hoffenheim.jpg
+photo-juventus.jpg
+photo-superlig.jpg
+gizlilik.html
+hakkimizda.html
+menu-v5.css
+duzeltme.css
+duzeltme.js
+
+Bu nedenle bu ZIP, kodların tam yedeğidir ancak tek başına görsel varlıkların tamamının yedeği değildir.

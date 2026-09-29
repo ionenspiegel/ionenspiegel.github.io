@@ -1,0 +1,19 @@
+İonenSpiegel mevcut çalışan paket, 29 Eylül 2026
+
+Bu paket V84 ana sayfa sürümünü ve sitenin çalışması için gerekli CSS/JS/analytics/service-worker dosyalarını birlikte içerir.
+
+Korunanlar:
+- A Milli Takım bölümü ve sekmeleri
+- Maçlar ve takım sekmeleri
+- Koyu tema
+- Google Analytics 4
+- Microsoft Clarity
+- Publytics
+- İletişim formu ve mevcut Apps Script URL'si
+- Galeri, video ve kaydedilenler sayfaları
+- V62 yardımcı CSS/JS dosyaları
+
+Kurulum:
+ZIP içindeki tüm dosyaları GitHub Pages deposunun köküne yükle. Mevcut dosyaları tek tek seçerek değil, paketin tamamını kullan.
+
+Not: Apps Script Code.gs bu ZIP'te yoktur. İletişim sisteminin sunucu tarafı Google Apps Script projesindedir. Site içindeki endpoint URL'si index.html ve iletisim.html içinde korunmuştur.
