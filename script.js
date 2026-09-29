@@ -133,7 +133,7 @@ function initLeagueTabs(){
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',initLeagueTabs);else initLeagueTabs();
 $$('.transfer-tabs button').forEach(btn=>btn.addEventListener('click',()=>{$$('.transfer-tabs button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const type=btn.dataset.transfer;$$('#transferGrid article').forEach(a=>a.style.display=(type==='all'||a.dataset.type===type)?'block':'none')}));
 $$('.match-filters button').forEach(btn=>btn.addEventListener('click',()=>{$$('.match-filters button').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const day=btn.dataset.day;$$('.match-row').forEach(r=>r.style.display=(day==='all'||r.dataset.day===day)?'grid':'none')}));
-$('#todayBtn')?.addEventListener('click',()=>{document.querySelector('[data-fixture-day="today"]')?.scrollIntoView({behavior:'smooth',block:'center'});toast('17 Eylül maç sonucu gösteriliyor')});
+$('#todayBtn')?.addEventListener('click',()=>{const day=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Istanbul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());const matches=[...document.querySelectorAll('.fixture-match[data-kickoff]')];const todayMatch=matches.find(row=>row.dataset.kickoff.slice(0,10)===day);(todayMatch||document.querySelector('.upcoming-fixture-day'))?.scrollIntoView({behavior:'smooth',block:'center'});toast(todayMatch?'Bugünün maçları gösteriliyor':'Bugün maç yok; sıradaki maçlar gösteriliyor')});
 function liveNewsImage(item){const t=(item.title+' '+item.category).toLocaleLowerCase('tr-TR');if(t.includes('beşiktaş'))return './photo-bjk.jpg';if(t.includes('fenerbahçe'))return './photo-asensio.jpg';if(t.includes('trabzonspor')||t.includes('galatasaray'))return './photo-derbi.jpg';if(t.includes('juventus'))return './photo-juventus.jpg';if(t.includes('bournemouth'))return './photo-bournemouth.jpg';if(t.includes('hoffenheim'))return './photo-hoffenheim.jpg';return './photo-europa.jpg'}
 function liveNewsTeam(item){const t=(item.title+' '+item.description).toLocaleLowerCase('tr-TR');for(const team of Object.keys(teamStyles)){if(t.includes(team.toLocaleLowerCase('tr-TR')))return team}return ''}
 function liveNewsDate(value){if(!value)return 'Şimdi';const d=new Date(value);if(Number.isNaN(d.getTime()))return value;return new Intl.DateTimeFormat('tr-TR',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}).format(d)}
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
 (function initV20(){
   const upcoming=[['19 Eyl','MS','Kocaelispor','Gaziantep FK','2 - 0'],['19 Eyl','MS','Çorum FK','Alanyaspor','1 - 2'],['19 Eyl','MS','Başakşehir','Gençlerbirliği','4 - 0'],['19 Eyl','MS','Trabzonspor','Galatasaray','4 - 0'],['20 Eyl','MS','Fenerbahçe','Eyüpspor','8 - 0'],['20 Eyl','MS','Erzurumspor','Samsunspor','1 - 0'],['20 Eyl','MS','Amed Sportif','Beşiktaş','3 - 2'],['20 Eyl','MS','Göztepe','Rizespor','2 - 2']];
   const list=$('#upcomingMainList');
-  if(list){ list.innerHTML=upcoming.map((m,i)=>`<button class="fixture-card" data-match="${i}"><span><b>${m[0]}</b><small>${m[1]}</small></span><strong>${m[2]} <em>${m[1]==='MS'?m[4]:'vs'}</em> ${m[3]}</strong><small>${m[1]==='MS'?'Süper Lig':m[4]}</small></button>`).join(''); $('#fixtureCount')?.replaceChildren(document.createTextNode(upcoming.length+' maç')); }
+  if(list&&!list.querySelector('.fixture-day')){ list.innerHTML=upcoming.map((m,i)=>`<button class="fixture-card" data-match="${i}"><span><b>${m[0]}</b><small>${m[1]}</small></span><strong>${m[2]} <em>${m[1]==='MS'?m[4]:'vs'}</em> ${m[3]}</strong><small>${m[1]==='MS'?'Süper Lig':m[4]}</small></button>`).join(''); $('#fixtureCount')?.replaceChildren(document.createTextNode(upcoming.length+' maç')); }
   const details=[['Kocaelispor','Gaziantep FK','Süper Lig','19 Eylül 2026 · SONUÇ 2-0'],['Çorum FK','Alanyaspor','Süper Lig','19 Eylül 2026 · SONUÇ 1-2'],['Başakşehir','Gençlerbirliği','Süper Lig','19 Eylül 2026 · SONUÇ 4-0'],['Trabzonspor','Galatasaray','Süper Lig','19 Eylül 2026 · SONUÇ 4-0'],['Fenerbahçe','Eyüpspor','Süper Lig','20 Eylül 2026 · SONUÇ 8-0'],['Erzurumspor','Samsunspor','Süper Lig','20 Eylül 2026 · SONUÇ 1-0'],['Amed Sportif','Beşiktaş','Süper Lig','20 Eylül 2026 · SONUÇ 3-2'],['Göztepe','Rizespor','Süper Lig','20 Eylül 2026 · SONUÇ 2-2']];
   function openMatch(i){const m=details[i]||details[0]; let modal=$('#matchDetailModal'); if(!modal){modal=document.createElement('div');modal.className='modal-backdrop show';modal.id='matchDetailModal';modal.innerHTML='<div class="match-detail-modal"><button class="close-btn" id="matchClose">×</button><span class="tag news">MAÇ DETAYI</span><h2 id="matchTitle"></h2><p id="matchMeta"></p><div class="match-tabs"><b>Muhtemel 11</b><b>İstatistikler</b><b>Olaylar</b></div><div class="match-detail-body"><div><strong>Ev sahibi</strong><p>Muhtemel kadro bilgisi resmi kulüp açıklamasıyla güncellenir.</p></div><div><strong>Deplasman</strong><p>Muhtemel kadro bilgisi resmi kulüp açıklamasıyla güncellenir.</p></div><div class="match-stats"><span>Topa sahip olma <b>-- / --</b></span><span>Şut <b>-- / --</b></span><span>Korner <b>-- / --</b></span></div></div></div>';document.body.appendChild(modal);$('#matchClose').onclick=()=>modal.remove();modal.onclick=e=>{if(e.target===modal)modal.remove()};}
     $('#matchTitle').textContent=m[0]+' - '+m[1]; $('#matchMeta').textContent=m[3]+' · '+m[2]; modal.classList.add('show'); }
@@ -422,6 +422,18 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
   const box=document.querySelector('#upcomingFixtures');
   const count=document.querySelector('#fixtureCount');
   if(!box)return;
+  const currentWeek=[...document.querySelectorAll('#upcomingMainList .fixture-day[data-fixture-day="7-hafta"] .fixture-match')];
+  if(currentWeek.length){
+    box.innerHTML=currentWeek.map((row,i)=>{
+      const time=row.querySelector('time')?.innerText.replace(/\s+/g,' ').trim()||'';
+      const home=row.querySelector('.fixture-team b')?.textContent.trim()||'';
+      const away=row.querySelector('.fixture-team.away b')?.textContent.trim()||'';
+      return `<button class="fixture-card" type="button" data-upcoming-index="${i}"><span><b>${time}</b><small>Yaklaşan</small></span><strong>${home} <em>vs</em> ${away}</strong><small>Süper Lig</small></button>`;
+    }).join('');
+    if(count)count.textContent=`${currentWeek.length} maç`;
+    box.querySelectorAll('[data-upcoming-index]').forEach(btn=>btn.addEventListener('click',()=>document.querySelector('#maclar')?.scrollIntoView({behavior:'smooth',block:'start'})));
+    return;
+  }
   box.innerHTML=matches.map((m,i)=>`<button class="fixture-card" type="button" data-upcoming-index="${i}">
     <span><b>${m[0]}</b><small>${m[1]}</small></span>
     <strong>${m[2]} <em>vs</em> ${m[3]}</strong>
@@ -470,24 +482,18 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
   document.querySelector('#mediaClose')?.addEventListener('click',closeMedia);
   modal.addEventListener('click',e=>{if(e.target===modal)closeMedia()});
   window.ISCloseMedia=closeMedia;
+  window.ISOpenMedia=()=>openMedia('video');
 })();
 
-/* V53: Ziyaret sayacı API gelmezse bu cihazda da çalışır. */
+/* V86: Sayaç API'si gelmezse sahte yerel sayı gösterme. */
 (function initVisitorFallback(){
-  const totalEl=document.querySelector('#visitorTotal');
-  const todayEl=document.querySelector('#visitorToday');
-  const totalKey='ionenspiegel-local-total';
-  const dayKey='ionenspiegel-local-day';
-  const todayKey='ionenspiegel-local-today';
-  const now=new Date();
-  const day=now.toLocaleDateString('sv-SE',{timeZone:'Europe/Istanbul'});
-  let total=Number(localStorage.getItem(totalKey)||0)+1;
-  let today=Number(localStorage.getItem(todayKey)||0);
-  if(localStorage.getItem(dayKey)!==day){today=1;localStorage.setItem(dayKey,day)}else today+=1;
-  localStorage.setItem(totalKey,String(total));
-  localStorage.setItem(todayKey,String(today));
-  if(totalEl)totalEl.textContent=total.toLocaleString('tr-TR');
-  if(todayEl)todayEl.textContent=today.toLocaleString('tr-TR');
+  const counter=document.querySelector('.visitor-counter');
+  if(!counter)return;
+  window.setTimeout(()=>{
+    const total=document.querySelector('#visitorTotal')?.textContent.trim();
+    const today=document.querySelector('#visitorToday')?.textContent.trim();
+    if((!total||total==='—'||total==='-')&&(!today||today==='—'||today==='-'))counter.hidden=true;
+  },2500);
 })();
 
 /* V53: Anket seçeneklerini her durumda görünür ve tıklanabilir hale getir. */
@@ -619,10 +625,13 @@ else loadOwnJsonNews(false);
   const buttons=[...document.querySelectorAll('[data-world-filter]')];
   const cards=[...document.querySelectorAll('.world-news-track .world-card')];
   if(!buttons.length||!cards.length)return;
+  const track=document.querySelector('.world-news-track');
+  const empty=document.createElement('p');empty.className='nav-world-empty';empty.hidden=true;empty.textContent='Bu ülke için listelenmiş sonuç haberi yok.';track?.after(empty);
   buttons.forEach(button=>button.addEventListener('click',()=>{
     const filter=button.dataset.worldFilter||'all';
     buttons.forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',active?'true':'false')});
     cards.forEach(card=>{const country=card.querySelector('.world-tag')?.textContent.trim().toLocaleUpperCase('tr-TR')||'';card.hidden=filter!=='all'&&country!==filter});
+    if(empty)empty.hidden=cards.some(card=>!card.hidden);
   }));
 })();
 
@@ -915,4 +924,163 @@ else loadOwnJsonNews(false);
   }));
 
   qa('#daha-fazla button,#daha-fazla a,.mobile-nav button,.mobile-nav a').forEach(el=>{el.style.pointerEvents='auto';el.style.touchAction='manipulation'});
+})();
+
+/* V86 navigation: desktop dropdown keys, menu shortcuts, scrollspy and today's match dot. */
+(function initV86Navigation(){
+  document.querySelectorAll('a[href="#guncel-gundem"]').forEach(link=>link.setAttribute('href','#gundem'));
+  document.querySelectorAll('a[href*="?stkn="],a[href*="?si="]').forEach(link=>{try{const url=new URL(link.href);url.search='';link.href=url.href}catch(_){}});
+  const quickMenu=document.querySelector('footer .footer-grid > div:nth-child(2)');
+  if(quickMenu)quickMenu.innerHTML='<b>Hızlı Menü</b><a href="#sondakika">Son Dakika</a><a href="#superlig">Süper Lig</a><a href="#milli-takim">Millî Takım</a><a href="#avrupa-kupalari">Avrupa Kupaları</a><a href="#dunya">Avrupa Ligleri</a><a href="#transfer">Transfer</a><button type="button" data-nav-video>Videolar</button><a href="#gundem">Gündem</a><a href="#iletisim">İletişim</a><a href="#maclar">Canlı / Bugünün Maçları</a>';
+  const accountLabel=document.querySelector('#loginBtn');if(accountLabel)accountLabel.textContent='Hesap';
+  const feed=document.querySelector('#newsFeed');
+  if(feed){
+    let arrangeQueued=false;
+    const arrangeNews=()=>{
+      arrangeQueued=false;
+      const rows=[...feed.querySelectorAll(':scope > .news-row')];if(!rows.length)return;
+      const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Istanbul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+      const dateOf=row=>row.dataset.newsId?.match(/\d{4}-\d{2}-\d{2}/)?.[0]||today;
+      const current=rows.filter(row=>dateOf(row)<=today).sort((a,b)=>dateOf(b).localeCompare(dateOf(a)));
+      const future=rows.filter(row=>dateOf(row)>today).sort((a,b)=>dateOf(a).localeCompare(dateOf(b)));
+      let divider=feed.querySelector(':scope > .nav-news-divider');
+      const desired=[...current,...(future.length?[divider||document.createElement('div')]:[]),...future];
+      const children=[...feed.children];
+      const expected=desired.map(el=>el.classList.contains('nav-news-divider')?'divider':el.dataset.newsId);
+      const actual=children.map(el=>el.classList.contains('nav-news-divider')?'divider':el.classList.contains('news-row')?el.dataset.newsId:'other');
+      if(expected.length===actual.length&&expected.every((x,i)=>x===actual[i]))return;
+      divider?.remove();
+      current.forEach(row=>feed.append(row));
+      if(future.length){divider=divider||document.createElement('div');divider.className='nav-news-divider';divider.textContent='Yaklaşan';feed.append(divider);future.forEach(row=>{const kicker=row.querySelector('.news-kicker');if(kicker&&!kicker.querySelector('.nav-upcoming-tag')){const tag=document.createElement('span');tag.className='nav-upcoming-tag';tag.textContent='Yaklaşan';kicker.append(' ',tag)}feed.append(row)})}
+    };
+    const queue=()=>{if(arrangeQueued)return;arrangeQueued=true;setTimeout(arrangeNews,0)};
+    queue();new MutationObserver(queue).observe(feed,{childList:true});
+  }
+  const dropdowns=[...document.querySelectorAll('.nav-dropdown')];
+  dropdowns.forEach(details=>{
+    details.addEventListener('keydown',event=>{
+      if(event.key==='Escape'&&details.open){details.open=false;details.querySelector('summary')?.focus();event.preventDefault()}
+    });
+    details.addEventListener('focusout',()=>setTimeout(()=>{
+      if(!details.contains(document.activeElement))details.open=false;
+    },0));
+  });
+
+  document.addEventListener('click',event=>{
+    const video=event.target.closest('[data-nav-video]');
+    if(video){event.preventDefault();window.ISOpenMedia?.();closeDrawer();return}
+    const account=event.target.closest('#navAccountMenu');
+    if(account){event.preventDefault();closeDrawer();document.querySelector('#loginBtn')?.click();return}
+    const tabLink=event.target.closest('[data-nav-tab]');
+    if(tabLink){
+      const button=document.getElementById('tab-'+tabLink.dataset.navTab);
+      if(button){event.preventDefault();button.click();document.querySelector('#puan')?.scrollIntoView({behavior:'smooth',block:'start'})}
+    }
+    const countryLink=event.target.closest('[data-world-filter-nav]');
+    if(countryLink){
+      const filter=countryLink.dataset.worldFilterNav;
+      setTimeout(()=>document.querySelector(`[data-world-filter="${CSS.escape(filter)}"]`)?.click(),80);
+    }
+    const fixtureLink=event.target.closest('[data-fixture-filter-nav]');
+    if(fixtureLink){
+      const filter=fixtureLink.dataset.fixtureFilterNav;
+      setTimeout(()=>document.querySelector(`[data-fixture-filter="${CSS.escape(filter)}"]`)?.click(),80);
+    }
+    if(event.target.closest('.nav-dropdown-panel a'))dropdowns.forEach(item=>item.open=false);
+  },true);
+
+  const navItems=[...document.querySelectorAll('[data-scrollspy]')];
+  const sections=[...new Set(navItems.map(item=>document.getElementById(item.dataset.scrollspy)).filter(Boolean))];
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver(entries=>{
+      const visible=entries.filter(entry=>entry.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+      if(!visible)return;
+      navItems.forEach(item=>{
+        const active=item.dataset.scrollspy===visible.target.id;
+        item.setAttribute('data-nav-active',String(active));
+        if(item.tagName==='A'){if(active)item.setAttribute('aria-current','location');else item.removeAttribute('aria-current')}
+      });
+    },{rootMargin:'-20% 0px -68% 0px',threshold:[0,.15,.4]});
+    sections.forEach(section=>observer.observe(section));
+  }
+
+  const dots=[...document.querySelectorAll('.nav-live-dot')];
+  function updateTodayMatchDot(){
+    if(!dots.length)return;
+    const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Istanbul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+    const hasToday=[...document.querySelectorAll('.fixture-match[data-kickoff]')].some(match=>match.dataset.kickoff?.slice(0,10)===today);
+    dots.forEach(dot=>dot.hidden=!hasToday);
+  }
+  updateTodayMatchDot();
+  window.setInterval(updateTodayMatchDot,60000);
+
+  // Generate the drawer fixture list from the main schedule so both stay in sync.
+  const drawerMatches=document.querySelector('#navNextMatches');
+  const fixtureRows=[...document.querySelectorAll('#upcomingMainList .fixture-day[data-fixture-day="7-hafta"] .fixture-match')];
+  const kickoffByTeams=[
+    ['Galatasaray','Kasımpaşa','2026-10-09T20:00:00+03:00'],['Gençlerbirliği','Amed Sportif','2026-10-10T13:30:00+03:00'],
+    ['Corendon Alanyaspor','Erzurumspor FK','2026-10-10T16:00:00+03:00'],['Samsunspor','Trabzonspor','2026-10-10T16:00:00+03:00'],
+    ['Çaykur Rizespor','Fenerbahçe','2026-10-10T19:00:00+03:00'],['Konyaspor','Başakşehir','2026-10-11T13:30:00+03:00'],
+    ['Gaziantep FK','Arca Çorum FK','2026-10-11T16:00:00+03:00'],['Beşiktaş','Kocaelispor','2026-10-11T19:00:00+03:00'],
+    ['Eyüpspor','Göztepe','2026-10-12T20:00:00+03:00']
+  ];
+  kickoffByTeams.forEach(([home,away,kickoff])=>{
+    const row=fixtureRows.find(item=>item.textContent.includes(home)&&item.textContent.includes(away));
+    if(row)row.dataset.kickoff=kickoff;
+  });
+  function refreshFixtureStates(){
+    const now=Date.now();
+    fixtureRows.forEach(row=>{
+      const kickoff=row.dataset.kickoff;
+      if(!kickoff)return;
+      let state=row.querySelector('.nav-fixture-state');
+      if(!state){state=document.createElement('span');state.className='nav-fixture-state';row.append(state)}
+      const result=row.dataset.score;
+      if(new Date(kickoff).getTime()>now){state.textContent='YAKLAŞAN';return}
+      const center=row.querySelector('.fixture-vs');
+      if(result&&center)center.textContent=result;
+      else if(center)center.textContent='—';
+      state.textContent=result?'MS':'Sonuç bekleniyor';
+    });
+  }
+  if(drawerMatches){
+    drawerMatches.innerHTML=fixtureRows.map(row=>{
+      const home=row.querySelector('.fixture-team b')?.textContent.trim()||'';
+      const away=row.querySelector('.fixture-team.away b')?.textContent.trim()||'';
+      const time=row.querySelector('time')?.innerText.replace(/\s+/g,' ').trim()||'';
+      return `<a href="#maclar">${time} · ${home} - ${away}</a>`;
+    }).join('');
+  }
+  refreshFixtureStates();
+
+  // Consolidate the repeated agenda blocks without losing their distinct source cards.
+  const agenda=document.querySelector('#gundem');
+  const sources=[...document.querySelectorAll('#transfer .transfer-live-grid article,#guncel-gundem .big-update-grid article')];
+  if(agenda&&sources.length){
+    const grid=document.createElement('div');grid.className='big-update-grid';
+    const seen=new Set();
+    const canonical=title=>{
+      const t=title.toLocaleLowerCase('tr-TR');
+      if(t.includes('türkiye 1-4 italya'))return 'turkiye-italya';
+      if(t.includes('seçim')&&t.includes('4 ekim'))return 'bjk-secim';
+      if(t.includes('kasimpasa')||t.includes('kasımpaşa'))return 'gs-kasimpasa';
+      if(t.includes('7. hafta'))return 'superlig-7-hafta';
+      if(t.includes('belçika 0-1 fransa'))return 'belcika-fransa';
+      if(t.includes('barcelona')||t.includes('aston villa')||t.includes('hoffenheim'))return 'uefa-fixture-duplicate';
+      return t.replace(/[^a-z0-9ığüşöç]+/g,' ').trim();
+    };
+    const alreadyCovered=new Set([...document.querySelectorAll('#newsFeed h3,#avrupa-kupalari h3,#avrupa-gecesi h3,#dunya h3')].map(node=>canonical(node.textContent||'')));
+    sources.forEach(card=>{
+      const key=canonical(card.querySelector('h3')?.textContent||'');
+      if(seen.has(key)||alreadyCovered.has(key))return;seen.add(key);grid.append(card);
+    });
+    const brief=document.querySelector('#bugun .brief-grid');
+    const belgium=brief&&[...brief.querySelectorAll('.brief-card')].find(card=>card.textContent.includes('Belçika - Türkiye'));
+    if(belgium){const card=document.createElement('article');card.className='content-card';card.innerHTML='<span class="tag news">MİLLÎ TAKIM · YAKLAŞAN</span><h3>Belçika - Türkiye</h3><p>'+belgium.querySelector('p').textContent+'</p><a href="https://www.tff.org/default.aspx?ftxtID=51371&amp;pageID=202" target="_blank" rel="noopener noreferrer">TFF ↗</a>';grid.append(card)}
+    agenda.innerHTML='<div class="section-head"><div><h2><span class="red-line"></span> Güncel Gündem</h2><p class="section-subtitle">Kaynak bağlantılı güncel futbol gelişmeleri</p></div></div>';
+    agenda.append(grid);agenda.classList.add('nav-agenda');
+    document.querySelector('#bugun')?.remove();document.querySelector('#guncel-gundem')?.remove();
+    const transfer=document.querySelector('#transfer');
+    if(transfer)transfer.innerHTML='<div class="section-head"><div><h2><span class="red-line"></span> Transfer Gündemi</h2><p class="section-subtitle">Resmî açıklama, doğrulanmış haber ve iddia ayrımıyla transfer gelişmeleri</p></div></div><div class="nav-transfer-legend" aria-label="Transfer haber etiketleri"><span class="nav-transfer-official">RESMİ · Kulüp veya oyuncu açıklaması</span><span class="nav-transfer-news">HABER · Kaynaklı haber</span><span class="nav-transfer-rumor">İDDİA · Doğrulanmamış gelişme</span></div><p class="nav-transfer-empty">Şu an doğrulanmış transfer haberi yok.</p>';
+  }
 })();

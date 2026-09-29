@@ -1,0 +1,24 @@
+İONENSPIEGEL V86 — 29 EYLÜL 2026
+
+YÜKLEME
+Bu klasördeki dosyaların tamamını GitHub Pages deposunun kök dizinine kopyalayın. Mevcut dosyaların üzerine yazın. ZIP paketi aynı klasörün yanında bulunur.
+
+DEĞİŞEN DOSYALAR
+- index.html: Üst menü ve mobil kısayol şeridi; ülke filtreleri; 7. hafta fikstürü; UEFA saatleri; transfer bölümü; metin ve hedef bağlantıları.
+- script.js: Menü klavye etkileşimleri, mobil/masaüstü gezinme, scrollspy, video modalı tetikleme, fikstür ve haber tarihleri, gündem birleştirme, gerçek olmayan ziyaret sayacı yedeğinin kaldırılması.
+- v85-modern.css: Yalnızca nav- önekli yeni stiller; açık/koyu temadaki var olan renk değişkenlerini kullanır.
+- sw.js: V86 önbellek adı.
+
+GÜNDEM BİRLEŞTİRMESİ
+“Güncel Futbol Gündemi” (#gundem), “Bugünün Futbol Özeti” (#bugun), eski “Güncel Gündem” kartları (#transfer) ve “29 Eylül · Güncel Gündem” (#guncel-gundem) tek #gundem alanında toplandı. Aynı haberler kaynak bölümlerinde görünüyorsa tekrarları atlandı. #transfer, RESMİ / HABER / İDDİA etiket açıklamaları ve doğrulanmış haber bulunmadığı durum mesajıyla yeniden amaçlandırıldı.
+
+FİKSTÜR
+Süper Lig 7. hafta için 9 karşılaşma 9–12 Ekim tarihlerine ve saatlerine göre sıralandı. Mobil çekmece fikstürü bu ana listeden otomatik oluşturulur. Saatler TSİ'dir.
+
+KONTROL
+- JavaScript sözdizimi: node --check script.js başarılı.
+- Sayfa içi bağlantılar: 112 ID bulundu, eksik hedef yok.
+- Mobil ve masaüstü menü, tema, arama, favori ve modal akışları korundu.
+
+GÜNCELLEME NOTU
+Bu dosya tam site paketidir; yalnızca tek bir HTML dosyasını yüklemek yeterli olmaz. v85-modern.css sayfada kullanılan ek stil dosyasıdır. style.css ayrıca korunmuştur.
