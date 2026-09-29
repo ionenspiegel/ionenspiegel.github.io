@@ -1,0 +1,7 @@
+V86.1 DÜZELTMESİ — 29 EYLÜL 2026
+
+- PC üst menüsü iki satırlı düzene alındı: logo/işlem düğmeleri üstte, bütün menü bağlantıları altta. Dar PC pencerelerinde bağlantılar yeni satıra sarılır; çakışıp kırpılmaz.
+- “Sonraki maçlar” ayrıntısı native details yerine mevcut yan menü akordeonuyla açılır. Dokuz satır, tarih ve saat sütunlarıyla gösterilir. Maç seçilince liste kapanır ve fikstüre kayar.
+- Telefon menü görünümünü değiştirmedim.
+
+Yükleme: Bu klasördeki dosyaları GitHub Pages köküne kopyalayıp üzerine yazın. Güncel arşiv: ionenspiegel-v86-1.zip.

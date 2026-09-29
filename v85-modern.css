@@ -189,3 +189,22 @@ html.dark-theme .world-country-filters button.active{background:#b8323d;border-c
 .nav-news-divider{grid-column:1/-1;padding:8px 12px;border-left:3px solid #d10b19;background:color-mix(in srgb,#d10b19 8%,transparent);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
 .nav-upcoming-tag{display:inline-block;margin-left:5px;padding:2px 6px;border-radius:999px;background:#d10b19;color:#fff;font-size:9px;font-weight:900}
 .nav-world-empty{padding:12px 14px;border:1px dashed var(--line);border-radius:10px;color:var(--muted);font-size:12px}
+
+/* V86.1: two-row desktop navigation prevents the long menu from colliding. */
+@media(min-width:821px){
+ .topbar .top-inner{display:grid!important;grid-template-columns:auto auto minmax(0,1fr) auto;grid-template-rows:58px auto;column-gap:14px;row-gap:0;height:auto!important;min-height:0!important;max-width:1700px!important;width:100%;padding-block:7px!important}
+ .topbar .brand.is-logo{grid-column:1;grid-row:1;align-self:center}
+ .topbar .edition{grid-column:2;grid-row:1;align-self:center}
+ .topbar .top-actions{grid-column:4;grid-row:1;align-self:center;margin:0!important;white-space:nowrap}
+ .topbar .nav-primary{grid-column:1/-1;grid-row:2;display:flex!important;flex-wrap:wrap;justify-content:space-between;gap:5px clamp(5px,.75vw,13px);width:100%;min-width:0;margin:0!important;padding-top:7px;border-top:1px solid #ffffff20}
+ .nav-primary>a,.nav-primary>button,.nav-primary>.nav-dropdown>summary{font-size:clamp(9px,.68vw,11px)!important;padding:7px 4px!important}
+}
+.nav-next-toggle{font-size:12px;font-weight:850}
+.nav-next-toggle>span:first-child{display:flex;align-items:center;gap:9px}
+.nav-match-count{color:#e46a71;font-size:10px}
+.nav-next-arrow{transition:transform .2s ease}
+.nav-next-toggle[aria-expanded="true"] .nav-next-arrow{transform:rotate(180deg)}
+.nav-drawer-fixtures-list.accordion{padding:0 12px}
+.nav-drawer-fixtures-list.accordion.open{max-height:250px!important;overflow-x:hidden!important;overflow-y:auto!important;padding:7px 12px}
+.nav-drawer-fixtures-list a{grid-template-columns:72px minmax(0,1fr);gap:9px;padding:10px 6px}
+@media(prefers-reduced-motion:reduce){.nav-next-arrow{transition:none}}

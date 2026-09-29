@@ -1016,6 +1016,7 @@ else loadOwnJsonNews(false);
 
   // Generate the drawer fixture list from the main schedule so both stay in sync.
   const drawerMatches=document.querySelector('#navNextMatches');
+  const drawerToggle=document.querySelector('#navNextToggle');
   const fixtureRows=[...document.querySelectorAll('#upcomingMainList .fixture-day[data-fixture-day="7-hafta"] .fixture-match')];
   const kickoffByTeams=[
     ['Galatasaray','Kasımpaşa','2026-10-09T20:00:00+03:00'],['Gençlerbirliği','Amed Sportif','2026-10-10T13:30:00+03:00'],
@@ -1048,9 +1049,20 @@ else loadOwnJsonNews(false);
       const home=row.querySelector('.fixture-team b')?.textContent.trim()||'';
       const away=row.querySelector('.fixture-team.away b')?.textContent.trim()||'';
       const time=row.querySelector('time')?.innerText.replace(/\s+/g,' ').trim()||'';
-      return `<a href="#maclar">${time} · ${home} - ${away}</a>`;
+      return `<a href="#maclar"><time>${time}</time><span>${home} - ${away}</span></a>`;
     }).join('');
+    const count=drawerToggle?.querySelector('.nav-match-count');if(count)count.textContent=`${fixtureRows.length} maç`;
   }
+  drawerToggle?.addEventListener('click',()=>{
+    const isOpen=drawerToggle.getAttribute('aria-expanded')==='true';
+    drawerToggle.setAttribute('aria-expanded',String(!isOpen));
+    drawerMatches?.classList.toggle('open',!isOpen);
+  });
+  drawerMatches?.addEventListener('click',event=>{
+    if(!event.target.closest('a[href="#maclar"]'))return;
+    event.preventDefault();drawerToggle?.setAttribute('aria-expanded','false');drawerMatches.classList.remove('open');closeDrawer();
+    document.querySelector('#maclar')?.scrollIntoView({behavior:'smooth',block:'start'});
+  });
   refreshFixtureStates();
 
   // Consolidate the repeated agenda blocks without losing their distinct source cards.
