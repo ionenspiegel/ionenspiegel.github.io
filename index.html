@@ -174,7 +174,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 </style>
 
 <style id="v78-fixture-team-refresh">.upcoming-fixture-day .fixture-day-head{background:#fff7f7}.upcoming-match{background:#fff}.upcoming-match time{font-size:13px;line-height:1.1}.upcoming-match time small{font-size:8px;color:#888}.upcoming-match .fixture-vs{color:var(--red);font-weight:900}@media(max-width:520px){.upcoming-match time{font-size:11px}}</style>
-<link rel="stylesheet" href="v85-modern.css?v=86.0"></head>
+<link rel="stylesheet" href="v85-modern.css?v=86.2"></head>
 <body>
 <div id="progress"></div>
 <header class="topbar">
@@ -711,7 +711,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 </div>
 <div class="modal-backdrop" id="loginModal"><div class="modal"><button class="close-btn" type="button" data-close-modal aria-label="Kapat">×</button><div class="modal-logo">İonenSpiegel</div><h2>Hesap özelliği yakında</h2><p>Giriş ve hesap senkronizasyonu henüz etkin değil. Favori takım, tema ve kaydedilen haberler bu cihazda çalışmaya devam eder.</p><button class="primary-btn" data-close-modal>Kapat</button></div></div>
 <div class="modal-backdrop" id="searchModal"><div class="search-modal"><button class="close-btn" type="button" data-close-modal aria-label="Kapat">×</button><h2>Site içinde ara</h2><div class="big-search"><input id="globalSearch" placeholder="Takım, oyuncu, haber ara..."><button id="globalSearchBtn">Ara</button></div><div id="globalResults"></div></div></div>
-<script src="script.js?v=86.0"></script>
+<script src="script.js?v=86.2"></script>
 <script src="v62-fixes.js?v=66" defer></script>
 <script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
 
@@ -919,6 +919,6 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   tabs.forEach(tab=>tab.addEventListener('click',()=>{const key=tab.dataset.nationalTab;tabs.forEach(t=>{const on=t===tab;t.classList.toggle('active',on);t.setAttribute('aria-selected',on?'true':'false')});Object.entries(panels).forEach(([k,p])=>p?.classList.toggle('show',k===key))}));
 })();
 </script>
-<script src="v85-fixes.js?v=86.0" defer></script>
+<script src="v85-fixes.js?v=86.2" defer></script>
 </body>
 </html>

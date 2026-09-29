@@ -1,0 +1,7 @@
+V86.2 HERO GÖRÜNÜMÜ — 29 EYLÜL 2026
+
+- Ana haber alanındaki görsel içine gömülü silik yazı/soyut fotoğraf kullanımını kaldırdım. Artık kırmızı-siyah yerine sitenin antrasit ve ölçülü kırmızı paletinde düz bir arka plan kullanılıyor.
+- Masaüstü hero başlığı küçültülüp satır taşması azaltıldı. Diğer hero metinleri ve telefondaki ölçüler korunuyor.
+- Güncel stil ve script önbellek sürümleri ile service worker anahtarı artırıldı.
+
+Yükleme: ionenspiegel-v86-2.zip içindeki dosyaları GitHub Pages köküne kopyalayıp üzerine yazın.
