@@ -67,7 +67,7 @@ $('#savedNewsMenu')?.addEventListener('click',openSaved);$('#savedCard')?.addEve
 
 /* ---------- HERO ---------- */
 const HERO_BJK_PHOTO='./photo-derbi.jpg';
-const HERO_STATIC={title:"Trabzonspor, Galatasaray'ı 4-0 mağlup etti",text:"Trabzonspor, Süper Lig'in 6. haftasında Galatasaray'ı 4-0 mağlup etti. Mohamed Salah hat-trick yaptı.",source:'Anadolu Ajansı · 19 Eylül',newsId:'ts-gs-4-0-20-eylul',bg:`linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.30)),url("${HERO_BJK_PHOTO}") center/cover`,link:'https://www.aa.com.tr/tr/spor/trabzonspor-galatasarayi-farkli-yendi/4062172'};
+const HERO_STATIC={title:"Türkiye, İtalya'ya 4-1 mağlup oldu",text:"A Millî Takım, Uluslar Ligi A Ligi'ndeki ikinci maçında Bursa'da İtalya'ya 4-1 yenildi. Türkiye'nin golünü Barış Alper Yılmaz kaydetti.",source:'Türkiye Futbol Federasyonu · 28 Eylül',newsId:'turkiye-italya-1-4-2026-09-28',bg:`linear-gradient(90deg,rgba(0,0,0,.86),rgba(0,0,0,.30)),url("${HERO_BJK_PHOTO}") center/cover`,link:'https://www.tff.org/Default.aspx?ftxtId=51458&pageId=200'};
 function setSocialImage(src){const abs=new URL(src,location.href).href;['og:image','twitter:image'].forEach(n=>{const m=document.querySelector(`meta[property="${n}"],meta[name="${n}"]`);if(m)m.setAttribute('content',abs)})}
 function renderStaticHero(){const s=HERO_STATIC,media=$('#heroMedia');if(!media)return;$('#heroTitle').textContent=s.title;$('#heroText').textContent=s.text;$('#heroSource').textContent=s.source;media.style.background=s.bg;$('#heroIndex').textContent='1';const dots=$('#sliderDots');if(dots)dots.innerHTML='';const a=$(`.news-row[data-news-id="${s.newsId}"]`);setSocialImage(a?.querySelector('img')?.getAttribute('src')||'./hero-bjk.jpg');$('#heroRead').onclick=()=>window.open(s.link,'_blank','noopener')}
 renderStaticHero();
@@ -534,7 +534,7 @@ document.querySelector('#loginModal')?.querySelectorAll('[data-close-modal],.clo
 }));
 
 /* ---------- OWN JSON NEWS FEED ---------- */
-const IONENSPIEGEL_NEWS_FALLBACK=[{"id":"ts-gs-4-0-20-eylul","title":"Trabzonspor, Galatasaray'ı 4-0 mağlup etti","description":"Trabzonspor, Süper Lig'in 6. haftasında Galatasaray'ı 4-0 yendi. Mohamed Salah üç gol atarken Noah Saviolo da bir gol kaydetti.","category":"Trabzonspor","date":"20 Eylül 2026","image":"./is-logo.png","source":"Anadolu Ajansı","link":"https://www.aa.com.tr/tr/spor/trabzonspor-galatasarayi-farkli-yendi/4062172"},{"id":"salah-7-gol-20-eylul","title":"Mohamed Salah, hat-trick sonrası 7 gole ulaştı","description":"Galatasaray karşısında üç gol atan Mohamed Salah, Süper Lig'deki gol sayısını 7'ye yükseltti.","category":"Süper Lig","date":"20 Eylül 2026","image":"./is-logo.png","source":"beIN SPORTS Türkiye","link":"https://beinsports.com.tr/haber/trabzonspor-galatasaray-11"},{"id":"superlig-6-hafta-sonuclari","title":"Süper Lig'de cumartesi sonuçları belli oldu","description":"Kocaelispor 2-0 Gaziantep FK, Çorum FK 1-2 Alanyaspor, Başakşehir 4-0 Gençlerbirliği ve Trabzonspor 4-0 Galatasaray kazandı. Kasımpaşa-Konyaspor 0-0 bitti.","category":"Süper Lig","date":"20 Eylül 2026","image":"./is-logo.png","source":"beIN SPORTS Türkiye","link":"https://beinsports.com.tr/lig/super-lig/fikstur"},{"id":"fb-eyup-20-eylul","title":"Fenerbahçe-Eyüpspor maçı bugün oynanacak","description":"Fenerbahçe ile Eyüpspor, Süper Lig'in 6. haftasında 20 Eylül Pazar günü saat 17.00'de karşılaşacak.","category":"Fenerbahçe","date":"20 Eylül 2026","image":"./is-logo.png","source":"Türkiye Futbol Federasyonu","link":"https://www.tff.org/?pageID=198"},{"id":"amed-bjk-20-eylul","title":"Amed Sportif Faaliyetler, Beşiktaş'ı 3-2 mağlup etti","description":"Amed Sportif Faaliyetler, Süper Lig'in 6. haftasında Beşiktaş'ı 3-2 mağlup etti.","category":"Beşiktaş","date":"20 Eylül 2026","image":"./is-logo.png","source":"Anadolu Ajansı","link":"https://www.aa.com.tr/tr/spor/futbolda-haftanin-programi/4060705"},{"id":"brighton-arsenal-19-eylul","title":"Brighton, Arsenal'ı 3-0 yendi","description":"Brighton, Premier League'de Arsenal'ın yenilmez başlangıcını 3-0'lık galibiyetle sonlandırdı.","category":"İngiltere","date":"20 Eylül 2026","image":"./is-logo.png","source":"Reuters","link":"https://www.reuters.com/sports/soccer/wrapup-soccer-manzambi-jackson-buendia-fire-villa-first-win-spurs-misery-deepens-2026-09-19/"},{"id":"dortmund-stuttgart-19-eylul","title":"Dortmund, Stuttgart'ı 1-0 geçti","description":"Borussia Dortmund, Stuttgart'ı 1-0 yenerek Bundesliga'da 4 maçta 12 puana ulaştı.","category":"Almanya","date":"20 Eylül 2026","image":"./is-logo.png","source":"Reuters","link":"https://www.reuters.com/sports/soccer/dortmund-beat-stuttgart-1-0-go-top-bundesliga-2026-09-19/"},{"id":"barcelona-sevilla-19-eylul","title":"Barcelona, Sevilla'yı 3-1 mağlup etti","description":"Barcelona, Raphinha'nın hat-trick yaptığı karşılaşmada Sevilla'yı 3-1 yenerek LaLiga'daki galibiyet serisini sürdürdü.","category":"İspanya","date":"20 Eylül 2026","image":"./is-logo.png","source":"Reuters","link":"https://www.reuters.com/"},{"id":"roma-inter-19-eylul","title":"Roma ve Inter 2-2 berabere kaldı","description":"Inter, Roma karşısında iki farklı geriye düştüğü maçta Lautaro Martinez'in iki golüyle 2-2'lik beraberliği aldı.","category":"İtalya","date":"20 Eylül 2026","image":"./is-logo.png","source":"Reuters","link":"https://www.reuters.com/"}];
+const IONENSPIEGEL_NEWS_FALLBACK=[{"id":"turkiye-italya-1-4-2026-09-28","title":"Türkiye, İtalya'ya 4-1 mağlup oldu","description":"A Millî Takım, UEFA Uluslar Ligi A Ligi 1. Grup'taki maçında Bursa'da İtalya ile karşılaştı. Türkiye'nin golünü Barış Alper Yılmaz kaydetti.","category":"Millî Takım","date":"28 Eylül 2026","image":"./is-logo.png","source":"Türkiye Futbol Federasyonu","link":"https://www.tff.org/Default.aspx?ftxtId=51458&pageId=200"},{"id":"belcika-turkiye-2026-10-02","title":"Millî Takım'ın sıradaki rakibi Belçika","description":"Türkiye, Uluslar Ligi A Ligi 1. Grup'taki bir sonraki maçında 2 Ekim'de Belçika'ya konuk olacak. Başlama saati Türkiye saatiyle 21.45.","category":"Millî Takım","date":"2 Ekim 2026","image":"./is-logo.png","source":"Türkiye Futbol Federasyonu","link":"https://www.tff.org/default.aspx?ftxtID=51371&pageID=202"},{"id":"besiktas-secim-2026-10-04","title":"Beşiktaş'ta seçimli genel kurul 4 Ekim'de","description":"27 Eylül'deki olağanüstü genel kurulda yeterli çoğunluk sağlanamadı. İkinci toplantı 4 Ekim'de yapılacak.","category":"Beşiktaş","date":"29 Eylül 2026","image":"./is-logo.png","source":"DHA","link":"https://www.dha.com.tr/yerel-haberler/istanbul/besiktasta-olaganustu-secimli-genel-kurul-kara-2941664"},{"id":"galatasaray-kasimpasa-hazirlik-2026-09-28","title":"Galatasaray, Kasımpaşa maçına hazırlanıyor","description":"Sarı-kırmızılılar, Süper Lig'in 7. haftasında oynayacağı Kasımpaşa karşılaşmasının hazırlıklarını sürdürüyor.","category":"Galatasaray","date":"28 Eylül 2026","image":"./is-logo.png","source":"Galatasaray.org","link":"https://www.galatasaray.org/haber/futbol/antrenman-raporu-28-eylul-pazartesi/61026"},{"id":"superlig-7-hafta-2026-10-09","title":"Süper Lig'de 7. hafta 9 Ekim'de başlıyor","description":"Millî ara sonrasında Süper Lig'in 7. hafta karşılaşmaları 9-12 Ekim tarihleri arasında oynanacak.","category":"Süper Lig","date":"29 Eylül 2026","image":"./is-logo.png","source":"Türkiye Futbol Federasyonu","link":"https://www.tff.org/default.aspx?macId=283763&pageId=198"}];
 function renderOwnNewsItems(items, status){
   const feed=document.querySelector('#newsFeed');
   if(!feed) return;
@@ -546,9 +546,12 @@ function renderOwnNewsItems(items, status){
     const desc=esc(item.description||'Haberin ayrıntıları için kaynak sayfasını aç.');
     const link=esc(item.link||'#');
     const source=esc(item.source||'İonenSpiegel');
-    const category=esc(item.category||'FUTBOL');
+    const rawCategory=String(item.category||'FUTBOL');
+    const category=esc(rawCategory);
+    const badges={'Millî Takım':'🇹🇷','Beşiktaş':'BJK','Galatasaray':'GS','Süper Lig':'⚽'};
+    const badge=esc(badges[rawCategory]||rawCategory.slice(0,3).toUpperCase());
     const date=esc(item.date||'');
-    return `<article class="news-row has-bookmark" data-news-id="${id}" data-team="${esc(team)}" data-search="${esc(item.title+' '+(item.description||''))}"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb" href="${link}" target="_blank" rel="noopener noreferrer"><img src="${img}" alt="İonenSpiegel haber görseli" loading="lazy"></a><div><div class="news-kicker">${date} · ${category}</div><h3>${esc(item.title)}</h3><p>${desc}</p><a href="${link}" target="_blank" rel="noopener noreferrer">${source} ↗</a></div></article>`;
+    return `<article class="news-row has-bookmark" data-news-id="${id}" data-team="${esc(team)}" data-search="${esc(item.title+' '+(item.description||''))}"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb news-thumb-badge" href="${link}" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><span>${badge}</span></a><div><div class="news-kicker">${date} · ${category}</div><h3>${esc(item.title)}</h3><p>${desc}</p><a href="${link}" target="_blank" rel="noopener noreferrer">${source} ↗</a></div></article>`;
   }).join('');
   sortNewsByFavorite();
   updateBookmarkButtons();
@@ -568,10 +571,17 @@ async function loadOwnJsonNews(showToast=false){
   const status=$('#newsStatus');
   try{
     if(status)status.textContent='Haberler yükleniyor…';
-    const response=await fetchWithTimeout('./data/news.json?v='+Date.now(),{cache:'no-store'});
-    if(!response.ok)throw new Error('news.json yüklenemedi');
-    const items=await response.json();
-    if(!Array.isArray(items))throw new Error('Geçersiz haber verisi');
+    let items=null,lastError=null;
+    for(const path of ['./data/news.json','./news.json']){
+      try{
+        const response=await fetchWithTimeout(path+'?v=85.4-'+Date.now(),{cache:'no-store'});
+        if(!response.ok)throw new Error(path+' yüklenemedi');
+        const candidate=await response.json();
+        if(!Array.isArray(candidate)||candidate.length===0)throw new Error(path+' geçersiz');
+        items=candidate;break;
+      }catch(error){lastError=error}
+    }
+    if(!items)throw lastError||new Error('Haber verisi bulunamadı');
     renderOwnNewsItems(items,status);
     if(showToast)toast(`${items.length} haber yenilendi`);
   }catch(error){
@@ -601,7 +611,20 @@ async function loadOwnJsonNews(showToast=false){
   apply('all');
 })();
 
-document.addEventListener('DOMContentLoaded',()=>loadOwnJsonNews(false));
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>loadOwnJsonNews(false),{once:true});
+else loadOwnJsonNews(false);
+
+/* V85.4: filter the existing European league cards by country. */
+(function initWorldCountryFilters(){
+  const buttons=[...document.querySelectorAll('[data-world-filter]')];
+  const cards=[...document.querySelectorAll('.world-news-track .world-card')];
+  if(!buttons.length||!cards.length)return;
+  buttons.forEach(button=>button.addEventListener('click',()=>{
+    const filter=button.dataset.worldFilter||'all';
+    buttons.forEach(item=>{const active=item===button;item.classList.toggle('active',active);item.setAttribute('aria-pressed',active?'true':'false')});
+    cards.forEach(card=>{const country=card.querySelector('.world-tag')?.textContent.trim().toLocaleUpperCase('tr-TR')||'';card.hidden=filter!=='all'&&country!==filter});
+  }));
+})();
 
 /* V30 DAILY VERIFIED NEWS FALLBACK: local JSON is the single source for the homepage feed. */
 

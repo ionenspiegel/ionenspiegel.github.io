@@ -23,3 +23,12 @@ V85.3 TEMA DÜZENLEMESİ
 - Açık tema: sıcak açık zemin, koyu okunaklı metin ve ölçülü bordo vurgu.
 - Koyu tema: antrasit zemin, açık metin, ayrı kart/çizgi tonları ve bordo vurgu.
 - Üst çubuğa güneş/ay düğmesi eklendi. Tema tercihi cihazda saklanır ve menüdeki tema seçeneğiyle senkronize olur.
+
+V85.4 HABER VE MENÜ DÜZELTMELERİ
+- Ana sayfanın ilk açılışında ve çevrimdışı yedekte 29 Eylül haber JSON'u gösterilir; haber yükleyici önce data/news.json, ardından news.json dosyasını dener.
+- Hero haberi eski 19 Eylül içeriği yerine güncel Millî Takım haberine bağlandı.
+- Avrupa, fikstür, puan durumu ve Türk takımları menü bağlantıları mevcut bölüm kimliklerine bağlandı; #avrupa bağlantısı korunarak hedef eklendi.
+- Dünya Gündemi'ndeki tekrarlanan ve kategori dışı Trabzonspor/Avrupa haberleri güncel, ayrı kulüp ve Millî Takım haberleriyle değiştirildi.
+- Haber kartlarında aynı logo görseli tekrar etmek yerine kategoriye göre renklenen kısa rozet kullanılır.
+- Avrupa bölümüne Şampiyonlar Ligi, Avrupa Ligi ve Konferans Ligi resmî sayfa bağlantıları eklendi.
+- JavaScript, CSS ve Service Worker önbellek sürümleri 85.4 olarak yükseltildi.

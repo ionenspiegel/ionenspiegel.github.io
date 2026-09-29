@@ -117,3 +117,24 @@ html.dark-theme .stat-row b{background:#292e35!important;color:#f2f1ee!important
 .theme-toggle{display:grid!important;place-items:center;flex:0 0 42px;font-size:20px!important;line-height:1!important;color:#fff!important;background:#ffffff16!important;border:1px solid #ffffff3a!important;transition:transform .18s,background .18s!important}
 .theme-toggle:hover{transform:translateY(-1px);background:#ffffff25!important}
 @media(max-width:820px){.theme-toggle{width:38px!important;height:38px!important;flex-basis:38px;font-size:18px!important}}
+
+/* V85.4 navigation and competition links */
+.anchor-alias{display:block;position:relative;top:-92px;height:0;scroll-margin-top:100px}
+.desktop-nav a:focus-visible,.drawer a:focus-visible,.drawer button:focus-visible,.europe-competition-links a:focus-visible{outline:3px solid #e05a6380;outline-offset:3px;border-radius:6px}
+.europe-competition-links{display:flex;gap:9px;flex-wrap:wrap;margin:-8px 0 18px}
+.world-country-filters{display:flex;gap:7px;flex-wrap:wrap;margin:-5px 0 14px}
+.world-country-filters button{border:1px solid var(--line,#ded9d0);border-radius:999px;background:var(--card,#fffdf9);color:var(--ink,#1b1d20);padding:7px 12px;font:800 10px Inter,Arial,sans-serif;cursor:pointer}
+.world-country-filters button.active{background:#b8323d;border-color:#b8323d;color:#fff}
+.world-card[hidden]{display:none!important}
+.europe-competition-links a{display:inline-flex;align-items:center;min-height:38px;padding:8px 13px;border:1px solid var(--line,#ded9d0);border-radius:999px;background:var(--card,#fffdf9);color:var(--ink,#1b1d20);font-size:11px;font-weight:800;text-decoration:none;transition:transform .16s,border-color .16s}
+.europe-competition-links a:hover{transform:translateY(-1px);border-color:#b8323d;color:#b8323d}
+.news-row .news-thumb-badge{display:grid;place-items:center;text-decoration:none;background:linear-gradient(145deg,#25282d,#3a3e44)!important;color:#fff!important}
+.news-row .news-thumb-badge span{font-family:'Barlow Condensed',sans-serif;font-size:clamp(24px,4vw,44px);font-weight:900;letter-spacing:-1px;text-shadow:0 3px 12px #0005}
+.news-row[data-team="Beşiktaş"] .news-thumb-badge{background:linear-gradient(145deg,#17191c,#555b62)!important}
+.news-row[data-team="Galatasaray"] .news-thumb-badge{background:linear-gradient(145deg,#8d1724,#d49b36)!important}
+.news-row[data-team="Millî Takım"] .news-thumb-badge{background:linear-gradient(145deg,#7b1720,#d9434b)!important}
+.news-row[data-team="Süper Lig"] .news-thumb-badge{background:linear-gradient(145deg,#273c75,#4b70bd)!important}
+html.dark-theme .europe-competition-links a{background:#191c21;color:#f2f1ee;border-color:#30343b}
+html.dark-theme .world-country-filters button{background:#191c21;color:#f2f1ee;border-color:#30343b}
+html.dark-theme .world-country-filters button.active{background:#b8323d;border-color:#b8323d;color:#fff}
+@media(max-width:820px){.anchor-alias{top:-78px;scroll-margin-top:84px}.europe-competition-links{gap:7px}.europe-competition-links a{font-size:10px;padding:7px 10px}}

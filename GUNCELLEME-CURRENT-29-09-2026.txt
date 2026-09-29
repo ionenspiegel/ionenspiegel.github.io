@@ -1,4 +1,4 @@
-İonenSpiegel mevcut çalışan paket, 29 Eylül 2026
+İonenSpiegel V85.4 güncel paket, 29 Eylül 2026
 
 Bu paket V84 ana sayfa sürümünü ve sitenin çalışması için gerekli CSS/JS/analytics/service-worker dosyalarını birlikte içerir.
 
@@ -15,5 +15,7 @@ Korunanlar:
 
 Kurulum:
 ZIP içindeki tüm dosyaları GitHub Pages deposunun köküne yükle. Mevcut dosyaları tek tek seçerek değil, paketin tamamını kullan.
+
+Bu sürüm ana haber akışını güncel JSON ile eşitler, olmayan menü hedeflerini düzeltir ve Avrupa kupaları bağlantılarını ekler. ZIP'te bulunmayan ve MISSING-ASSETS.txt içinde listelenen mevcut görsel/sayfaları GitHub deposundan silme; ZIP'i mevcut depo üzerine kopyala.
 
 Not: Apps Script Code.gs bu ZIP'te yoktur. İletişim sisteminin sunucu tarafı Google Apps Script projesindedir. Site içindeki endpoint URL'si index.html ve iletisim.html içinde korunmuştur.
