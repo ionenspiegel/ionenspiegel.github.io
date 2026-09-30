@@ -1,0 +1,14 @@
+İonenSpiegel V86.3 — 30 Eylül 2026
+
+Bu güncellemede:
+- Son Dakika akışı ve daily-news.json, 30 Eylül 2026 gelişmeleriyle yenilendi.
+- Ana manşet Orkun Kökçü'nün aday kadrodan çıkarılması olarak güncellendi.
+- Belçika-Türkiye maçının hakemi, maç saati ve Trabzonspor-Drogheda United hazırlık maçı eklendi.
+- Galatasaray'ın Kasımpaşa hazırlığından güncel haber eklendi.
+- Haberler news.json, data/news.json ve JavaScript çevrimdışı yedeğinde eşitlendi.
+- Service worker önbellek anahtarı V86.3 olarak artırıldı.
+
+Yükleme:
+ZIP içindeki dosyaları GitHub Pages deposunun kök dizinine kopyalayıp üzerine yazın. Paket tamdır; sitenin mevcut dosyalarını silmeden güncellenen dosyaları ekleyin/üzerine yazın.
+
+Haber kaynakları ilgili kartlarda bağlantı olarak verilmiştir. Bu paket site tasarımını veya mevcut işlevleri değiştirmez.

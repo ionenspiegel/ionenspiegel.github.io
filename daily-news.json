@@ -1,19 +1,49 @@
 {
   "items": [
     {
-      "id": "turkiye-italya-1-4-2026-09-28",
-      "title": "Türkiye, İtalya'ya 4-1 mağlup oldu",
-      "description": "A Millî Takım, UEFA Uluslar Ligi A Ligi 1. Grup'taki maçında Bursa'da İtalya ile karşılaştı. Türkiye'nin golünü Barış Alper Yılmaz kaydetti.",
+      "id": "orkun-kokcu-kadrodan-cikarildi-2026-09-30",
+      "title": "Orkun Kökçü, Millî Takım kadrosundan çıkarıldı",
+      "description": "TFF, İtalya maçının ardından ayak parmağındaki ağrıları artan Orkun Kökçü'nün Belçika ve İtalya maçları öncesinde aday kadrodan çıkarıldığını, tedavisinin kulübünde süreceğini duyurdu.",
       "category": "Millî Takım",
-      "date": "28 Eylül 2026",
+      "date": "30 Eylül 2026",
       "image": "./is-logo.png",
-      "source": "Türkiye Futbol Federasyonu",
-      "link": "https://www.tff.org/Default.aspx?ftxtId=51458&pageId=200"
+      "source": "Yeni Şafak · TFF açıklaması",
+      "link": "https://www.yenisafak.com/spor/a-milli-takimda-sakatlik-yildiz-isim-kadrodan-cikarildi-4860227"
     },
     {
-      "id": "belcika-turkiye-2026-10-02",
-      "title": "Millî Takım'ın sıradaki rakibi Belçika",
-      "description": "Türkiye, Uluslar Ligi A Ligi 1. Grup'taki bir sonraki maçında 2 Ekim'de Belçika'ya konuk olacak. Başlama saati Türkiye saatiyle 21.45.",
+      "id": "belcika-turkiye-hakemi-rohit-saggi-2026-09-30",
+      "title": "Belçika-Türkiye maçını Rohit Saggi yönetecek",
+      "description": "UEFA, 2 Ekim Cuma günü TSİ 21.45'te oynanacak Uluslar Ligi karşılaşmasının hakemini açıkladı. Norveçli Rohit Saggi düdük çalacak.",
+      "category": "Millî Takım",
+      "date": "30 Eylül 2026",
+      "image": "./is-logo.png",
+      "source": "Anadolu Ajansı",
+      "link": "https://aa.com.tr/tr/spor/belcika-turkiye-macini-norvecli-hakem-rohit-saggi-yonetecek/4073514"
+    },
+    {
+      "id": "trabzonspor-drogheda-2026-10-01",
+      "title": "Trabzonspor yarın Drogheda United'ı ağırlayacak",
+      "description": "Bordo-mavililer, millî ara dönemindeki özel maçta kardeş kulübü Drogheda United ile 1 Ekim Perşembe günü saat 19.00'da Papara Park'ta karşılaşacak.",
+      "category": "Trabzonspor",
+      "date": "1 Ekim 2026",
+      "image": "./is-logo.png",
+      "source": "Anadolu Ajansı · Trabzonspor açıklaması",
+      "link": "https://www.aa.com.tr/tr/spor/trabzonspor-drogheda-united-ve-zenitle-ozel-maclarda-karsilasacak/4045381/4045381"
+    },
+    {
+      "id": "galatasaray-kasimpasa-mesaisi-2026-09-30",
+      "title": "Galatasaray'da Kasımpaşa mesaisi sürüyor",
+      "description": "Galatasaray, 9 Ekim Cuma günü oynayacağı Kasımpaşa maçının hazırlıklarını sürdürdü. Leroy Sané takımla birlikte çalıştı.",
+      "category": "Galatasaray",
+      "date": "30 Eylül 2026",
+      "image": "./is-logo.png",
+      "source": "Anadolu Ajansı / Yeni Şafak",
+      "link": "https://www.yenisafak.com/spor/galatasarayda-kasimpasa-mesaisi-4860353"
+    },
+    {
+      "id": "belcika-turkiye-maci-2026-10-02",
+      "title": "A Millî Takım cuma günü Belçika deplasmanında",
+      "description": "Türkiye, UEFA Uluslar A Ligi 1. Grup'taki üçüncü maçında 2 Ekim Cuma günü TSİ 21.45'te Maurice Dufrasne Stadyumu'nda Belçika ile karşılaşacak.",
       "category": "Millî Takım",
       "date": "2 Ekim 2026",
       "image": "./is-logo.png",
@@ -31,18 +61,8 @@
       "link": "https://www.dha.com.tr/yerel-haberler/istanbul/besiktasta-olaganustu-secimli-genel-kurul-kara-2941664"
     },
     {
-      "id": "galatasaray-kasimpasa-hazirlik-2026-09-28",
-      "title": "Galatasaray, Kasımpaşa maçına hazırlanıyor",
-      "description": "Sarı-kırmızılılar, Süper Lig'in 7. haftasında oynayacağı Kasımpaşa karşılaşmasının hazırlıklarını sürdürüyor.",
-      "category": "Galatasaray",
-      "date": "28 Eylül 2026",
-      "image": "./is-logo.png",
-      "source": "Galatasaray.org",
-      "link": "https://www.galatasaray.org/haber/futbol/antrenman-raporu-28-eylul-pazartesi/61026"
-    },
-    {
       "id": "superlig-7-hafta-2026-10-09",
-      "title": "Süper Lig'de 7. hafta 9 Ekim'de başlıyor",
+      "title": "Süper Lig'de 7. hafta 9 Ekim'de başlayacak",
       "description": "Millî ara sonrasında Süper Lig'in 7. hafta karşılaşmaları 9-12 Ekim tarihleri arasında oynanacak.",
       "category": "Süper Lig",
       "date": "29 Eylül 2026",
@@ -51,5 +71,5 @@
       "link": "https://www.tff.org/default.aspx?macId=283763&pageId=198"
     }
   ],
-  "date": "29 Eylül 2026"
+  "date": "30 Eylül 2026"
 }

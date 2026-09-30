@@ -1,5 +1,5 @@
 // İonenSpiegel V62 service worker
-const CACHE_NAME='ionenspiegel-v86-2-hero-29-09-2026';
+const CACHE_NAME='ionenspiegel-v86-3-news-30-09-2026';
 self.addEventListener('install',e=>e.waitUntil(self.skipWaiting()));
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE_NAME).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
 self.addEventListener('fetch',e=>{
@@ -12,3 +12,4 @@ self.addEventListener('fetch',e=>{
   }
   e.respondWith(caches.match(r).then(c=>c||fetch(r).then(res=>{const x=res.clone();caches.open(CACHE_NAME).then(k=>k.put(r,x));return res})));
 });
+
