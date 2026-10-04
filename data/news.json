@@ -1,72 +1,102 @@
 [
   {
-    "id": "orkun-kokcu-kadrodan-cikarildi-2026-09-30",
-    "title": "Orkun Kökçü, Millî Takım kadrosundan çıkarıldı",
-    "description": "TFF, İtalya maçının ardından ayak parmağındaki ağrıları artan Orkun Kökçü'nün Belçika ve İtalya maçları öncesinde aday kadrodan çıkarıldığını, tedavisinin kulübünde süreceğini duyurdu.",
+    "id": "italya-turkiye-5-ekim-2026",
+    "title": "Türkiye, yarın İtalya deplasmanında puan arayacak",
+    "description": "A Millî Takım, UEFA Uluslar A Ligi 1. Grup’taki dördüncü maçında 5 Ekim Pazartesi günü TSİ 21.45’te Bologna’daki Renato Dall’Ara Stadı’nda İtalya ile karşılaşacak. Maçı Szymon Marciniak yönetecek.",
     "category": "Millî Takım",
-    "date": "30 Eylül 2026",
+    "date": "4 Ekim 2026",
     "image": "./is-logo.png",
-    "source": "Yeni Şafak · TFF açıklaması",
-    "link": "https://www.yenisafak.com/spor/a-milli-takimda-sakatlik-yildiz-isim-kadrodan-cikarildi-4860227"
+    "source": "Anadolu Ajansı · TFF",
+    "link": "https://aa.com.tr/tr/spor/turkiye-uefa-uluslar-liginde-deplasmanda-italya-ile-karsilasacak/4077348"
   },
   {
-    "id": "belcika-turkiye-hakemi-rohit-saggi-2026-09-30",
-    "title": "Belçika-Türkiye maçını Rohit Saggi yönetecek",
-    "description": "UEFA, 2 Ekim Cuma günü TSİ 21.45'te oynanacak Uluslar Ligi karşılaşmasının hakemini açıkladı. Norveçli Rohit Saggi düdük çalacak.",
-    "category": "Millî Takım",
-    "date": "30 Eylül 2026",
+    "id": "besiktas-secimli-genel-kurul-2026-10-04",
+    "title": "Beşiktaş’ta seçimli genel kurul başladı",
+    "description": "Beşiktaş’ın olağanüstü seçimli genel kurulu 4 Ekim Pazar günü Sinan Erdem Spor Salonu’nda başladı. Serdal Adalı seçime tek aday olarak katılıyor ve oy verme işlemi saat 17.00’ye kadar sürüyor.",
+    "category": "Beşiktaş",
+    "date": "4 Ekim 2026",
     "image": "./is-logo.png",
     "source": "Anadolu Ajansı",
-    "link": "https://aa.com.tr/tr/spor/belcika-turkiye-macini-norvecli-hakem-rohit-saggi-yonetecek/4073514"
+    "link": "https://www.aa.com.tr/tr/spor/besiktas-kulubunun-secimli-olaganustu-genel-kurulu/4077404"
   },
   {
-    "id": "trabzonspor-drogheda-2026-10-01",
-    "title": "Trabzonspor yarın Drogheda United'ı ağırlayacak",
-    "description": "Bordo-mavililer, millî ara dönemindeki özel maçta kardeş kulübü Drogheda United ile 1 Ekim Perşembe günü saat 19.00'da Papara Park'ta karşılaşacak.",
-    "category": "Trabzonspor",
-    "date": "1 Ekim 2026",
+    "id": "superlig-7-hafta-programi-2026-10-04",
+    "title": "Süper Lig’de 7. haftanın programı belli",
+    "description": "Millî ara sonrasında 7. hafta 9 Ekim’de Galatasaray-Kasımpaşa maçıyla başlayacak. Fenerbahçe 10 Ekim’de Rizespor’a, Beşiktaş 11 Ekim’de Kocaelispor’a konuk olacak.",
+    "category": "Süper Lig",
+    "date": "4 Ekim 2026",
     "image": "./is-logo.png",
-    "source": "Anadolu Ajansı · Trabzonspor açıklaması",
-    "link": "https://www.aa.com.tr/tr/spor/trabzonspor-drogheda-united-ve-zenitle-ozel-maclarda-karsilasacak/4045381/4045381"
+    "source": "Türkiye Futbol Federasyonu",
+    "link": "https://www.tff.org/?pageID=198"
   },
   {
-    "id": "galatasaray-kasimpasa-mesaisi-2026-09-30",
-    "title": "Galatasaray'da Kasımpaşa mesaisi sürüyor",
-    "description": "Galatasaray, 9 Ekim Cuma günü oynayacağı Kasımpaşa maçının hazırlıklarını sürdürdü. Leroy Sané takımla birlikte çalıştı.",
+    "id": "fenerbahce-turan-tovuz-2-0-2026-10-03",
+    "title": "Fenerbahçe, Turan Tovuz’u 2-0 yendi",
+    "description": "Fenerbahçe, millî ara dönemindeki hazırlık maçında Azerbaycan temsilcisi Turan Tovuz’u 2-0 mağlup etti. Golleri N’Golo Kanté ve Çağrı Balta attı.",
+    "category": "Fenerbahçe",
+    "date": "3 Ekim 2026",
+    "image": "./is-logo.png",
+    "source": "Anadolu Ajansı",
+    "link": "https://m.aa.com.tr/tr/spor/fenerbahce-deplasmanda-azerbaycan-temsilcisi-turan-tovuzu-2-0-maglup-etti/4077271"
+  },
+  {
+    "id": "galatasaray-pendikspor-3-3-2026-10-03",
+    "title": "Galatasaray, Pendikspor ile 3-3 berabere kaldı",
+    "description": "Galatasaray, millî ara dönemindeki hazırlık maçında Trendyol 1. Lig ekibi Orfa Yapı Pendikspor ile 3-3 berabere kaldı.",
     "category": "Galatasaray",
-    "date": "30 Eylül 2026",
+    "date": "3 Ekim 2026",
     "image": "./is-logo.png",
-    "source": "Anadolu Ajansı / Yeni Şafak",
-    "link": "https://www.yenisafak.com/spor/galatasarayda-kasimpasa-mesaisi-4860353"
+    "source": "Anadolu Ajansı",
+    "link": "https://www.aa.com.tr/tr/futbol/"
   },
   {
-    "id": "belcika-turkiye-maci-2026-10-02",
-    "title": "A Millî Takım cuma günü Belçika deplasmanında",
-    "description": "Türkiye, UEFA Uluslar A Ligi 1. Grup'taki üçüncü maçında 2 Ekim Cuma günü TSİ 21.45'te Maurice Dufrasne Stadyumu'nda Belçika ile karşılaşacak.",
+    "id": "belcika-turkiye-3-0-2026-10-02",
+    "title": "Belçika, Türkiye’yi 3-0 mağlup etti",
+    "description": "A Millî Takım, UEFA Uluslar A Ligi 1. Grup’taki üçüncü maçında Belçika’ya 3-0 yenildi. Kevin De Bruyne iki, Romelu Lukaku bir gol attı. Türkiye grupta henüz puan alamadı.",
     "category": "Millî Takım",
     "date": "2 Ekim 2026",
     "image": "./is-logo.png",
     "source": "Türkiye Futbol Federasyonu",
-    "link": "https://www.tff.org/default.aspx?ftxtID=51371&pageID=202"
+    "link": "https://www.tff.org/default.aspx?2586pg=5&ftxtID=51538&pageID=471"
   },
   {
-    "id": "besiktas-secim-2026-10-04",
-    "title": "Beşiktaş'ta seçimli genel kurul 4 Ekim'de",
-    "description": "27 Eylül'deki olağanüstü genel kurulda yeterli çoğunluk sağlanamadı. İkinci toplantı 4 Ekim'de yapılacak.",
-    "category": "Beşiktaş",
-    "date": "29 Eylül 2026",
+    "id": "fenerbahce-transfer-yasagi-kaldirildi-2026-10-01",
+    "title": "Fenerbahçe’nin FIFA transfer yasağı kaldırıldı",
+    "description": "Fenerbahçe, Youssef En-Nesyri transferiyle ilgili ödeme sonrası FIFA tarafından uygulanan üç dönemlik geçici transfer yasağının kaldırıldığını açıkladı.",
+    "category": "Fenerbahçe",
+    "date": "1 Ekim 2026",
     "image": "./is-logo.png",
-    "source": "DHA",
-    "link": "https://www.dha.com.tr/yerel-haberler/istanbul/besiktasta-olaganustu-secimli-genel-kurul-kara-2941664"
+    "source": "Anadolu Ajansı",
+    "link": "https://www.aa.com.tr/tr/spor/fifanin-fenerbahceye-verdigi-transfer-yasagi-kaldirildi/4075557"
   },
   {
-    "id": "superlig-7-hafta-2026-10-09",
-    "title": "Süper Lig'de 7. hafta 9 Ekim'de başlayacak",
-    "description": "Millî ara sonrasında Süper Lig'in 7. hafta karşılaşmaları 9-12 Ekim tarihleri arasında oynanacak.",
-    "category": "Süper Lig",
-    "date": "29 Eylül 2026",
+    "id": "trabzonspor-drogheda-0-1-2026-10-01",
+    "title": "Trabzonspor, Drogheda United’a 1-0 kaybetti",
+    "description": "Trabzonspor, millî ara döneminde kardeş kulübü Drogheda United ile oynadığı hazırlık maçını 1-0 kaybetti.",
+    "category": "Trabzonspor",
+    "date": "1 Ekim 2026",
     "image": "./is-logo.png",
-    "source": "Türkiye Futbol Federasyonu",
-    "link": "https://www.tff.org/default.aspx?macId=283763&pageId=198"
+    "source": "Anadolu Ajansı",
+    "link": "https://www.aa.com.tr/tr/futbol/trabzonspor-drogheda-united-ve-zenitle-ozel-maclarda-karsilasacak/4045381"
+  },
+  {
+    "id": "messi-eldense-2026-10-01",
+    "title": "Lionel Messi, CD Eldense’yi satın aldı",
+    "description": "Anadolu Ajansı’nın aktardığına göre Lionel Messi, İspanya 2. Futbol Ligi ekiplerinden CD Eldense’nin sahibi oldu.",
+    "category": "Avrupa",
+    "date": "1 Ekim 2026",
+    "image": "./is-logo.png",
+    "source": "Anadolu Ajansı",
+    "link": "https://www.aa.com.tr/tr/futbol/"
+  },
+  {
+    "id": "real-madrid-barcelona-negreira-2026-10-01",
+    "title": "Real Madrid ve Barcelona’dan Negreira davası açıklamaları",
+    "description": "Real Madrid ile Barcelona, Negreira davasıyla ilgili karşılıklı açıklamalarda bulundu.",
+    "category": "Avrupa",
+    "date": "1 Ekim 2026",
+    "image": "./is-logo.png",
+    "source": "Anadolu Ajansı",
+    "link": "https://www.aa.com.tr/tr/futbol/"
   }
 ]

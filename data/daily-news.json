@@ -1,106 +1,105 @@
 {
-  "date": "26 Eylül 2026",
   "items": [
     {
-      "id": "fenerbahce-fifa-3-donem-yasak-26-eylul",
-      "title": "Fenerbahçe'ye FIFA'dan 3 dönem transfer yasağı",
-      "description": "FIFA'nın güncel kayıtlarında Fenerbahçe için 3 transfer ve tescil dönemi süren bir kayıt yasağı yer aldı. Yaptırımın mali bir dosyayla bağlantılı olduğu bildirildi. Dosyanın ayrıntıları ve ödeme tutarı mevcut kayıtta açıklanmadı.",
-      "category": "Fenerbahçe",
-      "date": "26 Eylül 2026",
-      "image": "./assets/hero/fenerbahce-fifa-26-09-2026.svg",
-      "source": "FIFA kayıtları",
-      "link": "https://knowledge.fifa.com/registration-bans"
+      "id": "italya-turkiye-5-ekim-2026",
+      "title": "Türkiye, yarın İtalya deplasmanında puan arayacak",
+      "description": "A Millî Takım, UEFA Uluslar A Ligi 1. Grup’taki dördüncü maçında 5 Ekim Pazartesi günü TSİ 21.45’te Bologna’daki Renato Dall’Ara Stadı’nda İtalya ile karşılaşacak. Maçı Szymon Marciniak yönetecek.",
+      "category": "Millî Takım",
+      "date": "4 Ekim 2026",
+      "image": "./is-logo.png",
+      "source": "Anadolu Ajansı · TFF",
+      "link": "https://aa.com.tr/tr/spor/turkiye-uefa-uluslar-liginde-deplasmanda-italya-ile-karsilasacak/4077348"
     },
     {
-      "id": "pfdk-sevkleri-25-09-2026",
-      "title": "PFDK sevkleri açıklandı",
-      "description": "TFF Hukuk Müşavirliği, aralarında Trabzonspor, Galatasaray, Fenerbahçe ve Beşiktaş'ın da bulunduğu kulüp ve futbol görevlilerini PFDK'ya sevk etti.",
-      "category": "TFF",
-      "date": "26 Eylül 2026",
-      "image": "./assets/hero/pfdk-26-09-2026.svg",
-      "source": "DHA",
-      "link": "https://www.dha.com.tr/yerel-haberler/istanbul/pfdk-sevkleri-aciklandi-2951471"
-    },
-    {
-      "id": "cies-greenwood-26-09-2026",
-      "title": "Greenwood, Süper Lig'in en değerli oyuncusu",
-      "description": "CIES Football Observatory'nin güncel araştırmasında Mason Greenwood, 61 milyon avroluk tahmini bonservis değeriyle Süper Lig listesinin zirvesinde yer aldı.",
-      "category": "Süper Lig",
-      "date": "26 Eylül 2026",
-      "image": "./assets/hero/cies-26-09-2026.svg",
-      "source": "Mackolik / CIES",
-      "link": "https://www.mackolik.com/index.php/futbol/haber/mason-greenwood-super-ligin-zirvesinde/33dc28c2-5253-494a-bb67-57bb85798498"
-    },
-    {
-      "id": "besiktas-mali-genel-kurul-26-09-2026",
-      "title": "Beşiktaş'ın olağan idari ve mali genel kurulu bugün",
-      "description": "Beşiktaş'ın resmi duyurusuna göre 2025-2026 dönemine ait Olağan İdari ve Mali Genel Kurul Toplantısı 26 Eylül'de Haliç Kongre Merkezi'nde yapılacak.",
+      "id": "besiktas-secimli-genel-kurul-2026-10-04",
+      "title": "Beşiktaş’ta seçimli genel kurul başladı",
+      "description": "Beşiktaş’ın olağanüstü seçimli genel kurulu 4 Ekim Pazar günü Sinan Erdem Spor Salonu’nda başladı. Serdal Adalı seçime tek aday olarak katılıyor ve oy verme işlemi saat 17.00’ye kadar sürüyor.",
       "category": "Beşiktaş",
-      "date": "26 Eylül 2026",
-      "image": "./assets/hero/besiktas-genel-kurul-26-09-2026.svg",
-      "source": "Beşiktaş JK",
-      "link": "https://bjk.com.tr/tr/haber/95082"
-    },
-    {
-      "id": "montella-fransa-26-09-2026",
-      "title": "Montella: Daha fazlasını hak ettik",
-      "description": "A Millî Takım Teknik Direktörü Vincenzo Montella, Fransa karşısındaki 1-0'lık yenilginin ardından oyuncularının çok iyi mücadele ettiğini ve daha fazlasını hak ettiklerini söyledi.",
-      "category": "Millî Takım",
-      "date": "26 Eylül 2026",
+      "date": "4 Ekim 2026",
       "image": "./is-logo.png",
-      "source": "TFF",
-      "link": "https://www.tff.org/default.aspx?ftxtID=51442&pageID=202"
+      "source": "Anadolu Ajansı",
+      "link": "https://www.aa.com.tr/tr/spor/besiktas-kulubunun-secimli-olaganustu-genel-kurulu/4077404"
     },
     {
-      "id": "turkiye-fransa-0-1-25-09-2026",
-      "title": "Türkiye, Fransa'ya 1-0 mağlup oldu",
-      "description": "UEFA Uluslar Ligi A1 Grubu'nun ilk maçında Türkiye, Kocaeli'de Fransa'ya 1-0 kaybetti. UEFA'nın resmi sonuçlarında maç 0-1 olarak yer alıyor.",
-      "category": "Millî Takım",
-      "date": "26 Eylül 2026",
+      "id": "superlig-7-hafta-programi-2026-10-04",
+      "title": "Süper Lig’de 7. haftanın programı belli",
+      "description": "Millî ara sonrasında 7. hafta 9 Ekim’de Galatasaray-Kasımpaşa maçıyla başlayacak. Fenerbahçe 10 Ekim’de Rizespor’a, Beşiktaş 11 Ekim’de Kocaelispor’a konuk olacak.",
+      "category": "Süper Lig",
+      "date": "4 Ekim 2026",
       "image": "./is-logo.png",
-      "source": "UEFA",
-      "link": "https://www.uefa.com/uefanationsleague/news/02a2-1fea18abbcbc-456e846509e7-1000--2026-27-uefa-nations-league-all-the-league-phase-fixtures-a/"
+      "source": "Türkiye Futbol Federasyonu",
+      "link": "https://www.tff.org/?pageID=198"
     },
     {
-      "id": "uefa-unl-26-eylul-programi",
-      "title": "Uluslar Ligi'nde 26 Eylül programı",
-      "description": "UEFA'nın resmi programına göre 26 Eylül'de İngiltere-İspanya, Çekya-Hırvatistan ve Kuzey Makedonya-İsviçre dahil olmak üzere 10 karşılaşma oynanacak.",
-      "category": "Uluslar Ligi",
-      "date": "26 Eylül 2026",
-      "image": "./is-logo.png",
-      "source": "UEFA",
-      "link": "https://www.uefa.com/uefanationsleague/news/02a2-1fea18abbcbc-456e846509e7-1000--2026-27-uefa-nations-league-all-the-league-phase-fixtures-a/"
-    },
-    {
-      "id": "england-spain-26-09-2026",
-      "title": "İngiltere-İspanya maçı bugün",
-      "description": "UEFA Uluslar Ligi A3 Grubu'nun ilk haftasında İngiltere, 26 Eylül'de Wembley'de İspanya'yı ağırlayacak.",
-      "category": "Uluslar Ligi",
-      "date": "26 Eylül 2026",
-      "image": "./is-logo.png",
-      "source": "UEFA",
-      "link": "https://www.uefa.com/uefanationsleague/teams/39/matches/"
-    },
-    {
-      "id": "fenerbahce-fifa-kayit-3-donem-26-09-2026",
-      "title": "Fenerbahçe için FIFA kayıtlarında 3 dönemlik transfer yasağı görünüyor",
-      "description": "26 Eylül tarihli haberlerde, FIFA'nın resmi transfer yasağı kayıtlarında Fenerbahçe için üç transfer dönemini kapsayan bir kayıt bulunduğu aktarılıyor. Yasağın dosya nedeni ve uygulanma ayrıntıları konusunda kulüpten resmi açıklama bulunmadığı belirtiliyor.",
+      "id": "fenerbahce-turan-tovuz-2-0-2026-10-03",
+      "title": "Fenerbahçe, Turan Tovuz’u 2-0 yendi",
+      "description": "Fenerbahçe, millî ara dönemindeki hazırlık maçında Azerbaycan temsilcisi Turan Tovuz’u 2-0 mağlup etti. Golleri N’Golo Kanté ve Çağrı Balta attı.",
       "category": "Fenerbahçe",
-      "date": "26 Eylül 2026",
-      "image": "./assets/hero/fenerbahce-fifa-26-09-2026.svg",
-      "source": "Türkiye Gazetesi",
-      "link": "https://www.turkiyegazetesi.com.tr/spor/fifa-duyurdu-fenerbahceye-3-donem-transfer-yasagi-1818643",
-      "label": "FIFA kaydına dayalı haber"
+      "date": "3 Ekim 2026",
+      "image": "./is-logo.png",
+      "source": "Anadolu Ajansı",
+      "link": "https://m.aa.com.tr/tr/spor/fenerbahce-deplasmanda-azerbaycan-temsilcisi-turan-tovuzu-2-0-maglup-etti/4077271"
     },
     {
-      "id": "uefa-unl-matchday-1-sonuclari-26-09-2026",
-      "title": "Uluslar Ligi ilk hafta sonuçları güncellendi",
-      "description": "UEFA, 24-25 Eylül'de oynanan ilk hafta karşılaşmalarının sonuçlarını yayımladı. Türkiye-Fransa 0-1, İtalya-Belçika 0-2 ve Hollanda-Almanya 1-1 sonuçları resmi listede yer alıyor.",
-      "category": "Uluslar Ligi",
-      "date": "26 Eylül 2026",
+      "id": "galatasaray-pendikspor-3-3-2026-10-03",
+      "title": "Galatasaray, Pendikspor ile 3-3 berabere kaldı",
+      "description": "Galatasaray, millî ara dönemindeki hazırlık maçında Trendyol 1. Lig ekibi Orfa Yapı Pendikspor ile 3-3 berabere kaldı.",
+      "category": "Galatasaray",
+      "date": "3 Ekim 2026",
       "image": "./is-logo.png",
-      "source": "UEFA",
-      "link": "https://www.uefa.com/uefanationsleague/news/02a2-1fea18abbcbc-456e846509e7-1000--2026-27-uefa-nations-league-all-the-league-phase-fixtures-a/"
+      "source": "Anadolu Ajansı",
+      "link": "https://www.aa.com.tr/tr/futbol/"
+    },
+    {
+      "id": "belcika-turkiye-3-0-2026-10-02",
+      "title": "Belçika, Türkiye’yi 3-0 mağlup etti",
+      "description": "A Millî Takım, UEFA Uluslar A Ligi 1. Grup’taki üçüncü maçında Belçika’ya 3-0 yenildi. Kevin De Bruyne iki, Romelu Lukaku bir gol attı. Türkiye grupta henüz puan alamadı.",
+      "category": "Millî Takım",
+      "date": "2 Ekim 2026",
+      "image": "./is-logo.png",
+      "source": "Türkiye Futbol Federasyonu",
+      "link": "https://www.tff.org/default.aspx?2586pg=5&ftxtID=51538&pageID=471"
+    },
+    {
+      "id": "fenerbahce-transfer-yasagi-kaldirildi-2026-10-01",
+      "title": "Fenerbahçe’nin FIFA transfer yasağı kaldırıldı",
+      "description": "Fenerbahçe, Youssef En-Nesyri transferiyle ilgili ödeme sonrası FIFA tarafından uygulanan üç dönemlik geçici transfer yasağının kaldırıldığını açıkladı.",
+      "category": "Fenerbahçe",
+      "date": "1 Ekim 2026",
+      "image": "./is-logo.png",
+      "source": "Anadolu Ajansı",
+      "link": "https://www.aa.com.tr/tr/spor/fifanin-fenerbahceye-verdigi-transfer-yasagi-kaldirildi/4075557"
+    },
+    {
+      "id": "trabzonspor-drogheda-0-1-2026-10-01",
+      "title": "Trabzonspor, Drogheda United’a 1-0 kaybetti",
+      "description": "Trabzonspor, millî ara döneminde kardeş kulübü Drogheda United ile oynadığı hazırlık maçını 1-0 kaybetti.",
+      "category": "Trabzonspor",
+      "date": "1 Ekim 2026",
+      "image": "./is-logo.png",
+      "source": "Anadolu Ajansı",
+      "link": "https://www.aa.com.tr/tr/futbol/trabzonspor-drogheda-united-ve-zenitle-ozel-maclarda-karsilasacak/4045381"
+    },
+    {
+      "id": "messi-eldense-2026-10-01",
+      "title": "Lionel Messi, CD Eldense’yi satın aldı",
+      "description": "Anadolu Ajansı’nın aktardığına göre Lionel Messi, İspanya 2. Futbol Ligi ekiplerinden CD Eldense’nin sahibi oldu.",
+      "category": "Avrupa",
+      "date": "1 Ekim 2026",
+      "image": "./is-logo.png",
+      "source": "Anadolu Ajansı",
+      "link": "https://www.aa.com.tr/tr/futbol/"
+    },
+    {
+      "id": "real-madrid-barcelona-negreira-2026-10-01",
+      "title": "Real Madrid ve Barcelona’dan Negreira davası açıklamaları",
+      "description": "Real Madrid ile Barcelona, Negreira davasıyla ilgili karşılıklı açıklamalarda bulundu.",
+      "category": "Avrupa",
+      "date": "1 Ekim 2026",
+      "image": "./is-logo.png",
+      "source": "Anadolu Ajansı",
+      "link": "https://www.aa.com.tr/tr/futbol/"
     }
-  ]
+  ],
+  "date": "4 Ekim 2026"
 }
