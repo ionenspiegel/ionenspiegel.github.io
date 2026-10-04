@@ -1,0 +1,18 @@
+İonenSpiegel haber güncellemesi
+Tarih: 4 Ekim 2026
+
+Eski 19-20 Eylül ve 29 Eylül statik ana sayfa içerikleri temizlendi.
+Ana sayfa, Avrupa/Dünya, Güncel Gündem, Bugünün Özeti, Millî Takım, maç merkezi ve gündem blokları 4 Ekim 2026 durumuna getirildi.
+
+Güncel önemli gelişmeler:
+- Belçika 3-0 Türkiye
+- İtalya - Türkiye, 5 Ekim 21.45
+- Fenerbahçe 2-0 Turan Tovuz
+- Pendikspor 3-3 Galatasaray
+- Drogheda United 1-0 Trabzonspor
+- Beşiktaş seçimli genel kurul
+- Süper Lig 7. hafta, 9-12 Ekim
+- Avrupa kupalarında Türk takımlarının sıradaki maçları
+
+Hash yönlendirmeleri ve mevcut JS işlevleri korunmuştur.
+V87/V88 kullanılmamıştır.
