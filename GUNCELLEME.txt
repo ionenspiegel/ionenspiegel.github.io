@@ -1,0 +1,18 @@
+İonenSpiegel V86.3 Haber Güncellemesi
+Tarih: 6 Ekim 2026
+
+Güncellenen dosyalar:
+- index.html
+- script.js
+- news.json
+- daily-news.json
+- data/news.json
+- data/daily-news.json
+- sw.js
+
+Güncel ana haber: Türkiye'nin İtalya'ya 3-1 yenilgisi.
+Eski 30 Eylül ve önceki haberler haber veri akışından çıkarıldı.
+Ana haber fallback'i güncellendi.
+Maç merkezi 7. hafta Süper Lig fikstürüne çekildi.
+Service Worker cache sürümü 6 Ekim 2026 olarak yenilendi.
+V86.3 yapısı ve mevcut işlevler korunmuştur. V87/V88 veya yeni görünüm paketi kullanılmamıştır.
