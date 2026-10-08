@@ -1,9 +1,69 @@
 {
   "items": [
     {
-      "id": "italya-turkiye-3-1-2026-10-05",
-      "title": "A Milli Futbol Takımı, İtalya'ya 3-1 yenildi",
-      "description": "Türkiye, UEFA Uluslar A Ligi 1. Grup'taki dördüncü maçında İtalya'ya deplasmanda 3-1 mağlup oldu. Aral Şimşir Türkiye'nin golünü attı.",
+      "id": "galatasaray-kasimpasa-hazirlik-2026-10-08",
+      "title": "Galatasaray, Kasımpaşa maçının hazırlıklarını sürdürüyor",
+      "description": "Galatasaray, Süper Lig'in 7. haftasında 9 Ekim Cuma günü Kasımpaşa'yı konuk edeceği karşılaşmanın hazırlıklarına devam etti. Sarı-kırmızılılar antrenmanı üç takımlı turnuva ve hücum çalışmasıyla tamamladı.",
+      "category": "Galatasaray",
+      "date": "8 Ekim 2026",
+      "image": "./is-logo.png",
+      "source": "Anadolu Ajansı",
+      "link": "https://www.gzt.com/spor/galatasaray-kasimpasa-mesaisine-devam-etti-4267835"
+    },
+    {
+      "id": "fenerbahce-rizespor-hazirlik-2026-10-08",
+      "title": "Fenerbahçe, Rizespor maçına hazırlanıyor",
+      "description": "Fenerbahçe, Süper Lig'in 7. haftasında 10 Ekim Cumartesi günü deplasmanda Çaykur Rizespor ile oynayacağı maçın hazırlıklarını sürdürüyor. Sarı-lacivertlilerde antrenman taktik ve bireysel çalışmalarla tamamlandı.",
+      "category": "Fenerbahçe",
+      "date": "8 Ekim 2026",
+      "image": "./is-logo.png",
+      "source": "DHA",
+      "link": "https://www.dha.com.tr/spor/fenerbahce-caykur-rizespor-macinin-hazirliklarini-surdurdu-2958367"
+    },
+    {
+      "id": "trabzonspor-samsunspor-deplasman-2026-10-07",
+      "title": "Trabzonspor, Samsunspor deplasmanında galibiyet arıyor",
+      "description": "İlk 6 haftada 10 puan toplayan Trabzonspor, Samsunspor deplasmanında sezonun dış sahadaki ilk galibiyetini hedefliyor. Bordo-mavililer ligde deplasmanda henüz kazanamadı.",
+      "category": "Trabzonspor",
+      "date": "7 Ekim 2026",
+      "image": "./is-logo.png",
+      "source": "Anadolu Ajansı",
+      "link": "https://www.aa.com.tr/tr/spor/trabzonspor-samsun-macina-deplasmandaki-153-gunluk-hasreti-dindirmek-icin-cikacak/4080565"
+    },
+    {
+      "id": "besiktas-kocaelispor-hazirlik-2026-10-06",
+      "title": "Beşiktaş, Kocaelispor maçına hazırlanıyor",
+      "description": "Beşiktaş, Süper Lig'in 7. haftasında 11 Ekim Pazar günü Kocaelispor ile oynayacağı karşılaşmanın hazırlıklarını sürdürüyor. Siyah-beyazlılar kondisyon ve taktik çalışmalarının ardından çift kale maç yaptı.",
+      "category": "Beşiktaş",
+      "date": "6 Ekim 2026",
+      "image": "./is-logo.png",
+      "source": "İhlas Haber Ajansı",
+      "link": "https://www.sondakika.com/amp/haber-besiktas-kocaelispor-hazirligini-bjk-nevzat-demir--20303106/"
+    },
+    {
+      "id": "superlig-7-hafta-programi-2026-10-08",
+      "title": "Süper Lig'de 7. hafta yarın başlıyor",
+      "description": "Milli ara sonrası Süper Lig 7. hafta heyecanı 9 Ekim Cuma günü Galatasaray-Kasımpaşa karşılaşmasıyla başlayacak. 10 Ekim'de Samsunspor-Trabzonspor ve Çaykur Rizespor-Fenerbahçe, 11 Ekim'de Beşiktaş-Kocaelispor oynanacak.",
+      "category": "Süper Lig",
+      "date": "8 Ekim 2026",
+      "image": "./is-logo.png",
+      "source": "Anadolu Ajansı",
+      "link": "https://www.aa.com.tr/tr/spor/fenerbahce-8-maclik-yogun-maratona-giriyor/4079291"
+    },
+    {
+      "id": "sampiyonlar-ligi-turk-temsilciler-2026-10-08",
+      "title": "Şampiyonlar Ligi'nde Türk temsilcilerinin sıradaki maçları yaklaşıyor",
+      "description": "Galatasaray 13 Ekim'de RAMS Park'ta Barcelona'yı, Fenerbahçe ise 14 Ekim'de İngiltere'de Aston Villa'yı konuk edecek. İki karşılaşma lig aşamasının ikinci haftasında oynanacak.",
+      "category": "Avrupa",
+      "date": "8 Ekim 2026",
+      "image": "./is-logo.png",
+      "source": "UEFA",
+      "link": "https://fr.uefa.com/uefachampionsleague/news/02a8-217680c70b8d-878c5efa7b92-1000--ligue-des-champions-2026-27-tout-le-calendrier-de-la-phas/"
+    },
+    {
+      "id": "a-milli-italya-3-1-2026-10-05",
+      "title": "A Millî Takım, İtalya'ya 3-1 mağlup oldu",
+      "description": "Türkiye, UEFA Uluslar A Ligi'ndeki dördüncü maçında İtalya'ya deplasmanda 3-1 yenildi. Aral Şimşir, A Millî Takım'ın golünü kaydetti.",
       "category": "Millî Takım",
       "date": "6 Ekim 2026",
       "image": "./is-logo.png",
@@ -11,75 +71,15 @@
       "link": "https://www.aa.com.tr/tr/spor/a-milli-futbol-takimi-italyaya-3-1-yenildi/4079039"
     },
     {
-      "id": "superlig-7-hafta-programi-2026-10-07",
-      "title": "Süper Lig'de 7. hafta 9 Ekim'de başlıyor",
-      "description": "Milli ara sonrası Süper Lig 7. haftada yeniden başlayacak. Galatasaray-Kasımpaşa 9 Ekim'de, Samsunspor-Trabzonspor ve Çaykur Rizespor-Fenerbahçe 10 Ekim'de, Beşiktaş-Kocaelispor 11 Ekim'de oynanacak.",
-      "category": "Süper Lig",
-      "date": "7 Ekim 2026",
-      "image": "./is-logo.png",
-      "source": "Anadolu Ajansı",
-      "link": "https://www.aa.com.tr/tr/spor/fenerbahce-8-maclik-yogun-maratona-giriyor/4079291"
-    },
-    {
-      "id": "fenerbahce-8-maclik-maratona-2026-10-06",
-      "title": "Fenerbahçe 8 maçlık yoğun maratona giriyor",
-      "description": "Fenerbahçe, 10 Ekim'deki Çaykur Rizespor maçının ardından 14 Ekim'de Aston Villa ile Şampiyonlar Ligi'nde karşılaşacak. Sarı-lacivertlileri 9 Kasım'daki milli araya kadar 8 maç bekliyor.",
-      "category": "Fenerbahçe",
-      "date": "6 Ekim 2026",
-      "image": "./is-logo.png",
-      "source": "Anadolu Ajansı",
-      "link": "https://f.aa.com.tr/tr/spor/fenerbahce-8-maclik-yogun-maratona-giriyor/4079291"
-    },
-    {
-      "id": "galatasaray-yogun-takvim-2026-10-06",
-      "title": "Galatasaray'ı yoğun fikstür bekliyor",
-      "description": "Galatasaray, milli ara sonrasında lig ve Şampiyonlar Ligi'nde yoğun bir döneme giriyor. İlk önemli maç 9 Ekim'de Kasımpaşa, ardından 13 Ekim'de Barcelona karşılaşması.",
-      "category": "Galatasaray",
-      "date": "6 Ekim 2026",
-      "image": "./is-logo.png",
-      "source": "GelSpor",
-      "link": "https://gelspor.com/haber/galatasarayi-milli-aradan-sonra-yogun-takvim-bekliyor-30-gunde-5-lig-3-devler-ligi-maci"
-    },
-    {
-      "id": "trabzonspor-yogun-program-2026-10-05",
-      "title": "Trabzonspor yoğun maç programına giriyor",
-      "description": "Trabzonspor, 10 Ekim-8 Kasım arasında Süper Lig ve UEFA Konferans Ligi'nde 30 günlük süreçte 8 karşılaşmaya çıkacak.",
-      "category": "Trabzonspor",
-      "date": "5 Ekim 2026",
-      "image": "./is-logo.png",
-      "source": "Anadolu Ajansı",
-      "link": "https://h.aa.com.tr/tr/spor/trabzonspor-yogun-mac-programina-giriyor/4078080"
-    },
-    {
       "id": "superlig-puan-durumu-2026-10-07",
-      "title": "Süper Lig'de 6 hafta sonunda zirvede Amedspor ve Galatasaray var",
-      "description": "6 hafta sonunda Amed Sportif Faaliyetler ve Galatasaray 13'er puanda. Beşiktaş ve Kocaelispor 12 puanla takip ediyor, Fenerbahçe ve Trabzonspor 10'ar puanda bulunuyor.",
+      "title": "Süper Lig'de ilk 6 haftanın ardından zirve yarışı sürüyor",
+      "description": "6 hafta sonunda Amed Sportif Faaliyetler ve Galatasaray 13'er puanla zirvede. Beşiktaş ve Kocaelispor 12'şer, Fenerbahçe ve Trabzonspor 10'ar puanda bulunuyor.",
       "category": "Süper Lig",
       "date": "7 Ekim 2026",
       "image": "./is-logo.png",
-      "source": "Ajans Edremit",
-      "link": "https://www.ajansedremit.com/super-lig"
-    },
-    {
-      "id": "sampiyonlar-ligi-13-14-ekim-2026",
-      "title": "Şampiyonlar Ligi'nde Galatasaray ve Fenerbahçe'nin sıradaki maçları belli",
-      "description": "Galatasaray 13 Ekim'de Barcelona'yı, Fenerbahçe ise 14 Ekim'de Aston Villa'yı konuk değil deplasmanda karşılayacak. İki Türk temsilcisinin lig aşamasındaki ikinci maçları bu tarihlerde oynanacak.",
-      "category": "Avrupa",
-      "date": "7 Ekim 2026",
-      "image": "./is-logo.png",
-      "source": "UEFA",
-      "link": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000/"
-    },
-    {
-      "id": "besiktas-serdal-adali-2026-10-04",
-      "title": "Beşiktaş'ta üçüncü Serdal Adalı dönemi",
-      "description": "Serdal Adalı, olağanüstü seçimli genel kurulda 3815 oyla üçüncü kez Beşiktaş Kulübü başkanlığına seçildi.",
-      "category": "Beşiktaş",
-      "date": "4 Ekim 2026",
-      "image": "./is-logo.png",
-      "source": "Anadolu Ajansı",
-      "link": "https://www.aa.com.tr/tr/spor/besiktasta-ucuncu-serdal-adali-donemi/4077786"
+      "source": "Merceknet",
+      "link": "https://www.merceknet.com/tr/2026/09/21/super-ligde-milli-ara-oncesi-tablo-degisti-amed-lider-fenerbahceden-tarihi-8-0-galatasaray-agir-yara-aldi-konyaspor-berabere-kaldi/"
     }
   ],
-  "date": "7 Ekim 2026"
+  "date": "8 Ekim 2026"
 }

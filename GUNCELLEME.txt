@@ -1,6 +1,3 @@
-İonenSpiegel V86.3 günlük haber güncellemesi
-Tarih: 7 Ekim 2026
+İonenSpiegel V86.3 haber güncellemesi - 8 Ekim 2026
 
-Güncellenen: index.html, script.js, news.json, daily-news.json, data/news.json, data/daily-news.json, sw.js
-V87/V88 ve iptal edilen 2027 görünüm paketi kullanılmadı.
-Haberler 7 Ekim 2026 gündemine çekildi; eski statik ana akış içerikleri yenilendi.
+Güncel antrenman, fikstür, Avrupa ve milli takım haberleri işlendi. Eski ana akış haberleri güncel gelişmelerle değiştirildi. V87/V88 ve iptal edilen görünüm paketi kullanılmadı.
