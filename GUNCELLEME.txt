@@ -1,3 +1,18 @@
-İonenSpiegel V86.3 haber güncellemesi - 8 Ekim 2026
+İonenSpiegel V86.3 haber güncellemesi — 9 Ekim 2026
 
-Güncel antrenman, fikstür, Avrupa ve milli takım haberleri işlendi. Eski ana akış haberleri güncel gelişmelerle değiştirildi. V87/V88 ve iptal edilen görünüm paketi kullanılmadı.
+Güncellenen ana gündem:
+- Galatasaray-Kasımpaşa (9 Ekim, 20.00; Galatasaray'ın resmî maç önü bilgileri).
+- Süper Lig 7. hafta programı ve altı hafta sonrası puan tablosunun haber özeti.
+- Rizespor-Fenerbahçe (10 Ekim), Samsunspor-Trabzonspor (10 Ekim), Beşiktaş-Kocaelispor (11 Ekim).
+- A Millî Takım'ın İtalya'ya 3-1 yenilgisi ve güncel grup puan özeti.
+- UEFA fikstürüne göre Galatasaray-Barcelona (13 Ekim), Aston Villa-Fenerbahçe (14 Ekim), Hoffenheim-Beşiktaş ve KuPS-Trabzonspor (15 Ekim).
+- Eski “Türkiye yarın İtalya ile oynayacak”, “Beşiktaş seçimli genel kurulu başladı” ve hazırlık maçı odaklı ana gündem içerikleri güncel maçlarla değiştirildi.
+- script.js içindeki çevrimdışı haber yedeği, index.html statik haber akışı ve dört haber JSON kopyası eşitlendi.
+- Service Worker önbellek anahtarı 9 Ekim 2026'ya yükseltildi.
+
+Doğrulama kaynakları: Galatasaray.org, Beşiktaş JK, Trabzonspor resmî sitesi, UEFA.com, beIN SPORTS ve Reuters.
+Transfer iddiaları arasında bu kontrolde yeterince doğrulanmış yeni bir duyuru bulunmadığından doğrulanmamış transfer haberi eklenmedi.
+
+Sürüm notu: V86.3 yapısı korundu. V87/V88 veya iptal edilen 2027 görünüm paketi kullanılmadı.
+
+Paket sınırı: Bu güncelleme, çalışma alanında mevcut olan 8 dosyalı/206 KB'lık 8 Ekim haber anlık görüntüsünü temel alır. Bu anlık görüntü sitenin yaklaşık 500 MB'lık tam GitHub deposu değildir; bu pakette bulunmayan görseller, CSS, manifest ve diğer klasörler geri eklenmiş gibi varsayılmamalıdır.
