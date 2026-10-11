@@ -302,7 +302,7 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
 
 /* ---------- V20 ETKILESIM / YEREL VERI ---------- */
 (function initV20(){
-  const upcoming=[['9 Eki','20:00','Galatasaray','Kasımpaşa','-'],['10 Eki','13:30','Gençlerbirliği','Amed Sportif','-'],['10 Eki','16:00','Alanyaspor','Erzurumspor','-'],['10 Eki','16:00','Samsunspor','Trabzonspor','-'],['10 Eki','19:00','Rizespor','Fenerbahçe','-'],['11 Eki','13:30','Konyaspor','Başakşehir','-'],['11 Eki','16:00','Gaziantep FK','Çorum FK','-'],['11 Eki','19:00','Beşiktaş','Kocaelispor','-'],['12 Eki','20:00','Eyüpspor','Göztepe','-']];
+  const upcoming=[['9 Eki','20:00','Galatasaray','Kasımpaşa','3 - 1'],['10 Eki','13:30','Gençlerbirliği','Amed Sportif','2 - 2'],['10 Eki','16:00','Alanyaspor','Erzurumspor','0 - 0'],['10 Eki','16:00','Samsunspor','Trabzonspor','0 - 3'],['10 Eki','19:00','Rizespor','Fenerbahçe','0 - 3'],['11 Eki','13:30','Konyaspor','Başakşehir','Sonuç bekleniyor'],['11 Eki','16:00','Gaziantep FK','Çorum FK','Süper Lig'],['11 Eki','19:00','Beşiktaş','Kocaelispor','Süper Lig'],['12 Eki','20:00','Eyüpspor','Göztepe','Süper Lig']];
   const list=$('#upcomingMainList');
   if(list&&!list.querySelector('.fixture-day')){ list.innerHTML=upcoming.map((m,i)=>`<button class="fixture-card" data-match="${i}"><span><b>${m[0]}</b><small>${m[1]}</small></span><strong>${m[2]} <em>${m[1]==='MS'?m[4]:'vs'}</em> ${m[3]}</strong><small>${m[1]==='MS'?'Süper Lig':m[4]}</small></button>`).join(''); $('#fixtureCount')?.replaceChildren(document.createTextNode(upcoming.length+' maç')); }
   const details=[['Galatasaray','Kasımpaşa','Süper Lig','9 Ekim 2026 · 20.00'],['Gençlerbirliği','Amed Sportif','Süper Lig','10 Ekim 2026 · 13.30'],['Alanyaspor','Erzurumspor','Süper Lig','10 Ekim 2026 · 16.00'],['Samsunspor','Trabzonspor','Süper Lig','10 Ekim 2026 · 16.00'],['Rizespor','Fenerbahçe','Süper Lig','10 Ekim 2026 · 19.00'],['Konyaspor','Başakşehir','Süper Lig','11 Ekim 2026 · 13.30'],['Gaziantep FK','Çorum FK','Süper Lig','11 Ekim 2026 · 16.00'],['Beşiktaş','Kocaelispor','Süper Lig','11 Ekim 2026 · 19.00'],['Eyüpspor','Göztepe','Süper Lig','12 Ekim 2026 · 20.00']];
@@ -411,14 +411,15 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
 /* V53: Yaklaşan Maçlar widgetı gerçek fikstür verisine bağlandı. */
 (function initUpcomingWidget(){
   const matches=[
-    ['18 Eyl','20:00','Kasımpaşa','Konyaspor','Süper Lig'],
-    ['19 Eyl','17:00','Kocaelispor','Gaziantep FK','Süper Lig'],
-    ['19 Eyl','17:00','Arca Çorum FK','Alanyaspor','Süper Lig'],
-    ['19 Eyl','20:00','Trabzonspor','Galatasaray','Süper Lig'],
-    ['19 Eyl','20:00','Başakşehir','Gençlerbirliği','Süper Lig'],
-    ['20 Eyl','MS','Fenerbahçe','Eyüpspor','8 - 0'],
-    ['20 Eyl','MS','Amed Sportif','Beşiktaş','3 - 2']
-  ];
+    ['9 Eki · MS 3-1','20:00','Galatasaray','Kasımpaşa','Süper Lig'],
+    ['10 Eki · MS 2-2','13:30','Gençlerbirliği','Amed Sportif','Süper Lig'],
+    ['10 Eki · MS 0-0','16:00','Alanyaspor','Erzurumspor FK','Süper Lig'],
+    ['10 Eki · MS 0-3','16:00','Samsunspor','Trabzonspor','Süper Lig'],
+    ['10 Eki · MS 0-3','19:00','Çaykur Rizespor','Fenerbahçe','Süper Lig'],
+    ['11 Eki · Sonuç bekleniyor','13:30','Konyaspor','Başakşehir','Süper Lig'],
+    ['11 Eki · Yaklaşan','16:00','Gaziantep FK','Arca Çorum FK','Süper Lig'],
+    ['11 Eki · Yaklaşan','19:00','Beşiktaş','Kocaelispor','Süper Lig'],
+    ['12 Eki · Yaklaşan','20:00','Eyüpspor','Göztepe','Süper Lig']  ];
   const box=document.querySelector('#upcomingFixtures');
   const count=document.querySelector('#fixtureCount');
   if(!box)return;
@@ -428,7 +429,8 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
       const time=row.querySelector('time')?.innerText.replace(/\s+/g,' ').trim()||'';
       const home=row.querySelector('.fixture-team b')?.textContent.trim()||'';
       const away=row.querySelector('.fixture-team.away b')?.textContent.trim()||'';
-      return `<button class="fixture-card" type="button" data-upcoming-index="${i}"><span><b>${time}</b><small>Yaklaşan</small></span><strong>${home} <em>vs</em> ${away}</strong><small>Süper Lig</small></button>`;
+      const result=row.dataset.score; const past=new Date(row.dataset.kickoff||0).getTime()<Date.now(); const status=result?`MS ${result}`:(past?`Sonuç bekleniyor`:`Yaklaşan`);
+      return `<button class="fixture-card" type="button" data-upcoming-index="${i}"><span><b>${time}</b><small>${status}</small></span><strong>${home} <em>${result||'vs'}</em> ${away}</strong><small>Süper Lig</small></button>`;
     }).join('');
     if(count)count.textContent=`${currentWeek.length} maç`;
     box.querySelectorAll('[data-upcoming-index]').forEach(btn=>btn.addEventListener('click',()=>document.querySelector('#maclar')?.scrollIntoView({behavior:'smooth',block:'start'})));
@@ -931,7 +933,7 @@ else loadOwnJsonNews(false);
   document.querySelectorAll('a[href="#guncel-gundem"]').forEach(link=>link.setAttribute('href','#gundem'));
   document.querySelectorAll('a[href*="?stkn="],a[href*="?si="]').forEach(link=>{try{const url=new URL(link.href);url.search='';link.href=url.href}catch(_){}});
   const quickMenu=document.querySelector('footer .footer-grid > div:nth-child(2)');
-  if(quickMenu)quickMenu.innerHTML='<b>Hızlı Menü</b><a href="#sondakika">Son Dakika</a><a href="#superlig">Süper Lig</a><a href="#milli-takim">Millî Takım</a><a href="#avrupa-kupalari">Avrupa Kupaları</a><a href="#dunya">Avrupa Ligleri</a><a href="#transfer">Transfer</a><button type="button" data-nav-video>Videolar</button><a href="#gundem">Gündem</a><a href="#iletisim">İletişim</a><a href="#maclar">Canlı / Bugünün Maçları</a>';
+  if(quickMenu)quickMenu.innerHTML='<b>Hızlı Menü</b><a href="#sondakika">Son Dakika</a><a href="#superlig">Süper Lig</a><a href="#avrupa-kupalari">Avrupa Kupaları</a><a href="#dunya">Avrupa Ligleri</a><a href="#transfer">Transfer</a><button type="button" data-nav-video>Videolar</button><a href="#gundem">Gündem</a><a href="#iletisim">İletişim</a><a href="#maclar">Canlı / Bugünün Maçları</a>';
   const accountLabel=document.querySelector('#loginBtn');if(accountLabel)accountLabel.textContent='Hesap';
   const feed=document.querySelector('#newsFeed');
   if(feed){
