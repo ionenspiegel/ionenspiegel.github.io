@@ -55,7 +55,9 @@ $('#moreTeams')?.addEventListener('click',()=>{openDrawer()});
 
 /* ---------- NEWS BOOKMARKS ---------- */
 function articleData(article){
-  const img = article.querySelector('img')?.src || article.querySelector('.thumb span')?.textContent || './is-logo.png';
+  const imgEl = article.querySelector('img');
+  const badgeEl = article.querySelector('.thumb span');
+  const img = imgEl ? imgEl.src : (badgeEl ? badgeEl.textContent.trim() : '⚽');
   const h = article.querySelector('h3')?.textContent.trim() || 'Haber';
   const p = article.querySelector('p')?.textContent.trim() || '';
   const source = article.querySelector('a[target="_blank"]')?.href || '#';
@@ -68,7 +70,7 @@ function articleData(article){
     team: article.dataset.team || '',
     text: p,
     source: source,
-    image: img.startsWith('http') || img.startsWith('./') ? img : './is-logo.png',
+    image: img,
     kicker: kicker,
     savedAt: Date.now()
   };
@@ -117,13 +119,16 @@ function renderSavedNews(){
   }
   
   box.innerHTML = saved.map(x => `
-    <article class="saved-news-card" style="display:flex; gap:12px; align-items:center; padding:10px; border-bottom:1px solid #333; position:relative;">
-      <div style="flex:1;">
-        <small style="color:var(--red); font-weight:bold;">${x.kicker || 'HABER'}</small>
-        <h3 style="font-size:14px; margin:4px 0;">${x.title}</h3>
-        <a href="${x.source}" target="_blank" rel="noopener noreferrer" style="font-size:12px; color:#4d8dff;">Kaynağı aç ↗</a>
+    <article class="saved-news-card" style="display:flex; gap:12px; align-items:center; padding:12px; border-bottom:1px solid #2a2a2a; position:relative;">
+      <div style="width:40px; height:40px; background:#e50914; color:#fff; border-radius:8px; display:grid; place-items:center; font-weight:bold; font-size:12px; flex-shrink:0;">
+        ${x.image.length <= 4 ? x.image : '⚽'}
       </div>
-      <button class="saved-remove" type="button" data-remove-saved="${x.id}" aria-label="Kaydı kaldır" style="background:none; border:none; color:#ff5962; font-size:20px; cursor:pointer; padding:5px;">×</button>
+      <div style="flex:1; min-width:0;">
+        <small style="color:#ff5962; font-weight:900; font-size:10px;">${x.kicker}</small>
+        <h3 style="font-size:13px; margin:2px 0; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${x.title}</h3>
+        <a href="${x.source}" target="_blank" rel="noopener noreferrer" style="font-size:11px; color:#4d8dff; text-decoration:none;">Kaynağı aç ↗</a>
+      </div>
+      <button class="saved-remove" type="button" data-remove-saved="${x.id}" aria-label="Kaydı kaldır" style="background:none; border:none; color:#ff5962; font-size:22px; cursor:pointer; padding:4px 8px;">×</button>
     </article>
   `).join('');
   
