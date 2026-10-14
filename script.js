@@ -54,17 +54,87 @@ $$('.team-link').forEach(b=>b.addEventListener('click',()=>filterTeam(b.dataset.
 $('#moreTeams')?.addEventListener('click',()=>{openDrawer()});
 
 /* ---------- NEWS BOOKMARKS ---------- */
-function articleData(article){const img=article.querySelector('img');const h=article.querySelector('h3');const p=article.querySelector('p');const source=article.querySelector('a');const kicker=article.querySelector('.news-kicker');return{id:article.dataset.newsId,title:h?.textContent.trim()||'Haber',team:article.dataset.team||'',text:p?.textContent.trim()||'',source:source?.href||'#',image:img?.src||'',kicker:kicker?.textContent.trim()||'',savedAt:Date.now()}}
-function isSaved(id){return getSaved().some(x=>x.id===id)}
-function updateBookmarkButtons(){ $$('.news-row.has-bookmark').forEach(a=>{const b=a.querySelector('.bookmark-btn');if(!b)return;const saved=isSaved(a.dataset.newsId);b.classList.toggle('saved',saved);b.textContent=saved?'🔖':'🔖';b.setAttribute('aria-label',saved?'Kaydedilenlerden çıkar':'Haberi kaydet');})}
-function toggleBookmark(article){const id=article.dataset.newsId;let saved=getSaved();if(saved.some(x=>x.id===id)){saved=saved.filter(x=>x.id!==id);toast('Haber kaydedilenlerden çıkarıldı')}else{saved.unshift(articleData(article));toast('Haber “Sonra Oku”ya kaydedildi')}setSaved(saved);updateBookmarkButtons();renderSavedNews()}
+function articleData(article){
+  const img = article.querySelector('img')?.src || article.querySelector('.thumb span')?.textContent || './is-logo.png';
+  const h = article.querySelector('h3')?.textContent.trim() || 'Haber';
+  const p = article.querySelector('p')?.textContent.trim() || '';
+  const source = article.querySelector('a[target="_blank"]')?.href || '#';
+  const kicker = article.querySelector('.news-kicker')?.textContent.trim() || 'HABER';
+  const newsId = article.dataset.newsId || 'news-' + Date.now();
+  
+  return {
+    id: newsId,
+    title: h,
+    team: article.dataset.team || '',
+    text: p,
+    source: source,
+    image: img.startsWith('http') || img.startsWith('./') ? img : './is-logo.png',
+    kicker: kicker,
+    savedAt: Date.now()
+  };
+}
 
-const savedModal=$('#savedModal');
-function renderSavedNews(){const box=$('#savedNewsList');if(!box)return;const saved=getSaved();if(!saved.length){box.innerHTML='<div class="saved-empty">🔖<br><br>Henüz kaydedilmiş haber yok.<br><small>Haberlerin sağ üstündeki yer imi düğmesine dokun.</small></div>';return}box.innerHTML=saved.map(x=>`<article class="saved-news-card"><img src="${x.image}" alt=""><div><small>${x.kicker}</small><h3>${x.title}</h3><a href="${x.source}" target="_blank" rel="noopener">Kaynağı aç ↗</a></div><button class="saved-remove" type="button" data-remove-saved="${x.id}" aria-label="Kaydı kaldır">×</button></article>`).join('');$$('[data-remove-saved]').forEach(b=>b.addEventListener('click',()=>{setSaved(getSaved().filter(x=>x.id!==b.dataset.removeSaved));renderSavedNews();updateBookmarkButtons();toast('Kayıt kaldırıldı')}))}
-function openSaved(){renderSavedNews();savedModal?.classList.add('show');document.body.classList.add('modal-open');closeDrawer()}
-function closeSaved(){savedModal?.classList.remove('show');document.body.classList.remove('modal-open')}
-$('#savedNewsMenu')?.addEventListener('click',openSaved);$('#savedCard')?.addEventListener('click',openSaved);$('#savedClose')?.addEventListener('click',closeSaved);savedModal?.addEventListener('click',e=>{if(e.target===savedModal)closeSaved()});
+function isSaved(id){
+  return getSaved().some(x => x.id === id);
+}
 
+function updateBookmarkButtons(){ 
+  $$('.news-row.has-bookmark').forEach(a => {
+    const b = a.querySelector('.bookmark-btn');
+    if(!b) return;
+    const saved = isSaved(a.dataset.newsId);
+    b.classList.toggle('saved', saved);
+    b.setAttribute('aria-label', saved ? 'Kaydedilenlerden çıkar' : 'Haberi kaydet');
+  });
+}
+
+function toggleBookmark(article){
+  const id = article.dataset.newsId;
+  if(!id) return;
+  let saved = getSaved();
+  if(saved.some(x => x.id === id)){
+    saved = saved.filter(x => x.id !== id);
+    toast('Haber kaydedilenlerden çıkarıldı');
+  } else {
+    saved.unshift(articleData(article));
+    toast('Haber “Sonra Oku”ya kaydedildi');
+  }
+  setSaved(saved);
+  updateBookmarkButtons();
+  renderSavedNews();
+}
+
+const savedModal = $('#savedModal');
+
+function renderSavedNews(){
+  const box = $('#savedNewsList');
+  if(!box) return;
+  const saved = getSaved();
+  
+  if(!saved.length){
+    box.innerHTML = '<div class="saved-empty">🔖<br><br>Henüz kaydedilmiş haber yok.<br><small>Haberlerin sağ üstündeki yer imi düğmesine dokun.</small></div>';
+    return;
+  }
+  
+  box.innerHTML = saved.map(x => `
+    <article class="saved-news-card" style="display:flex; gap:12px; align-items:center; padding:10px; border-bottom:1px solid #333; position:relative;">
+      <div style="flex:1;">
+        <small style="color:var(--red); font-weight:bold;">${x.kicker || 'HABER'}</small>
+        <h3 style="font-size:14px; margin:4px 0;">${x.title}</h3>
+        <a href="${x.source}" target="_blank" rel="noopener noreferrer" style="font-size:12px; color:#4d8dff;">Kaynağı aç ↗</a>
+      </div>
+      <button class="saved-remove" type="button" data-remove-saved="${x.id}" aria-label="Kaydı kaldır" style="background:none; border:none; color:#ff5962; font-size:20px; cursor:pointer; padding:5px;">×</button>
+    </article>
+  `).join('');
+  
+  $$('[data-remove-saved]').forEach(b => b.addEventListener('click', (e) => {
+    e.stopPropagation();
+    setSaved(getSaved().filter(x => x.id !== b.dataset.removeSaved));
+    renderSavedNews();
+    updateBookmarkButtons();
+    toast('Kayıt kaldırıldı');
+  }));
+}
 /* ---------- HERO ---------- */
 const HERO_BJK_PHOTO='./photo-derbi.jpg';
 const HERO_STATIC={"title":"Galatasaray, Barcelona Karşısında Mağlup Oldu: 1-4","text":"Şampiyonlar Ligi lig aşaması 2. hafta mücadelesinde Galatasaray, RAMS Park'ta Barcelona'ya 4-1 mağlup oldu.","source":"UEFA / İonenSpiegel · 15 Ekim 2026","newsId":"ucl-galatasaray-barcelona-sonucu-2026-10-15","bg":"linear-gradient(125deg,#17191e 0%,#22252b 68%,#352127 100%)","link":"https://www.uefa.com/uefachampionsleague/"};function renderStaticHero(){const s=HERO_STATIC,media=$('#heroMedia');if(!media)return;$('#heroTitle').textContent=s.title;$('#heroText').textContent=s.text;$('#heroSource').textContent=s.source;media.style.background=s.bg;$('#heroIndex').textContent='1';const dots=$('#sliderDots');if(dots)dots.innerHTML='';const a=$(`.news-row[data-news-id="${s.newsId}"]`);setSocialImage(a?.querySelector('img')?.getAttribute('src')||'./hero-bjk.jpg');$('#heroRead').onclick=()=>window.open(s.link,'_blank','noopener')}
