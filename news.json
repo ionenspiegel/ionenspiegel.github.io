@@ -1,82 +1,62 @@
 [
   {
+    "id": "ucl-fenerbahce-aston-villa-sonucu-2026-10-15",
+    "title": "Fenerbahçe, Aston Villa deplasmanında 6-0 kaybetti",
+    "description": "UEFA Şampiyonlar Ligi lig aşamasının 14 Ekim tarihli karşılaşmasında Fenerbahçe, Aston Villa deplasmanından mağlubiyetle ayrıldı. Sarı-lacivertlilerin bir sonraki Şampiyonlar Ligi maçı 20 Ekim'de Slavia Prag ile oynanacak.",
+    "category": "Fenerbahçe",
+    "date": "15 Ekim 2026",
+    "image": "./is-logo.png",
+    "source": "UEFA",
+    "link": "https://www.uefa.com/uefachampionsleague/"
+  },
+  {
     "id": "ucl-galatasaray-barcelona-sonucu-2026-10-15",
     "title": "Galatasaray, Barcelona karşısında 4-1 mağlup oldu",
-    "description": "UEFA Şampiyonlar Ligi lig aşamasının 13 Ekim tarihli maçında Galatasaray, Barcelona'ya 4-1 yenildi. Sarı-kırmızılılar için sıradaki Avrupa sınavı 21 Ekim'de Lille deplasmanı olacak. Sonuç ve sonraki maç UEFA fikstüründe yer alıyor.",
+    "description": "13 Ekim Salı akşamı RAMS Park'ta oynanan Şampiyonlar Ligi lig aşaması 2. hafta mücadelesinde Galatasaray, Barcelona'ya 4-1 yenildi. Sarı-kırmızılılar 21 Ekim'de Lille deplasmanına çıkacak.",
     "category": "Galatasaray",
     "date": "15 Ekim 2026",
     "image": "./is-logo.png",
     "source": "UEFA",
-    "link": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-uefa-champions-league-all-the-league-phase-fixtures/"
-  },
-  {
-    "id": "ucl-fenerbahce-aston-villa-sonucu-2026-10-15",
-    "title": "Fenerbahçe, Aston Villa deplasmanında 6-0 kaybetti",
-    "description": "UEFA'nın 14 Ekim tarihli Şampiyonlar Ligi sonuçlarına göre Fenerbahçe, Aston Villa deplasmanından 6-0 mağlubiyetle ayrıldı. Sarı-lacivertlilerin lig aşamasındaki bir sonraki maçı 20 Ekim'de Slavia Prag karşısında oynanacak.",
-    "category": "Fenerbahçe",
-    "date": "15 Ekim 2026",
-    "image": "./is-logo.png",
-    "source": "UEFA",
-    "link": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-uefa-champions-league-all-the-league-phase-fixtures/"
-  },
-  {
-    "id": "conference-league-trabzonspor-kups-2026-10-15",
-    "title": "Trabzonspor, Konferans Ligi'ne KuPS deplasmanında başlıyor",
-    "description": "Trabzonspor, UEFA Konferans Ligi 2026/27 lig aşamasının ilk haftasında 15 Ekim'de KuPS Kuopio ile karşılaşıyor. UEFA fikstüründe başlangıç saati 18.45 CET olarak belirtiliyor; Türkiye saatiyle 19.45'e denk geliyor.",
-    "category": "Trabzonspor",
-    "date": "15 Ekim 2026",
-    "image": "./is-logo.png",
-    "source": "UEFA",
-    "link": "https://www.uefa.com/uefaconferenceleague/news/02a8-2174cb200f25-b94693ddff4e-1000--2026-27-conference-league-all-the-league-phase-fixtures/"
+    "link": "https://www.uefa.com/uefachampionsleague/"
   },
   {
     "id": "europa-league-besiktas-hoffenheim-2026-10-15",
     "title": "Beşiktaş, Avrupa Ligi'nde Hoffenheim deplasmanında",
-    "description": "Beşiktaş, UEFA Avrupa Ligi lig aşamasının ikinci maç haftasında 15 Ekim'de Hoffenheim'a konuk oluyor. UEFA fikstüründe maç 21.00 CET olarak listeleniyor; bu saat Türkiye'de 22.00.",
+    "description": "Beşiktaş, UEFA Avrupa Ligi lig aşaması 2. hafta maçında bugün (15 Ekim) TSİ 22.00'de Hoffenheim'a konuk oluyor. Siyah-beyazlılar Almanya'da galibiyet hedefliyor.",
     "category": "Beşiktaş",
     "date": "15 Ekim 2026",
     "image": "./is-logo.png",
     "source": "UEFA",
-    "link": "https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-uefa-europa-league-all-the-league-phase-fixtures-and-re/"
+    "link": "https://www.uefa.com/uefaeuropaleague/"
   },
   {
-    "id": "europa-league-15-ekim-programi-2026",
-    "title": "Avrupa Ligi'nde bu akşam dikkat çeken maçlar",
-    "description": "15 Ekim UEFA Avrupa Ligi programında Salzburg-Milan, Lyon-Crystal Palace, Celta-Juventus, Benfica-Celtic ve Hoffenheim-Beşiktaş karşılaşmaları bulunuyor. Fikstür ve saatler UEFA'nın resmî programına göre derlendi.",
-    "category": "Avrupa Kupaları",
+    "id": "conference-league-trabzonspor-kups-2026-10-15",
+    "title": "Trabzonspor, Konferans Ligi'ne KuPS deplasmanında başlıyor",
+    "description": "Trabzonspor, UEFA Konferans Ligi lig aşamasındaki ilk maçında bugün (15 Ekim) TSİ 19.45'te Finlandiya temsilcisi KuPS Kuopio ile karşılaşacak.",
+    "category": "Trabzonspor",
     "date": "15 Ekim 2026",
     "image": "./is-logo.png",
     "source": "UEFA",
-    "link": "https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-uefa-europa-league-all-the-league-phase-fixtures-and-re/"
+    "link": "https://www.uefa.com/uefaconferenceleague/"
+  },
+  {
+    "id": "superlig-7-hafta-sonuclari-2026-10-13",
+    "title": "Süper Lig'de 7. hafta tamamlandı",
+    "description": "12 Ekim Pazartesi akşamı oynanan Eyüpspor 0-2 Göztepe maçıyla Süper Lig'in 7. haftası sona erdi. Haftanın dikkat çeken maçında Çaykur Rizespor ile Fenerbahçe 1-1 berabere kalırken Beşiktaş, Kocaelispor'u 3-1 mağlup etti.",
+    "category": "Süper Lig",
+    "date": "13 Ekim 2026",
+    "image": "./is-logo.png",
+    "source": "beIN SPORTS",
+    "link": "https://www.beinsports.com.tr/lig/super-lig"
   },
   {
     "id": "superlig-8-hafta-corum-rizespor-2026-10-15",
     "title": "Çorum FK, Süper Lig'de Rizespor'u ağırlayacak",
-    "description": "Süper Lig'in 8. haftasında Arca Çorum FK, 16 Ekim Cuma günü saat 20.00'de Çaykur Rizespor'u konuk edecek. Fikstür saati TFF'nin lig programıyla karşılaştırıldı.",
+    "description": "Süper Lig'in 8. haftası yarın (16 Ekim Cuma) saat 20.00'de oynanacak Arca Çorum FK - Çaykur Rizespor karşılaşmasıyla başlayacak.",
     "category": "Süper Lig",
     "date": "15 Ekim 2026",
     "image": "./is-logo.png",
-    "source": "TFF / FBref fikstürü",
-    "link": "https://www.tff.org/?pageID=198"
-  },
-  {
-    "id": "superlig-fenerbahce-alanyaspor-2026-10-15",
-    "title": "Fenerbahçe'nin sıradaki lig maçı Alanyaspor karşısında",
-    "description": "Fenerbahçe, 17 Ekim Cumartesi günü Süper Lig'in 8. haftasında Alanyaspor'u ağırlayacak. Maçın başlama saati 19.00 olarak fikstürde listeleniyor.",
-    "category": "Fenerbahçe",
-    "date": "15 Ekim 2026",
-    "image": "./is-logo.png",
-    "source": "TFF / FBref fikstürü",
-    "link": "https://fbref.com/en/comps/26/schedule/Super-Lig-Scores-and-Fixtures"
-  },
-  {
-    "id": "superlig-trabzonspor-besiktas-derbisi-2026-10-15",
-    "title": "Trabzonspor-Beşiktaş maçı 19 Ekim'de",
-    "description": "Süper Lig'in 8. haftasında Trabzonspor, 19 Ekim Pazartesi günü Beşiktaş'ı konuk edecek. Karşılaşma iki takımın ligdeki sıralaması ve Avrupa maçlarının ardından kadro tercihlerine dair gündem oluşturuyor; kadro haberleri açıklamalar geldikçe güncellenmeli.",
-    "category": "Süper Lig",
-    "date": "15 Ekim 2026",
-    "image": "./is-logo.png",
-    "source": "TFF / FBref fikstürü",
-    "link": "https://fbref.com/en/comps/26/schedule/Super-Lig-Scores-and-Fixtures"
+    "source": "TFF",
+    "link": "https://www.tff.org/"
   }
 ]
