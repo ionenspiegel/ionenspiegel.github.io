@@ -1,31 +1,14 @@
-İONENSPIEGEL V86.3 — 15 EKİM 2026 GÜNLÜK HABER GÜNCELLEMESİ
+İONENSPIEGEL V86.3 — 18 EKİM 2026 HABER GÜNCELLEMESİ
 
-Bu ZIP, eldeki 13 Ekim V86.3 haber paketinin dosyaları üzerinde hazırlanmış bir haber güncelleme paketidir. Yaklaşık 500 MB olduğu belirtilen tam GitHub deposu değildir; eksik görsel/CSS/diğer varlıkların tümünü içerdiği garanti edilmez.
+Bu ZIP, mevcut küçük V86.3 haber paketinin güncellenmiş dosyalarını içerir; kullanıcının belirttiği yaklaşık 500 MB tam GitHub deposu değildir. Eksik CSS, görsel ve diğer varlıkları içerdiği garanti edilmez. Tam depodaki dosyalarla karşılaştırıp yalnızca ilgili dosyaları uygulayın.
 
-Güncellenen dosyalar:
-- news.json ve data/news.json
-- daily-news.json ve data/daily-news.json
-- script.js içindeki çevrimdışı haber yedeği
-- index.html sayfa başlığı
-- sw.js önbellek anahtarı
+Güncellenenler: news.json, daily-news.json, data/news.json, data/daily-news.json, script.js içindeki haber yedeği, index.html başlığı, sw.js önbellek anahtarı.
 
-Öne çıkan gündem:
-- Galatasaray 1-4 Barcelona (13 Ekim, UEFA)
-- Aston Villa 6-0 Fenerbahçe (14 Ekim, UEFA)
-- Trabzonspor-KuPS Kuopio, UEFA Konferans Ligi (15 Ekim)
-- Hoffenheim-Beşiktaş, UEFA Avrupa Ligi (15 Ekim)
-- Avrupa Ligi'nin 15 Ekim programı
-- Arca Çorum FK-Çaykur Rizespor (16 Ekim)
-- Fenerbahçe-Alanyaspor (17 Ekim)
-- Trabzonspor-Beşiktaş (19 Ekim)
+Gündem: Galatasaray-Gençlerbirliği (1-0), Fenerbahçe-Alanyaspor (3-0), Çorum FK-Rizespor (2-1), 18 Ekim Süper Lig maç programı ve Trabzonspor-Beşiktaş maçı.
 
 Kaynaklar:
-- UEFA Şampiyonlar Ligi: https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-uefa-champions-league-all-the-league-phase-fixtures/
-- UEFA Avrupa Ligi: https://www.uefa.com/uefaeuropaleague/news/02a8-2174cafa5bb6-82bbc20c9b92-1000--2026-27-uefa-europa-league-all-the-league-phase-fixtures-and-re/
-- UEFA Konferans Ligi: https://www.uefa.com/uefaconferenceleague/news/02a8-2174cb200f25-b94693ddff4e-1000--2026-27-conference-league-all-the-league-phase-fixtures/
-- TFF Süper Lig fikstürü: https://www.tff.org/?pageID=198
-- Süper Lig fikstürü: https://fbref.com/en/comps/26/schedule/Super-Lig-Scores-and-Fixtures
+- TFF fikstür ve sonuçlar: https://www.tff.org/Default.aspx?macId=283763&pageId=198
+- DHA 18 Ekim spor gündemi: https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913
+- UEFA Şampiyonlar Ligi fikstürü: https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/
 
-Kontroller: JSON dosyaları geçerli biçimde yazıldı; script.js içindeki haber yedeği aynı haber listesini kullanır.
-
-Sürüm notu: V86.3 yapısı korunmuştur; V87/V88 kullanılmamıştır.
+Not: Puan durumu, gol krallığı, asist tablosu, sayaç, form ve tüm site işlevleri bu haber paketiyle baştan kurulmaz; canlı site üzerinde ayrıca test edilmelidir. V86.3 korunmuştur; V87/V88 kullanılmamıştır.

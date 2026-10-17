@@ -54,95 +54,22 @@ $$('.team-link').forEach(b=>b.addEventListener('click',()=>filterTeam(b.dataset.
 $('#moreTeams')?.addEventListener('click',()=>{openDrawer()});
 
 /* ---------- NEWS BOOKMARKS ---------- */
-function articleData(article){
-  const imgEl = article.querySelector('img');
-  const badgeEl = article.querySelector('.thumb span');
-  const img = imgEl ? imgEl.src : (badgeEl ? badgeEl.textContent.trim() : '⚽');
-  const h = article.querySelector('h3')?.textContent.trim() || 'Haber';
-  const p = article.querySelector('p')?.textContent.trim() || '';
-  const source = article.querySelector('a[target="_blank"]')?.href || '#';
-  const kicker = article.querySelector('.news-kicker')?.textContent.trim() || 'HABER';
-  const newsId = article.dataset.newsId || 'news-' + Date.now();
-  
-  return {
-    id: newsId,
-    title: h,
-    team: article.dataset.team || '',
-    text: p,
-    source: source,
-    image: img,
-    kicker: kicker,
-    savedAt: Date.now()
-  };
-}
+function articleData(article){const img=article.querySelector('img');const h=article.querySelector('h3');const p=article.querySelector('p');const source=article.querySelector('a');const kicker=article.querySelector('.news-kicker');return{id:article.dataset.newsId,title:h?.textContent.trim()||'Haber',team:article.dataset.team||'',text:p?.textContent.trim()||'',source:source?.href||'#',image:img?.src||'',kicker:kicker?.textContent.trim()||'',savedAt:Date.now()}}
+function isSaved(id){return getSaved().some(x=>x.id===id)}
+function updateBookmarkButtons(){ $$('.news-row.has-bookmark').forEach(a=>{const b=a.querySelector('.bookmark-btn');if(!b)return;const saved=isSaved(a.dataset.newsId);b.classList.toggle('saved',saved);b.textContent=saved?'🔖':'🔖';b.setAttribute('aria-label',saved?'Kaydedilenlerden çıkar':'Haberi kaydet');})}
+function toggleBookmark(article){const id=article.dataset.newsId;let saved=getSaved();if(saved.some(x=>x.id===id)){saved=saved.filter(x=>x.id!==id);toast('Haber kaydedilenlerden çıkarıldı')}else{saved.unshift(articleData(article));toast('Haber “Sonra Oku”ya kaydedildi')}setSaved(saved);updateBookmarkButtons();renderSavedNews()}
 
-function isSaved(id){
-  return getSaved().some(x => x.id === id);
-}
+const savedModal=$('#savedModal');
+function renderSavedNews(){const box=$('#savedNewsList');if(!box)return;const saved=getSaved();if(!saved.length){box.innerHTML='<div class="saved-empty">🔖<br><br>Henüz kaydedilmiş haber yok.<br><small>Haberlerin sağ üstündeki yer imi düğmesine dokun.</small></div>';return}box.innerHTML=saved.map(x=>`<article class="saved-news-card"><img src="${x.image}" alt=""><div><small>${x.kicker}</small><h3>${x.title}</h3><a href="${x.source}" target="_blank" rel="noopener">Kaynağı aç ↗</a></div><button class="saved-remove" type="button" data-remove-saved="${x.id}" aria-label="Kaydı kaldır">×</button></article>`).join('');$$('[data-remove-saved]').forEach(b=>b.addEventListener('click',()=>{setSaved(getSaved().filter(x=>x.id!==b.dataset.removeSaved));renderSavedNews();updateBookmarkButtons();toast('Kayıt kaldırıldı')}))}
+function openSaved(){renderSavedNews();savedModal?.classList.add('show');document.body.classList.add('modal-open');closeDrawer()}
+function closeSaved(){savedModal?.classList.remove('show');document.body.classList.remove('modal-open')}
+$('#savedNewsMenu')?.addEventListener('click',openSaved);$('#savedCard')?.addEventListener('click',openSaved);$('#savedClose')?.addEventListener('click',closeSaved);savedModal?.addEventListener('click',e=>{if(e.target===savedModal)closeSaved()});
 
-function updateBookmarkButtons(){ 
-  $$('.news-row.has-bookmark').forEach(a => {
-    const b = a.querySelector('.bookmark-btn');
-    if(!b) return;
-    const saved = isSaved(a.dataset.newsId);
-    b.classList.toggle('saved', saved);
-    b.setAttribute('aria-label', saved ? 'Kaydedilenlerden çıkar' : 'Haberi kaydet');
-  });
-}
-
-function toggleBookmark(article){
-  const id = article.dataset.newsId;
-  if(!id) return;
-  let saved = getSaved();
-  if(saved.some(x => x.id === id)){
-    saved = saved.filter(x => x.id !== id);
-    toast('Haber kaydedilenlerden çıkarıldı');
-  } else {
-    saved.unshift(articleData(article));
-    toast('Haber “Sonra Oku”ya kaydedildi');
-  }
-  setSaved(saved);
-  updateBookmarkButtons();
-  renderSavedNews();
-}
-
-const savedModal = $('#savedModal');
-
-function renderSavedNews(){
-  const box = $('#savedNewsList');
-  if(!box) return;
-  const saved = getSaved();
-  
-  if(!saved.length){
-    box.innerHTML = '<div class="saved-empty">🔖<br><br>Henüz kaydedilmiş haber yok.<br><small>Haberlerin sağ üstündeki yer imi düğmesine dokun.</small></div>';
-    return;
-  }
-  
-  box.innerHTML = saved.map(x => `
-    <article class="saved-news-card" style="display:flex; gap:12px; align-items:center; padding:12px; border-bottom:1px solid #2a2a2a; position:relative;">
-      <div style="width:40px; height:40px; background:#e50914; color:#fff; border-radius:8px; display:grid; place-items:center; font-weight:bold; font-size:12px; flex-shrink:0;">
-        ${x.image.length <= 4 ? x.image : '⚽'}
-      </div>
-      <div style="flex:1; min-width:0;">
-        <small style="color:#ff5962; font-weight:900; font-size:10px;">${x.kicker}</small>
-        <h3 style="font-size:13px; margin:2px 0; color:#fff; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${x.title}</h3>
-        <a href="${x.source}" target="_blank" rel="noopener noreferrer" style="font-size:11px; color:#4d8dff; text-decoration:none;">Kaynağı aç ↗</a>
-      </div>
-      <button class="saved-remove" type="button" data-remove-saved="${x.id}" aria-label="Kaydı kaldır" style="background:none; border:none; color:#ff5962; font-size:22px; cursor:pointer; padding:4px 8px;">×</button>
-    </article>
-  `).join('');
-  
-  $$('[data-remove-saved]').forEach(b => b.addEventListener('click', (e) => {
-    e.stopPropagation();
-    setSaved(getSaved().filter(x => x.id !== b.dataset.removeSaved));
-    renderSavedNews();
-    updateBookmarkButtons();
-    toast('Kayıt kaldırıldı');
-  }));
-}
 /* ---------- HERO ---------- */
 const HERO_BJK_PHOTO='./photo-derbi.jpg';
-const HERO_STATIC={"title":"Galatasaray, Barcelona Karşısında Mağlup Oldu: 1-4","text":"Şampiyonlar Ligi lig aşaması 2. hafta mücadelesinde Galatasaray, RAMS Park'ta Barcelona'ya 4-1 mağlup oldu.","source":"UEFA / İonenSpiegel · 15 Ekim 2026","newsId":"ucl-galatasaray-barcelona-sonucu-2026-10-15","bg":"linear-gradient(125deg,#17191e 0%,#22252b 68%,#352127 100%)","link":"https://www.uefa.com/uefachampionsleague/"};function renderStaticHero(){const s=HERO_STATIC,media=$('#heroMedia');if(!media)return;$('#heroTitle').textContent=s.title;$('#heroText').textContent=s.text;$('#heroSource').textContent=s.source;media.style.background=s.bg;$('#heroIndex').textContent='1';const dots=$('#sliderDots');if(dots)dots.innerHTML='';const a=$(`.news-row[data-news-id="${s.newsId}"]`);setSocialImage(a?.querySelector('img')?.getAttribute('src')||'./hero-bjk.jpg');$('#heroRead').onclick=()=>window.open(s.link,'_blank','noopener')}
+const HERO_STATIC={"title":"Galatasaray, Kasımpaşa karşısında 3-1 kazandı","text":"Galatasaray 3-1’lik galibiyetle 16 puana yükseldi. Lucas Torreira 65. dakikada kırmızı kart gördü.","source":"Yeni Şafak · 10 Ekim 2026","newsId":"galatasaray-kasimpasa-mac-gunu-2026-10-09","bg":"linear-gradient(125deg,#17191e 0%,#22252b 68%,#352127 100%)","link":"https://www.yenisafak.com/spor/futbol"};
+function setSocialImage(src){const abs=new URL(src,location.href).href;['og:image','twitter:image'].forEach(n=>{const m=document.querySelector(`meta[property="${n}"],meta[name="${n}"]`);if(m)m.setAttribute('content',abs)})}
+function renderStaticHero(){const s=HERO_STATIC,media=$('#heroMedia');if(!media)return;$('#heroTitle').textContent=s.title;$('#heroText').textContent=s.text;$('#heroSource').textContent=s.source;media.style.background=s.bg;$('#heroIndex').textContent='1';const dots=$('#sliderDots');if(dots)dots.innerHTML='';const a=$(`.news-row[data-news-id="${s.newsId}"]`);setSocialImage(a?.querySelector('img')?.getAttribute('src')||'./hero-bjk.jpg');$('#heroRead').onclick=()=>window.open(s.link,'_blank','noopener')}
 renderStaticHero();
 
 /* ---------- LEAGUE TABS V65: sağlam, dokunmatik ve erişilebilir sekme sistemi ---------- */
@@ -613,68 +540,7 @@ document.querySelector('#loginModal')?.querySelectorAll('[data-close-modal],.clo
 }));
 
 /* ---------- OWN JSON NEWS FEED ---------- */
-const IONENSPIEGEL_NEWS_FALLBACK=[
-  {
-    "id": "ucl-fenerbahce-aston-villa-sonucu-2026-10-15",
-    "title": "Fenerbahçe, Aston Villa deplasmanında 6-0 kaybetti",
-    "description": "UEFA Şampiyonlar Ligi lig aşamasının 14 Ekim tarihli karşılaşmasında Fenerbahçe, Aston Villa deplasmanından mağlubiyetle ayrıldı. Sarı-lacivertlilerin bir sonraki Şampiyonlar Ligi maçı 20 Ekim'de Slavia Prag ile oynanacak.",
-    "category": "Fenerbahçe",
-    "date": "15 Ekim 2026",
-    "image": "./is-logo.png",
-    "source": "UEFA",
-    "link": "https://www.uefa.com/uefachampionsleague/"
-  },
-  {
-    "id": "ucl-galatasaray-barcelona-sonucu-2026-10-15",
-    "title": "Galatasaray, Barcelona karşısında 4-1 mağlup oldu",
-    "description": "13 Ekim Salı akşamı RAMS Park'ta oynanan Şampiyonlar Ligi lig aşaması 2. hafta mücadelesinde Galatasaray, Barcelona'ya 4-1 yenildi. Sarı-kırmızılılar 21 Ekim'de Lille deplasmanına çıkacak.",
-    "category": "Galatasaray",
-    "date": "15 Ekim 2026",
-    "image": "./is-logo.png",
-    "source": "UEFA",
-    "link": "https://www.uefa.com/uefachampionsleague/"
-  },
-  {
-    "id": "europa-league-besiktas-hoffenheim-2026-10-15",
-    "title": "Beşiktaş, Avrupa Ligi'nde Hoffenheim deplasmanında",
-    "description": "Beşiktaş, UEFA Avrupa Ligi lig aşaması 2. hafta maçında bugün (15 Ekim) TSİ 22.00'de Hoffenheim'a konuk oluyor. Siyah-beyazlılar Almanya'da galibiyet hedefliyor.",
-    "category": "Beşiktaş",
-    "date": "15 Ekim 2026",
-    "image": "./is-logo.png",
-    "source": "UEFA",
-    "link": "https://www.uefa.com/uefaeuropaleague/"
-  },
-  {
-    "id": "conference-league-trabzonspor-kups-2026-10-15",
-    "title": "Trabzonspor, Konferans Ligi'ne KuPS deplasmanında başlıyor",
-    "description": "Trabzonspor, UEFA Konferans Ligi lig aşamasındaki ilk maçında bugün (15 Ekim) TSİ 19.45'te Finlandiya temsilcisi KuPS Kuopio ile karşılaşacak.",
-    "category": "Trabzonspor",
-    "date": "15 Ekim 2026",
-    "image": "./is-logo.png",
-    "source": "UEFA",
-    "link": "https://www.uefa.com/uefaconferenceleague/"
-  },
-  {
-    "id": "superlig-7-hafta-sonuclari-2026-10-13",
-    "title": "Süper Lig'de 7. hafta tamamlandı",
-    "description": "12 Ekim Pazartesi akşamı oynanan Eyüpspor 0-2 Göztepe maçıyla Süper Lig'in 7. haftası sona erdi. Haftanın dikkat çeken maçında Çaykur Rizespor ile Fenerbahçe 1-1 berabere kalırken Beşiktaş, Kocaelispor'u 3-1 mağlup etti.",
-    "category": "Süper Lig",
-    "date": "13 Ekim 2026",
-    "image": "./is-logo.png",
-    "source": "beIN SPORTS",
-    "link": "https://www.beinsports.com.tr/lig/super-lig"
-  },
-  {
-    "id": "superlig-8-hafta-corum-rizespor-2026-10-15",
-    "title": "Çorum FK, Süper Lig'de Rizespor'u ağırlayacak",
-    "description": "Süper Lig'in 8. haftası yarın (16 Ekim Cuma) saat 20.00'de oynanacak Arca Çorum FK - Çaykur Rizespor karşılaşmasıyla başlayacak.",
-    "category": "Süper Lig",
-    "date": "15 Ekim 2026",
-    "image": "./is-logo.png",
-    "source": "TFF",
-    "link": "https://www.tff.org/"
-  }
-];
+const IONENSPIEGEL_NEWS_FALLBACK=[{"id":"superlig-galatasaray-genclerbirligi-2026-10-18","title":"Galatasaray, Gençlerbirliği deplasmanından 1-0 galip çıktı","description":"18 Ekim tarihli spor gündemi özetine göre Galatasaray, Gençlerbirliği karşısında 1-0 kazandı. Sarı-kırmızılıların bir sonraki Şampiyonlar Ligi maçı 21 Ekim'de Lille deplasmanında.","category":"Galatasaray","date":"18 Ekim 2026","image":"./is-logo.png","source":"DHA / UEFA","link":"https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913"},{"id":"superlig-fenerbahce-alanyaspor-2026-10-18","title":"Fenerbahçe, Alanyaspor'u 3-0 mağlup etti","description":"18 Ekim tarihli spor gündemi özetinde Fenerbahçe'nin Alanyaspor'u 3-0 yendiği bildirildi. Sarı-lacivertliler 20 Ekim'de Şampiyonlar Ligi'nde Slavia Prag ile karşılaşacak.","category":"Fenerbahçe","date":"18 Ekim 2026","image":"./is-logo.png","source":"DHA / UEFA","link":"https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913"},{"id":"superlig-corum-rizespor-2026-10-18","title":"Arca Çorum FK, Rizespor'u 2-1 yendi","description":"TFF'nin 2026/27 Süper Lig fikstüründe 16 Ekim'de oynanan Arca Çorum FK-Çaykur Rizespor karşılaşması 2-1 olarak listeleniyor.","category":"Çorum FK","date":"18 Ekim 2026","image":"./is-logo.png","source":"TFF","link":"https://www.tff.org/Default.aspx?macId=283763&pageId=198"},{"id":"superlig-kasimpasa-samsunspor-2026-10-18","title":"Bugünün Süper Lig programı: Kasımpaşa-Samsunspor","description":"18 Ekim Pazar günü Süper Lig programında saat 13.30'da Kasımpaşa-Samsunspor, 16.00'da Kocaelispor-Göztepe ve 19.00'da İstanbul Başakşehir-Gaziantep FK karşılaşmaları bulunuyor. Saatler Türkiye saatidir.","category":"Süper Lig","date":"18 Ekim 2026","image":"./is-logo.png","source":"TFF","link":"https://www.tff.org/Default.aspx?macId=283763&pageId=198"},{"id":"superlig-kocaelispor-goztepe-2026-10-18","title":"Kocaelispor-Göztepe maçı saat 16.00'da","description":"Süper Lig'in 8. hafta programında Kocaelispor, 18 Ekim Pazar günü saat 16.00'da Göztepe'yi konuk ediyor.","category":"Süper Lig","date":"18 Ekim 2026","image":"./is-logo.png","source":"TFF","link":"https://www.tff.org/Default.aspx?macId=283763&pageId=198"},{"id":"superlig-basaksehir-gaziantep-2026-10-18","title":"Başakşehir-Gaziantep FK mücadelesi akşam oynanacak","description":"İstanbul Başakşehir ile Gaziantep FK, 18 Ekim Pazar günü saat 19.00'da Süper Lig'in 8. haftasında karşı karşıya gelecek.","category":"Süper Lig","date":"18 Ekim 2026","image":"./is-logo.png","source":"TFF","link":"https://www.tff.org/Default.aspx?macId=283763&pageId=198"},{"id":"superlig-trabzonspor-besiktas-2026-10-18","title":"Trabzonspor-Beşiktaş derbisi yarın","description":"Trabzonspor ile Beşiktaş, Süper Lig'in 8. haftasında 19 Ekim Pazartesi günü saat 20.00'de karşılaşacak. Maç TFF'nin fikstüründe yer alıyor.","category":"Trabzonspor / Beşiktaş","date":"18 Ekim 2026","image":"./is-logo.png","source":"TFF","link":"https://www.tff.org/Default.aspx?macId=283763&pageId=198"},{"id":"ucl-fenerbahce-slavia-lille-galatasaray-2026-10-18","title":"Avrupa'da sıradaki sınavlar: Fenerbahçe ve Galatasaray","description":"UEFA Şampiyonlar Ligi lig aşamasında Fenerbahçe 20 Ekim'de Slavia Prag'ı ağırlayacak; Galatasaray ise 21 Ekim'de Lille deplasmanına çıkacak.","category":"Avrupa Kupaları","date":"18 Ekim 2026","image":"./is-logo.png","source":"UEFA","link":"https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/"}];
 function renderOwnNewsItems(items, status){
   const feed=document.querySelector('#newsFeed');
   if(!feed) return;
