@@ -67,7 +67,7 @@ $('#savedNewsMenu')?.addEventListener('click',openSaved);$('#savedCard')?.addEve
 
 /* ---------- HERO ---------- */
 const HERO_BJK_PHOTO='./photo-derbi.jpg';
-const HERO_STATIC={"title":"Galatasaray, Kasımpaşa karşısında 3-1 kazandı","text":"Galatasaray 3-1’lik galibiyetle 16 puana yükseldi. Lucas Torreira 65. dakikada kırmızı kart gördü.","source":"Yeni Şafak · 10 Ekim 2026","newsId":"galatasaray-kasimpasa-mac-gunu-2026-10-09","bg":"linear-gradient(125deg,#17191e 0%,#22252b 68%,#352127 100%)","link":"https://www.yenisafak.com/spor/futbol"};
+const HERO_STATIC={"title": "Galatasaray, Gençlerbirliği deplasmanından 1-0 galip çıktı", "text": "18 Ekim tarihli spor gündemi özetine göre Galatasaray, Gençlerbirliği karşısında 1-0 kazandı. Sarı-kırmızılıların bir sonraki Şampiyonlar Ligi maçı 21 Ekim'de Lille deplasmanında.", "source": "DHA / UEFA · 18 Ekim 2026", "newsId": "superlig-galatasaray-genclerbirligi-2026-10-18", "bg": "linear-gradient(125deg,#17191e 0%,#22252b 68%,#352127 100%)", "link": "https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913"};
 function setSocialImage(src){const abs=new URL(src,location.href).href;['og:image','twitter:image'].forEach(n=>{const m=document.querySelector(`meta[property="${n}"],meta[name="${n}"]`);if(m)m.setAttribute('content',abs)})}
 function renderStaticHero(){const s=HERO_STATIC,media=$('#heroMedia');if(!media)return;$('#heroTitle').textContent=s.title;$('#heroText').textContent=s.text;$('#heroSource').textContent=s.source;media.style.background=s.bg;$('#heroIndex').textContent='1';const dots=$('#sliderDots');if(dots)dots.innerHTML='';const a=$(`.news-row[data-news-id="${s.newsId}"]`);setSocialImage(a?.querySelector('img')?.getAttribute('src')||'./hero-bjk.jpg');$('#heroRead').onclick=()=>window.open(s.link,'_blank','noopener')}
 renderStaticHero();
@@ -302,10 +302,10 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
 
 /* ---------- V20 ETKILESIM / YEREL VERI ---------- */
 (function initV20(){
-  const upcoming=[['9 Eki','20:00','Galatasaray','Kasımpaşa','-'],['10 Eki','13:30','Gençlerbirliği','Amed Sportif','-'],['10 Eki','16:00','Alanyaspor','Erzurumspor','-'],['10 Eki','16:00','Samsunspor','Trabzonspor','-'],['10 Eki','19:00','Rizespor','Fenerbahçe','-'],['11 Eki','13:30','Konyaspor','Başakşehir','-'],['11 Eki','16:00','Gaziantep FK','Çorum FK','-'],['11 Eki','19:00','Beşiktaş','Kocaelispor','-'],['12 Eki','20:00','Eyüpspor','Göztepe','-']];
+  const upcoming=[["16 Eki","20:00","Çorum FK","Rizespor","-"],["17 Eki","13:30","Erzurumspor","Eyüpspor","-"],["17 Eki","16:00","Gençlerbirliği","Galatasaray","-"],["17 Eki","16:00","Amed Sportif","Konyaspor","-"],["17 Eki","19:00","Fenerbahçe","Alanyaspor","-"],["18 Eki","13:30","Kasımpaşa","Samsunspor","-"],["18 Eki","16:00","Kocaelispor","Göztepe","-"],["18 Eki","19:00","Başakşehir","Gaziantep FK","-"],["19 Eki","20:00","Trabzonspor","Beşiktaş","-"]];
   const list=$('#upcomingMainList');
   if(list&&!list.querySelector('.fixture-day')){ list.innerHTML=upcoming.map((m,i)=>`<button class="fixture-card" data-match="${i}"><span><b>${m[0]}</b><small>${m[1]}</small></span><strong>${m[2]} <em>${m[1]==='MS'?m[4]:'vs'}</em> ${m[3]}</strong><small>${m[1]==='MS'?'Süper Lig':m[4]}</small></button>`).join(''); $('#fixtureCount')?.replaceChildren(document.createTextNode(upcoming.length+' maç')); }
-  const details=[['Galatasaray','Kasımpaşa','Süper Lig','9 Ekim 2026 · 20.00'],['Gençlerbirliği','Amed Sportif','Süper Lig','10 Ekim 2026 · 13.30'],['Alanyaspor','Erzurumspor','Süper Lig','10 Ekim 2026 · 16.00'],['Samsunspor','Trabzonspor','Süper Lig','10 Ekim 2026 · 16.00'],['Rizespor','Fenerbahçe','Süper Lig','10 Ekim 2026 · 19.00'],['Konyaspor','Başakşehir','Süper Lig','11 Ekim 2026 · 13.30'],['Gaziantep FK','Çorum FK','Süper Lig','11 Ekim 2026 · 16.00'],['Beşiktaş','Kocaelispor','Süper Lig','11 Ekim 2026 · 19.00'],['Eyüpspor','Göztepe','Süper Lig','12 Ekim 2026 · 20.00']];
+  const details=[["Çorum FK","Rizespor","Süper Lig","16 Ekim 2026 · 20.00"],["Erzurumspor","Eyüpspor","Süper Lig","17 Ekim 2026 · 13.30"],["Gençlerbirliği","Galatasaray","Süper Lig","17 Ekim 2026 · 16.00"],["Amed Sportif","Konyaspor","Süper Lig","17 Ekim 2026 · 16.00"],["Fenerbahçe","Alanyaspor","Süper Lig","17 Ekim 2026 · 19.00"],["Kasımpaşa","Samsunspor","Süper Lig","18 Ekim 2026 · 13.30"],["Kocaelispor","Göztepe","Süper Lig","18 Ekim 2026 · 16.00"],["Başakşehir","Gaziantep FK","Süper Lig","18 Ekim 2026 · 19.00"],["Trabzonspor","Beşiktaş","Süper Lig","19 Ekim 2026 · 20.00"]];
   function openMatch(i){const m=details[i]||details[0]; let modal=$('#matchDetailModal'); if(!modal){modal=document.createElement('div');modal.className='modal-backdrop show';modal.id='matchDetailModal';modal.innerHTML='<div class="match-detail-modal"><button class="close-btn" id="matchClose">×</button><span class="tag news">MAÇ DETAYI</span><h2 id="matchTitle"></h2><p id="matchMeta"></p><div class="match-tabs"><b>Muhtemel 11</b><b>İstatistikler</b><b>Olaylar</b></div><div class="match-detail-body"><div><strong>Ev sahibi</strong><p>Muhtemel kadro bilgisi resmi kulüp açıklamasıyla güncellenir.</p></div><div><strong>Deplasman</strong><p>Muhtemel kadro bilgisi resmi kulüp açıklamasıyla güncellenir.</p></div><div class="match-stats"><span>Topa sahip olma <b>-- / --</b></span><span>Şut <b>-- / --</b></span><span>Korner <b>-- / --</b></span></div></div></div>';document.body.appendChild(modal);$('#matchClose').onclick=()=>modal.remove();modal.onclick=e=>{if(e.target===modal)modal.remove()};}
     $('#matchTitle').textContent=m[0]+' - '+m[1]; $('#matchMeta').textContent=m[3]+' · '+m[2]; modal.classList.add('show'); }
   $$('.fixture-card').forEach(b=>b.addEventListener('click',()=>openMatch(Number(b.dataset.match))));
@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
   const box=document.querySelector('#upcomingFixtures');
   const count=document.querySelector('#fixtureCount');
   if(!box)return;
-  const currentWeek=[...document.querySelectorAll('#upcomingMainList .fixture-day[data-fixture-day="7-hafta"] .fixture-match')];
+  const currentWeek=[...document.querySelectorAll('#upcomingMainList .fixture-day[data-fixture-day="8-hafta"] .fixture-match')];
   if(currentWeek.length){
     box.innerHTML=currentWeek.map((row,i)=>{
       const time=row.querySelector('time')?.innerText.replace(/\s+/g,' ').trim()||'';
@@ -1017,13 +1017,11 @@ else loadOwnJsonNews(false);
   // Generate the drawer fixture list from the main schedule so both stay in sync.
   const drawerMatches=document.querySelector('#navNextMatches');
   const drawerToggle=document.querySelector('#navNextToggle');
-  const fixtureRows=[...document.querySelectorAll('#upcomingMainList .fixture-day[data-fixture-day="7-hafta"] .fixture-match')];
+  const fixtureRows=[...document.querySelectorAll('#upcomingMainList .fixture-day[data-fixture-day="8-hafta"] .fixture-match')];
   const kickoffByTeams=[
-    ['Galatasaray','Kasımpaşa','2026-10-09T20:00:00+03:00'],['Gençlerbirliği','Amed Sportif','2026-10-10T13:30:00+03:00'],
-    ['Corendon Alanyaspor','Erzurumspor FK','2026-10-10T16:00:00+03:00'],['Samsunspor','Trabzonspor','2026-10-10T16:00:00+03:00'],
-    ['Çaykur Rizespor','Fenerbahçe','2026-10-10T19:00:00+03:00'],['Konyaspor','Başakşehir','2026-10-11T13:30:00+03:00'],
-    ['Gaziantep FK','Arca Çorum FK','2026-10-11T16:00:00+03:00'],['Beşiktaş','Kocaelispor','2026-10-11T19:00:00+03:00'],
-    ['Eyüpspor','Göztepe','2026-10-12T20:00:00+03:00']
+    ['Çorum','Rizespor','2026-10-16T20:00:00+03:00'],['Erzurumspor','Eyüpspor','2026-10-17T13:30:00+03:00'],['Gençlerbirliği','Galatasaray','2026-10-17T16:00:00+03:00'],
+    ['Amed Sportif','Konyaspor','2026-10-17T16:00:00+03:00'],['Fenerbahçe','Alanyaspor','2026-10-17T19:00:00+03:00'],['Kasımpaşa','Samsunspor','2026-10-18T13:30:00+03:00'],
+    ['Kocaelispor','Göztepe','2026-10-18T16:00:00+03:00'],['Başakşehir','Gaziantep FK','2026-10-18T19:00:00+03:00'],['Trabzonspor','Beşiktaş','2026-10-19T20:00:00+03:00']
   ];
   kickoffByTeams.forEach(([home,away,kickoff])=>{
     const row=fixtureRows.find(item=>item.textContent.includes(home)&&item.textContent.includes(away));
