@@ -72,7 +72,7 @@ function setSocialImage(src){const abs=new URL(src,location.href).href;['og:imag
 function renderStaticHero(){const s=HERO_STATIC,media=$('#heroMedia');if(!media)return;$('#heroTitle').textContent=s.title;$('#heroText').textContent=s.text;$('#heroSource').textContent=s.source;media.style.background=s.bg;$('#heroIndex').textContent='1';const dots=$('#sliderDots');if(dots)dots.innerHTML='';const a=$(`.news-row[data-news-id="${s.newsId}"]`);setSocialImage(a?.querySelector('img')?.getAttribute('src')||'./hero-bjk.jpg');$('#heroRead').onclick=()=>window.open(s.link,'_blank','noopener')}
 renderStaticHero();
 
-/* ---------- LEAGUE TABS V65: sağlam, dokunmatik ve erişilebilir sekme sistemi ---------- */
+/* ---------- LEAGUE TABS V65 ---------- */
 function activateLeagueTab(btn, smoothScroll=true){
   if(!btn || !btn.dataset.table)return;
   const table=btn.dataset.table;
@@ -167,7 +167,6 @@ newsFeedRoot?.addEventListener('click',e=>{
   openArticle(row);
 });
 
-
 /* ---------- SON DAKİKA OTOMATİK KAYAN ŞERİT ---------- */
 (function initBreakingTicker(){
   const track=document.getElementById('breakingScroll');
@@ -175,7 +174,6 @@ newsFeedRoot?.addEventListener('click',e=>{
   const originals=[...track.querySelectorAll('a')];
   if(!originals.length) return;
 
-  // İçerik ekrana sığsa bile şerit hareket edebilsin diye listeyi bir kez kopyala.
   if(!track.dataset.loopReady){
     originals.forEach(a=>{
       const clone=a.cloneNode(true);
@@ -188,7 +186,7 @@ newsFeedRoot?.addEventListener('click',e=>{
 
   let paused=false;
   let last=performance.now();
-  const speed=34; // px/sn
+  const speed=34; 
 
   const tick=(now)=>{
     const dt=Math.min(50,now-last)/1000;
@@ -281,6 +279,7 @@ window.addEventListener('appinstalled',()=>{deferredInstall=null;installCard?.cl
 
 /* ---------- V12 NOTIFICATIONS ---------- */
 $('#notificationCard')?.addEventListener('click',async()=>{if(!('Notification' in window)){toast('Bu tarayıcı bildirimleri desteklemiyor');return}let p=Notification.permission;if(p==='default')p=await Notification.requestPermission();if(p==='granted'){toast('Bildirimler açıldı');setTimeout(()=>new Notification('ionenspiegel',{body:'Yeni futbol gelişmesi var.',icon:'icon-192.png',tag:'ionenspiegel-news'}),3000)}else toast('Bildirim izni verilmedi')});
+
 /* ---------- V12 SKELETON NEWS ---------- */
 function runNewsSkeleton(){const feed=$('#newsFeed');if(!feed)return;const html=feed.innerHTML;feed.classList.add('skeleton-mode');feed.setAttribute('aria-busy','true');feed.innerHTML=`<article class="news-row"><div class="thumb"></div><div><div class="news-kicker">YÜKLENİYOR</div><h3>Haber hazırlanıyor...</h3><p>İçerik yükleniyor.</p></div></article><article class="news-row"><div class="thumb"></div><div><div class="news-kicker">YÜKLENİYOR</div><h3>Haber hazırlanıyor...</h3><p>İçerik yükleniyor.</p></div></article><article class="news-row"><div class="thumb"></div><div><div class="news-kicker">YÜKLENİYOR</div><h3>Haber hazırlanıyor...</h3><p>İçerik yükleniyor.</p></div></article>`;setTimeout(()=>{feed.innerHTML=html;feed.classList.remove('skeleton-mode');feed.setAttribute('aria-busy','false');bindNewsInteractions()},420)}
 
@@ -384,7 +383,6 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
   function countSharedVisit(){
     if(!/^https:\/\//.test(visitorApi)) return;
 
-    // Aynı tarayıcı aynı gün içinde sayfayı yenileyerek sayacı şişirmesin.
     const key = 'ionenspiegel-visit-day';
     const today = new Date().toLocaleDateString('sv-SE', {timeZone:'Europe/Istanbul'});
     if(localStorage.getItem(key) === today) return;
@@ -397,16 +395,12 @@ document.addEventListener('DOMContentLoaded',()=>{$('.stats-tabs')?.scrollTo({le
       body:'action=ziyaret'
     }).catch(()=>{});
 
-    // Kısa süre sonra ortak sayacı tekrar oku.
     setTimeout(loadCommunity, 1200);
   }
 
   countSharedVisit();
   $$('.news-row,.content-card,.world-card').forEach(card=>{card.addEventListener('click',()=>{const key=(card.innerText||'').slice(0,80),r=JSON.parse(localStorage.getItem(readsKey)||'{}');r[key]=(r[key]||0)+1;localStorage.setItem(readsKey,JSON.stringify(r))},{once:false})});
 })();
-
-
-
 
 /* V53: Yaklaşan Maçlar widgetı gerçek fikstür verisine bağlandı. */
 (function initUpcomingWidget(){
@@ -554,7 +548,7 @@ function renderOwnNewsItems(items, status){
     const source=esc(item.source||'İonenSpiegel');
     const rawCategory=String(item.category||'FUTBOL');
     const category=esc(rawCategory);
-    const badges={'Millî Takım':'🇹🇷','Beşiktaş':'BJK','Galatasaray':'GS','Süper Lig':'⚽'};
+    const badges={'Beşiktaş':'BJK','Galatasaray':'GS','Süper Lig':'⚽'};
     const badge=esc(badges[rawCategory]||rawCategory.slice(0,3).toUpperCase());
     const date=esc(item.date||'');
     return `<article class="news-row has-bookmark" data-news-id="${id}" data-team="${esc(team)}" data-search="${esc(item.title+' '+(item.description||''))}"><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb news-thumb-badge" href="${link}" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><span>${badge}</span></a><div><div class="news-kicker">${date} · ${category}</div><h3>${esc(item.title)}</h3><p>${desc}</p><a href="${link}" target="_blank" rel="noopener noreferrer">${source} ↗</a></div></article>`;
@@ -569,7 +563,6 @@ function renderOwnNewsItems(items, status){
   });
   if(status) status.textContent=`Kendi JSON haber akışı · ${items.length} haber`;
 }
-
 
 async function loadOwnJsonNews(showToast=false){
   const feed=$('#newsFeed');
@@ -635,10 +628,7 @@ else loadOwnJsonNews(false);
   }));
 })();
 
-/* V30 DAILY VERIFIED NEWS FALLBACK: local JSON is the single source for the homepage feed. */
-
-
-/* V52 FIXTURE FILTER: filters the existing fixture markup without changing the page structure. */
+/* V52 FIXTURE FILTER */
 (function(){
   function applyFixtureFilter(filter){
     const root=document.querySelector('#maclar');
@@ -774,18 +764,13 @@ else loadOwnJsonNews(false);
   });
 })();
 
-/* V58 BUTTON REPAIR
-   Visible controls in the current mobile design use newer IDs/classes while
-   legacy listeners still target older controls. This layer binds the visible
-   controls without removing the existing news/fixture logic.
-*/
+/* V58 BUTTON REPAIR */
 (function initV58ButtonRepair(){
   const q=(s,r=document)=>r.querySelector(s);
   const qa=(s,r=document)=>[...r.querySelectorAll(s)];
   const say=(m)=>{try{if(typeof toast==='function')toast(m)}catch(e){}};
   const more=q('#daha-fazla');
 
-  // Top and drawer controls.
   q('#mobileMenu')?.addEventListener('click',()=>typeof openDrawer==='function'&&openDrawer(),true);
   q('#menuBtn')?.addEventListener('click',()=>typeof openDrawer==='function'&&openDrawer(),true);
   q('#drawerClose')?.addEventListener('click',()=>typeof closeDrawer==='function'&&closeDrawer(),true);
@@ -794,7 +779,6 @@ else loadOwnJsonNews(false);
   q('#globalSearchBtn')?.addEventListener('click',()=>typeof globalSearch==='function'&&globalSearch(),true);
   q('#loginBtn')?.addEventListener('click',()=>q('#loginModal')?.classList.add('show'),true);
 
-  // Visible theme card.
   const theme=q('#darkThemeCard',more);
   function refreshThemeCard(){
     const dark=document.documentElement.classList.contains('dark-theme');
@@ -815,8 +799,6 @@ else loadOwnJsonNews(false);
   });
   refreshThemeCard();
 
-  // Visible favorite-team modal. The page also contains a legacy picker, so
-  // deliberately scope this renderer to the new modal.
   const favModal=q('#favoriteModal');
   const favGrid=q('#teamPicker',favModal);
   const favSearch=q('#teamSearch',favModal);
@@ -863,7 +845,6 @@ else loadOwnJsonNews(false);
   const favStatus=q('#favoriteStatus',more);
   if(favStatus)favStatus.textContent=pending||'Seçilmedi';
 
-  // Visible notification card.
   async function notifications(){
     if(!('Notification' in window)){say('Bu tarayıcı bildirimleri desteklemiyor');return}
     try{
@@ -877,7 +858,6 @@ else loadOwnJsonNews(false);
   const ns=q('#notificationStatus',more);
   if(ns&&'Notification' in window)ns.textContent=Notification.permission==='granted'?'Aktif':Notification.permission==='denied'?'Engellendi':'Kapalı';
 
-  // Visible video/gallery cards are links without legacy IDs.
   const media=q('#mediaModal'), content=q('#mediaContent'), title=q('#mediaTitle');
   function openMedia(mode){
     if(!media||!content)return;
@@ -901,7 +881,6 @@ else loadOwnJsonNews(false);
     if(t.includes('galeri'))a.addEventListener('click',e=>{e.preventDefault();openMedia('gallery')});
   });
 
-  // News chips.
   qa('#newsChips .news-chip').forEach(chip=>chip.addEventListener('click',()=>{
     const f=chip.dataset.newsFilter||'all';
     qa('#newsChips .news-chip').forEach(x=>x.classList.toggle('active',x===chip));
@@ -917,7 +896,6 @@ else loadOwnJsonNews(false);
   q('#refreshNews')?.addEventListener('click',()=>{if(typeof loadOwnJsonNews==='function')loadOwnJsonNews(true);else say('Haber akışı yenileniyor')});
   q('#backTop')?.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-  // Bottom navigation and drawer anchors.
   qa('.mobile-nav a[href^="#"],.desktop-nav a[href^="#"],.drawer a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
     const h=a.getAttribute('href');const target=h&&q(h);
     if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});if(typeof closeDrawer==='function')closeDrawer()}
@@ -930,8 +908,10 @@ else loadOwnJsonNews(false);
 (function initV86Navigation(){
   document.querySelectorAll('a[href="#guncel-gundem"]').forEach(link=>link.setAttribute('href','#gundem'));
   document.querySelectorAll('a[href*="?stkn="],a[href*="?si="]').forEach(link=>{try{const url=new URL(link.href);url.search='';link.href=url.href}catch(_){}});
+  
   const quickMenu=document.querySelector('footer .footer-grid > div:nth-child(2)');
-  if(quickMenu)quickMenu.innerHTML='<b>Hızlı Menü</b><a href="#sondakika">Son Dakika</a><a href="#superlig">Süper Lig</a><a href="#milli-takim">Millî Takım</a><a href="#avrupa-kupalari">Avrupa Kupaları</a><a href="#dunya">Avrupa Ligleri</a><a href="#transfer">Transfer</a><button type="button" data-nav-video>Videolar</button><a href="#gundem">Gündem</a><a href="#iletisim">İletişim</a><a href="#maclar">Canlı / Bugünün Maçları</a>';
+  if(quickMenu)quickMenu.innerHTML='<b>Hızlı Menü</b><a href="#sondakika">Son Dakika</a><a href="#superlig">Süper Lig</a><a href="#avrupa-kupalari">Avrupa Kupaları</a><a href="#dunya">Avrupa Ligleri</a><a href="#transfer">Transfer</a><button type="button" data-nav-video>Videolar</button><a href="#gundem">Gündem</a><a href="#iletisim">İletişim</a><a href="#maclar">Canlı / Bugünün Maçları</a>';
+  
   const accountLabel=document.querySelector('#loginBtn');if(accountLabel)accountLabel.textContent='Hesap';
   const feed=document.querySelector('#newsFeed');
   if(feed){
@@ -1014,7 +994,6 @@ else loadOwnJsonNews(false);
   updateTodayMatchDot();
   window.setInterval(updateTodayMatchDot,60000);
 
-  // Generate the drawer fixture list from the main schedule so both stay in sync.
   const drawerMatches=document.querySelector('#navNextMatches');
   const drawerToggle=document.querySelector('#navNextToggle');
   const fixtureRows=[...document.querySelectorAll('#upcomingMainList .fixture-day[data-fixture-day="8-hafta"] .fixture-match')];
@@ -1063,7 +1042,6 @@ else loadOwnJsonNews(false);
   });
   refreshFixtureStates();
 
-  // Consolidate the repeated agenda blocks without losing their distinct source cards.
   const agenda=document.querySelector('#gundem');
   const sources=[...document.querySelectorAll('#transfer .transfer-live-grid article,#guncel-gundem .big-update-grid article')];
   if(agenda&&sources.length){
@@ -1071,11 +1049,9 @@ else loadOwnJsonNews(false);
     const seen=new Set();
     const canonical=title=>{
       const t=title.toLocaleLowerCase('tr-TR');
-      if(t.includes('türkiye 1-4 italya'))return 'turkiye-italya';
       if(t.includes('seçim')&&t.includes('4 ekim'))return 'bjk-secim';
       if(t.includes('kasimpasa')||t.includes('kasımpaşa'))return 'gs-kasimpasa';
       if(t.includes('7. hafta'))return 'superlig-7-hafta';
-      if(t.includes('belçika 0-1 fransa'))return 'belcika-fransa';
       if(t.includes('barcelona')||t.includes('aston villa')||t.includes('hoffenheim'))return 'uefa-fixture-duplicate';
       return t.replace(/[^a-z0-9ığüşöç]+/g,' ').trim();
     };
@@ -1084,9 +1060,7 @@ else loadOwnJsonNews(false);
       const key=canonical(card.querySelector('h3')?.textContent||'');
       if(seen.has(key)||alreadyCovered.has(key))return;seen.add(key);grid.append(card);
     });
-    const brief=document.querySelector('#bugun .brief-grid');
-    const belgium=brief&&[...brief.querySelectorAll('.brief-card')].find(card=>card.textContent.includes('Belçika - Türkiye'));
-    if(belgium){const card=document.createElement('article');card.className='content-card';card.innerHTML='<span class="tag news">MİLLÎ TAKIM · YAKLAŞAN</span><h3>Belçika - Türkiye</h3><p>'+belgium.querySelector('p').textContent+'</p><a href="https://www.tff.org/default.aspx?ftxtID=51371&amp;pageID=202" target="_blank" rel="noopener noreferrer">TFF ↗</a>';grid.append(card)}
+
     agenda.innerHTML='<div class="section-head"><div><h2><span class="red-line"></span> Güncel Gündem</h2><p class="section-subtitle">Kaynak bağlantılı güncel futbol gelişmeleri</p></div></div>';
     agenda.append(grid);agenda.classList.add('nav-agenda');
     document.querySelector('#bugun')?.remove();document.querySelector('#guncel-gundem')?.remove();
@@ -1094,6 +1068,3 @@ else loadOwnJsonNews(false);
     if(transfer)transfer.innerHTML='<div class="section-head"><div><h2><span class="red-line"></span> Transfer Gündemi</h2><p class="section-subtitle">Resmî açıklama, doğrulanmış haber ve iddia ayrımıyla transfer gelişmeleri</p></div></div><div class="nav-transfer-legend" aria-label="Transfer haber etiketleri"><span class="nav-transfer-official">RESMİ · Kulüp veya oyuncu açıklaması</span><span class="nav-transfer-news">HABER · Kaynaklı haber</span><span class="nav-transfer-rumor">İDDİA · Doğrulanmamış gelişme</span></div><p class="nav-transfer-empty">Şu an doğrulanmış transfer haberi yok.</p>';
   }
 })();
-
-
-
