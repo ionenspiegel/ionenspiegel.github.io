@@ -7,7 +7,7 @@
 <link rel="icon" href="icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="manifest" href="manifest.json">
-<title>İonenSpiegel | Güncel Futbol Haberleri • 18 Ekim 2026</title>
+<title>İonenSpiegel | Güncel Futbol Haberleri • 20 Ekim 2026</title>
 <meta name="description" content="İonenSpiegel - Son dakika futbol haberleri, transferler, puan durumları ve maç merkezi.">
 <meta property="og:title" content="İonenSpiegel | Futbol Haberleri">
 <meta property="og:description" content="Son dakika futbol haberleri, Şampiyonlar Ligi, Avrupa Ligi, transferler ve Süper Lig.">
@@ -40,6 +40,8 @@
 <link rel="stylesheet" href="v62-modern.css?v=65">
 <style id="live-score-removed">
 #liveScoreWidget,#liveScoreCard,#liveScoreList,.live-score-list,#timelineModal,.live-clock,.live-all-link{display:none!important}
+
+.big-update-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.big-update-grid .content-card{height:100%;padding:18px}.big-update-grid .content-card h3{margin:7px 0 8px}.big-update-grid .content-card p{line-height:1.55}.big-update-grid .content-card a{display:inline-block;margin-top:8px}@media(max-width:900px){.big-update-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.big-update-grid{grid-template-columns:1fr}}
 </style>
 
 <style id="v32-redesign">
@@ -55,6 +57,7 @@
 .dark-theme #maclar .fixture-filter.active{color:#fff!important;background:#e50914!important}
 </style>
 <style id="v45-design-refresh">
+/* V45: modern mobil tasarım, renk sistemi ve erişilebilirlik */
 :root{--red:#e50914;--red-deep:#b90712;--accent:#ffb000;--ink:#111419;--surface:#fff;--surface-2:#f3f4f6;--focus:#4d8dff;--z-header:100;--z-drawer:150;--z-modal:200;--z-toast:300;--z-progress:310;--z-bottom-nav:120}
 body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 100%)}
 .topbar{z-index:var(--z-header);background:linear-gradient(115deg,#d60712 0%,#e50914 55%,#b90712 100%)}
@@ -75,9 +78,10 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.mobile-nav,.fixture-filter{transition:none}.breaking-scroll{animation:none!important}.live-pulse{animation:none!important}.news-feed.skeleton-mode .news-row:after{animation:none!important}.slider-arrow,.slider-dots{transition:none!important}}
 </style>
 <link rel="stylesheet" href="v62-light-theme-fix.css?v=63">
-<script src="./ga4.js?v=64" defer></script>
+  <script src="./ga4.js?v=64" defer></script>
 
 <style id="v65-professional-fixes">
+/* V65: profesyonel header, logo ve Süper Lig sekmeleri */
 .topbar .top-inner{align-items:center;min-height:72px}
 .brand.is-logo{display:inline-flex;align-items:baseline;justify-content:flex-start;gap:0;white-space:nowrap;font-family:'Barlow Condensed',Arial,sans-serif;font-size:clamp(35px,4vw,43px);font-weight:900;line-height:.9;letter-spacing:0;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
 .brand.is-logo .logo-first{font-weight:600;letter-spacing:-.35px}
@@ -107,6 +111,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 }
 </style>
 <style id="v67-breaking-fix">
+/* V67: ÜST SON DAKİKA BANDI */
 .breaking{height:46px!important;display:flex!important;align-items:stretch!important;overflow:hidden!important;background:#08090b!important;border-top:1px solid #252830!important;border-bottom:1px solid #252830!important}
 .breaking-label{flex:0 0 118px!important;width:118px!important;min-width:118px!important;height:46px!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:0 10px!important;font-size:11px!important;letter-spacing:.2px!important;line-height:1!important;white-space:nowrap!important;overflow:hidden!important}
 .breaking-label .live-dot{width:7px!important;height:7px!important;min-width:7px!important;margin-right:7px!important}
@@ -155,7 +160,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
         <a href="#dunya" data-world-filter-nav="İNGİLTERE">Premier League</a><a href="#dunya" data-world-filter-nav="İSPANYA">LaLiga</a><a href="#dunya" data-world-filter-nav="İTALYA">Serie A</a><a href="#dunya" data-world-filter-nav="ALMANYA">Bundesliga</a><a href="#dunya" data-world-filter-nav="FRANSA">Ligue 1</a>
       </div></details>
       <a href="#transfer" data-scrollspy="transfer">Transfer</a><button type="button" data-nav-video>Videolar</button><a href="#gundem" data-scrollspy="gundem">Gündem</a><a href="#iletisim" data-scrollspy="iletisim">İletişim</a>
-      <a class="nav-today-link" href="#maclar" data-scrollspy="maclar">Bugünün Maçları <span class="nav-live-dot" hidden aria-label="Bugün maç var"></span></a>
+      <a class="nav-today-link" href="#maclar" data-scrollspy="maclar">Canlı / Bugünün Maçları <span class="nav-live-dot" hidden aria-label="Bugün maç var"></span></a>
     </nav>
     <div class="top-actions">
       <button class="icon-btn theme-toggle" id="themeToggleButton" type="button" aria-label="Koyu temaya geç" title="Tema değiştir">☾</button>
@@ -165,14 +170,15 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   </div>
 </header>
 
-<nav class="nav-mobile-strip" aria-label="Bölüm kısayolları"><a href="#sondakika" data-scrollspy="sondakika">Son Dakika</a><a href="#superlig" data-scrollspy="superlig">Süper Lig</a><a href="#avrupa-kupalari" data-scrollspy="avrupa-kupalari">Avrupa Kupaları</a><a href="#dunya" data-scrollspy="dunya">Avrupa Ligleri</a><a href="#transfer" data-scrollspy="transfer">Transfer</a><button type="button" data-nav-video>Videolar</button><a href="#gundem" data-scrollspy="gundem">Gündem</a><a href="#iletisim" data-scrollspy="iletisim">İletişim</a><a href="#maclar" data-scrollspy="maclar">Bugünün Maçları</a></nav>
+<nav class="nav-mobile-strip" aria-label="Bölüm kısayolları"><a href="#sondakika" data-scrollspy="sondakika">Son Dakika</a><a href="#superlig" data-scrollspy="superlig">Süper Lig</a><a href="#avrupa-kupalari" data-scrollspy="avrupa-kupalari">Avrupa Kupaları</a><a href="#dunya" data-scrollspy="dunya">Avrupa Ligleri</a><a href="#transfer" data-scrollspy="transfer">Transfer</a><button type="button" data-nav-video>Videolar</button><a href="#gundem" data-scrollspy="gundem">Gündem</a><a href="#iletisim" data-scrollspy="iletisim">İletişim</a><a href="#maclar" data-scrollspy="maclar">Canlı / Bugünün Maçları <span class="nav-live-dot" hidden aria-label="Bugün maç var"></span></a></nav>
 
 <div class="breaking" id="sondakika">
   <div class="breaking-label"><span class="live-dot"></span> SON DAKİKA</div>
-  <div class="breaking-scroll" id="breakingScroll" aria-label="Son dakika haberleri"><a href="#gundem"><span>01</span><b>Galatasaray, Gençlerbirliği deplasmanından 1-0 galip çıktı</b></a>
-  <a href="#gundem"><span>02</span><b>Fenerbahçe, Alanyaspor&#x27;u 3-0 mağlup etti</b></a>
-  <a href="#gundem"><span>03</span><b>Arca Çorum FK, Rizespor&#x27;u 2-1 yendi</b></a>
-  <a href="#gundem"><span>04</span><b>Bugünün Süper Lig programı: Kasımpaşa-Samsunspor</b></a>
+  <div class="breaking-scroll" id="breakingScroll" aria-label="Son dakika haberleri">
+  <a href="#gundem"><span>01</span><b>Trabzonspor derbide hata yapmadı: 2-0</b></a>
+  <a href="#gundem"><span>02</span><b>Galatasaray, Gençlerbirliği deplasmanından 1-0 galip çıktı</b></a>
+  <a href="#gundem"><span>03</span><b>Fenerbahçe, Alanyaspor&#x27;u 3-0 mağlup etti</b></a>
+  <a href="#gundem"><span>04</span><b>Arca Çorum FK, Rizespor&#x27;u 2-1 yendi</b></a>
 </div>
 </div>
 
@@ -200,19 +206,19 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
       <div class="hero-overlay"></div>
       <div class="hero-copy">
         <span class="category red">SON DAKİKA</span>
-        <h1 id="heroTitle">Galatasaray, Gençlerbirliği deplasmanından 1-0 galip çıktı</h1>
-        <p id="heroText">18 Ekim tarihli spor gündemi özetine göre Galatasaray, Gençlerbirliği karşısında 1-0 kazandı. Sarı-kırmızılıların bir sonraki Şampiyonlar Ligi maçı 21 Ekim&#x27;de Lille deplasmanında.</p>
-        <div class="hero-meta"><span id="heroSource">DHA / UEFA · 18 Ekim 2026</span><button class="ghost-btn" id="heroRead" type="button" onclick="window.open('https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913','_blank','noopener')">Haberi görüntüle ↗</button></div>
+        <h1 id="heroTitle">Trabzonspor derbide hata yapmadı: 2-0</h1>
+        <p id="heroText">Süper Lig'in 8. haftasının kapanış maçında Trabzonspor, evinde Beşiktaş'ı 2-0 mağlup etti. Bordo-mavililer puanını 16'ya yükseltirken, Beşiktaş 15 puanda kaldı.</p>
+        <div class="hero-meta"><span id="heroSource">TFF / İonenSpiegel · 19 Ekim 2026</span><button class="ghost-btn" id="heroRead" type="button" onclick="window.open('https://www.tff.org/Default.aspx?pageID=198','_blank','noopener')">Haberi görüntüle ↗</button></div>
       </div>
     </div>
     <aside class="hero-side">
-      <div class="home-fixture-card derby-card"><div class="home-fixture-kicker"><span>🏁</span><b>YARININ MAÇI</b><span>19 EKİM</span></div><div class="home-fixture-teams"><strong>TRABZONSPOR</strong><em>20:00</em><strong>BEŞİKTAŞ</strong></div><div class="home-fixture-meta">Süper Lig · 8. hafta</div><a href="#maclar" class="wide-btn">Maç merkezine git →</a></div>
+      <div class="home-fixture-card derby-card"><div class="home-fixture-kicker"><span>🏁</span><b>MAÇ SONUCU</b><span>19 EKİM</span></div><div class="home-fixture-teams"><strong>TRABZONSPOR</strong><em>2 - 0</em><strong>BEŞİKTAŞ</strong></div><div class="home-fixture-meta">Süper Lig · 8. hafta</div><a href="#maclar" class="wide-btn">Maç merkezine git →</a></div>
       <div class="quick-panel"><div class="panel-title">BUGÜN ÖNE ÇIKANLAR</div><button data-scroll="#gundem"><b>01</b> Güncel gündem <span>→</span></button><button data-scroll="#puan"><b>02</b> Süper Lig tablosu <span>→</span></button><button data-scroll="#avrupa-kupalari"><b>03</b> Avrupa kupaları <span>→</span></button><button data-scroll="#maclar"><b>04</b> Türk takımlarının maçları <span>→</span></button></div>
     </aside>
   </section>
 
   <section class="section latest-section">
-    <div class="section-head"><div><h2><span class="red-line"></span> Son Dakika</h2><p class="section-subtitle" id="newsStatus">18 Ekim 2026 · güncel ve doğrulanmış haber seçkisi</p></div><button class="filter-btn" id="refreshNews" type="button" aria-label="Haber akışını yenile">↻ Yenile</button></div>
+    <div class="section-head"><div><h2><span class="red-line"></span> Son Dakika</h2><p class="section-subtitle" id="newsStatus">20 Ekim 2026 · güncel ve doğrulanmış haber seçkisi</p></div><button class="filter-btn" id="refreshNews" type="button" aria-label="Haber akışını yenile">↻ Yenile</button></div>
     <div class="news-chips" id="newsChips" role="tablist" aria-label="Haber filtreleri">
       <button class="news-chip active" type="button" data-news-filter="all">Tümü</button>
       <button class="news-chip" type="button" data-news-filter="Beşiktaş">Beşiktaş</button>
@@ -221,31 +227,30 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
       <button class="news-chip" type="button" data-news-filter="Avrupa">Avrupa</button>
     </div>
     <div class="latest-layout">
-      
-    <div class="news-feed" id="newsFeed"><article class="news-row has-bookmark" data-news-id="superlig-galatasaray-genclerbirligi-2026-10-18" data-team="Galatasaray" data-search="Galatasaray, Gençlerbirliği deplasmanından 1-0 galip çıktı 18 Ekim tarihli spor gündemi özetine göre Galatasaray, Gençlerbirliği karşısında 1-0 kazandı. Sarı-kırmızılıların bir sonraki Şampiyonlar Ligi maçı 21 Ekim&#x27;de Lille deplasmanında."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb news-thumb-badge" href="https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><span>GS</span></a><div><div class="news-kicker">18 Ekim 2026 · GALATASARAY</div><h3>Galatasaray, Gençlerbirliği deplasmanından 1-0 galip çıktı</h3><p>18 Ekim tarihli spor gündemi özetine göre Galatasaray, Gençlerbirliği karşısında 1-0 kazandı. Sarı-kırmızılıların bir sonraki Şampiyonlar Ligi maçı 21 Ekim&#x27;de Lille deplasmanında.</p><a href="https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913" target="_blank" rel="noopener noreferrer">DHA / UEFA ↗</a></div></article>
-<article class="news-row has-bookmark" data-news-id="superlig-trabzonspor-besiktas-2026-10-19" data-team="Trabzonspor / Beşiktaş" data-search="Trabzonspor derbide hata yapmadı 2-0 Beşiktaş">
-  <button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button>
-  <a class="thumb news-thumb-badge" href="https://www.tff.org/Default.aspx?pageID=198" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><span>TS-BJK</span></a>
-  <div>
-    <div class="news-kicker">19 Ekim 2026 · TRABZONSPOR / BEŞİKTAŞ</div>
-    <h3>Trabzonspor derbide hata yapmadı: 2-0</h3>
-    <p>Süper Lig'in 8. haftasının kapanış maçında Trabzonspor, evinde Beşiktaş'ı 2-0 mağlup ederek üç puanın sahibi oldu.</p>
-    <a href="https://www.tff.org/Default.aspx?pageID=198" target="_blank" rel="noopener noreferrer">TFF / İonenSpiegel ↗</a>
-  </div>
-</article>
-
-      <article class="news-row has-bookmark" data-news-id="superlig-fenerbahce-alanyaspor-2026-10-18" data-team="Fenerbahçe" data-search="Fenerbahçe, Alanyaspor&#x27;u 3-0 mağlup etti 18 Ekim tarihli spor gündemi özetinde Fenerbahçe&#x27;nin Alanyaspor&#x27;u 3-0 yendiği bildirildi. Sarı-lacivertliler 20 Ekim&#x27;de Şampiyonlar Ligi&#x27;nde Slavia Prag ile karşılaşacak."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb news-thumb-badge" href="https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><span>FB</span></a><div><div class="news-kicker">18 Ekim 2026 · FENERBAHÇE</div><h3>Fenerbahçe, Alanyaspor&#x27;u 3-0 mağlup etti</h3><p>18 Ekim tarihli spor gündemi özetinde Fenerbahçe&#x27;nin Alanyaspor&#x27;u 3-0 yendiği bildirildi. Sarı-lacivertliler 20 Ekim&#x27;de Şampiyonlar Ligi&#x27;nde Slavia Prag ile karşılaşacak.</p><a href="https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913" target="_blank" rel="noopener noreferrer">DHA / UEFA ↗</a></div></article>
+      <div class="news-feed" id="newsFeed">
+      <article class="news-row has-bookmark" data-news-id="superlig-trabzonspor-besiktas-2026-10-19" data-team="Trabzonspor / Beşiktaş" data-search="Trabzonspor derbide hata yapmadı 2-0 Beşiktaş">
+          <button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button>
+          <a class="thumb news-thumb-badge" href="https://www.tff.org/Default.aspx?pageID=198" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><span>TS-BJK</span></a>
+          <div>
+          <div class="news-kicker">19 Ekim 2026 · TRABZONSPOR / BEŞİKTAŞ</div>
+          <h3>Trabzonspor derbide hata yapmadı: 2-0</h3>
+          <p>Süper Lig'in 8. haftasının kapanış maçında Trabzonspor, evinde Beşiktaş'ı 2-0 mağlup ederek üç puanın sahibi oldu.</p>
+          <a href="https://www.tff.org/Default.aspx?pageID=198" target="_blank" rel="noopener noreferrer">TFF / İonenSpiegel ↗</a>
+          </div>
+      </article>
+      <article class="news-row has-bookmark" data-news-id="superlig-galatasaray-genclerbirligi-2026-10-18" data-team="Galatasaray" data-search="Galatasaray, Gençlerbirliği deplasmanından 1-0 galip çıktı 18 Ekim tarihli spor gündemi özetine göre Galatasaray, Gençlerbirliği karşısında 1-0 kazandı. Sarı-kırmızılıların bir sonraki Şampiyonlar Ligi maçı 21 Ekim&#x27;de Lille deplasmanında."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb news-thumb-badge" href="https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><span>GS</span></a><div><div class="news-kicker">18 Ekim 2026 · GALATASARAY</div><h3>Galatasaray, Gençlerbirliği deplasmanından 1-0 galip çıktı</h3><p>18 Ekim tarihli spor gündemi özetine göre Galatasaray, Gençlerbirliği karşısında 1-0 kazandı. Sarı-kırmızılıların bir sonraki Şampiyonlar Ligi maçı 21 Ekim&#x27;de Lille deplasmanında.</p><a href="https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913" target="_blank" rel="noopener noreferrer">DHA / UEFA ↗</a></div></article>
+<article class="news-row has-bookmark" data-news-id="superlig-fenerbahce-alanyaspor-2026-10-18" data-team="Fenerbahçe" data-search="Fenerbahçe, Alanyaspor&#x27;u 3-0 mağlup etti 18 Ekim tarihli spor gündemi özetinde Fenerbahçe&#x27;nin Alanyaspor&#x27;u 3-0 yendiği bildirildi. Sarı-lacivertliler 20 Ekim&#x27;de Şampiyonlar Ligi&#x27;nde Slavia Prag ile karşılaşacak."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb news-thumb-badge" href="https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><span>FB</span></a><div><div class="news-kicker">18 Ekim 2026 · FENERBAHÇE</div><h3>Fenerbahçe, Alanyaspor&#x27;u 3-0 mağlup etti</h3><p>18 Ekim tarihli spor gündemi özetinde Fenerbahçe&#x27;nin Alanyaspor&#x27;u 3-0 yendiği bildirildi. Sarı-lacivertliler 20 Ekim&#x27;de Şampiyonlar Ligi&#x27;nde Slavia Prag ile karşılaşacak.</p><a href="https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913" target="_blank" rel="noopener noreferrer">DHA / UEFA ↗</a></div></article>
 <article class="news-row has-bookmark" data-news-id="superlig-corum-rizespor-2026-10-18" data-team="Çorum FK" data-search="Arca Çorum FK, Rizespor&#x27;u 2-1 yendi TFF&#x27;nin 2026/27 Süper Lig fikstüründe 16 Ekim&#x27;de oynanan Arca Çorum FK-Çaykur Rizespor karşılaşması 2-1 olarak listeleniyor."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb news-thumb-badge" href="https://www.tff.org/Default.aspx?macId=283763&amp;pageId=198" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><span>ÇFK</span></a><div><div class="news-kicker">18 Ekim 2026 · ÇORUM FK</div><h3>Arca Çorum FK, Rizespor&#x27;u 2-1 yendi</h3><p>TFF&#x27;nin 2026/27 Süper Lig fikstüründe 16 Ekim&#x27;de oynanan Arca Çorum FK-Çaykur Rizespor karşılaşması 2-1 olarak listeleniyor.</p><a href="https://www.tff.org/Default.aspx?macId=283763&amp;pageId=198" target="_blank" rel="noopener noreferrer">TFF ↗</a></div></article>
 <article class="news-row has-bookmark" data-news-id="superlig-kasimpasa-samsunspor-2026-10-18" data-team="Süper Lig" data-search="Bugünün Süper Lig programı: Kasımpaşa-Samsunspor 18 Ekim Pazar günü Süper Lig programında saat 13.30&#x27;da Kasımpaşa-Samsunspor, 16.00&#x27;da Kocaelispor-Göztepe ve 19.00&#x27;da İstanbul Başakşehir-Gaziantep FK karşılaşmaları bulunuyor. Saatler Türkiye saatidir."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb news-thumb-badge" href="https://www.tff.org/Default.aspx?macId=283763&amp;pageId=198" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><span>⚽</span></a><div><div class="news-kicker">18 Ekim 2026 · SÜPER LIG</div><h3>Bugünün Süper Lig programı: Kasımpaşa-Samsunspor</h3><p>18 Ekim Pazar günü Süper Lig programında saat 13.30&#x27;da Kasımpaşa-Samsunspor, 16.00&#x27;da Kocaelispor-Göztepe ve 19.00&#x27;da İstanbul Başakşehir-Gaziantep FK karşılaşmaları bulunuyor. Saatler Türkiye saatidir.</p><a href="https://www.tff.org/Default.aspx?macId=283763&amp;pageId=198" target="_blank" rel="noopener noreferrer">TFF ↗</a></div></article>
 <article class="news-row has-bookmark" data-news-id="superlig-kocaelispor-goztepe-2026-10-18" data-team="Süper Lig" data-search="Kocaelispor-Göztepe maçı saat 16.00&#x27;da Süper Lig&#x27;in 8. hafta programında Kocaelispor, 18 Ekim Pazar günü saat 16.00&#x27;da Göztepe&#x27;yi konuk ediyor."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb news-thumb-badge" href="https://www.tff.org/Default.aspx?macId=283763&amp;pageId=198" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><span>⚽</span></a><div><div class="news-kicker">18 Ekim 2026 · SÜPER LIG</div><h3>Kocaelispor-Göztepe maçı saat 16.00&#x27;da</h3><p>Süper Lig&#x27;in 8. hafta programında Kocaelispor, 18 Ekim Pazar günü saat 16.00&#x27;da Göztepe&#x27;yi konuk ediyor.</p><a href="https://www.tff.org/Default.aspx?macId=283763&amp;pageId=198" target="_blank" rel="noopener noreferrer">TFF ↗</a></div></article>
 <article class="news-row has-bookmark" data-news-id="superlig-basaksehir-gaziantep-2026-10-18" data-team="Süper Lig" data-search="Başakşehir-Gaziantep FK mücadelesi akşam oynanacak İstanbul Başakşehir ile Gaziantep FK, 18 Ekim Pazar günü saat 19.00&#x27;da Süper Lig&#x27;in 8. haftasında karşı karşıya gelecek."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb news-thumb-badge" href="https://www.tff.org/Default.aspx?macId=283763&amp;pageId=198" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><span>⚽</span></a><div><div class="news-kicker">18 Ekim 2026 · SÜPER LIG</div><h3>Başakşehir-Gaziantep FK mücadelesi akşam oynanacak</h3><p>İstanbul Başakşehir ile Gaziantep FK, 18 Ekim Pazar günü saat 19.00&#x27;da Süper Lig&#x27;in 8. haftasında karşı karşıya gelecek.</p><a href="https://www.tff.org/Default.aspx?macId=283763&amp;pageId=198" target="_blank" rel="noopener noreferrer">TFF ↗</a></div></article>
-<article class="news-row has-bookmark" data-news-id="superlig-trabzonspor-besiktas-2026-10-18" data-team="Trabzonspor / Beşiktaş" data-search="Trabzonspor-Beşiktaş derbisi yarın Trabzonspor ile Beşiktaş, Süper Lig&#x27;in 8. haftasında 19 Ekim Pazartesi günü saat 20.00&#x27;de karşılaşacak. Maç TFF&#x27;nin fikstüründe yer alıyor."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb news-thumb-badge" href="https://www.tff.org/Default.aspx?macId=283763&amp;pageId=198" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><span>⚽</span></a><div><div class="news-kicker">18 Ekim 2026 · TRABZONSPOR / BEŞIKTAŞ</div><h3>Trabzonspor-Beşiktaş derbisi yarın</h3><p>Trabzonspor ile Beşiktaş, Süper Lig&#x27;in 8. haftasında 19 Ekim Pazartesi günü saat 20.00&#x27;de karşılaşacak. Maç TFF&#x27;nin fikstüründe yer alıyor.</p><a href="https://www.tff.org/Default.aspx?macId=283763&amp;pageId=198" target="_blank" rel="noopener noreferrer">TFF ↗</a></div></article>
 <article class="news-row has-bookmark" data-news-id="ucl-fenerbahce-slavia-lille-galatasaray-2026-10-18" data-team="Avrupa Kupaları" data-search="Avrupa&#x27;da sıradaki sınavlar: Fenerbahçe ve Galatasaray UEFA Şampiyonlar Ligi lig aşamasında Fenerbahçe 20 Ekim&#x27;de Slavia Prag&#x27;ı ağırlayacak; Galatasaray ise 21 Ekim&#x27;de Lille deplasmanına çıkacak."><button class="bookmark-btn" type="button" aria-label="Haberi kaydet" title="Sonra oku">🔖</button><a class="thumb news-thumb-badge" href="https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/" target="_blank" rel="noopener noreferrer" aria-label="Haberi kaynağında aç"><span>🏆</span></a><div><div class="news-kicker">18 Ekim 2026 · AVRUPA KUPALARI</div><h3>Avrupa&#x27;da sıradaki sınavlar: Fenerbahçe ve Galatasaray</h3><p>UEFA Şampiyonlar Ligi lig aşamasında Fenerbahçe 20 Ekim&#x27;de Slavia Prag&#x27;ı ağırlayacak; Galatasaray ise 21 Ekim&#x27;de Lille deplasmanına çıkacak.</p><a href="https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/" target="_blank" rel="noopener noreferrer">UEFA ↗</a></div></article>
 <a href="#maclar" class="wide-btn">Maç detaylarına git</a></div>
         <div class="widget"><div class="widget-title">TRENDLER</div><ol class="trend-list"><li><b>Trabzonspor-Beşiktaş</b><span>#1</span></li><li><b>Fenerbahçe-Slavia Prag</b><span>#2</span></li><li><b>Lille-Galatasaray</b><span>#3</span></li><li><b>Kasımpaşa-Samsunspor</b><span>#4</span></li></ol></div>
       </aside>
     </div>
   </section>
+
 
   <section class="section world-news-section" id="dunya">
     <span class="anchor-alias" id="avrupa" aria-hidden="true"></span>
@@ -258,17 +263,20 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
       <article class="world-card"><div class="world-card-top"><span class="world-tag">İNGİLTERE</span><span>14 EKİM</span></div><h3>Aston Villa, Fenerbahçe&#x27;yi 6-0 yendi</h3><p>Fenerbahçe, Şampiyonlar Ligi ikinci hafta maçında İngiltere&#x27;de ağır yenildi.</p><div class="world-card-bottom"><b>UEFA</b><a href="https://www.uefa.com/uefachampionsleague/clubs/52692--fenerbahce/matches/" target="_blank" rel="noopener noreferrer">Fikstürü aç ↗</a></div></article>
       <article class="world-card"><div class="world-card-top"><span class="world-tag">ALMANYA</span><span>15 EKİM</span></div><h3>Hoffenheim 2-3 Beşiktaş</h3><p>Beşiktaş, Avrupa Ligi lig aşamasında deplasmanda üç puanı aldı.</p><div class="world-card-bottom"><b>Haber Gazetesi</b><a href="https://www.habergazetesi.com.tr/hoffenheim-besiktas-mac-sonucu-2-3-golleri-kim-atti-mac-ozeti-ve-onemli-anlar" target="_blank" rel="noopener noreferrer">Habere git ↗</a></div></article>
       <article class="world-card"><div class="world-card-top"><span class="world-tag">FİNLANDİYA</span><span>15 EKİM</span></div><h3>KuPS Kuopio 2-4 Trabzonspor</h3><p>Bordo-mavililer Konferans Ligi&#x27;ne deplasmanda galibiyetle başladı.</p><div class="world-card-bottom"><b>24 Saat</b><a href="https://www.24saatgazetesi.com/trabzonspor-konferans-liginde-kups-kuopioyu-4-2-maglup-etti" target="_blank" rel="noopener noreferrer">Habere git ↗</a></div></article>
-      <article class="world-card"><div class="world-card-top"><span class="world-tag">TÜRKİYE</span><span>18 EKİM</span></div><h3>Süper Lig&#x27;de 8. hafta sürüyor</h3><p>Galatasaray 19 puanla lider; Amedspor 17, Fenerbahçe 16, Beşiktaş 15 puanda. Hafta 19 Ekim&#x27;de Trabzonspor-Beşiktaş ile bitecek.</p><div class="world-card-bottom"><b>Duhuliye</b><a href="https://www.duhuliye.com/futbol/super-ligde-gunun-sonuclari-besiktasin-zirve-yarisinda-son-durum-75986" target="_blank" rel="noopener noreferrer">Habere git ↗</a></div></article>
+      <article class="world-card"><div class="world-card-top"><span class="world-tag">TÜRKİYE</span><span>20 EKİM</span></div><h3>Süper Lig&#x27;de 8. hafta tamamlandı</h3><p>Galatasaray 19 puanla lider; Trabzonspor derbide kazanarak 16 puanla 4. sıraya tırmandı, Beşiktaş 15 puanda kaldı.</p><div class="world-card-bottom"><b>TFF</b><a href="https://www.tff.org/Default.aspx?pageID=198" target="_blank" rel="noopener noreferrer">Habere git ↗</a></div></article>
     </div>
     <div class="horizontal-hint">← Kaydırarak daha fazla dünya futbol haberine bak →</div>
   </section>
+
   
 <section class="section current-world" id="gundem">
   <div class="section-head">
-    <div><h2><span class="red-line"></span> Güncel Futbol Gündemi</h2><p class="section-subtitle">18 Ekim 2026 · kulüplerden güncel gelişmeler</p></div>
+    <div><h2><span class="red-line"></span> Güncel Futbol Gündemi</h2><p class="section-subtitle">20 Ekim 2026 · kulüplerden güncel gelişmeler</p></div>
     <span class="live-source-note">● Güncel kaynaklar</span>
   </div>
-  <div class="news-ticker-track" aria-label="Güncel futbol gündemi"><article class="ticker-card"><span class="ticker-tag">GALATASARAY</span><b>Galatasaray, Gençlerbirliği deplasmanından 1-0 galip çıktı</b><p>18 Ekim tarihli spor gündemi özetine göre Galatasaray, Gençlerbirliği karşısında 1-0 kazandı. Sarı-kırmızılıların bir sonraki Şampiyonlar Ligi maçı 21 Ekim&#x27;de Lille deplasmanında.</p><a href="https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913" target="_blank" rel="noopener noreferrer">DHA / UEFA ↗</a></article><article class="ticker-card"><span class="ticker-tag">FENERBAHÇE</span><b>Fenerbahçe, Alanyaspor&#x27;u 3-0 mağlup etti</b><p>18 Ekim tarihli spor gündemi özetinde Fenerbahçe&#x27;nin Alanyaspor&#x27;u 3-0 yendiği bildirildi. Sarı-lacivertliler 20 Ekim&#x27;de Şampiyonlar Ligi&#x27;nde Slavia Prag ile karşılaşacak.</p><a href="https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913" target="_blank" rel="noopener noreferrer">DHA / UEFA ↗</a></article><article class="ticker-card"><span class="ticker-tag">ÇORUM FK</span><b>Arca Çorum FK, Rizespor&#x27;u 2-1 yendi</b><p>TFF&#x27;nin 2026/27 Süper Lig fikstüründe 16 Ekim&#x27;de oynanan Arca Çorum FK-Çaykur Rizespor karşılaşması 2-1 olarak listeleniyor.</p><a href="https://www.tff.org/Default.aspx?macId=283763&amp;pageId=198" target="_blank" rel="noopener noreferrer">TFF ↗</a></article><article class="ticker-card"><span class="ticker-tag">SÜPER LIG</span><b>Bugünün Süper Lig programı: Kasımpaşa-Samsunspor</b><p>18 Ekim Pazar günü Süper Lig programında saat 13.30&#x27;da Kasımpaşa-Samsunspor, 16.00&#x27;da Kocaelispor-Göztepe ve 19.00&#x27;da İstanbul Başakşehir-Gaziantep FK karşılaşmaları bulunuyor. Saatler Türkiye saatidir.</p><a href="https://www.tff.org/Default.aspx?macId=283763&amp;pageId=198" target="_blank" rel="noopener noreferrer">TFF ↗</a></article>
+  <div class="news-ticker-track" aria-label="Güncel futbol gündemi">
+  <article class="ticker-card"><span class="ticker-tag">TRABZONSPOR</span><b>Trabzonspor derbide hata yapmadı: 2-0</b><p>Süper Lig'in 8. haftasının kapanış maçında Trabzonspor, evinde Beşiktaş'ı 2-0 mağlup ederek üç puanın sahibi oldu.</p><a href="https://www.tff.org/Default.aspx?pageID=198" target="_blank" rel="noopener noreferrer">TFF ↗</a></article>
+  <article class="ticker-card"><span class="ticker-tag">GALATASARAY</span><b>Galatasaray, Gençlerbirliği deplasmanından 1-0 galip çıktı</b><p>18 Ekim tarihli spor gündemi özetine göre Galatasaray, Gençlerbirliği karşısında 1-0 kazandı. Sarı-kırmızılıların bir sonraki Şampiyonlar Ligi maçı 21 Ekim&#x27;de Lille deplasmanında.</p><a href="https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913" target="_blank" rel="noopener noreferrer">DHA / UEFA ↗</a></article><article class="ticker-card"><span class="ticker-tag">FENERBAHÇE</span><b>Fenerbahçe, Alanyaspor&#x27;u 3-0 mağlup etti</b><p>18 Ekim tarihli spor gündemi özetinde Fenerbahçe&#x27;nin Alanyaspor&#x27;u 3-0 yendiği bildirildi. Sarı-lacivertliler 20 Ekim&#x27;de Şampiyonlar Ligi&#x27;nde Slavia Prag ile karşılaşacak.</p><a href="https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913" target="_blank" rel="noopener noreferrer">DHA / UEFA ↗</a></article><article class="ticker-card"><span class="ticker-tag">ÇORUM FK</span><b>Arca Çorum FK, Rizespor&#x27;u 2-1 yendi</b><p>TFF&#x27;nin 2026/27 Süper Lig fikstüründe 16 Ekim&#x27;de oynanan Arca Çorum FK-Çaykur Rizespor karşılaşması 2-1 olarak listeleniyor.</p><a href="https://www.tff.org/Default.aspx?macId=283763&amp;pageId=198" target="_blank" rel="noopener noreferrer">TFF ↗</a></article>
   </div>
 </section>
 
@@ -292,6 +300,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
     </div>
   </section>
 
+
   <section class="section" id="superlig">
     <div class="section-head"><h2><span class="red-line"></span> Süper Lig</h2><a class="text-link" href="#puan">Puan durumunun tamamı →</a></div>
     <div class="league-grid">
@@ -312,8 +321,8 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
                 <tr class="highlight"><td>1</td><td>Galatasaray</td><td>8</td><td>6</td><td>1</td><td>1</td><td>17:11</td><td class="positive">+6</td><td class="points">19</td><td><div class="form-dots"><i class="win">G</i><i class="win">G</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i></div></td></tr>
                 <tr><td>2</td><td>Amed Sportif</td><td>8</td><td>5</td><td>2</td><td>1</td><td>18:9</td><td class="positive">+9</td><td class="points">17</td><td><div class="form-dots"><i class="draw">B</i><i class="win">G</i><i class="win">G</i><i class="draw">B</i><i class="win">G</i></div></td></tr>
                 <tr><td>3</td><td>Fenerbahçe</td><td>8</td><td>5</td><td>1</td><td>2</td><td>22:6</td><td class="positive">+16</td><td class="points">16</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="win">G</i><i class="win">G</i></div></td></tr>
-                <tr><td>4</td><td>Beşiktaş</td><td>7</td><td>5</td><td>0</td><td>2</td><td>16:8</td><td class="positive">+8</td><td class="points">15</td><td><div class="form-dots"><i class="win">G</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
-                <tr><td>5</td><td>Trabzonspor</td><td>7</td><td>4</td><td>1</td><td>2</td><td>16:5</td><td class="positive">+11</td><td class="points">13</td><td><div class="form-dots"><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="loss">M</i><i class="win">G</i></div></td></tr>
+                <tr><td>4</td><td>Trabzonspor</td><td>8</td><td>5</td><td>1</td><td>2</td><td>18:5</td><td class="positive">+13</td><td class="points">16</td><td><div class="form-dots"><i class="draw">B</i><i class="loss">M</i><i class="win">G</i><i class="draw">B</i><i class="win">G</i></div></td></tr>
+                <tr><td>5</td><td>Beşiktaş</td><td>8</td><td>5</td><td>0</td><td>3</td><td>16:10</td><td class="positive">+6</td><td class="points">15</td><td><div class="form-dots"><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i><i class="loss">M</i></div></td></tr>
                 <tr><td>6</td><td>Arca Çorum FK</td><td>8</td><td>4</td><td>1</td><td>3</td><td>18:13</td><td class="positive">+5</td><td class="points">13</td><td><div class="form-dots"><i class="win">G</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="win">G</i></div></td></tr>
                 <tr><td>7</td><td>Kocaelispor</td><td>7</td><td>4</td><td>0</td><td>3</td><td>8:6</td><td class="positive">+2</td><td class="points">12</td><td><div class="form-dots"><i class="win">G</i><i class="win">G</i><i class="loss">M</i><i class="win">G</i><i class="loss">M</i></div></td></tr>
                 <tr><td>8</td><td>Corendon Alanyaspor</td><td>8</td><td>3</td><td>3</td><td>2</td><td>8:9</td><td class="negative">-1</td><td class="points">12</td><td><div class="form-dots"><i class="win">G</i><i class="draw">B</i><i class="win">G</i><i class="draw">B</i><i class="loss">M</i></div></td></tr>
@@ -330,11 +339,12 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
               </tbody>
             </table>
           </div>
-          <div class="standings-note"><span>●</span> 18 Ekim 2026 · 17 Ekim maçları itibarıyla güncel. 18 Ekim maçları bugün oynanacak.</div>
+          <div class="standings-note"><span>●</span> 20 Ekim 2026 · 8. hafta kapanış maçı itibarıyla günceldir.</div>
         </div>
 
         <div id="resultsPanel" class="hidden-panel">
-          <div class="result-item featured-result"><span>Fenerbahçe</span><strong>3 - 0</strong><span>Corendon Alanyaspor</span><small>(17 Ekim)</small></div>
+          <div class="result-item featured-result"><span>Trabzonspor</span><strong>2 - 0</strong><span>Beşiktaş</span><small>(19 Ekim)</small></div>
+          <div class="result-item"><span>Fenerbahçe</span><strong>3 - 0</strong><span>Corendon Alanyaspor</span><small>(17 Ekim)</small></div>
           <div class="result-item"><span>Gençlerbirliği</span><strong>0 - 1</strong><span>Galatasaray</span><small>(17 Ekim)</small></div>
           <div class="result-item"><span>Amed Sportif</span><strong>1 - 0</strong><span>TÜMOSAN Konyaspor</span><small>(17 Ekim)</small></div>
           <div class="result-item"><span>Erzurumspor FK</span><strong>2 - 0</strong><span>Eyüpspor</span><small>(17 Ekim)</small></div>
@@ -351,17 +361,17 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
         </div>
 
         <div id="fixturesPanel" class="hidden-panel fixtures-panel">
-          <div class="fixtures-panel-head"><div><b>SONRAKİ MAÇLAR</b><small>8. hafta · kalan maçlar</small></div><span>4 maç</span></div>
+          <div class="fixtures-panel-head"><div><b>SONRAKİ MAÇLAR</b><small>9. hafta fikstürü</small></div><span>4 maç</span></div>
           <div class="upcoming-fixtures">
-            <div class="fixture-item"><span>18 Ekim · 13:30</span><b>Kasımpaşa - Samsunspor</b></div>
-            <div class="fixture-item"><span>18 Ekim · 16:00</span><b>Kocaelispor - Göztepe</b></div>
-            <div class="fixture-item"><span>18 Ekim · 19:00</span><b>İstanbul Başakşehir - Gaziantep FK</b></div>
-            <div class="fixture-item"><span>19 Ekim · 20:00</span><b>Trabzonspor - Beşiktaş</b></div>
+            <div class="fixture-item"><span>23 Ekim · 20:00</span><b>Rizespor - Amed Sportif</b></div>
+            <div class="fixture-item"><span>24 Ekim · 16:00</span><b>Göztepe - Trabzonspor</b></div>
+            <div class="fixture-item"><span>24 Ekim · 19:00</span><b>Alanyaspor - Kasımpaşa</b></div>
+            <div class="fixture-item"><span>25 Ekim · 19:00</span><b>Galatasaray - Beşiktaş</b></div>
           </div>
         </div>
 
         <div id="goalsPanel" class="hidden-panel stats-panel"><div class="stat-list">
-          <div class="stat-row"><b>1</b><strong>Mohamed Salah</strong><span>Trabzonspor</span><em>7 gol</em></div>
+          <div class="stat-row"><b>1</b><strong>Mohamed Salah</strong><span>Trabzonspor</span><em>8 gol</em></div>
           <div class="stat-row"><b>2</b><strong>Gift Orban</strong><span>Amed Sportif</span><em>7 gol</em></div>
           <div class="stat-row"><b>3</b><strong>Victor Osimhen</strong><span>Galatasaray</span><em>6 gol</em></div>
           <div class="stat-row"><b>4</b><strong>Vedat Muriqi</strong><span>Fenerbahçe</span><em>6 gol</em></div>
@@ -404,16 +414,13 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   </div>
   <div class="fixture-board" id="upcomingMainList" aria-live="polite">
     <div class="fixture-day upcoming-fixture-day" data-fixture-day="8-hafta">
-      <div class="fixture-day-head"><b>16–19 EKİM · 8. HAFTA</b><span>SÜPER LİG · SONUÇLAR VE KALAN MAÇLAR</span></div>
+      <div class="fixture-day-head"><b>16–19 EKİM · 8. HAFTA</b><span>SÜPER LİG · SONUÇLAR</span></div>
       <article class="fixture-match upcoming-match" data-kickoff="2026-10-16T20:00:00+03:00" data-score="2 - 1" data-fixture-category="turkiye"><time>16 Eki<br><small>MS</small></time><div class="fixture-team"><b>Çorum FK</b></div><strong class="fixture-vs">2 - 1</strong><div class="fixture-team away"><b>Rizespor</b></div><span class="fixture-badge">SL</span></article>
       <article class="fixture-match upcoming-match" data-kickoff="2026-10-17T13:30:00+03:00" data-score="2 - 0" data-fixture-category="turkiye"><time>17 Eki<br><small>MS</small></time><div class="fixture-team"><b>Erzurumspor FK</b></div><strong class="fixture-vs">2 - 0</strong><div class="fixture-team away"><b>Eyüpspor</b></div><span class="fixture-badge">SL</span></article>
       <article class="fixture-match upcoming-match" data-kickoff="2026-10-17T16:00:00+03:00" data-score="0 - 1" data-fixture-category="turkiye galatasaray"><time>17 Eki<br><small>MS</small></time><div class="fixture-team"><b>Gençlerbirliği</b></div><strong class="fixture-vs">0 - 1</strong><div class="fixture-team away"><b>Galatasaray</b></div><span class="fixture-badge">SL</span></article>
       <article class="fixture-match upcoming-match" data-kickoff="2026-10-17T16:00:00+03:00" data-score="1 - 0" data-fixture-category="turkiye amed"><time>17 Eki<br><small>MS</small></time><div class="fixture-team"><b>Amed Sportif</b></div><strong class="fixture-vs">1 - 0</strong><div class="fixture-team away"><b>Konyaspor</b></div><span class="fixture-badge">SL</span></article>
       <article class="fixture-match upcoming-match" data-kickoff="2026-10-17T19:00:00+03:00" data-score="3 - 0" data-fixture-category="turkiye fenerbahce"><time>17 Eki<br><small>MS</small></time><div class="fixture-team"><b>Fenerbahçe</b></div><strong class="fixture-vs">3 - 0</strong><div class="fixture-team away"><b>Alanyaspor</b></div><span class="fixture-badge">SL</span></article>
-      <article class="fixture-match upcoming-match" data-kickoff="2026-10-18T13:30:00+03:00" data-fixture-category="turkiye upcoming"><time>18 Eki<br><small>13:30</small></time><div class="fixture-team"><b>Kasımpaşa</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Samsunspor</b></div><span class="fixture-badge">SL</span></article>
-      <article class="fixture-match upcoming-match" data-kickoff="2026-10-18T16:00:00+03:00" data-fixture-category="turkiye upcoming"><time>18 Eki<br><small>16:00</small></time><div class="fixture-team"><b>Kocaelispor</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Göztepe</b></div><span class="fixture-badge">SL</span></article>
-      <article class="fixture-match upcoming-match" data-kickoff="2026-10-18T19:00:00+03:00" data-fixture-category="turkiye upcoming"><time>18 Eki<br><small>19:00</small></time><div class="fixture-team"><b>Başakşehir</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Gaziantep FK</b></div><span class="fixture-badge">SL</span></article>
-      <article class="fixture-match upcoming-match" data-kickoff="2026-10-19T20:00:00+03:00" data-fixture-category="turkiye upcoming bjk trabzonspor"><time>19 Eki<br><small>20:00</small></time><div class="fixture-team"><b>Trabzonspor</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>Beşiktaş</b></div><span class="fixture-badge">SL</span></article>
+      <article class="fixture-match upcoming-match" data-kickoff="2026-10-19T20:00:00+03:00" data-score="2 - 0" data-fixture-category="turkiye bjk trabzonspor"><time>19 Eki<br><small>MS</small></time><div class="fixture-team"><b>Trabzonspor</b></div><strong class="fixture-vs">2 - 0</strong><div class="fixture-team away"><b>Beşiktaş</b></div><span class="fixture-badge">SL</span></article>
     </div>
     <div class="fixture-day upcoming-fixture-day" data-fixture-day="avrupa">
       <div class="fixture-day-head"><b>13–22 EKİM · AVRUPA KUPALARI</b><span>UEFA · SONUÇLAR VE YAKLAŞAN</span></div>
@@ -456,12 +463,12 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 </section>
 
 <section class="section content-section daily-brief" id="bugun">
-  <div class="section-head"><div><h2><span class="red-line"></span> Bugünün Futbol Özeti</h2><p class="section-subtitle">18 Ekim 2026 · güncel durum ve sıradaki önemli maçlar</p></div></div>
+  <div class="section-head"><div><h2><span class="red-line"></span> Bugünün Futbol Özeti</h2><p class="section-subtitle">20 Ekim 2026 · güncel durum ve sıradaki önemli maçlar</p></div></div>
   <div class="brief-grid">
-    <article class="brief-card"><span>⚽</span><div><small>BUGÜN</small><strong>Kasımpaşa - Samsunspor</strong><p>18 Ekim · 13:30.</p></div></article>
-    <article class="brief-card"><span>⚽</span><div><small>BUGÜN</small><strong>Kocaelispor - Göztepe</strong><p>18 Ekim · 16:00.</p></div></article>
-    <article class="brief-card"><span>⚽</span><div><small>BUGÜN</small><strong>Başakşehir - Gaziantep FK</strong><p>18 Ekim · 19:00.</p></div></article>
-    <article class="brief-card"><span>🔵</span><div><small>DÜN</small><strong>Fenerbahçe 3-0 Alanyaspor</strong><p>17 Ekim · Süper Lig.</p></div></article>
+    <article class="brief-card"><span>🏆</span><div><small>BUGÜN</small><strong>Fenerbahçe - Slavia Prag</strong><p>20 Ekim · Şampiyonlar Ligi.</p></div></article>
+    <article class="brief-card"><span>🔵</span><div><small>DÜN</small><strong>Trabzonspor 2-0 Beşiktaş</strong><p>19 Ekim · Süper Lig.</p></div></article>
+    <article class="brief-card"><span>🏆</span><div><small>YARIN</small><strong>Lille - Galatasaray</strong><p>21 Ekim · Şampiyonlar Ligi.</p></div></article>
+    <article class="brief-card"><span>⚽</span><div><small>CUMA</small><strong>Rizespor - Amed Sportif</strong><p>23 Ekim · Süper Lig (9. Hafta).</p></div></article>
   </div>
 </section>
 
