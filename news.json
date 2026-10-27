@@ -1,93 +1,92 @@
 [
   {
-  "id": "superlig-trabzonspor-besiktas-2026-10-19",
-  "title": "Trabzonspor derbide hata yapmadı: 2-0",
-  "description": "Süper Lig'in 8. haftasının kapanış maçında Trabzonspor, evinde Beşiktaş'ı 2-0 mağlup ederek üç puanın sahibi oldu.",
-  "category": "Trabzonspor / Beşiktaş",
-  "date": "19 Ekim 2026",
-  "image": "./photo-derbi.jpg",
-  "source": "TFF / İonenSpiegel",
-  "link": "https://www.tff.org/Default.aspx?pageID=198"
-}
-
-  {
-    "id": "superlig-galatasaray-genclerbirligi-2026-10-18",
-    "title": "Galatasaray, Gençlerbirliği deplasmanından 1-0 galip çıktı",
-    "description": "18 Ekim tarihli spor gündemi özetine göre Galatasaray, Gençlerbirliği karşısında 1-0 kazandı. Sarı-kırmızılıların bir sonraki Şampiyonlar Ligi maçı 21 Ekim'de Lille deplasmanında.",
-    "category": "Galatasaray",
-    "date": "18 Ekim 2026",
-    "image": "./is-logo.png",
-    "source": "DHA / UEFA",
-    "link": "https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913"
+    "id": "superlig-9-hafta-ozeti-2026-10-27",
+    "title": "9. hafta tamamlandı: Galatasaray liderliğini korudu",
+    "description": "Galatasaray derbide Fenerbahçe'yi 2-1 yendi ve 22 puana ulaştı. Amed Sportif 20, Trabzonspor 19 puanla ilk üçü tamamladı.",
+    "category": "Süper Lig",
+    "date": "27 Ekim 2026",
+    "image": "./photo-superlig.jpg",
+    "source": "AA / TFF",
+    "link": "https://www.star.com.tr/spor/super-ligde-9-hafta-sona-erdi-iste-sonuclar-haber-2049332/"
   },
   {
-    "id": "superlig-fenerbahce-alanyaspor-2026-10-18",
-    "title": "Fenerbahçe, Alanyaspor'u 3-0 mağlup etti",
-    "description": "18 Ekim tarihli spor gündemi özetinde Fenerbahçe'nin Alanyaspor'u 3-0 yendiği bildirildi. Sarı-lacivertliler 20 Ekim'de Şampiyonlar Ligi'nde Slavia Prag ile karşılaşacak.",
-    "category": "Fenerbahçe",
-    "date": "18 Ekim 2026",
-    "image": "./is-logo.png",
-    "source": "DHA / UEFA",
-    "link": "https://www.dha.com.tr/yerel-haberler/istanbul/18-ekim-pazar-dha-spor-gundemi-2964913"
+    "id": "amed-samsunspor-1-2-2026-10-24",
+    "title": "Amed Sportif, Samsunspor deplasmanında kazandı: 2-1",
+    "description": "Amed Sportif Faaliyetler, 9. hafta maçında Samsunspor'u deplasmanda 2-1 mağlup etti ve 20 puana yükseldi.",
+    "category": "Amed Sportif",
+    "date": "24 Ekim 2026",
+    "image": "./photo-superlig.jpg",
+    "source": "TFF",
+    "link": "https://www.tff.org/?pageID=198"
   },
   {
-    "id": "superlig-corum-rizespor-2026-10-18",
-    "title": "Arca Çorum FK, Rizespor'u 2-1 yendi",
-    "description": "TFF'nin 2026/27 Süper Lig fikstüründe 16 Ekim'de oynanan Arca Çorum FK-Çaykur Rizespor karşılaşması 2-1 olarak listeleniyor.",
+    "id": "trabzonspor-rizespor-3-4-2026-10-26",
+    "title": "Trabzonspor, Rize deplasmanında 4-3 kazandı",
+    "description": "Trabzonspor, Çaykur Rizespor karşısında 4-3'lük galibiyet aldı ve 9 hafta sonunda 19 puana ulaştı.",
+    "category": "Trabzonspor",
+    "date": "26 Ekim 2026",
+    "image": "./photo-superlig.jpg",
+    "source": "TFF",
+    "link": "https://www.tff.org/?pageID=198"
+  },
+  {
+    "id": "besiktas-basaksehir-2-0-2026-10-26",
+    "title": "Beşiktaş, Başakşehir'i 2-0 mağlup etti",
+    "description": "Beşiktaş, 9. haftada İstanbul Başakşehir'i 2-0 yenerek puanını 18'e çıkardı.",
+    "category": "Beşiktaş",
+    "date": "26 Ekim 2026",
+    "image": "./photo-bjk.jpg",
+    "source": "TFF",
+    "link": "https://www.tff.org/?pageID=198"
+  },
+  {
+    "id": "goztepe-corum-2-0-2026-10-25",
+    "title": "Çorum FK, Göztepe deplasmanında kaybetti",
+    "description": "Arca Çorum FK, 9. hafta karşılaşmasında Göztepe'ye 2-0 mağlup oldu. Sıradaki maçta Erzurumspor FK'ya konuk olacak.",
     "category": "Çorum FK",
-    "date": "18 Ekim 2026",
-    "image": "./is-logo.png",
+    "date": "25 Ekim 2026",
+    "image": "./photo-superlig.jpg",
     "source": "TFF",
-    "link": "https://www.tff.org/Default.aspx?macId=283763&pageId=198"
+    "link": "https://www.tff.org/?pageID=198"
   },
   {
-    "id": "superlig-kasimpasa-samsunspor-2026-10-18",
-    "title": "Bugünün Süper Lig programı: Kasımpaşa-Samsunspor",
-    "description": "18 Ekim Pazar günü Süper Lig programında saat 13.30'da Kasımpaşa-Samsunspor, 16.00'da Kocaelispor-Göztepe ve 19.00'da İstanbul Başakşehir-Gaziantep FK karşılaşmaları bulunuyor. Saatler Türkiye saatidir.",
+    "id": "superlig-10-hafta-programi-2026-10-27",
+    "title": "Süper Lig'de 10. hafta programı belli oldu",
+    "description": "10. hafta 30 Ekim Cuma günü Konyaspor-Galatasaray maçıyla başlayacak; Erzurumspor FK-Çorum FK ve Fenerbahçe-Göztepe maçları 31 Ekim'de oynanacak.",
     "category": "Süper Lig",
-    "date": "18 Ekim 2026",
-    "image": "./is-logo.png",
+    "date": "27 Ekim 2026",
+    "image": "./photo-superlig.jpg",
     "source": "TFF",
-    "link": "https://www.tff.org/Default.aspx?macId=283763&pageId=198"
+    "link": "https://www.tff.org/?pageID=198"
   },
   {
-    "id": "superlig-kocaelispor-goztepe-2026-10-18",
-    "title": "Kocaelispor-Göztepe maçı saat 16.00'da",
-    "description": "Süper Lig'in 8. hafta programında Kocaelispor, 18 Ekim Pazar günü saat 16.00'da Göztepe'yi konuk ediyor.",
-    "category": "Süper Lig",
-    "date": "18 Ekim 2026",
-    "image": "./is-logo.png",
+    "id": "galatasaray-konyaspor-2026-10-30",
+    "title": "Galatasaray, 10. haftada Konyaspor deplasmanında",
+    "description": "Konyaspor-Galatasaray karşılaşması 30 Ekim Cuma günü saat 20.00'de oynanacak.",
+    "category": "Galatasaray",
+    "date": "30 Ekim 2026 · FİKSTÜR",
+    "image": "./photo-superlig.jpg",
     "source": "TFF",
-    "link": "https://www.tff.org/Default.aspx?macId=283763&pageId=198"
+    "link": "https://www.tff.org/?pageID=198"
   },
   {
-    "id": "superlig-basaksehir-gaziantep-2026-10-18",
-    "title": "Başakşehir-Gaziantep FK mücadelesi akşam oynanacak",
-    "description": "İstanbul Başakşehir ile Gaziantep FK, 18 Ekim Pazar günü saat 19.00'da Süper Lig'in 8. haftasında karşı karşıya gelecek.",
-    "category": "Süper Lig",
-    "date": "18 Ekim 2026",
-    "image": "./is-logo.png",
+    "id": "corum-erzurumspor-2026-10-31",
+    "title": "Çorum FK'nın sıradaki rakibi Erzurumspor FK",
+    "description": "Erzurumspor FK-Arca Çorum FK maçı 31 Ekim Cumartesi günü saat 13.30'da başlayacak.",
+    "category": "Çorum FK",
+    "date": "31 Ekim 2026 · FİKSTÜR",
+    "image": "./photo-superlig.jpg",
     "source": "TFF",
-    "link": "https://www.tff.org/Default.aspx?macId=283763&pageId=198"
+    "link": "https://www.tff.org/?pageID=198"
   },
   {
-    "id": "superlig-trabzonspor-besiktas-2026-10-18",
-    "title": "Trabzonspor-Beşiktaş derbisi yarın",
-    "description": "Trabzonspor ile Beşiktaş, Süper Lig'in 8. haftasında 19 Ekim Pazartesi günü saat 20.00'de karşılaşacak. Maç TFF'nin fikstüründe yer alıyor.",
-    "category": "Trabzonspor / Beşiktaş",
-    "date": "18 Ekim 2026",
-    "image": "./is-logo.png",
-    "source": "TFF",
-    "link": "https://www.tff.org/Default.aspx?macId=283763&pageId=198"
-  },
-  {
-    "id": "ucl-fenerbahce-slavia-lille-galatasaray-2026-10-18",
-    "title": "Avrupa'da sıradaki sınavlar: Fenerbahçe ve Galatasaray",
-    "description": "UEFA Şampiyonlar Ligi lig aşamasında Fenerbahçe 20 Ekim'de Slavia Prag'ı ağırlayacak; Galatasaray ise 21 Ekim'de Lille deplasmanına çıkacak.",
-    "category": "Avrupa Kupaları",
-    "date": "18 Ekim 2026",
-    "image": "./is-logo.png",
+    "id": "trabzonspor-hearts-2-0-2026-10-22",
+    "title": "Trabzonspor, Hearts'ı 2-0 yendi",
+    "description": "Trabzonspor, UEFA Konferans Ligi'nde Hearts karşısında 2-0 kazandı. Bordo-mavililerin sıradaki Avrupa maçı 5 Kasım'da Freiburg'a karşı.",
+    "category": "Trabzonspor",
+    "date": "22 Ekim 2026 · AVRUPA",
+    "image": "./photo-superlig.jpg",
     "source": "UEFA",
-    "link": "https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--2026-27-champions-league-all-the-league-phase-fixtures-a/"
+    "link": "https://www.uefa.com/uefaconferenceleague/news/02a8-2174cb200f25-b94693ddff4e-1000--202627-conference-league-all-the-league-phase-fixtures/"
   }
 ]
