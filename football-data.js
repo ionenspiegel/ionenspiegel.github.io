@@ -17,6 +17,59 @@
     } catch (_) {
       return false;
     }
+
+  function display(value) {
+    return value === null || value === undefined || value === '' ? '—' : escapeHtml(value);
+  }
+
+  function sourceNote(source, link) {
+    return '<p class="data-source-note">Kaynak: <a href="' + escapeHtml(link) + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(source) + ' ↗</a> · Güncelleme: 5 Kasım 2026</p>';
+  }
+
+  function renderStandings(rows) {
+    const panel = document.getElementById('standingsPanel');
+    if (!panel) return;
+    const body = rows.map((row) => '<tr class="' + (row.team === 'Çorum FK' ? 'highlight' : '') + '"><td>' + display(row.rank) + '</td><td>' + escapeHtml(row.team) + '</td><td>' + display(row.played) + '</td><td>' + display(row.wins) + '</td><td>' + display(row.draws) + '</td><td>' + display(row.losses) + '</td><td>' + (row.gf == null || row.ga == null ? '—' : display(row.gf) + ':' + display(row.ga)) + '</td><td>' + display(row.gd) + '</td><td class="points">' + display(row.points) + '</td><td>—</td></tr>').join('');
+    panel.innerHTML = '<div class="table-scroll"><table><thead><tr><th>#</th><th>Takım</th><th>O</th><th>G</th><th>B</th><th>M</th><th>A:Y</th><th>AV</th><th>P</th><th>Form</th></tr></thead><tbody>' + body + '</tbody></table></div>' + sourceNote('canlıskor.org / LigAnaliz', 'https://canliskor.org/en/league/super-lig');
+  }
+
+  function renderResults(matches) {
+    const panel = document.getElementById('resultsPanel');
+    if (!panel) return;
+    const results = matches.filter((match) => match.type === 'result');
+    panel.innerHTML = results.map((match) => '<div class="result-item"><span>' + escapeHtml(match.home) + '</span><strong>' + display(match.homeScore) + ' - ' + display(match.awayScore) + '</strong><span>' + escapeHtml(match.away) + '</span><small>' + new Date(match.date).toLocaleDateString('tr-TR') + ' · <a href="' + escapeHtml(match.link) + '" target="_blank" rel="noopener noreferrer">Kaynak ↗</a></small></div>').join('');
+  }
+
+  function renderFixtures(matches) {
+    const panel = document.getElementById('fixturesPanel');
+    if (!panel) return;
+    const fixtures = matches.filter((match) => match.type === 'fixture');
+    panel.innerHTML = '<div class="upcoming-fixtures">' + fixtures.map((match) => '<article class="fixture-match"><time>' + new Date(match.date).toLocaleDateString('tr-TR', {day:'2-digit', month:'short'}) + '<br><small>' + new Date(match.date).toLocaleTimeString('tr-TR', {hour:'2-digit', minute:'2-digit'}) + '</small></time><div class="fixture-team"><b>' + escapeHtml(match.home) + '</b></div><strong class="fixture-vs">vs</strong><div class="fixture-team away"><b>' + escapeHtml(match.away) + '</b></div><a class="fixture-badge" href="' + escapeHtml(match.link) + '" target="_blank" rel="noopener noreferrer">Kaynak ↗</a></article>').join('') + '</div>' + sourceNote('LigAnaliz 11. hafta', 'https://liganaliz.com/genel-durum/11');
+  }
+
+  function renderScorers(rows) {
+    const panel = document.getElementById('goalsPanel');
+    if (!panel) return;
+    panel.innerHTML = rows.length ? '<div class="stat-list">' + rows.map((row) => '<div class="stat-row"><b>' + display(row.rank) + '</b><span>' + escapeHtml(row.player) + '<small>' + escapeHtml(row.team) + '</small></span><em>' + display(row.goals) + '</em><small>gol</small></div>').join('') + '</div>' + sourceNote('LigAnaliz 10. hafta', 'https://liganaliz.com/genel-durum/10') : '<div class="data-empty">Doğrulanmış gol krallığı verisi yok.</div>';
+  }
+
+  function renderAssists(rows) {
+    const panel = document.getElementById('assistsPanel');
+    if (!panel) return;
+    panel.innerHTML = rows.length ? '<div class="stat-list">' + rows.map((row) => '<div class="stat-row"><b>' + display(row.rank) + '</b><span>' + escapeHtml(row.player) + '<small>' + escapeHtml(row.team) + '</small></span><em>' + display(row.assists) + '</em><small>asist</small></div>').join('') + '</div>' : '<div class="data-empty">5 Kasım 2026 kesimi için doğrulanmış asist tablosu bulunamadı.</div>';
+  }
+
+  function renderPanels(data) {
+    const standings = data.standings && Array.isArray(data.standings.superLig) ? data.standings.superLig : [];
+    renderStandings(standings);
+    renderResults(data.matches || []);
+    renderFixtures(data.matches || []);
+    renderScorers(data.scorers || []);
+    renderAssists(data.assists || []);
+    ['standingsPanel', 'resultsPanel', 'goalsPanel', 'assistsPanel', 'fixturesPanel'].forEach((id) => {
+      document.getElementById(id)?.classList.remove('data-unverified');
+    });
+  }
   }
 
   function validDate(value) {
@@ -68,7 +121,7 @@
   }
 
   function hideUnverifiedBlocks() {
-    ['standingsPanel', 'scorersPanel', 'assistsPanel', 'fixturesPanel', 'maclar'].forEach((id) => {
+    ['standingsPanel', 'resultsPanel', 'goalsPanel', 'assistsPanel', 'fixturesPanel', 'maclar'].forEach((id) => {
       const element = document.getElementById(id);
       if (element) element.classList.add('data-unverified');
     });
@@ -78,6 +131,7 @@
   }
 
   function renderVerifiedData(data) {
+    renderPanels(data);
     renderNews(data.news);
     if (!data.updatedAt) {
       setStatus('Doğrulanmış veri bulundu ancak güncelleme zamanı belirtilmemiş.', 'warning');

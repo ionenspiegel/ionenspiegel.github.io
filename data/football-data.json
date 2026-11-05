@@ -1,20 +1,72 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "asOf": "2026-11-05T23:59:59+03:00",
-  "updatedAt": null,
-  "provider": null,
-  "verified": false,
+  "updatedAt": "2026-11-05T23:59:59+03:00",
+  "verified": true,
+  "provider": "TFF / LigAnaliz / canlıskor.org",
+  "sources": [
+    {"name":"TFF puan, fikstür ve sonuçlar","url":"https://www.tff.org/?pageID=198"},
+    {"name":"TFF 10. hafta detayları","url":"https://www.tff.org/Default.aspx?hafta=10&pageId=198"},
+    {"name":"LigAnaliz 10. hafta genel görünüm","url":"https://liganaliz.com/genel-durum/10"},
+    {"name":"canlıskor.org Süper Lig","url":"https://canliskor.org/en/league/super-lig"},
+    {"name":"LigAnaliz asist istatistikleri","url":"https://liganaliz.com/istatistikler/asist"}
+  ],
   "news": [],
-  "matches": [],
+  "matches": [
+    {"id":"sl-10-konyaspor-galatasaray","type":"result","date":"2026-10-30T19:00:00+03:00","home":"Konyaspor","away":"Galatasaray","homeScore":0,"awayScore":4,"source":"LigAnaliz","link":"https://liganaliz.com/genel-durum/10"},
+    {"id":"sl-10-erzurum-corum","type":"result","date":"2026-10-31T12:30:00+03:00","home":"Erzurumspor FK","away":"Çorum FK","homeScore":1,"awayScore":3,"source":"LigAnaliz","link":"https://liganaliz.com/mac/126/Erzurumspor%20FK-Corum%20FK"},
+    {"id":"sl-10-kocaeli-rize","type":"result","date":"2026-10-31T15:00:00+03:00","home":"Kocaelispor","away":"Rizespor","homeScore":0,"awayScore":0,"source":"LigAnaliz","link":"https://liganaliz.com/mac/125/Kocaelispor-Rizespor"},
+    {"id":"sl-10-fenerbahce-goztepe","type":"result","date":"2026-10-31T18:00:00+03:00","home":"Fenerbahçe","away":"Göztepe","homeScore":1,"awayScore":2,"source":"LigAnaliz","link":"https://liganaliz.com/mac/124/Fenerbahce-Goztepe"},
+    {"id":"sl-10-amed-eyupspor","type":"result","date":"2026-11-01T12:30:00+03:00","home":"Amed Sportif","away":"Eyüpspor","homeScore":5,"awayScore":1,"source":"LigAnaliz","link":"https://liganaliz.com/mac/121/Amed%20Sportif-Eyupspor"},
+    {"id":"sl-10-trabzon-gaziantep","type":"result","date":"2026-11-01T15:00:00+03:00","home":"Trabzonspor","away":"Gaziantep FK","homeScore":2,"awayScore":0,"source":"LigAnaliz","link":"https://liganaliz.com/mac/118/Trabzonspor-Gaziantep%20FK"},
+    {"id":"sl-10-basaksehir-samsunspor","type":"result","date":"2026-11-01T15:00:00+03:00","home":"İstanbul Başakşehir","away":"Samsunspor","homeScore":5,"awayScore":2,"source":"LigAnaliz","link":"https://liganaliz.com/mac/120/Istanbul%20Basaksehir-Samsunspor"},
+    {"id":"sl-10-kasimpasa-besiktas","type":"result","date":"2026-11-01T18:00:00+03:00","home":"Kasımpaşa","away":"Beşiktaş","homeScore":2,"awayScore":2,"source":"LigAnaliz","link":"https://liganaliz.com/mac/119/Kasimpasa-Besiktas"},
+    {"id":"sl-10-genclerbirligi-alanya","type":"result","date":"2026-11-02T19:00:00+03:00","home":"Gençlerbirliği","away":"Alanyaspor","homeScore":5,"awayScore":0,"source":"LigAnaliz","link":"https://liganaliz.com/mac/122/Genclerbirligi-Alanyaspor"},
+    {"id":"sl-11-gaziantep-kasimpasa","type":"fixture","date":"2026-11-06T19:00:00+03:00","home":"Gaziantep FK","away":"Kasımpaşa","source":"LigAnaliz","link":"https://liganaliz.com/genel-durum/11"},
+    {"id":"sl-11-eyupspor-kocaeli","type":"fixture","date":"2026-11-07T12:30:00+03:00","home":"Eyüpspor","away":"Kocaelispor","source":"LigAnaliz","link":"https://liganaliz.com/genel-durum/11"},
+    {"id":"sl-11-samsun-konya","type":"fixture","date":"2026-11-07T15:00:00+03:00","home":"Samsunspor","away":"Konyaspor","source":"LigAnaliz","link":"https://liganaliz.com/genel-durum/11"},
+    {"id":"sl-11-goztepe-basaksehir","type":"fixture","date":"2026-11-07T18:00:00+03:00","home":"Göztepe","away":"İstanbul Başakşehir","source":"LigAnaliz","link":"https://liganaliz.com/genel-durum/11"},
+    {"id":"sl-11-galatasaray-amed","type":"fixture","date":"2026-11-07T18:00:00+03:00","home":"Galatasaray","away":"Amed Sportif","source":"LigAnaliz","link":"https://liganaliz.com/genel-durum/11"},
+    {"id":"sl-11-rize-erzurum","type":"fixture","date":"2026-11-08T12:30:00+03:00","home":"Rizespor","away":"Erzurumspor FK","source":"LigAnaliz","link":"https://liganaliz.com/genel-durum/11"},
+    {"id":"sl-11-corum-fenerbahce","type":"fixture","date":"2026-11-08T15:00:00+03:00","home":"Çorum FK","away":"Fenerbahçe","source":"LigAnaliz","link":"https://liganaliz.com/genel-durum/11"},
+    {"id":"sl-11-alanya-trabzon","type":"fixture","date":"2026-11-08T17:30:00+03:00","home":"Alanyaspor","away":"Trabzonspor","source":"LigAnaliz","link":"https://liganaliz.com/genel-durum/11"},
+    {"id":"sl-11-besiktas-gencler","type":"fixture","date":"2026-11-08T20:00:00+03:00","home":"Beşiktaş","away":"Gençlerbirliği","source":"LigAnaliz","link":"https://liganaliz.com/genel-durum/11"}
+  ],
   "standings": {
-    "superLig": [],
+    "superLig": [
+      {"rank":1,"team":"Galatasaray","played":10,"wins":8,"draws":1,"losses":1,"gf":23,"ga":12,"gd":11,"points":25},
+      {"rank":2,"team":"Amed Sportif","played":10,"wins":7,"draws":2,"losses":1,"gf":25,"ga":11,"gd":14,"points":23},
+      {"rank":3,"team":"Trabzonspor","played":10,"wins":7,"draws":1,"losses":2,"gf":24,"ga":8,"gd":16,"points":22},
+      {"rank":4,"team":"Beşiktaş","played":10,"wins":6,"draws":1,"losses":3,"gf":20,"ga":12,"gd":8,"points":19},
+      {"rank":5,"team":"Kasımpaşa","played":10,"wins":4,"draws":5,"losses":1,"gf":15,"ga":11,"gd":4,"points":17},
+      {"rank":6,"team":"Fenerbahçe","played":10,"wins":5,"draws":1,"losses":4,"gf":24,"ga":10,"gd":14,"points":16},
+      {"rank":7,"team":"Çorum FK","played":10,"wins":5,"draws":1,"losses":4,"gf":21,"ga":16,"gd":5,"points":16},
+      {"rank":8,"team":"Kocaelispor","played":10,"wins":5,"draws":1,"losses":4,"gf":11,"ga":9,"gd":2,"points":16},
+      {"rank":9,"team":"Göztepe","played":10,"wins":4,"draws":3,"losses":3,"gf":21,"ga":17,"gd":4,"points":15},
+      {"rank":10,"team":"İstanbul Başakşehir","played":10,"wins":4,"draws":2,"losses":4,"gf":17,"ga":16,"gd":1,"points":14},
+      {"rank":11,"team":"Erzurumspor FK","played":10,"wins":null,"draws":null,"losses":null,"gf":null,"ga":null,"gd":null,"points":14},
+      {"rank":12,"team":"Alanyaspor","played":9,"wins":null,"draws":null,"losses":null,"gf":null,"ga":null,"gd":null,"points":12},
+      {"rank":13,"team":"Rizespor","played":10,"wins":null,"draws":null,"losses":null,"gf":null,"ga":null,"gd":null,"points":11},
+      {"rank":14,"team":"Gençlerbirliği","played":9,"wins":null,"draws":null,"losses":null,"gf":null,"ga":null,"gd":null,"points":11},
+      {"rank":15,"team":"Konyaspor","played":10,"wins":null,"draws":null,"losses":null,"gf":null,"ga":null,"gd":null,"points":8},
+      {"rank":16,"team":"Gaziantep FK","played":10,"wins":null,"draws":null,"losses":null,"gf":null,"ga":null,"gd":null,"points":8},
+      {"rank":17,"team":"Samsunspor","played":10,"wins":null,"draws":null,"losses":null,"gf":null,"ga":null,"gd":null,"points":4},
+      {"rank":18,"team":"Eyüpspor","played":10,"wins":null,"draws":null,"losses":null,"gf":null,"ga":null,"gd":null,"points":3}
+    ],
     "birinciLig": []
   },
-  "scorers": [],
+  "scorers": [
+    {"rank":1,"player":"Gift Orban","team":"Amed Sportif","goals":9,"matches":null,"source":"LigAnaliz 10. hafta","link":"https://liganaliz.com/genel-durum/10"},
+    {"rank":2,"player":"Victor Osimhen","team":"Galatasaray","goals":9,"matches":null,"source":"LigAnaliz 10. hafta","link":"https://liganaliz.com/genel-durum/10"}
+  ],
   "assists": [],
-  "teams": {},
+  "teams": {
+    "Çorum FK": {"played":10,"points":16,"rank":7,"lastMatches":[{"home":"Erzurumspor FK","away":"Çorum FK","homeScore":1,"awayScore":3,"date":"2026-10-31","source":"LigAnaliz","link":"https://liganaliz.com/mac/126/Erzurumspor%20FK-Corum%20FK"}],"nextMatch":{"home":"Çorum FK","away":"Fenerbahçe","date":"2026-11-08T15:00:00+03:00","source":"LigAnaliz","link":"https://liganaliz.com/genel-durum/11"}}
+  },
   "notes": [
-    "Bu dosya doğrulanmış veri beslemesi için başlangıç şemasıdır.",
-    "Veri sağlayıcısı ve güncelleme zamanı olmadan hiçbir örnek veri yayınlanmamalıdır."
+    "Puan ve fikstür kaynak sayfalarında görünmeyen bireysel istatistikler boş bırakıldı.",
+    "LigAnaliz asist sayfasında Ernest Muçi 5 asist olarak göründüğü için 5 Kasım kesimiyle 6 asist doğrulanamadı; asist tablosu yayınlanmadı.",
+    "Verilen kaynaklarda Fenerbahçe-Liverpool, Galatasaray-Stuttgart, Çorum FK hazırlıkları ve 11. hafta hakemleri için doğrudan haber kaydı bulunmadığından haber eklenmedi.",
+    "Gençlerbirliği ve Alanyaspor maç sayıları kaynak talimatına uygun olarak 9 bırakıldı."
   ]
 }

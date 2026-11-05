@@ -6,35 +6,36 @@ Uygulamanın yayın kesim tarihi `2026-11-05T23:59:59+03:00` olarak tanımlıdı
 
 ## Kullanılan kaynaklar
 
-- Haber RSS akışı için Google Apps Script'teki `NEWS_FEEDS` listesi: ASpor, ASpor Süper Lig, Habertürk Spor ve A Haber Spor.
-- RSS kayıtlarında yayın tarihi ve HTTPS kaynak bağlantısı zorunludur.
-- TFF ve UEFA bağlantıları, futbol verisi sağlayıcısının ekleyeceği kayıtların kaynak bağlantısı olarak kullanılabilir; bu depoda doğrulanmamış yeni sonuç, puan veya oyuncu istatistiği eklenmemiştir.
+- [TFF puan, fikstür ve sonuçlar](https://www.tff.org/?pageID=198)
+- [TFF 10. hafta detayları](https://www.tff.org/Default.aspx?hafta=10&pageId=198)
+- [LigAnaliz 10. hafta genel görünüm](https://liganaliz.com/genel-durum/10)
+- [canlıskor.org Süper Lig](https://canliskor.org/en/league/super-lig)
+- [LigAnaliz asist istatistikleri](https://liganaliz.com/istatistikler/asist)
+
+TFF sayfası bağlantıları kaynak listesinde korunmuştur. Alınan sayfa içeriğinde ayrıntı görünmeyen alanlar için yalnızca LigAnaliz/canlıskor.org üzerinde görünen kayıtlar kullanılmıştır.
 
 ## Güvenlik ve doğrulama
 
-- `data/football-data.json` başlangıçta `verified: false` ve boş veri listeleriyle gelir.
+- `data/football-data.json` 5 Kasım 2026 kesim tarihli, kaynak metadatası bulunan kayıtları içerir.
 - `football-data.js`, yalnızca `verified: true` olan, HTTPS kaynak bağlantısı ve geçerli yayın tarihi bulunan haberleri işler.
-- Puan durumu, fikstür, sonuç, gol krallığı, asist krallığı ve takım istatistikleri doğrulanmış veri gelene kadar gizlenir.
+- Puan durumu, 10. hafta sonuçları, 11. hafta fikstürü, Çorum FK özeti ve iki doğrulanabilen golcü gösterilir.
 - API anahtarı JavaScript dosyalarına yazılmamalıdır. GitHub Pages tarafında anahtar saklanamayacağı için futbol API'si Google Apps Script, Cloudflare Worker veya başka bir sunucu tarafı proxy üzerinden sunulmalıdır.
 
 ## Şu anda çalışan özellikler
 
-- Doğrulanmış veri yoksa eski statik haber, skor, fikstür, puan ve transfer içeriklerini yayınlamama.
+- Kaynaklı veri yoksa eski statik haber, skor, fikstür, puan ve transfer içeriklerini yayınlamama.
 - Veri kesim tarihi ve veri durumu bildirimi.
-- RSS uç noktasında tarih filtresi, kaynak bağlantısı ve son güncelleme alanı.
+- Her veri panelinde kaynak bağlantısı ve 5 Kasım 2026 güncelleme tarihi.
 - Yerel doğrulanmış JSON veya `window.IONEN_DATA_ENDPOINT` ile tanımlanan HTTPS uç noktasından veri yükleme.
 
 ## Henüz etkin olmayan özellikler
 
-5 Kasım 2026 itibarıyla doğrulanabilir bir futbol API çıktısı depoya sağlanmadığından aşağıdakiler canlı/veri dolu olarak yayınlanmıyor:
+Kaynak sayfalarında doğrulanamadığı için aşağıdakiler yayınlanmıyor veya eksik bırakılıyor:
 
-- Süper Lig ve 1. Lig puan tabloları
-- Yaklaşan maçlar ve sonuçlar
+- 1. Lig puan tablosu
+- İlk 20 golcü ve asist sıralamasının doğrulanamayan satırları
 - Canlı skorlar
-- İlk 20 golcü ve asist sıralaması
-- Takım kadro ve oyuncu istatistikleri
+- Fenerbahçe-Liverpool, Galatasaray-Stuttgart ve Çorum FK hazırlıkları haberleri
+- 11. hafta hakemleri
 
-Bir sağlayıcı bağlandığında çıktı `data/football-data.json` şemasına uymalı; `verified: true`, `updatedAt`, `provider`, kaynak bağlantıları ve kesim tarihinden eski kayıtlar bulunmalıdır. Canlı skor yalnızca sağlayıcı gerçek zamanlı veri veriyorsa etkinleştirilmelidir.
-git add .
-git commit -m "Doğrulanabilir futbol veri altyapısını güncelle"
-git push origin main
+LigAnaliz asist sayfasında Ernest Muçi 5 asist olarak göründüğü için kullanıcı tarafından belirtilen 6 asist değeri bu kaynaklarla doğrulanamadı; asist tablosu boş bırakıldı. Gençlerbirliği ve Alanyaspor maç sayıları 9 olarak korunmuştur.
