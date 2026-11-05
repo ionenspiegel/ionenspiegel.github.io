@@ -17,6 +17,7 @@
     } catch (_) {
       return false;
     }
+  }
 
   function display(value) {
     return value === null || value === undefined || value === '' ? '—' : escapeHtml(value);
@@ -70,7 +71,6 @@
       document.getElementById(id)?.classList.remove('data-unverified');
     });
   }
-  }
 
   function validDate(value) {
     const date = new Date(value);
@@ -95,6 +95,15 @@
     if (!status) return;
     status.textContent = message;
     status.dataset.tone = tone || 'neutral';
+  }
+
+  function updateSiteDate(value) {
+    const date = new Date(value || CUTOFF);
+    if (Number.isNaN(date.valueOf())) return;
+    const formatted = date.toLocaleDateString('tr-TR', {day: 'numeric', month: 'long', year: 'numeric'});
+    document.querySelectorAll('[data-site-date]').forEach((element) => {
+      element.textContent = formatted;
+    });
   }
 
   function renderNews(news) {
@@ -131,6 +140,7 @@
   }
 
   function renderVerifiedData(data) {
+    updateSiteDate(data.asOf || data.updatedAt);
     renderPanels(data);
     renderNews(data.news);
     if (!data.updatedAt) {

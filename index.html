@@ -42,6 +42,7 @@
 #liveScoreWidget,#liveScoreCard,#liveScoreList,.live-score-list,#timelineModal,.live-clock,.live-all-link{display:none!important}
 .data-unverified{display:none!important}.football-data-status{margin:12px 0;padding:11px 14px;border:1px solid var(--line,#ddd);border-radius:10px;font-size:11px;color:var(--muted,#666);background:var(--card,#fff)}.football-data-status[data-tone="warning"]{border-color:#e2b34a;color:#765500;background:#fff9e6}.football-data-status[data-tone="ok"]{border-color:#55a978;color:#17633b;background:#effaf3}.data-empty{padding:28px 18px;border:1px dashed var(--line,#ddd);border-radius:10px;color:var(--muted,#666);font-size:12px;text-align:center}
 .data-source-note{margin:10px 0 0;color:var(--muted,#777);font-size:10px}.data-source-note a{color:var(--red,#e50914);font-weight:800;text-decoration:none}
+.corum-feature{border:1px solid #e3b4b7;border-left:5px solid #b3131b;background:linear-gradient(135deg,#fff7f7,#fff);border-radius:14px;padding:18px}.corum-feature-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.corum-feature h3{margin:0;font-family:'Barlow Condensed';font-size:30px}.corum-feature small{color:#8a3035}.corum-feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}.corum-feature-item{padding:12px;background:#fff;border:1px solid #edd5d6;border-radius:10px}.corum-feature-item b{display:block;color:#b3131b;font-size:10px;margin-bottom:5px}.corum-feature-item strong{display:block;font-size:14px}.corum-feature-item span{display:block;color:#666;font-size:11px;margin-top:4px}@media(max-width:600px){.corum-feature-grid{grid-template-columns:1fr}.corum-feature h3{font-size:26px}}
 
 .big-update-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.big-update-grid .content-card{height:100%;padding:18px}.big-update-grid .content-card h3{margin:7px 0 8px}.big-update-grid .content-card p{line-height:1.55}.big-update-grid .content-card a{display:inline-block;margin-top:8px}@media(max-width:900px){.big-update-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.big-update-grid{grid-template-columns:1fr}}
 </style>
@@ -208,7 +209,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
         <span class="category red">SON DAKİKA</span>
         <h1 id="heroTitle">9. hafta tamamlandı: Galatasaray liderliğini korudu</h1>
         <p id="heroText">Galatasaray, 26 Ekim derbisinde Fenerbahçe'yi 2-1 mağlup etti. Sarı-kırmızılılar 22 puanla lider; Amed Sportif 20, Trabzonspor 19 puanda.</p>
-        <div class="hero-meta"><span id="heroSource">Anadolu Ajansı / TFF · 27 Ekim 2026</span><button class="ghost-btn" id="heroRead" type="button" onclick="window.open(\'https://www.star.com.tr/spor/super-ligde-9-hafta-sona-erdi-iste-sonuclar-haber-2049332/','_blank','noopener')Haberi görüntüle ↗</button></div>
+        <div class="hero-meta"><span id="heroSource">Doğrulanmış haber bekleniyor · 5 Kasım 2026</span><button class="ghost-btn" id="heroRead" type="button" hidden>Haberi görüntüle ↗</button></div>
       </div>
     </div>
     <aside class="hero-side">
@@ -218,7 +219,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   </section>
 
   <section class="section latest-section">
-    <div class="section-head"><div><h2><span class="red-line"></span> Son Dakika</h2>W Ekim 2026 · güncel haberler ve doğrulanmış fikstür</p></div><button class="filter-btn" id="refreshNews" type="button" aria-label="Haber akışını yenile">↻ Yenile</button></div>
+    <div class="section-head"><div><h2><span class="red-line"></span> Son Dakika</h2><p class="section-subtitle"><span data-site-date>5 Kasım 2026</span> · kaynaklı haberler ve doğrulanmış fikstür</p></div><button class="filter-btn" id="refreshNews" type="button" aria-label="Haber akışını yenile">↻ Yenile</button></div>
     <div class="news-chips" id="newsChips" role="tablist" aria-label="Haber filtreleri">
       <button class="news-chip active" type="button" data-news-filter="all">Tümü</button>
       <button class="news-chip" type="button" data-news-filter="Beşiktaş">Beşiktaş</button>
@@ -326,7 +327,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   <section class="section world-news-section" id="dunya">
     <span class="anchor-alias" id="avrupa" aria-hidden="true"></span>
     <div class="section-head">
-      <div><h2><span class="red-line"></span> Avrupa ve Dünya Futbolu</h2><p class="section-subtitle">Ekim 2026 · sonuçlar ve yaklaşan önemli maçlar · ülkeye göre filtrele</p></div>
+      <div><h2><span class="red-line"></span> Avrupa ve Dünya Futbolu</h2><p class="section-subtitle"><span data-site-date>5 Kasım 2026</span> · sonuçlar ve yaklaşan önemli maçlar · ülkeye göre filtrele</p></div>
       <a class="text-link" href="https://www.reuters.com/sports/soccer/" target="_blank" rel="noopener noreferrer">Dünya haberlerini keşfet ↗</a>
     </div>
     <div class="world-country-filters" role="group" aria-label="Ülkeye göre filtrele"><button type="button" class="active" data-world-filter="all">Tümü</button><button type="button" data-world-filter="İNGİLTERE">İngiltere</button><button type="button" data-world-filter="İSPANYA">İspanya</button><button type="button" data-world-filter="İTALYA">İtalya</button><button type="button" data-world-filter="ALMANYA">Almanya</button><button type="button" data-world-filter="FRANSA">Fransa</button><button type="button" data-world-filter="PORTEKİZ">Portekiz</button><button type="button" data-world-filter="HOLLANDA">Hollanda</button><button type="button" data-world-filter="İRLANDA">İrlanda</button><button type="button" data-world-filter="TÜRKİYE">Türkiye</button></div>
@@ -340,7 +341,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   
 <section class="section current-world" id="gundem">
   <div class="section-head">
-    <div><h2><span class="red-line"></span> Güncel Futbol Gündemi</h2><p class="section-subtitle">27 Ekim 2026 · kulüplerden güncel gelişmeler</p></div>
+    <div><h2><span class="red-line"></span> Güncel Futbol Gündemi</h2><p class="section-subtitle"><span data-site-date>5 Kasım 2026</span> · kulüplerden kaynaklı gelişmeler</p></div>
     <span class="live-source-note">● Güncel kaynaklar</span>
   </div>
   <div class="news-ticker-track" aria-label="Güncel futbol gündemi">
@@ -353,7 +354,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 
 <section class="section european-night" id="avrupa-gecesi">
   <div class="section-head">
-    <div><h2><span class="red-line"></span> Avrupa'dan Güncel Maçlar</h2><p class="section-subtitle">Ekim 2026 · Avrupa kupalarında sonuçlar ve sıradaki maçlar</p></div>
+    <div><h2><span class="red-line"></span> Avrupa'dan Güncel Maçlar</h2><p class="section-subtitle"><span data-site-date>5 Kasım 2026</span> · Avrupa kupalarında sonuçlar ve sıradaki maçlar</p></div>
     <a class="text-link" href="https://www.uefa.com/" target="_blank" rel="noopener noreferrer">UEFA ↗</a>
   </div>
   <div class="euro-match-track">
@@ -370,6 +371,19 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
     <div class="source-guide-inner">
       <div><span class="red-line"></span><b>Haber etiketleri</b><p><strong>RESMİ</strong> kulüp/kurum açıklaması · <strong>HABER</strong> medya kaynağı · <strong>İDDİA</strong> doğrulanmamış transfer gündemi. İddialar kesinleşmiş transfer gibi gösterilmez.</p></div>
       <a href="https://www.uefa.com/" target="_blank" rel="noopener">UEFA</a><a href="https://www.tff.org/" target="_blank" rel="noopener">TFF</a><a href="https://www.aa.com.tr/tr/spor" target="_blank" rel="noopener">AA Spor</a>
+    </div>
+  </section>
+
+  <section class="section" id="corum-fk">
+    <div class="section-head"><div><h2><span class="red-line"></span> Çorum FK Özel</h2><p class="section-subtitle">5 Kasım 2026 · Süper Lig 10. hafta sonrası</p></div><a class="text-link" href="https://liganaliz.com/takim/27/Corum%20FK" target="_blank" rel="noopener noreferrer">Takım kaynağı ↗</a></div>
+    <div class="corum-feature">
+      <div class="corum-feature-head"><div><h3>Arca Çorum FK</h3><small>7. sıra · 10 maç · 16 puan</small></div><span aria-label="Çorum FK renkleri">🔴⚪</span></div>
+      <div class="corum-feature-grid">
+        <div class="corum-feature-item"><b>SON MAÇ</b><strong>Erzurumspor FK 1–3 Çorum FK</strong><span>31 Ekim 2026 · Kaynak: LigAnaliz</span></div>
+        <div class="corum-feature-item"><b>11. HAFTA</b><strong>Çorum FK – Fenerbahçe</strong><span>8 Kasım 2026 · 15.00</span></div>
+        <div class="corum-feature-item"><b>PUAN DURUMU</b><strong>10 maç · 16 puan</strong><span>5 galibiyet · 1 beraberlik · 4 mağlubiyet · +5 averaj</span></div>
+      </div>
+      <p class="data-source-note">Kaynak: <a href="https://liganaliz.com/genel-durum/10" target="_blank" rel="noopener noreferrer">LigAnaliz 10. hafta</a> · Fikstür: <a href="https://www.tff.org/?pageID=198" target="_blank" rel="noopener noreferrer">TFF ↗</a></p>
     </div>
   </section>
 
@@ -412,7 +426,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
               </tbody>
             </table>
           </div>
-          <div class="standings-note"><span>●</span> 27 Ekim 2026 · 9. hafta sonu puan durumu. Son 5 maç formu kaynakta doğrulanmadığı için gösterilmiyor.</div>
+          <div class="standings-note"><span>●</span> <span data-site-date>5 Kasım 2026</span> · 10. hafta sonu puan durumu. Form bilgisi kaynakta doğrulanmadığı için gösterilmiyor.</div>
         </div>
 
         <div id="resultsPanel" class="hidden-panel">
@@ -464,7 +478,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
   </section>
 
 <section class="section upcoming-section" id="maclar">
-  <div class="section-head"><div><h2><span class="red-line"></span> Maçlar ve Fikstür</h2><p class="section-subtitle">27 Ekim 2026 · 9. hafta sonuçları ve 10. hafta programı</p></div><a class="text-link" href="https://www.tff.org/?pageID=198" target="_blank" rel="noopener">TFF fikstürü ↗</a></div>
+  <div class="section-head"><div><h2><span class="red-line"></span> Maçlar ve Fikstür</h2><p class="section-subtitle"><span data-site-date>5 Kasım 2026</span> · 10. hafta sonuçları ve 11. hafta programı</p></div><a class="text-link" href="https://www.tff.org/?pageID=198" target="_blank" rel="noopener">TFF fikstürü ↗</a></div>
   <div class="fixture-toolbar" role="tablist" aria-label="Fikstür filtreleri">
     <button class="fixture-filter active" data-fixture-filter="all" type="button">Tümü</button>
     <button class="fixture-filter" data-fixture-filter="upcoming" type="button">Yaklaşan</button>
@@ -525,7 +539,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 </section>
 
 <section class="section content-section" id="avrupa-kupalari">
-  <div class="section-head"><div><h2><span class="red-line"></span> Avrupa Futbolu</h2><p class="section-subtitle">Ekim 2026 · güncel UEFA gündemi ve Türk takımlarının maçları</p></div><a class="text-link" href="https://www.uefa.com/" target="_blank" rel="noopener noreferrer">UEFA ↗</a></div>
+  <div class="section-head"><div><h2><span class="red-line"></span> Avrupa Futbolu</h2><p class="section-subtitle"><span data-site-date>5 Kasım 2026</span> · güncel UEFA gündemi ve Türk takımlarının maçları</p></div><a class="text-link" href="https://www.uefa.com/" target="_blank" rel="noopener noreferrer">UEFA ↗</a></div>
   <nav class="europe-competition-links" aria-label="Avrupa kupaları"><a href="https://www.uefa.com/uefachampionsleague/" target="_blank" rel="noopener noreferrer">Şampiyonlar Ligi ↗</a><a href="https://www.uefa.com/uefaeuropaleague/" target="_blank" rel="noopener noreferrer">Avrupa Ligi ↗</a><a href="https://www.uefa.com/uefaconferenceleague/" target="_blank" rel="noopener noreferrer">Konferans Ligi ↗</a><a href="#maclar">Türk takımlarının fikstürü ↓</a></nav>
   <div class="news-grid euro-news-grid">
     <article class="content-card"><span class="tag news">ŞAMPİYONLAR LİGİ</span><h3>Fenerbahçe 2-2 Slavia Praha</h3><p>Fenerbahçe, 20 Ekim'de oynanan Şampiyonlar Ligi lig aşaması maçında Slavia Praha ile 2-2 berabere kaldı.</p><a href="https://www.uefa.com/uefachampionsleague/news/02a8-2174c9e9019d-f909a77bd77a-1000--202627-champions-league-all-the-league-phase-fixtures-and-results/" target="_blank" rel="noopener noreferrer">UEFA ↗</a></article>
@@ -536,7 +550,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 </section>
 
 <section class="section content-section daily-brief" id="bugun">
-  <div class="section-head"><div><h2><span class="red-line"></span> Bugünün Futbol Özeti</h2><p class="section-subtitle">27 Ekim 2026 · güncel durum ve sıradaki önemli maçlar</p></div></div>
+  <div class="section-head"><div><h2><span class="red-line"></span> Bugünün Futbol Özeti</h2><p class="section-subtitle"><span data-site-date>5 Kasım 2026</span> · güncel durum ve sıradaki önemli maçlar</p></div></div>
   <div class="brief-grid">
     <article class="brief-card"><span>🏆</span><div><small>LİDER</small><strong>Galatasaray</strong><p>22 Puanla Zirvede.</p></div></article>
     <article class="brief-card"><span>🥈</span><div><small>İKİNCİ</small><strong>Amed Sportif</strong><p>20 Puanla Takipte.</p></div></article>
@@ -826,7 +840,6 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 </script>
 
 <script src="v85-fixes.js?v=87.0-20261027" defer></script>
-<script src="./v87-live-news-fix.js?v=20261027"></script>
 <script src="./football-data.js?v=20261105" defer></script>
 </body>
 </html>
