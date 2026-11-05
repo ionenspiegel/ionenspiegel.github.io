@@ -570,24 +570,16 @@ async function loadOwnJsonNews(showToast=false){
   const status=$('#newsStatus');
   try{
     if(status)status.textContent='Haberler yükleniyor…';
-    let items=null,lastError=null;
-    for(const path of ['./data/news.json','./news.json']){
-      try{
-        const response=await fetchWithTimeout(path+'?v=86.3-'+Date.now(),{cache:'no-store'});
-        if(!response.ok)throw new Error(path+' yüklenemedi');
-        const candidate=await response.json();
-        if(!Array.isArray(candidate)||candidate.length===0)throw new Error(path+' geçersiz');
-        items=candidate;break;
-      }catch(error){lastError=error}
-    }
-    if(!items)throw lastError||new Error('Haber verisi bulunamadı');
-    renderOwnNewsItems(items,status);
-    if(showToast)toast(`${items.length} haber yenilendi`);
+    const response=await fetchWithTimeout('./data/football-data.json?v='+Date.now(),{cache:'no-store'});
+    if(!response.ok)throw new Error('Doğrulanmış veri yüklenemedi');
+    const data=await response.json();
+    if(data.verified!==true||!Array.isArray(data.news))throw new Error('Doğrulanmış haber akışı yok');
+    renderOwnNewsItems(data.news,status);
+    if(showToast)toast(`${data.news.length} haber yenilendi`);
   }catch(error){
-    console.warn('Yerel haber JSON alınamadı, gömülü haber verisi kullanılıyor.',error);
-    renderOwnNewsItems(IONENSPIEGEL_NEWS_FALLBACK,status);
-    if(status)status.textContent=`Yerel haber akışı · ${IONENSPIEGEL_NEWS_FALLBACK.length} haber`;
-    if(showToast)toast('Yerel haberler yüklendi');
+    feed.innerHTML='<div class="data-empty">Doğrulanmış haber bulunamadı. Eski içerik gösterilmiyor.</div>';
+    if(status)status.textContent='Doğrulanmış haber akışı kullanılamıyor.';
+    if(showToast)toast('Doğrulanmış haber bulunamadı');
   }
 }
 /* V54: Haber filtreleri */

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-11-05T23:59:59+03:00",
+  "updatedAt": null,
+  "provider": null,
+  "verified": false,
+  "news": [],
+  "matches": [],
+  "standings": {
+    "superLig": [],
+    "birinciLig": []
+  },
+  "scorers": [],
+  "assists": [],
+  "teams": {},
+  "notes": [
+    "Bu dosya doğrulanmış veri beslemesi için başlangıç şemasıdır.",
+    "Veri sağlayıcısı ve güncelleme zamanı olmadan hiçbir örnek veri yayınlanmamalıdır."
+  ]
+}

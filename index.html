@@ -7,9 +7,9 @@
 <link rel="icon" href="icon-192.png" type="image/png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="manifest" href="manifest.json">
-<title>İonenSpiegel | Güncel Futbol Haberleri • 27 Ekim 2026</title>
+<title>İonenSpiegel | Güncel Futbol Haberleri • 5 Kasım 2026 veri durumu</title>
 <meta name="description" content="İonenSpiegel - Son dakika futbol haberleri, transferler, puan durumları ve maç merkezi.">
-<meta property="og:title" content="İonenSpiegel | Futbol Haberleri • 27 Ekim 2026">
+<meta property="og:title" content="İonenSpiegel | Futbol Haberleri • 5 Kasım 2026 veri durumu">
 <meta property="og:description" content="Son dakika futbol haberleri, Şampiyonlar Ligi, Avrupa Ligi, transferler ve Süper Lig.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="İonenSpiegel">
@@ -21,7 +21,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="İonenSpiegel futbol haberleri">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="İonenSpiegel | Futbol Haberleri • 27 Ekim 2026">
+<meta name="twitter:title" content="İonenSpiegel | Futbol Haberleri • 5 Kasım 2026 veri durumu">
 <meta name="twitter:description" content="Son dakika futbol haberleri, Şampiyonlar Ligi, Avrupa Ligi, maç merkezi ve transfer gündemi.">
 <meta name="twitter:image" content="https://ionenspiegel.github.io/og-image-v63.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,6 +40,7 @@
 <link rel="stylesheet" href="v62-modern.css?v=66">
 <style id="live-score-removed">
 #liveScoreWidget,#liveScoreCard,#liveScoreList,.live-score-list,#timelineModal,.live-clock,.live-all-link{display:none!important}
+.data-unverified{display:none!important}.football-data-status{margin:12px 0;padding:11px 14px;border:1px solid var(--line,#ddd);border-radius:10px;font-size:11px;color:var(--muted,#666);background:var(--card,#fff)}.football-data-status[data-tone="warning"]{border-color:#e2b34a;color:#765500;background:#fff9e6}.football-data-status[data-tone="ok"]{border-color:#55a978;color:#17633b;background:#effaf3}.data-empty{padding:28px 18px;border:1px dashed var(--line,#ddd);border-radius:10px;color:var(--muted,#666);font-size:12px;text-align:center}
 
 .big-update-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.big-update-grid .content-card{height:100%;padding:18px}.big-update-grid .content-card h3{margin:7px 0 8px}.big-update-grid .content-card p{line-height:1.55}.big-update-grid .content-card a{display:inline-block;margin-top:8px}@media(max-width:900px){.big-update-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.big-update-grid{grid-template-columns:1fr}}
 </style>
@@ -197,6 +198,7 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 
 <main id="anasayfa">
 <div class="container">
+  <div id="footballDataStatus" class="football-data-status" role="status" aria-live="polite">Doğrulanmış futbol verisi kontrol ediliyor…</div>
   
   <section class="hero-news" id="haberler">
     <div class="hero-media" id="heroMedia">
@@ -824,5 +826,6 @@ body{background:radial-gradient(circle at 10% -10%,#fff 0,#f4f4f2 34%,#ececea 10
 
 <script src="v85-fixes.js?v=87.0-20261027" defer></script>
 <script src="./v87-live-news-fix.js?v=20261027"></script>
+<script src="./football-data.js?v=20261105" defer></script>
 </body>
 </html>
